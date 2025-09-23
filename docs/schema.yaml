@@ -2,57 +2,65 @@
 # Slot schema for SmallAI
 # Owner: @kaden
 
-
 slots:
-action:
-description: "The high-level event type or verb the user is asking about"
-type: enum
-values:
-- failure
-- error
-- login
-- logout
-- success
-- download
-- upload
-- access
-- restart
-- deletion
-- *
-time:
-description: "Relative time window the user requested"
-type: enum
-values:
-- last1h
-- last24h
-- last7d
-- last30d
-- today
-- yesterday
-- last60m
-- *
-user:
-description: "Username filter; '*' indicates no specific user"
-type: string_or_wildcard
-examples:
-- "bob"
-- "admin"
-- "root"
-- "*"
-source:
-description: "Log source or index (high-level). '*' indicates search across all indexes"
-type: enum
-values:
-- auth
-- ssh
-- web
-- database
-- filesystem
-- host
-- *
+  action:
+    description: "The high-level event type or verb the user is asking about"
+    type: enum
+    values:
+      - failure
+      - error
+      - login
+      - logout
+      - success
+      - download
+      - upload
+      - access
+      - restart
+      - deletion
+      - "*"
+  time:
+    description: "Relative time window the user requested"
+    type: enum
+    values:
+      - last1h
+      - last24h
+      - last7d
+      - last30d
+      - today
+      - yesterday
+      - last60m
+      - "*"
+  user:
+    description: "Username filter; '*' indicates no specific user"
+    type: string_or_wildcard
+    examples:
+      - "bob"
+      - "admin"
+      - "root"
+      - "*"
+  s  source:
+    description: "Log source or index (high-level). '*' indicates search across all indexes"
+    type: enum
+    values:
+      - auth
+      - ssh
+      - web
+      - database
+      - filesystem
+      - host
+      - "*"
+    aliases:
+      syslog: host
+      "security log": auth
+      security: auth
+      security_log: auth
+      server: host
+      machine: host
+      nginx: web
+      apache: web
 
 
 metadata:
-version: 1.0
-owner: "@kaden"
-created: "REPLACE_WITH_DATE"
+  version: 1.0
+  owner: "@kaden"
+  created: "REPLACE_WITH_DATE"
