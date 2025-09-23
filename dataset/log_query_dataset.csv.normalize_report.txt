@@ -1,0 +1,11 @@
+Normalization report for dataset/log_query_dataset.csv
+Schema: docs/schema.yaml
+Generated: 2025-09-23T02:35:48.256075 UTC
+
+Change counts:
+
+Sample changes (up to 10 per slot):
+
+Invalid rows after mapping (first 200):
+
+Total invalid rows after mapping: 0
