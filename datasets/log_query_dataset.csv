@@ -1,501 +1,501 @@
 nl_query,action,time,user,source,structured_query
-give me all connection events by user jsmith this month in web server,access,last30d,jsmith,web,action=access time=last30d user=jsmith source=web
-display all download events by user bob last 30 days in host,download,last30d,bob,host,action=download time=last30d user=bob source=host
-pull up all error events by user alice past 60 minutes in host,error,last1h,alice,host,action=error time=last1h user=alice source=host
-display all logins events by user admin last 30 days in auth log,login,last30d,admin,auth,action=login time=last30d user=admin source=auth
-list all auth failure events by user jsmith last hour in web server,failure,last1h,jsmith,web,action=failure time=last1h user=jsmith source=web
-list all error events by user jsmith the previous day in filesystem,error,yesterday,jsmith,filesystem,action=error time=yesterday user=jsmith source=filesystem
-show me all access events by user root last hour in nginx,access,last1h,root,web,action=access time=last1h user=root source=web
-pull up all sign off events last 30 days in nginx,logout,last30d,*,web,action=logout time=last30d source=web
-display all file upload events by user bob this month in filesystem,upload,last30d,bob,filesystem,action=upload time=last30d user=bob source=filesystem
-display all upload events by user bob last 30 days in auth log,upload,last30d,bob,auth,action=upload time=last30d user=bob source=auth
-display all authentication events by user root this week in security log,login,last7d,root,auth,action=login time=last7d user=root source=auth
-display all failed login events by user admin past 60 minutes in authentication log,failure,last1h,admin,auth,action=failure time=last1h user=admin source=auth
-find all failure events past week in secure shell,error,last7d,*,ssh,action=error time=last7d source=ssh
-display all restart events by user alice yesterday in filesystem,restart,yesterday,alice,filesystem,action=restart time=yesterday user=alice source=filesystem
-list all successful login events this month in ssh,success,last30d,*,ssh,action=success time=last30d source=ssh
-pull up all auth failure events by user root last 7 days in security log,failure,last7d,root,auth,action=failure time=last7d user=root source=auth
-list all logout events by user admin last hour in host,logout,last1h,admin,host,action=logout time=last1h user=admin source=host
-show me all restart events by user alice last hour in apache,restart,last1h,alice,web,action=restart time=last1h user=alice source=web
-display all upload events by user bob today in database,upload,today,bob,database,action=upload time=today user=bob source=database
-pull up all connection events by user root in the last 24 hours in ssh,access,today,root,ssh,action=access time=today user=root source=ssh
-list all download events by user admin this week in db,download,last7d,admin,database,action=download time=last7d user=admin source=database
-pull up all restart events by user anonymous yesterday in security log,restart,yesterday,anonymous,auth,action=restart time=yesterday user=anonymous source=auth
-find all request events by user root past 60 minutes in apache,access,last1h,root,web,action=access time=last1h user=root source=web
-list all auth success events by user root this week in apache,success,last7d,root,web,action=success time=last7d user=root source=web
-display all file deletion events by user root the previous day in apache,deletion,yesterday,root,web,action=deletion time=yesterday user=root source=web
-display all file upload events by user alice this month in filesystem,upload,last30d,alice,filesystem,action=upload time=last30d user=alice source=filesystem
-show me all crash events by user jsmith past 60 minutes in ssh,error,last1h,jsmith,ssh,action=error time=last1h user=jsmith source=ssh
-display all upload events by user alice today in auth log,upload,today,alice,auth,action=upload time=today user=alice source=auth
-display all access events by user bob past 60 minutes in filesystem,access,last1h,bob,filesystem,action=access time=last1h user=bob source=filesystem
-pull up all login failure events by user anonymous since midnight in ssh,failure,today,anonymous,ssh,action=failure time=today user=anonymous source=ssh
-show me all connection events by user jsmith past 60 minutes in security log,access,last1h,jsmith,auth,action=access time=last1h user=jsmith source=auth
-show me all file deletion events by user alice last 7 days in security log,deletion,last7d,alice,auth,action=deletion time=last7d user=alice source=auth
-list all authentication events by user admin last 24 hours in db,login,last24h,admin,database,action=login time=last24h user=admin source=database
-show me all failed login events by user admin past 60 minutes in authentication log,failure,last1h,admin,auth,action=failure time=last1h user=admin source=auth
-find all service restart events by user jsmith this month in machine,restart,last30d,jsmith,host,action=restart time=last30d user=jsmith source=host
-give me all crash events by user alice last hour in database,error,last1h,alice,database,action=error time=last1h user=alice source=database
-find all logout events last 30 days in db,logout,last30d,*,database,action=logout time=last30d source=database
-list all file deletion events by user anonymous past week in machine,deletion,last7d,anonymous,host,action=deletion time=last7d user=anonymous source=host
-pull up all logout events by user alice today in auth log,logout,today,alice,auth,action=logout time=today user=alice source=auth
-pull up all logout events by user bob last 24 hours in database,logout,last24h,bob,database,action=logout time=last24h user=bob source=database
-show me all restart events by user jsmith this month in database,restart,last30d,jsmith,database,action=restart time=last30d user=jsmith source=database
-list all sign off events this month in nginx,logout,last30d,*,web,action=logout time=last30d source=web
-find all failure events by user bob last 24 hours in web server,error,last24h,bob,web,action=error time=last24h user=bob source=web
-pull up all service restart events by user bob this month in host,restart,last30d,bob,host,action=restart time=last30d user=bob source=host
-give me all connection events by user root last 30 days in filesystem,access,last30d,root,filesystem,action=access time=last30d user=root source=filesystem
-display all file download events by user root this week in database,download,last7d,root,database,action=download time=last7d user=root source=database
-pull up all service restart events by user root last 30 days in ssh,restart,last30d,root,ssh,action=restart time=last30d user=root source=ssh
-show me all failed login events by user bob last hour in nginx,failure,last1h,bob,web,action=failure time=last1h user=bob source=web
-pull up all download events the previous day in apache,download,yesterday,*,web,action=download time=yesterday source=web
-display all access events by user admin this month in ssh,access,last30d,admin,ssh,action=access time=last30d user=admin source=ssh
-give me all upload events by user anonymous since midnight in database,upload,today,anonymous,database,action=upload time=today user=anonymous source=database
-list all connection events by user bob today in machine,access,today,bob,host,action=access time=today user=bob source=host
-find all failed login events by user anonymous this month in machine,failure,last30d,anonymous,host,action=failure time=last30d user=anonymous source=host
-display all request events by user root in the last 24 hours in machine,access,today,root,host,action=access time=today user=root source=host
-display all delete events last 24 hours in server,deletion,last24h,*,host,action=deletion time=last24h source=host
-pull up all delete events by user bob past 60 minutes in db,deletion,last1h,bob,database,action=deletion time=last1h user=bob source=database
-pull up all auth success events by user anonymous yesterday in secure shell,success,yesterday,anonymous,ssh,action=success time=yesterday user=anonymous source=ssh
-give me all logout events by user root this week in web server,logout,last7d,root,web,action=logout time=last7d user=root source=web
-display all failed login events by user bob the previous day in filesystem,failure,yesterday,bob,filesystem,action=failure time=yesterday user=bob source=filesystem
-pull up all file upload events by user anonymous past week in file system,upload,last7d,anonymous,filesystem,action=upload time=last7d user=anonymous source=filesystem
-show me all auth failure events by user anonymous since yesterday in authentication log,failure,last24h,anonymous,auth,action=failure time=last24h user=anonymous source=auth
-list all failed login events by user anonymous the previous day in secure shell,failure,yesterday,anonymous,ssh,action=failure time=yesterday user=anonymous source=ssh
-find all successful login events by user bob today in file system,success,today,bob,filesystem,action=success time=today user=bob source=filesystem
-list all file download events by user anonymous this week in server,download,last7d,anonymous,host,action=download time=last7d user=anonymous source=host
-display all file upload events by user bob past 60 minutes in ssh,upload,last1h,bob,ssh,action=upload time=last1h user=bob source=ssh
-list all file upload events by user anonymous since yesterday in authentication log,upload,last24h,anonymous,auth,action=upload time=last24h user=anonymous source=auth
-pull up all sign off events by user anonymous since midnight in apache,logout,today,anonymous,web,action=logout time=today user=anonymous source=web
-list all successful login events by user anonymous today in machine,success,today,anonymous,host,action=success time=today user=anonymous source=host
-display all authentication events by user alice last 24 hours in machine,login,last24h,alice,host,action=login time=last24h user=alice source=host
-display all request events by user root since yesterday in nginx,access,last24h,root,web,action=access time=last24h user=root source=web
-pull up all download events by user root since midnight in db,download,today,root,database,action=download time=today user=root source=database
-list all crash events by user root past week in security log,error,last7d,root,auth,action=error time=last7d user=root source=auth
-pull up all successful login events by user admin last 24 hours in secure shell,success,last24h,admin,ssh,action=success time=last24h user=admin source=ssh
-list all login events by user root yesterday in ssh,login,yesterday,root,ssh,action=login time=yesterday user=root source=ssh
-pull up all access events in the last 24 hours in database,access,today,*,database,action=access time=today source=database
-display all download events by user alice last 7 days in file system,download,last7d,alice,filesystem,action=download time=last7d user=alice source=filesystem
-show me all logout events by user jsmith last 30 days in file system,logout,last30d,jsmith,filesystem,action=logout time=last30d user=jsmith source=filesystem
-find all authentication events by user jsmith last 30 days in filesystem,login,last30d,jsmith,filesystem,action=login time=last30d user=jsmith source=filesystem
-give me all logins events by user root this month in database,login,last30d,root,database,action=login time=last30d user=root source=database
-list all logins events by user anonymous last 30 days in database,login,last30d,anonymous,database,action=login time=last30d user=anonymous source=database
-list all failure events by user root this month in authentication log,error,last30d,root,auth,action=error time=last30d user=root source=auth
-give me all authentication events by user bob last 7 days in server,login,last7d,bob,host,action=login time=last7d user=bob source=host
-list all upload events by user anonymous past 60 minutes in machine,upload,last1h,anonymous,host,action=upload time=last1h user=anonymous source=host
-show me all login failure events by user alice since midnight in apache,failure,today,alice,web,action=failure time=today user=alice source=web
-give me all successful login events by user root this month in secure shell,success,last30d,root,ssh,action=success time=last30d user=root source=ssh
-pull up all auth failure events by user alice this week in auth log,failure,last7d,alice,auth,action=failure time=last7d user=alice source=auth
-find all connection events by user admin last 30 days in nginx,access,last30d,admin,web,action=access time=last30d user=admin source=web
-give me all request events by user alice last 7 days in file system,access,last7d,alice,filesystem,action=access time=last7d user=alice source=filesystem
-display all logout events in the last 24 hours in machine,logout,today,*,host,action=logout time=today source=host
-show me all logout events by user root since yesterday in file system,logout,last24h,root,filesystem,action=logout time=last24h user=root source=filesystem
-give me all failure events by user anonymous this month in security log,error,last30d,anonymous,auth,action=error time=last30d user=anonymous source=auth
-show me all delete events by user root last 30 days in ssh,deletion,last30d,root,ssh,action=deletion time=last30d user=root source=ssh
-list all failed login events by user jsmith yesterday in file system,failure,yesterday,jsmith,filesystem,action=failure time=yesterday user=jsmith source=filesystem
-find all file deletion events in the last 24 hours in ssh,deletion,today,*,ssh,action=deletion time=today source=ssh
-give me all access events by user admin since midnight in database,access,today,admin,database,action=access time=today user=admin source=database
-find all connection events by user anonymous yesterday in ssh,access,yesterday,anonymous,ssh,action=access time=yesterday user=anonymous source=ssh
-show me all logout events by user anonymous in the last 24 hours in server,logout,today,anonymous,host,action=logout time=today user=anonymous source=host
-show me all authentication events last 7 days in filesystem,login,last7d,*,filesystem,action=login time=last7d source=filesystem
-list all download events by user alice yesterday in server,download,yesterday,alice,host,action=download time=yesterday user=alice source=host
-list all sign off events by user jsmith today in machine,logout,today,jsmith,host,action=logout time=today user=jsmith source=host
-list all file download events by user alice last 30 days in machine,download,last30d,alice,host,action=download time=last30d user=alice source=host
-pull up all service restart events by user bob this week in server,restart,last7d,bob,host,action=restart time=last7d user=bob source=host
-show me all sign off events by user admin past week in db,logout,last7d,admin,database,action=logout time=last7d user=admin source=database
-display all login failure events by user anonymous this week in host,failure,last7d,anonymous,host,action=failure time=last7d user=anonymous source=host
-list all auth failure events by user bob last 24 hours in web server,failure,last24h,bob,web,action=failure time=last24h user=bob source=web
-show me all connection events last 24 hours in database,access,last24h,*,database,action=access time=last24h source=database
-find all service restart events by user anonymous yesterday in database,restart,yesterday,anonymous,database,action=restart time=yesterday user=anonymous source=database
-pull up all download events by user admin in the last 24 hours in security log,download,today,admin,auth,action=download time=today user=admin source=auth
-pull up all delete events by user anonymous today in ssh,deletion,today,anonymous,ssh,action=deletion time=today user=anonymous source=ssh
-list all login events by user jsmith last hour in database,login,last1h,jsmith,database,action=login time=last1h user=jsmith source=database
-list all upload events last 30 days in authentication log,upload,last30d,*,auth,action=upload time=last30d source=auth
-display all delete events by user bob this week in file system,deletion,last7d,bob,filesystem,action=deletion time=last7d user=bob source=filesystem
-give me all failed login events by user bob since yesterday in secure shell,failure,last24h,bob,ssh,action=failure time=last24h user=bob source=ssh
-find all delete events by user bob since midnight in machine,deletion,today,bob,host,action=deletion time=today user=bob source=host
-show me all logins events by user jsmith last 30 days in secure shell,login,last30d,jsmith,ssh,action=login time=last30d user=jsmith source=ssh
-display all file upload events by user anonymous in the last 24 hours in nginx,upload,today,anonymous,web,action=upload time=today user=anonymous source=web
-pull up all upload events by user jsmith past week in database,upload,last7d,jsmith,database,action=upload time=last7d user=jsmith source=database
-list all restart events since yesterday in host,restart,last24h,*,host,action=restart time=last24h source=host
-find all logout events by user jsmith since midnight in server,logout,today,jsmith,host,action=logout time=today user=jsmith source=host
-display all sign off events last 30 days in host,logout,last30d,*,host,action=logout time=last30d source=host
-display all file upload events by user root in the last 24 hours in host,upload,today,root,host,action=upload time=today user=root source=host
-find all service restart events by user alice this month in ssh,restart,last30d,alice,ssh,action=restart time=last30d user=alice source=ssh
-give me all login events last hour in security log,login,last1h,*,auth,action=login time=last1h source=auth
-find all file upload events by user bob since yesterday in nginx,upload,last24h,bob,web,action=upload time=last24h user=bob source=web
-find all logout events by user bob past 60 minutes in database,logout,last1h,bob,database,action=logout time=last1h user=bob source=database
-give me all download events last 30 days in authentication log,download,last30d,*,auth,action=download time=last30d source=auth
-list all service restart events by user admin past 60 minutes in security log,restart,last1h,admin,auth,action=restart time=last1h user=admin source=auth
-pull up all upload events by user anonymous this month in server,upload,last30d,anonymous,host,action=upload time=last30d user=anonymous source=host
-find all auth success events by user alice yesterday in authentication log,success,yesterday,alice,auth,action=success time=yesterday user=alice source=auth
-find all service restart events by user admin last 7 days in file system,restart,last7d,admin,filesystem,action=restart time=last7d user=admin source=filesystem
-display all connection events in the last 24 hours in nginx,access,today,*,web,action=access time=today source=web
-pull up all restart events by user jsmith last 24 hours in file system,restart,last24h,jsmith,filesystem,action=restart time=last24h user=jsmith source=filesystem
-show me all upload events by user anonymous last 30 days in web server,upload,last30d,anonymous,web,action=upload time=last30d user=anonymous source=web
-display all authentication events by user admin last 7 days in ssh,login,last7d,admin,ssh,action=login time=last7d user=admin source=ssh
-show me all upload events by user admin the previous day in host,upload,yesterday,admin,host,action=upload time=yesterday user=admin source=host
-display all file upload events by user anonymous the previous day in secure shell,upload,yesterday,anonymous,ssh,action=upload time=yesterday user=anonymous source=ssh
-display all successful login events by user admin past week in security log,success,last7d,admin,auth,action=success time=last7d user=admin source=auth
-list all file download events this week in apache,download,last7d,*,web,action=download time=last7d source=web
-give me all auth failure events by user root today in database,failure,today,root,database,action=failure time=today user=root source=database
-find all logins events by user admin since yesterday in nginx,login,last24h,admin,web,action=login time=last24h user=admin source=web
-find all download events by user root since midnight in apache,download,today,root,web,action=download time=today user=root source=web
-show me all restart events by user bob since yesterday in apache,restart,last24h,bob,web,action=restart time=last24h user=bob source=web
-pull up all successful login events by user admin past 60 minutes in nginx,success,last1h,admin,web,action=success time=last1h user=admin source=web
-find all service restart events by user admin last 30 days in machine,restart,last30d,admin,host,action=restart time=last30d user=admin source=host
-list all authentication events by user bob past 60 minutes in server,login,last1h,bob,host,action=login time=last1h user=bob source=host
-show me all authentication events by user bob past 60 minutes in auth log,login,last1h,bob,auth,action=login time=last1h user=bob source=auth
-pull up all service restart events by user root last hour in host,restart,last1h,root,host,action=restart time=last1h user=root source=host
-show me all auth success events by user bob last hour in machine,success,last1h,bob,host,action=success time=last1h user=bob source=host
-find all login events by user root since yesterday in database,login,last24h,root,database,action=login time=last24h user=root source=database
-display all login events by user root this month in host,login,last30d,root,host,action=login time=last30d user=root source=host
-find all access events the previous day in security log,access,yesterday,*,auth,action=access time=yesterday source=auth
-show me all upload events by user jsmith the previous day in security log,upload,yesterday,jsmith,auth,action=upload time=yesterday user=jsmith source=auth
-pull up all delete events by user admin last hour in authentication log,deletion,last1h,admin,auth,action=deletion time=last1h user=admin source=auth
-list all sign off events past 60 minutes in secure shell,logout,last1h,*,ssh,action=logout time=last1h source=ssh
-list all auth success events last 7 days in apache,success,last7d,*,web,action=success time=last7d source=web
-pull up all request events by user admin last 30 days in nginx,access,last30d,admin,web,action=access time=last30d user=admin source=web
-find all download events last 30 days in auth log,download,last30d,*,auth,action=download time=last30d source=auth
-find all request events by user alice the previous day in nginx,access,yesterday,alice,web,action=access time=yesterday user=alice source=web
-find all connection events by user admin this month in web server,access,last30d,admin,web,action=access time=last30d user=admin source=web
-find all restart events by user alice last hour in authentication log,restart,last1h,alice,auth,action=restart time=last1h user=alice source=auth
-show me all failure events by user root in the last 24 hours in ssh,error,today,root,ssh,action=error time=today user=root source=ssh
-show me all file upload events by user admin since yesterday in filesystem,upload,last24h,admin,filesystem,action=upload time=last24h user=admin source=filesystem
-give me all crash events since yesterday in machine,error,last24h,*,host,action=error time=last24h source=host
-display all sign off events by user anonymous since yesterday in server,logout,last24h,anonymous,host,action=logout time=last24h user=anonymous source=host
-pull up all successful login events by user admin yesterday in file system,success,yesterday,admin,filesystem,action=success time=yesterday user=admin source=filesystem
-find all failed login events by user anonymous this week in host,failure,last7d,anonymous,host,action=failure time=last7d user=anonymous source=host
-pull up all sign off events by user bob last hour in db,logout,last1h,bob,database,action=logout time=last1h user=bob source=database
-pull up all download events by user bob past week in ssh,download,last7d,bob,ssh,action=download time=last7d user=bob source=ssh
-display all auth failure events by user jsmith today in database,failure,today,jsmith,database,action=failure time=today user=jsmith source=database
-show me all request events by user jsmith last 30 days in authentication log,access,last30d,jsmith,auth,action=access time=last30d user=jsmith source=auth
-display all logins events by user anonymous last 7 days in secure shell,login,last7d,anonymous,ssh,action=login time=last7d user=anonymous source=ssh
-find all access events this month in secure shell,access,last30d,*,ssh,action=access time=last30d source=ssh
-display all service restart events by user root yesterday in server,restart,yesterday,root,host,action=restart time=yesterday user=root source=host
-give me all connection events by user root yesterday in database,access,yesterday,root,database,action=access time=yesterday user=root source=database
-give me all access events by user root the previous day in nginx,access,yesterday,root,web,action=access time=yesterday user=root source=web
-find all delete events by user jsmith last 24 hours in secure shell,deletion,last24h,jsmith,ssh,action=deletion time=last24h user=jsmith source=ssh
-display all sign off events by user admin this month in server,logout,last30d,admin,host,action=logout time=last30d user=admin source=host
-give me all login failure events by user jsmith since midnight in filesystem,failure,today,jsmith,filesystem,action=failure time=today user=jsmith source=filesystem
-display all login events by user alice since midnight in database,login,today,alice,database,action=login time=today user=alice source=database
-list all file upload events by user anonymous last 30 days in secure shell,upload,last30d,anonymous,ssh,action=upload time=last30d user=anonymous source=ssh
-list all sign off events by user jsmith last 24 hours in ssh,logout,last24h,jsmith,ssh,action=logout time=last24h user=jsmith source=ssh
-find all login failure events by user bob past week in auth log,failure,last7d,bob,auth,action=failure time=last7d user=bob source=auth
-give me all restart events last 7 days in nginx,restart,last7d,*,web,action=restart time=last7d source=web
-pull up all login events by user anonymous past 60 minutes in auth log,login,last1h,anonymous,auth,action=login time=last1h user=anonymous source=auth
-find all logout events by user admin since midnight in nginx,logout,today,admin,web,action=logout time=today user=admin source=web
-display all download events by user root yesterday in file system,download,yesterday,root,filesystem,action=download time=yesterday user=root source=filesystem
-give me all sign off events by user jsmith last hour in db,logout,last1h,jsmith,database,action=logout time=last1h user=jsmith source=database
-find all failed login events yesterday in ssh,failure,yesterday,*,ssh,action=failure time=yesterday source=ssh
-find all file download events by user root in the last 24 hours in db,download,today,root,database,action=download time=today user=root source=database
-pull up all sign off events by user root this month in database,logout,last30d,root,database,action=logout time=last30d user=root source=database
-show me all failed login events by user admin since midnight in nginx,failure,today,admin,web,action=failure time=today user=admin source=web
-display all service restart events by user admin this month in auth log,restart,last30d,admin,auth,action=restart time=last30d user=admin source=auth
-pull up all file deletion events by user bob last 7 days in filesystem,deletion,last7d,bob,filesystem,action=deletion time=last7d user=bob source=filesystem
-show me all error events last 7 days in db,error,last7d,*,database,action=error time=last7d source=database
-display all auth failure events by user jsmith the previous day in host,failure,yesterday,jsmith,host,action=failure time=yesterday user=jsmith source=host
-list all file upload events by user bob since yesterday in auth log,upload,last24h,bob,auth,action=upload time=last24h user=bob source=auth
-find all login events by user anonymous last 7 days in db,login,last7d,anonymous,database,action=login time=last7d user=anonymous source=database
-find all delete events by user jsmith yesterday in secure shell,deletion,yesterday,jsmith,ssh,action=deletion time=yesterday user=jsmith source=ssh
-list all file deletion events by user jsmith past 60 minutes in secure shell,deletion,last1h,jsmith,ssh,action=deletion time=last1h user=jsmith source=ssh
-show me all auth success events by user root last 24 hours in server,success,last24h,root,host,action=success time=last24h user=root source=host
-find all failure events past 60 minutes in server,error,last1h,*,host,action=error time=last1h source=host
-pull up all restart events by user admin since yesterday in filesystem,restart,last24h,admin,filesystem,action=restart time=last24h user=admin source=filesystem
-find all request events this month in db,access,last30d,*,database,action=access time=last30d source=database
-pull up all file upload events last hour in secure shell,upload,last1h,*,ssh,action=upload time=last1h source=ssh
-give me all file upload events by user admin today in filesystem,upload,today,admin,filesystem,action=upload time=today user=admin source=filesystem
-find all error events by user alice past week in secure shell,error,last7d,alice,ssh,action=error time=last7d user=alice source=ssh
-give me all file upload events by user anonymous since yesterday in host,upload,last24h,anonymous,host,action=upload time=last24h user=anonymous source=host
-find all file deletion events since yesterday in machine,deletion,last24h,*,host,action=deletion time=last24h source=host
-pull up all successful login events by user anonymous since midnight in auth log,success,today,anonymous,auth,action=success time=today user=anonymous source=auth
-list all sign off events by user root since yesterday in filesystem,logout,last24h,root,filesystem,action=logout time=last24h user=root source=filesystem
-show me all download events by user admin yesterday in ssh,download,yesterday,admin,ssh,action=download time=yesterday user=admin source=ssh
-show me all error events by user admin today in ssh,error,today,admin,ssh,action=error time=today user=admin source=ssh
-find all auth success events by user alice this week in ssh,success,last7d,alice,ssh,action=success time=last7d user=alice source=ssh
-pull up all file download events by user jsmith this month in security log,download,last30d,jsmith,auth,action=download time=last30d user=jsmith source=auth
-give me all file deletion events this week in security log,deletion,last7d,*,auth,action=deletion time=last7d source=auth
-display all crash events by user anonymous since yesterday in filesystem,error,last24h,anonymous,filesystem,action=error time=last24h user=anonymous source=filesystem
-display all auth success events by user anonymous in the last 24 hours in filesystem,success,today,anonymous,filesystem,action=success time=today user=anonymous source=filesystem
-pull up all successful login events last 24 hours in server,success,last24h,*,host,action=success time=last24h source=host
-show me all crash events by user admin this week in secure shell,error,last7d,admin,ssh,action=error time=last7d user=admin source=ssh
-give me all request events by user root this month in nginx,access,last30d,root,web,action=access time=last30d user=root source=web
-find all successful login events by user admin the previous day in secure shell,success,yesterday,admin,ssh,action=success time=yesterday user=admin source=ssh
-pull up all logout events by user alice past week in ssh,logout,last7d,alice,ssh,action=logout time=last7d user=alice source=ssh
-display all failure events past week in host,error,last7d,*,host,action=error time=last7d source=host
-display all file deletion events by user alice since yesterday in db,deletion,last24h,alice,database,action=deletion time=last24h user=alice source=database
-pull up all connection events by user anonymous today in web server,access,today,anonymous,web,action=access time=today user=anonymous source=web
-find all successful login events by user admin in the last 24 hours in file system,success,today,admin,filesystem,action=success time=today user=admin source=filesystem
-list all service restart events by user alice last 30 days in secure shell,restart,last30d,alice,ssh,action=restart time=last30d user=alice source=ssh
-pull up all service restart events by user admin last 24 hours in db,restart,last24h,admin,database,action=restart time=last24h user=admin source=database
-give me all access events by user jsmith since yesterday in filesystem,access,last24h,jsmith,filesystem,action=access time=last24h user=jsmith source=filesystem
-give me all failed login events by user admin past week in filesystem,failure,last7d,admin,filesystem,action=failure time=last7d user=admin source=filesystem
-list all file deletion events by user root today in nginx,deletion,today,root,web,action=deletion time=today user=root source=web
-find all logout events by user alice since yesterday in secure shell,logout,last24h,alice,ssh,action=logout time=last24h user=alice source=ssh
-list all file upload events this month in host,upload,last30d,*,host,action=upload time=last30d source=host
-list all sign off events by user alice last 7 days in ssh,logout,last7d,alice,ssh,action=logout time=last7d user=alice source=ssh
-list all file upload events by user anonymous yesterday in file system,upload,yesterday,anonymous,filesystem,action=upload time=yesterday user=anonymous source=filesystem
-give me all service restart events by user alice last 24 hours in security log,restart,last24h,alice,auth,action=restart time=last24h user=alice source=auth
-list all sign off events by user admin in the last 24 hours in database,logout,today,admin,database,action=logout time=today user=admin source=database
-display all upload events by user anonymous since yesterday in security log,upload,last24h,anonymous,auth,action=upload time=last24h user=anonymous source=auth
-find all auth success events by user anonymous in the last 24 hours in web server,success,today,anonymous,web,action=success time=today user=anonymous source=web
-show me all download events by user admin last 30 days in file system,download,last30d,admin,filesystem,action=download time=last30d user=admin source=filesystem
-pull up all download events since midnight in host,download,today,*,host,action=download time=today source=host
-pull up all sign off events by user anonymous past week in file system,logout,last7d,anonymous,filesystem,action=logout time=last7d user=anonymous source=filesystem
-list all logout events last 30 days in apache,logout,last30d,*,web,action=logout time=last30d source=web
-pull up all login events by user alice today in ssh,login,today,alice,ssh,action=login time=today user=alice source=ssh
-find all service restart events by user bob last 24 hours in server,restart,last24h,bob,host,action=restart time=last24h user=bob source=host
-pull up all file upload events by user root yesterday in machine,upload,yesterday,root,host,action=upload time=yesterday user=root source=host
-pull up all failed login events by user bob today in database,failure,today,bob,database,action=failure time=today user=bob source=database
-give me all successful login events by user anonymous last hour in db,success,last1h,anonymous,database,action=success time=last1h user=anonymous source=database
-find all sign off events by user root yesterday in file system,logout,yesterday,root,filesystem,action=logout time=yesterday user=root source=filesystem
-find all upload events by user jsmith yesterday in security log,upload,yesterday,jsmith,auth,action=upload time=yesterday user=jsmith source=auth
-display all file download events by user anonymous last 7 days in machine,download,last7d,anonymous,host,action=download time=last7d user=anonymous source=host
-show me all sign off events by user root last hour in security log,logout,last1h,root,auth,action=logout time=last1h user=root source=auth
-display all file upload events by user anonymous this month in filesystem,upload,last30d,anonymous,filesystem,action=upload time=last30d user=anonymous source=filesystem
-display all file upload events last 7 days in apache,upload,last7d,*,web,action=upload time=last7d source=web
-list all auth failure events by user root yesterday in web server,failure,yesterday,root,web,action=failure time=yesterday user=root source=web
-display all access events last 24 hours in apache,access,last24h,*,web,action=access time=last24h source=web
-display all successful login events by user bob the previous day in security log,success,yesterday,bob,auth,action=success time=yesterday user=bob source=auth
-give me all auth failure events by user admin since midnight in secure shell,failure,today,admin,ssh,action=failure time=today user=admin source=ssh
-show me all auth success events by user bob the previous day in host,success,yesterday,bob,host,action=success time=yesterday user=bob source=host
-find all file download events by user jsmith since yesterday in nginx,download,last24h,jsmith,web,action=download time=last24h user=jsmith source=web
-find all logins events by user anonymous today in db,login,today,anonymous,database,action=login time=today user=anonymous source=database
-display all auth success events by user alice this month in nginx,success,last30d,alice,web,action=success time=last30d user=alice source=web
-find all sign off events by user root in the last 24 hours in db,logout,today,root,database,action=logout time=today user=root source=database
-list all file download events by user jsmith yesterday in web server,download,yesterday,jsmith,web,action=download time=yesterday user=jsmith source=web
-display all request events by user jsmith yesterday in db,access,yesterday,jsmith,database,action=access time=yesterday user=jsmith source=database
-give me all file download events by user jsmith the previous day in secure shell,download,yesterday,jsmith,ssh,action=download time=yesterday user=jsmith source=ssh
-give me all logins events by user jsmith yesterday in db,login,yesterday,jsmith,database,action=login time=yesterday user=jsmith source=database
-list all download events by user alice the previous day in auth log,download,yesterday,alice,auth,action=download time=yesterday user=alice source=auth
-list all logins events by user jsmith in the last 24 hours in secure shell,login,today,jsmith,ssh,action=login time=today user=jsmith source=ssh
-list all sign off events this month in server,logout,last30d,*,host,action=logout time=last30d source=host
-give me all sign off events by user bob past week in filesystem,logout,last7d,bob,filesystem,action=logout time=last7d user=bob source=filesystem
-list all crash events by user anonymous last 30 days in secure shell,error,last30d,anonymous,ssh,action=error time=last30d user=anonymous source=ssh
-find all sign off events by user alice past week in security log,logout,last7d,alice,auth,action=logout time=last7d user=alice source=auth
-display all download events last 24 hours in machine,download,last24h,*,host,action=download time=last24h source=host
-list all service restart events by user root this month in db,restart,last30d,root,database,action=restart time=last30d user=root source=database
-show me all connection events by user alice this month in machine,access,last30d,alice,host,action=access time=last30d user=alice source=host
-show me all auth failure events by user alice past 60 minutes in database,failure,last1h,alice,database,action=failure time=last1h user=alice source=database
-list all crash events by user alice yesterday in host,error,yesterday,alice,host,action=error time=yesterday user=alice source=host
-display all logout events by user bob this week in database,logout,last7d,bob,database,action=logout time=last7d user=bob source=database
-display all authentication events by user admin today in host,login,today,admin,host,action=login time=today user=admin source=host
-display all service restart events by user anonymous last hour in host,restart,last1h,anonymous,host,action=restart time=last1h user=anonymous source=host
-list all login failure events by user alice yesterday in auth log,failure,yesterday,alice,auth,action=failure time=yesterday user=alice source=auth
-show me all download events by user admin the previous day in filesystem,download,yesterday,admin,filesystem,action=download time=yesterday user=admin source=filesystem
-show me all download events by user admin last 7 days in apache,download,last7d,admin,web,action=download time=last7d user=admin source=web
-display all connection events by user alice yesterday in ssh,access,yesterday,alice,ssh,action=access time=yesterday user=alice source=ssh
-show me all restart events since yesterday in authentication log,restart,last24h,*,auth,action=restart time=last24h source=auth
-give me all login events by user anonymous in the last 24 hours in apache,login,today,anonymous,web,action=login time=today user=anonymous source=web
-give me all download events by user admin last 30 days in web server,download,last30d,admin,web,action=download time=last30d user=admin source=web
-show me all logout events by user jsmith the previous day in machine,logout,yesterday,jsmith,host,action=logout time=yesterday user=jsmith source=host
-give me all logout events by user bob past week in server,logout,last7d,bob,host,action=logout time=last7d user=bob source=host
-show me all delete events today in filesystem,deletion,today,*,filesystem,action=deletion time=today source=filesystem
-find all download events by user admin last 7 days in server,download,last7d,admin,host,action=download time=last7d user=admin source=host
-display all request events by user jsmith this month in filesystem,access,last30d,jsmith,filesystem,action=access time=last30d user=jsmith source=filesystem
-pull up all request events by user anonymous since yesterday in filesystem,access,last24h,anonymous,filesystem,action=access time=last24h user=anonymous source=filesystem
-give me all file download events by user admin last 30 days in machine,download,last30d,admin,host,action=download time=last30d user=admin source=host
-list all auth failure events by user admin this week in file system,failure,last7d,admin,filesystem,action=failure time=last7d user=admin source=filesystem
-give me all request events by user bob last 24 hours in authentication log,access,last24h,bob,auth,action=access time=last24h user=bob source=auth
-list all download events by user jsmith last 24 hours in host,download,last24h,jsmith,host,action=download time=last24h user=jsmith source=host
-display all upload events by user admin yesterday in auth log,upload,yesterday,admin,auth,action=upload time=yesterday user=admin source=auth
-pull up all service restart events by user root today in web server,restart,today,root,web,action=restart time=today user=root source=web
-find all delete events by user root the previous day in machine,deletion,yesterday,root,host,action=deletion time=yesterday user=root source=host
-find all failed login events by user alice yesterday in secure shell,failure,yesterday,alice,ssh,action=failure time=yesterday user=alice source=ssh
-give me all service restart events by user root last 7 days in db,restart,last7d,root,database,action=restart time=last7d user=root source=database
-pull up all crash events by user bob since midnight in db,error,today,bob,database,action=error time=today user=bob source=database
-pull up all crash events by user anonymous this month in ssh,error,last30d,anonymous,ssh,action=error time=last30d user=anonymous source=ssh
-list all failure events by user jsmith the previous day in security log,error,yesterday,jsmith,auth,action=error time=yesterday user=jsmith source=auth
-list all auth failure events by user root past 60 minutes in server,failure,last1h,root,host,action=failure time=last1h user=root source=host
-pull up all file upload events by user jsmith last 30 days in authentication log,upload,last30d,jsmith,auth,action=upload time=last30d user=jsmith source=auth
-list all auth success events by user admin past week in db,success,last7d,admin,database,action=success time=last7d user=admin source=database
-list all logout events by user anonymous last hour in database,logout,last1h,anonymous,database,action=logout time=last1h user=anonymous source=database
-list all logout events last hour in file system,logout,last1h,*,filesystem,action=logout time=last1h source=filesystem
-display all logins events by user admin since midnight in database,login,today,admin,database,action=login time=today user=admin source=database
-pull up all upload events by user bob the previous day in db,upload,yesterday,bob,database,action=upload time=yesterday user=bob source=database
-give me all login events by user alice past week in machine,login,last7d,alice,host,action=login time=last7d user=alice source=host
-show me all authentication events by user anonymous last hour in file system,login,last1h,anonymous,filesystem,action=login time=last1h user=anonymous source=filesystem
-find all file deletion events by user root yesterday in secure shell,deletion,yesterday,root,ssh,action=deletion time=yesterday user=root source=ssh
-give me all logins events by user anonymous in the last 24 hours in file system,login,today,anonymous,filesystem,action=login time=today user=anonymous source=filesystem
-find all delete events by user anonymous last 7 days in host,deletion,last7d,anonymous,host,action=deletion time=last7d user=anonymous source=host
-find all login events by user admin the previous day in authentication log,login,yesterday,admin,auth,action=login time=yesterday user=admin source=auth
-give me all file upload events last 30 days in apache,upload,last30d,*,web,action=upload time=last30d source=web
-give me all delete events by user bob last 7 days in file system,deletion,last7d,bob,filesystem,action=deletion time=last7d user=bob source=filesystem
-show me all login events by user admin last 30 days in secure shell,login,last30d,admin,ssh,action=login time=last30d user=admin source=ssh
-display all failure events by user anonymous in the last 24 hours in database,error,today,anonymous,database,action=error time=today user=anonymous source=database
-give me all auth success events by user jsmith last 7 days in host,success,last7d,jsmith,host,action=success time=last7d user=jsmith source=host
-display all request events by user bob this week in secure shell,access,last7d,bob,ssh,action=access time=last7d user=bob source=ssh
-display all sign off events by user admin yesterday in secure shell,logout,yesterday,admin,ssh,action=logout time=yesterday user=admin source=ssh
-give me all failure events by user root yesterday in filesystem,error,yesterday,root,filesystem,action=error time=yesterday user=root source=filesystem
-show me all auth failure events by user admin the previous day in secure shell,failure,yesterday,admin,ssh,action=failure time=yesterday user=admin source=ssh
-find all logout events by user jsmith since yesterday in authentication log,logout,last24h,jsmith,auth,action=logout time=last24h user=jsmith source=auth
-list all auth success events yesterday in secure shell,success,yesterday,*,ssh,action=success time=yesterday source=ssh
-find all auth success events by user jsmith this month in auth log,success,last30d,jsmith,auth,action=success time=last30d user=jsmith source=auth
-show me all authentication events past 60 minutes in secure shell,login,last1h,*,ssh,action=login time=last1h source=ssh
-find all auth success events by user alice this week in filesystem,success,last7d,alice,filesystem,action=success time=last7d user=alice source=filesystem
-pull up all restart events by user jsmith yesterday in file system,restart,yesterday,jsmith,filesystem,action=restart time=yesterday user=jsmith source=filesystem
-show me all successful login events by user root past 60 minutes in apache,success,last1h,root,web,action=success time=last1h user=root source=web
-show me all successful login events by user bob this month in database,success,last30d,bob,database,action=success time=last30d user=bob source=database
-pull up all access events by user bob yesterday in auth log,access,yesterday,bob,auth,action=access time=yesterday user=bob source=auth
-show me all service restart events by user anonymous since yesterday in security log,restart,last24h,anonymous,auth,action=restart time=last24h user=anonymous source=auth
-give me all failed login events by user root since yesterday in filesystem,failure,last24h,root,filesystem,action=failure time=last24h user=root source=filesystem
-give me all restart events by user alice in the last 24 hours in secure shell,restart,today,alice,ssh,action=restart time=today user=alice source=ssh
-find all service restart events by user admin past week in server,restart,last7d,admin,host,action=restart time=last7d user=admin source=host
-give me all authentication events by user jsmith last 30 days in ssh,login,last30d,jsmith,ssh,action=login time=last30d user=jsmith source=ssh
-show me all failed login events by user root last 24 hours in ssh,failure,last24h,root,ssh,action=failure time=last24h user=root source=ssh
-list all file download events by user root last hour in database,download,last1h,root,database,action=download time=last1h user=root source=database
-show me all login failure events by user admin last hour in ssh,failure,last1h,admin,ssh,action=failure time=last1h user=admin source=ssh
-give me all logins events by user alice the previous day in nginx,login,yesterday,alice,web,action=login time=yesterday user=alice source=web
-give me all file download events by user anonymous this week in machine,download,last7d,anonymous,host,action=download time=last7d user=anonymous source=host
-display all restart events by user root last hour in file system,restart,last1h,root,filesystem,action=restart time=last1h user=root source=filesystem
-list all logout events by user bob past 60 minutes in database,logout,last1h,bob,database,action=logout time=last1h user=bob source=database
-display all auth success events by user admin today in filesystem,success,today,admin,filesystem,action=success time=today user=admin source=filesystem
-show me all service restart events past week in authentication log,restart,last7d,*,auth,action=restart time=last7d source=auth
-give me all auth failure events by user root since yesterday in web server,failure,last24h,root,web,action=failure time=last24h user=root source=web
-find all auth success events by user alice since yesterday in auth log,success,last24h,alice,auth,action=success time=last24h user=alice source=auth
-show me all login events by user alice past 60 minutes in filesystem,login,last1h,alice,filesystem,action=login time=last1h user=alice source=filesystem
-pull up all auth failure events by user bob this month in database,failure,last30d,bob,database,action=failure time=last30d user=bob source=database
-show me all download events by user anonymous past week in db,download,last7d,anonymous,database,action=download time=last7d user=anonymous source=database
-pull up all login failure events by user root last 7 days in host,failure,last7d,root,host,action=failure time=last7d user=root source=host
-find all logins events by user root the previous day in security log,login,yesterday,root,auth,action=login time=yesterday user=root source=auth
-find all successful login events by user anonymous the previous day in security log,success,yesterday,anonymous,auth,action=success time=yesterday user=anonymous source=auth
-display all file deletion events by user root in the last 24 hours in host,deletion,today,root,host,action=deletion time=today user=root source=host
-give me all auth failure events by user bob past 60 minutes in db,failure,last1h,bob,database,action=failure time=last1h user=bob source=database
-list all successful login events by user anonymous past week in nginx,success,last7d,anonymous,web,action=success time=last7d user=anonymous source=web
-give me all successful login events by user bob the previous day in machine,success,yesterday,bob,host,action=success time=yesterday user=bob source=host
-display all sign off events by user anonymous yesterday in file system,logout,yesterday,anonymous,filesystem,action=logout time=yesterday user=anonymous source=filesystem
-show me all access events by user alice past 60 minutes in security log,access,last1h,alice,auth,action=access time=last1h user=alice source=auth
-show me all login failure events by user alice this month in security log,failure,last30d,alice,auth,action=failure time=last30d user=alice source=auth
-display all file download events by user jsmith the previous day in database,download,yesterday,jsmith,database,action=download time=yesterday user=jsmith source=database
-display all successful login events by user bob today in host,success,today,bob,host,action=success time=today user=bob source=host
-list all login events by user admin last hour in file system,login,last1h,admin,filesystem,action=login time=last1h user=admin source=filesystem
-pull up all delete events yesterday in secure shell,deletion,yesterday,*,ssh,action=deletion time=yesterday source=ssh
-pull up all error events by user anonymous last hour in database,error,last1h,anonymous,database,action=error time=last1h user=anonymous source=database
-show me all access events by user jsmith last 7 days in apache,access,last7d,jsmith,web,action=access time=last7d user=jsmith source=web
-find all connection events by user anonymous past week in apache,access,last7d,anonymous,web,action=access time=last7d user=anonymous source=web
-give me all authentication events by user alice last 7 days in auth log,login,last7d,alice,auth,action=login time=last7d user=alice source=auth
-list all access events by user anonymous past 60 minutes in database,access,last1h,anonymous,database,action=access time=last1h user=anonymous source=database
-display all error events by user alice this month in filesystem,error,last30d,alice,filesystem,action=error time=last30d user=alice source=filesystem
-find all auth failure events by user admin past 60 minutes in authentication log,failure,last1h,admin,auth,action=failure time=last1h user=admin source=auth
-give me all file download events by user root past 60 minutes in apache,download,last1h,root,web,action=download time=last1h user=root source=web
-pull up all file deletion events by user root today in nginx,deletion,today,root,web,action=deletion time=today user=root source=web
-display all login events since midnight in machine,login,today,*,host,action=login time=today source=host
-list all auth success events by user bob this week in db,success,last7d,bob,database,action=success time=last7d user=bob source=database
-list all delete events by user anonymous the previous day in web server,deletion,yesterday,anonymous,web,action=deletion time=yesterday user=anonymous source=web
-display all successful login events by user bob since yesterday in nginx,success,last24h,bob,web,action=success time=last24h user=bob source=web
-pull up all crash events by user alice last hour in secure shell,error,last1h,alice,ssh,action=error time=last1h user=alice source=ssh
-display all error events by user bob last 30 days in db,error,last30d,bob,database,action=error time=last30d user=bob source=database
-pull up all login events by user bob last hour in host,login,last1h,bob,host,action=login time=last1h user=bob source=host
-give me all request events by user root the previous day in filesystem,access,yesterday,root,filesystem,action=access time=yesterday user=root source=filesystem
-display all login events last hour in server,login,last1h,*,host,action=login time=last1h source=host
-list all file upload events by user bob last hour in database,upload,last1h,bob,database,action=upload time=last1h user=bob source=database
-find all file upload events by user anonymous this week in security log,upload,last7d,anonymous,auth,action=upload time=last7d user=anonymous source=auth
-pull up all restart events by user alice past 60 minutes in auth log,restart,last1h,alice,auth,action=restart time=last1h user=alice source=auth
-pull up all logins events by user anonymous in the last 24 hours in security log,login,today,anonymous,auth,action=login time=today user=anonymous source=auth
-display all login events past week in db,login,last7d,*,database,action=login time=last7d source=database
-find all file deletion events by user root last 24 hours in authentication log,deletion,last24h,root,auth,action=deletion time=last24h user=root source=auth
-give me all upload events by user admin last hour in secure shell,upload,last1h,admin,ssh,action=upload time=last1h user=admin source=ssh
-show me all upload events by user anonymous since yesterday in ssh,upload,last24h,anonymous,ssh,action=upload time=last24h user=anonymous source=ssh
-give me all auth success events by user bob this week in web server,success,last7d,bob,web,action=success time=last7d user=bob source=web
-list all upload events by user alice last 24 hours in db,upload,last24h,alice,database,action=upload time=last24h user=alice source=database
-pull up all login events the previous day in authentication log,login,yesterday,*,auth,action=login time=yesterday source=auth
-display all logout events by user bob past 60 minutes in db,logout,last1h,bob,database,action=logout time=last1h user=bob source=database
-list all delete events by user bob since midnight in database,deletion,today,bob,database,action=deletion time=today user=bob source=database
-find all file download events by user alice last 7 days in ssh,download,last7d,alice,ssh,action=download time=last7d user=alice source=ssh
-show me all request events by user bob this month in file system,access,last30d,bob,filesystem,action=access time=last30d user=bob source=filesystem
-find all file download events by user bob past 60 minutes in secure shell,download,last1h,bob,ssh,action=download time=last1h user=bob source=ssh
-show me all restart events by user root last 30 days in authentication log,restart,last30d,root,auth,action=restart time=last30d user=root source=auth
-show me all auth success events today in db,success,today,*,database,action=success time=today source=database
-show me all logins events by user anonymous last hour in nginx,login,last1h,anonymous,web,action=login time=last1h user=anonymous source=web
-find all failure events this month in secure shell,error,last30d,*,ssh,action=error time=last30d source=ssh
-list all logins events by user jsmith last 7 days in db,login,last7d,jsmith,database,action=login time=last7d user=jsmith source=database
-display all failure events by user admin since yesterday in apache,error,last24h,admin,web,action=error time=last24h user=admin source=web
-display all restart events by user root since yesterday in web server,restart,last24h,root,web,action=restart time=last24h user=root source=web
-pull up all login failure events by user root last 30 days in host,failure,last30d,root,host,action=failure time=last30d user=root source=host
-display all successful login events by user anonymous last 24 hours in authentication log,success,last24h,anonymous,auth,action=success time=last24h user=anonymous source=auth
-show me all failed login events by user root past 60 minutes in ssh,failure,last1h,root,ssh,action=failure time=last1h user=root source=ssh
-show me all sign off events last 24 hours in file system,logout,last24h,*,filesystem,action=logout time=last24h source=filesystem
-list all login failure events by user anonymous in the last 24 hours in ssh,failure,today,anonymous,ssh,action=failure time=today user=anonymous source=ssh
-list all restart events by user root last 24 hours in ssh,restart,last24h,root,ssh,action=restart time=last24h user=root source=ssh
-give me all auth success events by user anonymous yesterday in machine,success,yesterday,anonymous,host,action=success time=yesterday user=anonymous source=host
-show me all access events by user alice last 30 days in security log,access,last30d,alice,auth,action=access time=last30d user=alice source=auth
-give me all auth success events by user anonymous last 7 days in secure shell,success,last7d,anonymous,ssh,action=success time=last7d user=anonymous source=ssh
-give me all crash events by user jsmith yesterday in secure shell,error,yesterday,jsmith,ssh,action=error time=yesterday user=jsmith source=ssh
-pull up all restart events by user alice this month in web server,restart,last30d,alice,web,action=restart time=last30d user=alice source=web
-pull up all successful login events by user admin past 60 minutes in db,success,last1h,admin,database,action=success time=last1h user=admin source=database
-list all upload events by user jsmith last 30 days in nginx,upload,last30d,jsmith,web,action=upload time=last30d user=jsmith source=web
-give me all logout events by user admin last 30 days in file system,logout,last30d,admin,filesystem,action=logout time=last30d user=admin source=filesystem
-list all file download events by user jsmith the previous day in file system,download,yesterday,jsmith,filesystem,action=download time=yesterday user=jsmith source=filesystem
-give me all logout events by user jsmith last 24 hours in secure shell,logout,last24h,jsmith,ssh,action=logout time=last24h user=jsmith source=ssh
-find all sign off events by user root last hour in web server,logout,last1h,root,web,action=logout time=last1h user=root source=web
-find all successful login events this month in host,success,last30d,*,host,action=success time=last30d source=host
-find all access events by user bob last 24 hours in db,access,last24h,bob,database,action=access time=last24h user=bob source=database
-find all login events by user jsmith past 60 minutes in file system,login,last1h,jsmith,filesystem,action=login time=last1h user=jsmith source=filesystem
-give me all file upload events by user jsmith last 30 days in machine,upload,last30d,jsmith,host,action=upload time=last30d user=jsmith source=host
-display all auth failure events by user admin yesterday in ssh,failure,yesterday,admin,ssh,action=failure time=yesterday user=admin source=ssh
-give me all logout events last 24 hours in secure shell,logout,last24h,*,ssh,action=logout time=last24h source=ssh
-give me all login failure events by user jsmith last 30 days in db,failure,last30d,jsmith,database,action=failure time=last30d user=jsmith source=database
-list all delete events by user bob yesterday in auth log,deletion,yesterday,bob,auth,action=deletion time=yesterday user=bob source=auth
-list all request events by user admin the previous day in filesystem,access,yesterday,admin,filesystem,action=access time=yesterday user=admin source=filesystem
-list all auth success events by user alice this month in secure shell,success,last30d,alice,ssh,action=success time=last30d user=alice source=ssh
-find all logout events by user anonymous past week in authentication log,logout,last7d,anonymous,auth,action=logout time=last7d user=anonymous source=auth
-give me all successful login events by user alice yesterday in database,success,yesterday,alice,database,action=success time=yesterday user=alice source=database
-display all file upload events by user alice this month in host,upload,last30d,alice,host,action=upload time=last30d user=alice source=host
-pull up all access events by user jsmith since midnight in filesystem,access,today,jsmith,filesystem,action=access time=today user=jsmith source=filesystem
-pull up all file deletion events by user root last 24 hours in security log,deletion,last24h,root,auth,action=deletion time=last24h user=root source=auth
-display all access events by user alice last hour in ssh,access,last1h,alice,ssh,action=access time=last1h user=alice source=ssh
-pull up all file download events by user anonymous last 7 days in security log,download,last7d,anonymous,auth,action=download time=last7d user=anonymous source=auth
-list all login failure events by user admin yesterday in database,failure,yesterday,admin,database,action=failure time=yesterday user=admin source=database
-list all file upload events by user anonymous last 30 days in secure shell,upload,last30d,anonymous,ssh,action=upload time=last30d user=anonymous source=ssh
-display all file upload events by user anonymous since midnight in apache,upload,today,anonymous,web,action=upload time=today user=anonymous source=web
-find all error events by user admin yesterday in secure shell,error,yesterday,admin,ssh,action=error time=yesterday user=admin source=ssh
-show me all file download events yesterday in web server,download,yesterday,*,web,action=download time=yesterday source=web
-list all file upload events by user admin today in database,upload,today,admin,database,action=upload time=today user=admin source=database
-find all restart events by user anonymous last hour in server,restart,last1h,anonymous,host,action=restart time=last1h user=anonymous source=host
-show me all failed login events by user anonymous last 30 days in database,failure,last30d,anonymous,database,action=failure time=last30d user=anonymous source=database
-show me all auth failure events by user admin past 60 minutes in apache,failure,last1h,admin,web,action=failure time=last1h user=admin source=web
-give me all logout events by user jsmith since yesterday in machine,logout,last24h,jsmith,host,action=logout time=last24h user=jsmith source=host
-find all access events by user alice this month in file system,access,last30d,alice,filesystem,action=access time=last30d user=alice source=filesystem
-pull up all upload events by user admin last 30 days in machine,upload,last30d,admin,host,action=upload time=last30d user=admin source=host
-give me all request events by user root past week in apache,access,last7d,root,web,action=access time=last7d user=root source=web
-pull up all auth success events by user anonymous yesterday in apache,success,yesterday,anonymous,web,action=success time=yesterday user=anonymous source=web
-show me all login failure events by user jsmith this month in host,failure,last30d,jsmith,host,action=failure time=last30d user=jsmith source=host
-give me all sign off events by user anonymous last 7 days in db,logout,last7d,anonymous,database,action=logout time=last7d user=anonymous source=database
-pull up all file download events by user alice since yesterday in secure shell,download,last24h,alice,ssh,action=download time=last24h user=alice source=ssh
-show me all file download events by user jsmith since midnight in database,download,today,jsmith,database,action=download time=today user=jsmith source=database
-pull up all auth success events by user root since midnight in server,success,today,root,host,action=success time=today user=root source=host
-pull up all logins events by user bob since midnight in file system,login,today,bob,filesystem,action=login time=today user=bob source=filesystem
-pull up all logout events by user root yesterday in database,logout,yesterday,root,database,action=logout time=yesterday user=root source=database
-display all auth success events by user bob the previous day in secure shell,success,yesterday,bob,ssh,action=success time=yesterday user=bob source=ssh
-display all failure events by user anonymous last 7 days in database,error,last7d,anonymous,database,action=error time=last7d user=anonymous source=database
-display all file upload events in the last 24 hours in machine,upload,today,*,host,action=upload time=today source=host
-show me all error events by user alice this month in ssh,error,last30d,alice,ssh,action=error time=last30d user=alice source=ssh
-list all failed login events by user anonymous this month in nginx,failure,last30d,anonymous,web,action=failure time=last30d user=anonymous source=web
-find all login failure events by user alice the previous day in nginx,failure,yesterday,alice,web,action=failure time=yesterday user=alice source=web
-pull up all delete events by user root past week in ssh,deletion,last7d,root,ssh,action=deletion time=last7d user=root source=ssh
-show me all auth failure events by user root last 30 days in security log,failure,last30d,root,auth,action=failure time=last30d user=root source=auth
-display all request events by user bob past week in auth log,access,last7d,bob,auth,action=access time=last7d user=bob source=auth
-list all access events by user jsmith past week in filesystem,access,last7d,jsmith,filesystem,action=access time=last7d user=jsmith source=filesystem
-display all failed login events by user alice the previous day in apache,failure,yesterday,alice,web,action=failure time=yesterday user=alice source=web
-give me all logins events by user jsmith the previous day in file system,login,yesterday,jsmith,filesystem,action=login time=yesterday user=jsmith source=filesystem
-display all auth success events by user bob last 24 hours in database,success,last24h,bob,database,action=success time=last24h user=bob source=database
-display all login failure events by user anonymous last hour in server,failure,last1h,anonymous,host,action=failure time=last1h user=anonymous source=host
-show me failed logins from yesterday,failure,yesterday,*,auth,action=failure time=yesterday source=auth
-list all successful logins in the last 7 days,success,last7d,*,auth,action=success time=last7d source=auth
-who accessed the system from IP 10.0.0.1 today,access,today,*,host,action=access time=today source=host
-all password change events for user jsmith this week,login,last7d,jsmith,auth,action=login user=jsmith time=last7d source=auth
-errors in web server logs in the past hour,error,last1h,*,web,action=error time=last1h source=web
-show me downloads by user root in last 24 hours,download,last24h,root,filesystem,action=download user=root time=last24h source=filesystem
-requests with status code 500 since midnight,error,today,*,web,action=error time=today source=web status=500
-find logins by anonymous users last month,login,last30d,anonymous,auth,action=login user=anonymous time=last30d source=auth
-show web traffic from IP range 192.168.0.0/16 yesterday,access,yesterday,*,web,action=access time=yesterday source=web
-who accessed server01 between 2pm and 4pm,access,today,*,host,action=access time=today source=host
-list all sudo usage by any user in last week,access,last7d,*,auth,action=access time=last7d source=auth
-when did apache restart in the last 30 minutes,restart,last1h,*,web,action=restart time=last1h source=web
-find all failed database connections,failure,last24h,*,database,action=failure time=last24h source=database
-who deleted files in /var/log directory,deletion,last7d,*,filesystem,action=deletion time=last7d source=filesystem
-instances of brute force attacks last day,failure,last24h,*,auth,action=failure time=last24h source=auth
-requests to /admin endpoint returning 403,access,today,*,web,action=access time=today source=web status=403
-list all log entries tagged as security alert today,error,today,*,auth,action=error time=today source=auth
-who logged out yesterday,logout,yesterday,*,auth,action=logout time=yesterday source=auth
-count file read operations on temp directory last hour,access,last1h,*,filesystem,action=access time=last1h source=filesystem
-show web requests by user bob last month,access,last30d,bob,web,action=access user=bob time=last30d source=web
+give me all connection events by user jsmith this month in web server,access,last30d,jsmith,access_combined,action=access time=last30d user=jsmith sourcetype=web
+display all download events by user bob last 30 days in host,download,last30d,bob,errors_demo,action=download time=last30d user=bob sourcetype=host
+pull up all error events by user alice past 60 minutes in host,error,last1h,alice,errors_demo,action=error time=last1h user=alice sourcetype=host
+display all logins events by user admin last 30 days in auth log,login,last30d,admin,syslog,action=login time=last30d user=admin sourcetype=auth
+list all auth failure events by user jsmith last hour in web server,failure,last1h,jsmith,access_combined,action=failure time=last1h user=jsmith sourcetype=web
+list all error events by user jsmith the previous day in filesystem,error,yesterday,jsmith,errors_demo,action=error time=yesterday user=jsmith sourcetype=filesystem
+show me all access events by user root last hour in nginx,access,last1h,root,access_combined,action=access time=last1h user=root sourcetype=web
+pull up all sign off events last 30 days in nginx,logout,last30d,*,access_combined,action=logout time=last30d sourcetype=web
+display all file upload events by user bob this month in filesystem,upload,last30d,bob,errors_demo,action=upload time=last30d user=bob sourcetype=filesystem
+display all upload events by user bob last 30 days in auth log,upload,last30d,bob,syslog,action=upload time=last30d user=bob sourcetype=auth
+display all authentication events by user root this week in security log,login,last7d,root,syslog,action=login time=last7d user=root sourcetype=auth
+display all failed login events by user admin past 60 minutes in authentication log,failure,last1h,admin,syslog,action=failure time=last1h user=admin sourcetype=auth
+find all failure events past week in secure shell,error,last7d,*,syslog,action=error time=last7d sourcetype=ssh
+display all restart events by user alice yesterday in filesystem,restart,yesterday,alice,errors_demo,action=restart time=yesterday user=alice sourcetype=filesystem
+list all successful login events this month in ssh,success,last30d,*,syslog,action=success time=last30d sourcetype=ssh
+pull up all auth failure events by user root last 7 days in security log,failure,last7d,root,syslog,action=failure time=last7d user=root sourcetype=auth
+list all logout events by user admin last hour in host,logout,last1h,admin,errors_demo,action=logout time=last1h user=admin sourcetype=host
+show me all restart events by user alice last hour in apache,restart,last1h,alice,access_combined,action=restart time=last1h user=alice sourcetype=web
+display all upload events by user bob today in database,upload,today,bob,errors_demo,action=upload time=today user=bob sourcetype=database
+pull up all connection events by user root in the last 24 hours in ssh,access,today,root,syslog,action=access time=today user=root sourcetype=ssh
+list all download events by user admin this week in db,download,last7d,admin,errors_demo,action=download time=last7d user=admin sourcetype=database
+pull up all restart events by user anonymous yesterday in security log,restart,yesterday,anonymous,syslog,action=restart time=yesterday user=anonymous sourcetype=auth
+find all request events by user root past 60 minutes in apache,access,last1h,root,access_combined,action=access time=last1h user=root sourcetype=web
+list all auth success events by user root this week in apache,success,last7d,root,access_combined,action=success time=last7d user=root sourcetype=web
+display all file deletion events by user root the previous day in apache,deletion,yesterday,root,access_combined,action=deletion time=yesterday user=root sourcetype=web
+display all file upload events by user alice this month in filesystem,upload,last30d,alice,errors_demo,action=upload time=last30d user=alice sourcetype=filesystem
+show me all crash events by user jsmith past 60 minutes in ssh,error,last1h,jsmith,syslog,action=error time=last1h user=jsmith sourcetype=ssh
+display all upload events by user alice today in auth log,upload,today,alice,syslog,action=upload time=today user=alice sourcetype=auth
+display all access events by user bob past 60 minutes in filesystem,access,last1h,bob,errors_demo,action=access time=last1h user=bob sourcetype=filesystem
+pull up all login failure events by user anonymous since midnight in ssh,failure,today,anonymous,syslog,action=failure time=today user=anonymous sourcetype=ssh
+show me all connection events by user jsmith past 60 minutes in security log,access,last1h,jsmith,syslog,action=access time=last1h user=jsmith sourcetype=auth
+show me all file deletion events by user alice last 7 days in security log,deletion,last7d,alice,syslog,action=deletion time=last7d user=alice sourcetype=auth
+list all authentication events by user admin last 24 hours in db,login,last24h,admin,errors_demo,action=login time=last24h user=admin sourcetype=database
+show me all failed login events by user admin past 60 minutes in authentication log,failure,last1h,admin,syslog,action=failure time=last1h user=admin sourcetype=auth
+find all service restart events by user jsmith this month in machine,restart,last30d,jsmith,errors_demo,action=restart time=last30d user=jsmith sourcetype=host
+give me all crash events by user alice last hour in database,error,last1h,alice,errors_demo,action=error time=last1h user=alice sourcetype=database
+find all logout events last 30 days in db,logout,last30d,*,errors_demo,action=logout time=last30d sourcetype=database
+list all file deletion events by user anonymous past week in machine,deletion,last7d,anonymous,errors_demo,action=deletion time=last7d user=anonymous sourcetype=host
+pull up all logout events by user alice today in auth log,logout,today,alice,syslog,action=logout time=today user=alice sourcetype=auth
+pull up all logout events by user bob last 24 hours in database,logout,last24h,bob,errors_demo,action=logout time=last24h user=bob sourcetype=database
+show me all restart events by user jsmith this month in database,restart,last30d,jsmith,errors_demo,action=restart time=last30d user=jsmith sourcetype=database
+list all sign off events this month in nginx,logout,last30d,*,access_combined,action=logout time=last30d sourcetype=web
+find all failure events by user bob last 24 hours in web server,error,last24h,bob,access_combined,action=error time=last24h user=bob sourcetype=web
+pull up all service restart events by user bob this month in host,restart,last30d,bob,errors_demo,action=restart time=last30d user=bob sourcetype=host
+give me all connection events by user root last 30 days in filesystem,access,last30d,root,errors_demo,action=access time=last30d user=root sourcetype=filesystem
+display all file download events by user root this week in database,download,last7d,root,errors_demo,action=download time=last7d user=root sourcetype=database
+pull up all service restart events by user root last 30 days in ssh,restart,last30d,root,syslog,action=restart time=last30d user=root sourcetype=ssh
+show me all failed login events by user bob last hour in nginx,failure,last1h,bob,access_combined,action=failure time=last1h user=bob sourcetype=web
+pull up all download events the previous day in apache,download,yesterday,*,access_combined,action=download time=yesterday sourcetype=web
+display all access events by user admin this month in ssh,access,last30d,admin,syslog,action=access time=last30d user=admin sourcetype=ssh
+give me all upload events by user anonymous since midnight in database,upload,today,anonymous,errors_demo,action=upload time=today user=anonymous sourcetype=database
+list all connection events by user bob today in machine,access,today,bob,errors_demo,action=access time=today user=bob sourcetype=host
+find all failed login events by user anonymous this month in machine,failure,last30d,anonymous,errors_demo,action=failure time=last30d user=anonymous sourcetype=host
+display all request events by user root in the last 24 hours in machine,access,today,root,errors_demo,action=access time=today user=root sourcetype=host
+display all delete events last 24 hours in server,deletion,last24h,*,errors_demo,action=deletion time=last24h sourcetype=host
+pull up all delete events by user bob past 60 minutes in db,deletion,last1h,bob,errors_demo,action=deletion time=last1h user=bob sourcetype=database
+pull up all auth success events by user anonymous yesterday in secure shell,success,yesterday,anonymous,syslog,action=success time=yesterday user=anonymous sourcetype=ssh
+give me all logout events by user root this week in web server,logout,last7d,root,access_combined,action=logout time=last7d user=root sourcetype=web
+display all failed login events by user bob the previous day in filesystem,failure,yesterday,bob,errors_demo,action=failure time=yesterday user=bob sourcetype=filesystem
+pull up all file upload events by user anonymous past week in file system,upload,last7d,anonymous,errors_demo,action=upload time=last7d user=anonymous sourcetype=filesystem
+show me all auth failure events by user anonymous since yesterday in authentication log,failure,last24h,anonymous,syslog,action=failure time=last24h user=anonymous sourcetype=auth
+list all failed login events by user anonymous the previous day in secure shell,failure,yesterday,anonymous,syslog,action=failure time=yesterday user=anonymous sourcetype=ssh
+find all successful login events by user bob today in file system,success,today,bob,errors_demo,action=success time=today user=bob sourcetype=filesystem
+list all file download events by user anonymous this week in server,download,last7d,anonymous,errors_demo,action=download time=last7d user=anonymous sourcetype=host
+display all file upload events by user bob past 60 minutes in ssh,upload,last1h,bob,syslog,action=upload time=last1h user=bob sourcetype=ssh
+list all file upload events by user anonymous since yesterday in authentication log,upload,last24h,anonymous,syslog,action=upload time=last24h user=anonymous sourcetype=auth
+pull up all sign off events by user anonymous since midnight in apache,logout,today,anonymous,access_combined,action=logout time=today user=anonymous sourcetype=web
+list all successful login events by user anonymous today in machine,success,today,anonymous,errors_demo,action=success time=today user=anonymous sourcetype=host
+display all authentication events by user alice last 24 hours in machine,login,last24h,alice,errors_demo,action=login time=last24h user=alice sourcetype=host
+display all request events by user root since yesterday in nginx,access,last24h,root,access_combined,action=access time=last24h user=root sourcetype=web
+pull up all download events by user root since midnight in db,download,today,root,errors_demo,action=download time=today user=root sourcetype=database
+list all crash events by user root past week in security log,error,last7d,root,syslog,action=error time=last7d user=root sourcetype=auth
+pull up all successful login events by user admin last 24 hours in secure shell,success,last24h,admin,syslog,action=success time=last24h user=admin sourcetype=ssh
+list all login events by user root yesterday in ssh,login,yesterday,root,syslog,action=login time=yesterday user=root sourcetype=ssh
+pull up all access events in the last 24 hours in database,access,today,*,errors_demo,action=access time=today sourcetype=database
+display all download events by user alice last 7 days in file system,download,last7d,alice,errors_demo,action=download time=last7d user=alice sourcetype=filesystem
+show me all logout events by user jsmith last 30 days in file system,logout,last30d,jsmith,errors_demo,action=logout time=last30d user=jsmith sourcetype=filesystem
+find all authentication events by user jsmith last 30 days in filesystem,login,last30d,jsmith,errors_demo,action=login time=last30d user=jsmith sourcetype=filesystem
+give me all logins events by user root this month in database,login,last30d,root,errors_demo,action=login time=last30d user=root sourcetype=database
+list all logins events by user anonymous last 30 days in database,login,last30d,anonymous,errors_demo,action=login time=last30d user=anonymous sourcetype=database
+list all failure events by user root this month in authentication log,error,last30d,root,syslog,action=error time=last30d user=root sourcetype=auth
+give me all authentication events by user bob last 7 days in server,login,last7d,bob,errors_demo,action=login time=last7d user=bob sourcetype=host
+list all upload events by user anonymous past 60 minutes in machine,upload,last1h,anonymous,errors_demo,action=upload time=last1h user=anonymous sourcetype=host
+show me all login failure events by user alice since midnight in apache,failure,today,alice,access_combined,action=failure time=today user=alice sourcetype=web
+give me all successful login events by user root this month in secure shell,success,last30d,root,syslog,action=success time=last30d user=root sourcetype=ssh
+pull up all auth failure events by user alice this week in auth log,failure,last7d,alice,syslog,action=failure time=last7d user=alice sourcetype=auth
+find all connection events by user admin last 30 days in nginx,access,last30d,admin,access_combined,action=access time=last30d user=admin sourcetype=web
+give me all request events by user alice last 7 days in file system,access,last7d,alice,errors_demo,action=access time=last7d user=alice sourcetype=filesystem
+display all logout events in the last 24 hours in machine,logout,today,*,errors_demo,action=logout time=today sourcetype=host
+show me all logout events by user root since yesterday in file system,logout,last24h,root,errors_demo,action=logout time=last24h user=root sourcetype=filesystem
+give me all failure events by user anonymous this month in security log,error,last30d,anonymous,syslog,action=error time=last30d user=anonymous sourcetype=auth
+show me all delete events by user root last 30 days in ssh,deletion,last30d,root,syslog,action=deletion time=last30d user=root sourcetype=ssh
+list all failed login events by user jsmith yesterday in file system,failure,yesterday,jsmith,errors_demo,action=failure time=yesterday user=jsmith sourcetype=filesystem
+find all file deletion events in the last 24 hours in ssh,deletion,today,*,syslog,action=deletion time=today sourcetype=ssh
+give me all access events by user admin since midnight in database,access,today,admin,errors_demo,action=access time=today user=admin sourcetype=database
+find all connection events by user anonymous yesterday in ssh,access,yesterday,anonymous,syslog,action=access time=yesterday user=anonymous sourcetype=ssh
+show me all logout events by user anonymous in the last 24 hours in server,logout,today,anonymous,errors_demo,action=logout time=today user=anonymous sourcetype=host
+show me all authentication events last 7 days in filesystem,login,last7d,*,errors_demo,action=login time=last7d sourcetype=filesystem
+list all download events by user alice yesterday in server,download,yesterday,alice,errors_demo,action=download time=yesterday user=alice sourcetype=host
+list all sign off events by user jsmith today in machine,logout,today,jsmith,errors_demo,action=logout time=today user=jsmith sourcetype=host
+list all file download events by user alice last 30 days in machine,download,last30d,alice,errors_demo,action=download time=last30d user=alice sourcetype=host
+pull up all service restart events by user bob this week in server,restart,last7d,bob,errors_demo,action=restart time=last7d user=bob sourcetype=host
+show me all sign off events by user admin past week in db,logout,last7d,admin,errors_demo,action=logout time=last7d user=admin sourcetype=database
+display all login failure events by user anonymous this week in host,failure,last7d,anonymous,errors_demo,action=failure time=last7d user=anonymous sourcetype=host
+list all auth failure events by user bob last 24 hours in web server,failure,last24h,bob,access_combined,action=failure time=last24h user=bob sourcetype=web
+show me all connection events last 24 hours in database,access,last24h,*,errors_demo,action=access time=last24h sourcetype=database
+find all service restart events by user anonymous yesterday in database,restart,yesterday,anonymous,errors_demo,action=restart time=yesterday user=anonymous sourcetype=database
+pull up all download events by user admin in the last 24 hours in security log,download,today,admin,syslog,action=download time=today user=admin sourcetype=auth
+pull up all delete events by user anonymous today in ssh,deletion,today,anonymous,syslog,action=deletion time=today user=anonymous sourcetype=ssh
+list all login events by user jsmith last hour in database,login,last1h,jsmith,errors_demo,action=login time=last1h user=jsmith sourcetype=database
+list all upload events last 30 days in authentication log,upload,last30d,*,syslog,action=upload time=last30d sourcetype=auth
+display all delete events by user bob this week in file system,deletion,last7d,bob,errors_demo,action=deletion time=last7d user=bob sourcetype=filesystem
+give me all failed login events by user bob since yesterday in secure shell,failure,last24h,bob,syslog,action=failure time=last24h user=bob sourcetype=ssh
+find all delete events by user bob since midnight in machine,deletion,today,bob,errors_demo,action=deletion time=today user=bob sourcetype=host
+show me all logins events by user jsmith last 30 days in secure shell,login,last30d,jsmith,syslog,action=login time=last30d user=jsmith sourcetype=ssh
+display all file upload events by user anonymous in the last 24 hours in nginx,upload,today,anonymous,access_combined,action=upload time=today user=anonymous sourcetype=web
+pull up all upload events by user jsmith past week in database,upload,last7d,jsmith,errors_demo,action=upload time=last7d user=jsmith sourcetype=database
+list all restart events since yesterday in host,restart,last24h,*,errors_demo,action=restart time=last24h sourcetype=host
+find all logout events by user jsmith since midnight in server,logout,today,jsmith,errors_demo,action=logout time=today user=jsmith sourcetype=host
+display all sign off events last 30 days in host,logout,last30d,*,errors_demo,action=logout time=last30d sourcetype=host
+display all file upload events by user root in the last 24 hours in host,upload,today,root,errors_demo,action=upload time=today user=root sourcetype=host
+find all service restart events by user alice this month in ssh,restart,last30d,alice,syslog,action=restart time=last30d user=alice sourcetype=ssh
+give me all login events last hour in security log,login,last1h,*,syslog,action=login time=last1h sourcetype=auth
+find all file upload events by user bob since yesterday in nginx,upload,last24h,bob,access_combined,action=upload time=last24h user=bob sourcetype=web
+find all logout events by user bob past 60 minutes in database,logout,last1h,bob,errors_demo,action=logout time=last1h user=bob sourcetype=database
+give me all download events last 30 days in authentication log,download,last30d,*,syslog,action=download time=last30d sourcetype=auth
+list all service restart events by user admin past 60 minutes in security log,restart,last1h,admin,syslog,action=restart time=last1h user=admin sourcetype=auth
+pull up all upload events by user anonymous this month in server,upload,last30d,anonymous,errors_demo,action=upload time=last30d user=anonymous sourcetype=host
+find all auth success events by user alice yesterday in authentication log,success,yesterday,alice,syslog,action=success time=yesterday user=alice sourcetype=auth
+find all service restart events by user admin last 7 days in file system,restart,last7d,admin,errors_demo,action=restart time=last7d user=admin sourcetype=filesystem
+display all connection events in the last 24 hours in nginx,access,today,*,access_combined,action=access time=today sourcetype=web
+pull up all restart events by user jsmith last 24 hours in file system,restart,last24h,jsmith,errors_demo,action=restart time=last24h user=jsmith sourcetype=filesystem
+show me all upload events by user anonymous last 30 days in web server,upload,last30d,anonymous,access_combined,action=upload time=last30d user=anonymous sourcetype=web
+display all authentication events by user admin last 7 days in ssh,login,last7d,admin,syslog,action=login time=last7d user=admin sourcetype=ssh
+show me all upload events by user admin the previous day in host,upload,yesterday,admin,errors_demo,action=upload time=yesterday user=admin sourcetype=host
+display all file upload events by user anonymous the previous day in secure shell,upload,yesterday,anonymous,syslog,action=upload time=yesterday user=anonymous sourcetype=ssh
+display all successful login events by user admin past week in security log,success,last7d,admin,syslog,action=success time=last7d user=admin sourcetype=auth
+list all file download events this week in apache,download,last7d,*,access_combined,action=download time=last7d sourcetype=web
+give me all auth failure events by user root today in database,failure,today,root,errors_demo,action=failure time=today user=root sourcetype=database
+find all logins events by user admin since yesterday in nginx,login,last24h,admin,access_combined,action=login time=last24h user=admin sourcetype=web
+find all download events by user root since midnight in apache,download,today,root,access_combined,action=download time=today user=root sourcetype=web
+show me all restart events by user bob since yesterday in apache,restart,last24h,bob,access_combined,action=restart time=last24h user=bob sourcetype=web
+pull up all successful login events by user admin past 60 minutes in nginx,success,last1h,admin,access_combined,action=success time=last1h user=admin sourcetype=web
+find all service restart events by user admin last 30 days in machine,restart,last30d,admin,errors_demo,action=restart time=last30d user=admin sourcetype=host
+list all authentication events by user bob past 60 minutes in server,login,last1h,bob,errors_demo,action=login time=last1h user=bob sourcetype=host
+show me all authentication events by user bob past 60 minutes in auth log,login,last1h,bob,syslog,action=login time=last1h user=bob sourcetype=auth
+pull up all service restart events by user root last hour in host,restart,last1h,root,errors_demo,action=restart time=last1h user=root sourcetype=host
+show me all auth success events by user bob last hour in machine,success,last1h,bob,errors_demo,action=success time=last1h user=bob sourcetype=host
+find all login events by user root since yesterday in database,login,last24h,root,errors_demo,action=login time=last24h user=root sourcetype=database
+display all login events by user root this month in host,login,last30d,root,errors_demo,action=login time=last30d user=root sourcetype=host
+find all access events the previous day in security log,access,yesterday,*,syslog,action=access time=yesterday sourcetype=auth
+show me all upload events by user jsmith the previous day in security log,upload,yesterday,jsmith,syslog,action=upload time=yesterday user=jsmith sourcetype=auth
+pull up all delete events by user admin last hour in authentication log,deletion,last1h,admin,syslog,action=deletion time=last1h user=admin sourcetype=auth
+list all sign off events past 60 minutes in secure shell,logout,last1h,*,syslog,action=logout time=last1h sourcetype=ssh
+list all auth success events last 7 days in apache,success,last7d,*,access_combined,action=success time=last7d sourcetype=web
+pull up all request events by user admin last 30 days in nginx,access,last30d,admin,access_combined,action=access time=last30d user=admin sourcetype=web
+find all download events last 30 days in auth log,download,last30d,*,syslog,action=download time=last30d sourcetype=auth
+find all request events by user alice the previous day in nginx,access,yesterday,alice,access_combined,action=access time=yesterday user=alice sourcetype=web
+find all connection events by user admin this month in web server,access,last30d,admin,access_combined,action=access time=last30d user=admin sourcetype=web
+find all restart events by user alice last hour in authentication log,restart,last1h,alice,syslog,action=restart time=last1h user=alice sourcetype=auth
+show me all failure events by user root in the last 24 hours in ssh,error,today,root,syslog,action=error time=today user=root sourcetype=ssh
+show me all file upload events by user admin since yesterday in filesystem,upload,last24h,admin,errors_demo,action=upload time=last24h user=admin sourcetype=filesystem
+give me all crash events since yesterday in machine,error,last24h,*,errors_demo,action=error time=last24h sourcetype=host
+display all sign off events by user anonymous since yesterday in server,logout,last24h,anonymous,errors_demo,action=logout time=last24h user=anonymous sourcetype=host
+pull up all successful login events by user admin yesterday in file system,success,yesterday,admin,errors_demo,action=success time=yesterday user=admin sourcetype=filesystem
+find all failed login events by user anonymous this week in host,failure,last7d,anonymous,errors_demo,action=failure time=last7d user=anonymous sourcetype=host
+pull up all sign off events by user bob last hour in db,logout,last1h,bob,errors_demo,action=logout time=last1h user=bob sourcetype=database
+pull up all download events by user bob past week in ssh,download,last7d,bob,syslog,action=download time=last7d user=bob sourcetype=ssh
+display all auth failure events by user jsmith today in database,failure,today,jsmith,errors_demo,action=failure time=today user=jsmith sourcetype=database
+show me all request events by user jsmith last 30 days in authentication log,access,last30d,jsmith,syslog,action=access time=last30d user=jsmith sourcetype=auth
+display all logins events by user anonymous last 7 days in secure shell,login,last7d,anonymous,syslog,action=login time=last7d user=anonymous sourcetype=ssh
+find all access events this month in secure shell,access,last30d,*,syslog,action=access time=last30d sourcetype=ssh
+display all service restart events by user root yesterday in server,restart,yesterday,root,errors_demo,action=restart time=yesterday user=root sourcetype=host
+give me all connection events by user root yesterday in database,access,yesterday,root,errors_demo,action=access time=yesterday user=root sourcetype=database
+give me all access events by user root the previous day in nginx,access,yesterday,root,access_combined,action=access time=yesterday user=root sourcetype=web
+find all delete events by user jsmith last 24 hours in secure shell,deletion,last24h,jsmith,syslog,action=deletion time=last24h user=jsmith sourcetype=ssh
+display all sign off events by user admin this month in server,logout,last30d,admin,errors_demo,action=logout time=last30d user=admin sourcetype=host
+give me all login failure events by user jsmith since midnight in filesystem,failure,today,jsmith,errors_demo,action=failure time=today user=jsmith sourcetype=filesystem
+display all login events by user alice since midnight in database,login,today,alice,errors_demo,action=login time=today user=alice sourcetype=database
+list all file upload events by user anonymous last 30 days in secure shell,upload,last30d,anonymous,syslog,action=upload time=last30d user=anonymous sourcetype=ssh
+list all sign off events by user jsmith last 24 hours in ssh,logout,last24h,jsmith,syslog,action=logout time=last24h user=jsmith sourcetype=ssh
+find all login failure events by user bob past week in auth log,failure,last7d,bob,syslog,action=failure time=last7d user=bob sourcetype=auth
+give me all restart events last 7 days in nginx,restart,last7d,*,access_combined,action=restart time=last7d sourcetype=web
+pull up all login events by user anonymous past 60 minutes in auth log,login,last1h,anonymous,syslog,action=login time=last1h user=anonymous sourcetype=auth
+find all logout events by user admin since midnight in nginx,logout,today,admin,access_combined,action=logout time=today user=admin sourcetype=web
+display all download events by user root yesterday in file system,download,yesterday,root,errors_demo,action=download time=yesterday user=root sourcetype=filesystem
+give me all sign off events by user jsmith last hour in db,logout,last1h,jsmith,errors_demo,action=logout time=last1h user=jsmith sourcetype=database
+find all failed login events yesterday in ssh,failure,yesterday,*,syslog,action=failure time=yesterday sourcetype=ssh
+find all file download events by user root in the last 24 hours in db,download,today,root,errors_demo,action=download time=today user=root sourcetype=database
+pull up all sign off events by user root this month in database,logout,last30d,root,errors_demo,action=logout time=last30d user=root sourcetype=database
+show me all failed login events by user admin since midnight in nginx,failure,today,admin,access_combined,action=failure time=today user=admin sourcetype=web
+display all service restart events by user admin this month in auth log,restart,last30d,admin,syslog,action=restart time=last30d user=admin sourcetype=auth
+pull up all file deletion events by user bob last 7 days in filesystem,deletion,last7d,bob,errors_demo,action=deletion time=last7d user=bob sourcetype=filesystem
+show me all error events last 7 days in db,error,last7d,*,errors_demo,action=error time=last7d sourcetype=database
+display all auth failure events by user jsmith the previous day in host,failure,yesterday,jsmith,errors_demo,action=failure time=yesterday user=jsmith sourcetype=host
+list all file upload events by user bob since yesterday in auth log,upload,last24h,bob,syslog,action=upload time=last24h user=bob sourcetype=auth
+find all login events by user anonymous last 7 days in db,login,last7d,anonymous,errors_demo,action=login time=last7d user=anonymous sourcetype=database
+find all delete events by user jsmith yesterday in secure shell,deletion,yesterday,jsmith,syslog,action=deletion time=yesterday user=jsmith sourcetype=ssh
+list all file deletion events by user jsmith past 60 minutes in secure shell,deletion,last1h,jsmith,syslog,action=deletion time=last1h user=jsmith sourcetype=ssh
+show me all auth success events by user root last 24 hours in server,success,last24h,root,errors_demo,action=success time=last24h user=root sourcetype=host
+find all failure events past 60 minutes in server,error,last1h,*,errors_demo,action=error time=last1h sourcetype=host
+pull up all restart events by user admin since yesterday in filesystem,restart,last24h,admin,errors_demo,action=restart time=last24h user=admin sourcetype=filesystem
+find all request events this month in db,access,last30d,*,errors_demo,action=access time=last30d sourcetype=database
+pull up all file upload events last hour in secure shell,upload,last1h,*,syslog,action=upload time=last1h sourcetype=ssh
+give me all file upload events by user admin today in filesystem,upload,today,admin,errors_demo,action=upload time=today user=admin sourcetype=filesystem
+find all error events by user alice past week in secure shell,error,last7d,alice,syslog,action=error time=last7d user=alice sourcetype=ssh
+give me all file upload events by user anonymous since yesterday in host,upload,last24h,anonymous,errors_demo,action=upload time=last24h user=anonymous sourcetype=host
+find all file deletion events since yesterday in machine,deletion,last24h,*,errors_demo,action=deletion time=last24h sourcetype=host
+pull up all successful login events by user anonymous since midnight in auth log,success,today,anonymous,syslog,action=success time=today user=anonymous sourcetype=auth
+list all sign off events by user root since yesterday in filesystem,logout,last24h,root,errors_demo,action=logout time=last24h user=root sourcetype=filesystem
+show me all download events by user admin yesterday in ssh,download,yesterday,admin,syslog,action=download time=yesterday user=admin sourcetype=ssh
+show me all error events by user admin today in ssh,error,today,admin,syslog,action=error time=today user=admin sourcetype=ssh
+find all auth success events by user alice this week in ssh,success,last7d,alice,syslog,action=success time=last7d user=alice sourcetype=ssh
+pull up all file download events by user jsmith this month in security log,download,last30d,jsmith,syslog,action=download time=last30d user=jsmith sourcetype=auth
+give me all file deletion events this week in security log,deletion,last7d,*,syslog,action=deletion time=last7d sourcetype=auth
+display all crash events by user anonymous since yesterday in filesystem,error,last24h,anonymous,errors_demo,action=error time=last24h user=anonymous sourcetype=filesystem
+display all auth success events by user anonymous in the last 24 hours in filesystem,success,today,anonymous,errors_demo,action=success time=today user=anonymous sourcetype=filesystem
+pull up all successful login events last 24 hours in server,success,last24h,*,errors_demo,action=success time=last24h sourcetype=host
+show me all crash events by user admin this week in secure shell,error,last7d,admin,syslog,action=error time=last7d user=admin sourcetype=ssh
+give me all request events by user root this month in nginx,access,last30d,root,access_combined,action=access time=last30d user=root sourcetype=web
+find all successful login events by user admin the previous day in secure shell,success,yesterday,admin,syslog,action=success time=yesterday user=admin sourcetype=ssh
+pull up all logout events by user alice past week in ssh,logout,last7d,alice,syslog,action=logout time=last7d user=alice sourcetype=ssh
+display all failure events past week in host,error,last7d,*,errors_demo,action=error time=last7d sourcetype=host
+display all file deletion events by user alice since yesterday in db,deletion,last24h,alice,errors_demo,action=deletion time=last24h user=alice sourcetype=database
+pull up all connection events by user anonymous today in web server,access,today,anonymous,access_combined,action=access time=today user=anonymous sourcetype=web
+find all successful login events by user admin in the last 24 hours in file system,success,today,admin,errors_demo,action=success time=today user=admin sourcetype=filesystem
+list all service restart events by user alice last 30 days in secure shell,restart,last30d,alice,syslog,action=restart time=last30d user=alice sourcetype=ssh
+pull up all service restart events by user admin last 24 hours in db,restart,last24h,admin,errors_demo,action=restart time=last24h user=admin sourcetype=database
+give me all access events by user jsmith since yesterday in filesystem,access,last24h,jsmith,errors_demo,action=access time=last24h user=jsmith sourcetype=filesystem
+give me all failed login events by user admin past week in filesystem,failure,last7d,admin,errors_demo,action=failure time=last7d user=admin sourcetype=filesystem
+list all file deletion events by user root today in nginx,deletion,today,root,access_combined,action=deletion time=today user=root sourcetype=web
+find all logout events by user alice since yesterday in secure shell,logout,last24h,alice,syslog,action=logout time=last24h user=alice sourcetype=ssh
+list all file upload events this month in host,upload,last30d,*,errors_demo,action=upload time=last30d sourcetype=host
+list all sign off events by user alice last 7 days in ssh,logout,last7d,alice,syslog,action=logout time=last7d user=alice sourcetype=ssh
+list all file upload events by user anonymous yesterday in file system,upload,yesterday,anonymous,errors_demo,action=upload time=yesterday user=anonymous sourcetype=filesystem
+give me all service restart events by user alice last 24 hours in security log,restart,last24h,alice,syslog,action=restart time=last24h user=alice sourcetype=auth
+list all sign off events by user admin in the last 24 hours in database,logout,today,admin,errors_demo,action=logout time=today user=admin sourcetype=database
+display all upload events by user anonymous since yesterday in security log,upload,last24h,anonymous,syslog,action=upload time=last24h user=anonymous sourcetype=auth
+find all auth success events by user anonymous in the last 24 hours in web server,success,today,anonymous,access_combined,action=success time=today user=anonymous sourcetype=web
+show me all download events by user admin last 30 days in file system,download,last30d,admin,errors_demo,action=download time=last30d user=admin sourcetype=filesystem
+pull up all download events since midnight in host,download,today,*,errors_demo,action=download time=today sourcetype=host
+pull up all sign off events by user anonymous past week in file system,logout,last7d,anonymous,errors_demo,action=logout time=last7d user=anonymous sourcetype=filesystem
+list all logout events last 30 days in apache,logout,last30d,*,access_combined,action=logout time=last30d sourcetype=web
+pull up all login events by user alice today in ssh,login,today,alice,syslog,action=login time=today user=alice sourcetype=ssh
+find all service restart events by user bob last 24 hours in server,restart,last24h,bob,errors_demo,action=restart time=last24h user=bob sourcetype=host
+pull up all file upload events by user root yesterday in machine,upload,yesterday,root,errors_demo,action=upload time=yesterday user=root sourcetype=host
+pull up all failed login events by user bob today in database,failure,today,bob,errors_demo,action=failure time=today user=bob sourcetype=database
+give me all successful login events by user anonymous last hour in db,success,last1h,anonymous,errors_demo,action=success time=last1h user=anonymous sourcetype=database
+find all sign off events by user root yesterday in file system,logout,yesterday,root,errors_demo,action=logout time=yesterday user=root sourcetype=filesystem
+find all upload events by user jsmith yesterday in security log,upload,yesterday,jsmith,syslog,action=upload time=yesterday user=jsmith sourcetype=auth
+display all file download events by user anonymous last 7 days in machine,download,last7d,anonymous,errors_demo,action=download time=last7d user=anonymous sourcetype=host
+show me all sign off events by user root last hour in security log,logout,last1h,root,syslog,action=logout time=last1h user=root sourcetype=auth
+display all file upload events by user anonymous this month in filesystem,upload,last30d,anonymous,errors_demo,action=upload time=last30d user=anonymous sourcetype=filesystem
+display all file upload events last 7 days in apache,upload,last7d,*,access_combined,action=upload time=last7d sourcetype=web
+list all auth failure events by user root yesterday in web server,failure,yesterday,root,access_combined,action=failure time=yesterday user=root sourcetype=web
+display all access events last 24 hours in apache,access,last24h,*,access_combined,action=access time=last24h sourcetype=web
+display all successful login events by user bob the previous day in security log,success,yesterday,bob,syslog,action=success time=yesterday user=bob sourcetype=auth
+give me all auth failure events by user admin since midnight in secure shell,failure,today,admin,syslog,action=failure time=today user=admin sourcetype=ssh
+show me all auth success events by user bob the previous day in host,success,yesterday,bob,errors_demo,action=success time=yesterday user=bob sourcetype=host
+find all file download events by user jsmith since yesterday in nginx,download,last24h,jsmith,access_combined,action=download time=last24h user=jsmith sourcetype=web
+find all logins events by user anonymous today in db,login,today,anonymous,errors_demo,action=login time=today user=anonymous sourcetype=database
+display all auth success events by user alice this month in nginx,success,last30d,alice,access_combined,action=success time=last30d user=alice sourcetype=web
+find all sign off events by user root in the last 24 hours in db,logout,today,root,errors_demo,action=logout time=today user=root sourcetype=database
+list all file download events by user jsmith yesterday in web server,download,yesterday,jsmith,access_combined,action=download time=yesterday user=jsmith sourcetype=web
+display all request events by user jsmith yesterday in db,access,yesterday,jsmith,errors_demo,action=access time=yesterday user=jsmith sourcetype=database
+give me all file download events by user jsmith the previous day in secure shell,download,yesterday,jsmith,syslog,action=download time=yesterday user=jsmith sourcetype=ssh
+give me all logins events by user jsmith yesterday in db,login,yesterday,jsmith,errors_demo,action=login time=yesterday user=jsmith sourcetype=database
+list all download events by user alice the previous day in auth log,download,yesterday,alice,syslog,action=download time=yesterday user=alice sourcetype=auth
+list all logins events by user jsmith in the last 24 hours in secure shell,login,today,jsmith,syslog,action=login time=today user=jsmith sourcetype=ssh
+list all sign off events this month in server,logout,last30d,*,errors_demo,action=logout time=last30d sourcetype=host
+give me all sign off events by user bob past week in filesystem,logout,last7d,bob,errors_demo,action=logout time=last7d user=bob sourcetype=filesystem
+list all crash events by user anonymous last 30 days in secure shell,error,last30d,anonymous,syslog,action=error time=last30d user=anonymous sourcetype=ssh
+find all sign off events by user alice past week in security log,logout,last7d,alice,syslog,action=logout time=last7d user=alice sourcetype=auth
+display all download events last 24 hours in machine,download,last24h,*,errors_demo,action=download time=last24h sourcetype=host
+list all service restart events by user root this month in db,restart,last30d,root,errors_demo,action=restart time=last30d user=root sourcetype=database
+show me all connection events by user alice this month in machine,access,last30d,alice,errors_demo,action=access time=last30d user=alice sourcetype=host
+show me all auth failure events by user alice past 60 minutes in database,failure,last1h,alice,errors_demo,action=failure time=last1h user=alice sourcetype=database
+list all crash events by user alice yesterday in host,error,yesterday,alice,errors_demo,action=error time=yesterday user=alice sourcetype=host
+display all logout events by user bob this week in database,logout,last7d,bob,errors_demo,action=logout time=last7d user=bob sourcetype=database
+display all authentication events by user admin today in host,login,today,admin,errors_demo,action=login time=today user=admin sourcetype=host
+display all service restart events by user anonymous last hour in host,restart,last1h,anonymous,errors_demo,action=restart time=last1h user=anonymous sourcetype=host
+list all login failure events by user alice yesterday in auth log,failure,yesterday,alice,syslog,action=failure time=yesterday user=alice sourcetype=auth
+show me all download events by user admin the previous day in filesystem,download,yesterday,admin,errors_demo,action=download time=yesterday user=admin sourcetype=filesystem
+show me all download events by user admin last 7 days in apache,download,last7d,admin,access_combined,action=download time=last7d user=admin sourcetype=web
+display all connection events by user alice yesterday in ssh,access,yesterday,alice,syslog,action=access time=yesterday user=alice sourcetype=ssh
+show me all restart events since yesterday in authentication log,restart,last24h,*,syslog,action=restart time=last24h sourcetype=auth
+give me all login events by user anonymous in the last 24 hours in apache,login,today,anonymous,access_combined,action=login time=today user=anonymous sourcetype=web
+give me all download events by user admin last 30 days in web server,download,last30d,admin,access_combined,action=download time=last30d user=admin sourcetype=web
+show me all logout events by user jsmith the previous day in machine,logout,yesterday,jsmith,errors_demo,action=logout time=yesterday user=jsmith sourcetype=host
+give me all logout events by user bob past week in server,logout,last7d,bob,errors_demo,action=logout time=last7d user=bob sourcetype=host
+show me all delete events today in filesystem,deletion,today,*,errors_demo,action=deletion time=today sourcetype=filesystem
+find all download events by user admin last 7 days in server,download,last7d,admin,errors_demo,action=download time=last7d user=admin sourcetype=host
+display all request events by user jsmith this month in filesystem,access,last30d,jsmith,errors_demo,action=access time=last30d user=jsmith sourcetype=filesystem
+pull up all request events by user anonymous since yesterday in filesystem,access,last24h,anonymous,errors_demo,action=access time=last24h user=anonymous sourcetype=filesystem
+give me all file download events by user admin last 30 days in machine,download,last30d,admin,errors_demo,action=download time=last30d user=admin sourcetype=host
+list all auth failure events by user admin this week in file system,failure,last7d,admin,errors_demo,action=failure time=last7d user=admin sourcetype=filesystem
+give me all request events by user bob last 24 hours in authentication log,access,last24h,bob,syslog,action=access time=last24h user=bob sourcetype=auth
+list all download events by user jsmith last 24 hours in host,download,last24h,jsmith,errors_demo,action=download time=last24h user=jsmith sourcetype=host
+display all upload events by user admin yesterday in auth log,upload,yesterday,admin,syslog,action=upload time=yesterday user=admin sourcetype=auth
+pull up all service restart events by user root today in web server,restart,today,root,access_combined,action=restart time=today user=root sourcetype=web
+find all delete events by user root the previous day in machine,deletion,yesterday,root,errors_demo,action=deletion time=yesterday user=root sourcetype=host
+find all failed login events by user alice yesterday in secure shell,failure,yesterday,alice,syslog,action=failure time=yesterday user=alice sourcetype=ssh
+give me all service restart events by user root last 7 days in db,restart,last7d,root,errors_demo,action=restart time=last7d user=root sourcetype=database
+pull up all crash events by user bob since midnight in db,error,today,bob,errors_demo,action=error time=today user=bob sourcetype=database
+pull up all crash events by user anonymous this month in ssh,error,last30d,anonymous,syslog,action=error time=last30d user=anonymous sourcetype=ssh
+list all failure events by user jsmith the previous day in security log,error,yesterday,jsmith,syslog,action=error time=yesterday user=jsmith sourcetype=auth
+list all auth failure events by user root past 60 minutes in server,failure,last1h,root,errors_demo,action=failure time=last1h user=root sourcetype=host
+pull up all file upload events by user jsmith last 30 days in authentication log,upload,last30d,jsmith,syslog,action=upload time=last30d user=jsmith sourcetype=auth
+list all auth success events by user admin past week in db,success,last7d,admin,errors_demo,action=success time=last7d user=admin sourcetype=database
+list all logout events by user anonymous last hour in database,logout,last1h,anonymous,errors_demo,action=logout time=last1h user=anonymous sourcetype=database
+list all logout events last hour in file system,logout,last1h,*,errors_demo,action=logout time=last1h sourcetype=filesystem
+display all logins events by user admin since midnight in database,login,today,admin,errors_demo,action=login time=today user=admin sourcetype=database
+pull up all upload events by user bob the previous day in db,upload,yesterday,bob,errors_demo,action=upload time=yesterday user=bob sourcetype=database
+give me all login events by user alice past week in machine,login,last7d,alice,errors_demo,action=login time=last7d user=alice sourcetype=host
+show me all authentication events by user anonymous last hour in file system,login,last1h,anonymous,errors_demo,action=login time=last1h user=anonymous sourcetype=filesystem
+find all file deletion events by user root yesterday in secure shell,deletion,yesterday,root,syslog,action=deletion time=yesterday user=root sourcetype=ssh
+give me all logins events by user anonymous in the last 24 hours in file system,login,today,anonymous,errors_demo,action=login time=today user=anonymous sourcetype=filesystem
+find all delete events by user anonymous last 7 days in host,deletion,last7d,anonymous,errors_demo,action=deletion time=last7d user=anonymous sourcetype=host
+find all login events by user admin the previous day in authentication log,login,yesterday,admin,syslog,action=login time=yesterday user=admin sourcetype=auth
+give me all file upload events last 30 days in apache,upload,last30d,*,access_combined,action=upload time=last30d sourcetype=web
+give me all delete events by user bob last 7 days in file system,deletion,last7d,bob,errors_demo,action=deletion time=last7d user=bob sourcetype=filesystem
+show me all login events by user admin last 30 days in secure shell,login,last30d,admin,syslog,action=login time=last30d user=admin sourcetype=ssh
+display all failure events by user anonymous in the last 24 hours in database,error,today,anonymous,errors_demo,action=error time=today user=anonymous sourcetype=database
+give me all auth success events by user jsmith last 7 days in host,success,last7d,jsmith,errors_demo,action=success time=last7d user=jsmith sourcetype=host
+display all request events by user bob this week in secure shell,access,last7d,bob,syslog,action=access time=last7d user=bob sourcetype=ssh
+display all sign off events by user admin yesterday in secure shell,logout,yesterday,admin,syslog,action=logout time=yesterday user=admin sourcetype=ssh
+give me all failure events by user root yesterday in filesystem,error,yesterday,root,errors_demo,action=error time=yesterday user=root sourcetype=filesystem
+show me all auth failure events by user admin the previous day in secure shell,failure,yesterday,admin,syslog,action=failure time=yesterday user=admin sourcetype=ssh
+find all logout events by user jsmith since yesterday in authentication log,logout,last24h,jsmith,syslog,action=logout time=last24h user=jsmith sourcetype=auth
+list all auth success events yesterday in secure shell,success,yesterday,*,syslog,action=success time=yesterday sourcetype=ssh
+find all auth success events by user jsmith this month in auth log,success,last30d,jsmith,syslog,action=success time=last30d user=jsmith sourcetype=auth
+show me all authentication events past 60 minutes in secure shell,login,last1h,*,syslog,action=login time=last1h sourcetype=ssh
+find all auth success events by user alice this week in filesystem,success,last7d,alice,errors_demo,action=success time=last7d user=alice sourcetype=filesystem
+pull up all restart events by user jsmith yesterday in file system,restart,yesterday,jsmith,errors_demo,action=restart time=yesterday user=jsmith sourcetype=filesystem
+show me all successful login events by user root past 60 minutes in apache,success,last1h,root,access_combined,action=success time=last1h user=root sourcetype=web
+show me all successful login events by user bob this month in database,success,last30d,bob,errors_demo,action=success time=last30d user=bob sourcetype=database
+pull up all access events by user bob yesterday in auth log,access,yesterday,bob,syslog,action=access time=yesterday user=bob sourcetype=auth
+show me all service restart events by user anonymous since yesterday in security log,restart,last24h,anonymous,syslog,action=restart time=last24h user=anonymous sourcetype=auth
+give me all failed login events by user root since yesterday in filesystem,failure,last24h,root,errors_demo,action=failure time=last24h user=root sourcetype=filesystem
+give me all restart events by user alice in the last 24 hours in secure shell,restart,today,alice,syslog,action=restart time=today user=alice sourcetype=ssh
+find all service restart events by user admin past week in server,restart,last7d,admin,errors_demo,action=restart time=last7d user=admin sourcetype=host
+give me all authentication events by user jsmith last 30 days in ssh,login,last30d,jsmith,syslog,action=login time=last30d user=jsmith sourcetype=ssh
+show me all failed login events by user root last 24 hours in ssh,failure,last24h,root,syslog,action=failure time=last24h user=root sourcetype=ssh
+list all file download events by user root last hour in database,download,last1h,root,errors_demo,action=download time=last1h user=root sourcetype=database
+show me all login failure events by user admin last hour in ssh,failure,last1h,admin,syslog,action=failure time=last1h user=admin sourcetype=ssh
+give me all logins events by user alice the previous day in nginx,login,yesterday,alice,access_combined,action=login time=yesterday user=alice sourcetype=web
+give me all file download events by user anonymous this week in machine,download,last7d,anonymous,errors_demo,action=download time=last7d user=anonymous sourcetype=host
+display all restart events by user root last hour in file system,restart,last1h,root,errors_demo,action=restart time=last1h user=root sourcetype=filesystem
+list all logout events by user bob past 60 minutes in database,logout,last1h,bob,errors_demo,action=logout time=last1h user=bob sourcetype=database
+display all auth success events by user admin today in filesystem,success,today,admin,errors_demo,action=success time=today user=admin sourcetype=filesystem
+show me all service restart events past week in authentication log,restart,last7d,*,syslog,action=restart time=last7d sourcetype=auth
+give me all auth failure events by user root since yesterday in web server,failure,last24h,root,access_combined,action=failure time=last24h user=root sourcetype=web
+find all auth success events by user alice since yesterday in auth log,success,last24h,alice,syslog,action=success time=last24h user=alice sourcetype=auth
+show me all login events by user alice past 60 minutes in filesystem,login,last1h,alice,errors_demo,action=login time=last1h user=alice sourcetype=filesystem
+pull up all auth failure events by user bob this month in database,failure,last30d,bob,errors_demo,action=failure time=last30d user=bob sourcetype=database
+show me all download events by user anonymous past week in db,download,last7d,anonymous,errors_demo,action=download time=last7d user=anonymous sourcetype=database
+pull up all login failure events by user root last 7 days in host,failure,last7d,root,errors_demo,action=failure time=last7d user=root sourcetype=host
+find all logins events by user root the previous day in security log,login,yesterday,root,syslog,action=login time=yesterday user=root sourcetype=auth
+find all successful login events by user anonymous the previous day in security log,success,yesterday,anonymous,syslog,action=success time=yesterday user=anonymous sourcetype=auth
+display all file deletion events by user root in the last 24 hours in host,deletion,today,root,errors_demo,action=deletion time=today user=root sourcetype=host
+give me all auth failure events by user bob past 60 minutes in db,failure,last1h,bob,errors_demo,action=failure time=last1h user=bob sourcetype=database
+list all successful login events by user anonymous past week in nginx,success,last7d,anonymous,access_combined,action=success time=last7d user=anonymous sourcetype=web
+give me all successful login events by user bob the previous day in machine,success,yesterday,bob,errors_demo,action=success time=yesterday user=bob sourcetype=host
+display all sign off events by user anonymous yesterday in file system,logout,yesterday,anonymous,errors_demo,action=logout time=yesterday user=anonymous sourcetype=filesystem
+show me all access events by user alice past 60 minutes in security log,access,last1h,alice,syslog,action=access time=last1h user=alice sourcetype=auth
+show me all login failure events by user alice this month in security log,failure,last30d,alice,syslog,action=failure time=last30d user=alice sourcetype=auth
+display all file download events by user jsmith the previous day in database,download,yesterday,jsmith,errors_demo,action=download time=yesterday user=jsmith sourcetype=database
+display all successful login events by user bob today in host,success,today,bob,errors_demo,action=success time=today user=bob sourcetype=host
+list all login events by user admin last hour in file system,login,last1h,admin,errors_demo,action=login time=last1h user=admin sourcetype=filesystem
+pull up all delete events yesterday in secure shell,deletion,yesterday,*,syslog,action=deletion time=yesterday sourcetype=ssh
+pull up all error events by user anonymous last hour in database,error,last1h,anonymous,errors_demo,action=error time=last1h user=anonymous sourcetype=database
+show me all access events by user jsmith last 7 days in apache,access,last7d,jsmith,access_combined,action=access time=last7d user=jsmith sourcetype=web
+find all connection events by user anonymous past week in apache,access,last7d,anonymous,access_combined,action=access time=last7d user=anonymous sourcetype=web
+give me all authentication events by user alice last 7 days in auth log,login,last7d,alice,syslog,action=login time=last7d user=alice sourcetype=auth
+list all access events by user anonymous past 60 minutes in database,access,last1h,anonymous,errors_demo,action=access time=last1h user=anonymous sourcetype=database
+display all error events by user alice this month in filesystem,error,last30d,alice,errors_demo,action=error time=last30d user=alice sourcetype=filesystem
+find all auth failure events by user admin past 60 minutes in authentication log,failure,last1h,admin,syslog,action=failure time=last1h user=admin sourcetype=auth
+give me all file download events by user root past 60 minutes in apache,download,last1h,root,access_combined,action=download time=last1h user=root sourcetype=web
+pull up all file deletion events by user root today in nginx,deletion,today,root,access_combined,action=deletion time=today user=root sourcetype=web
+display all login events since midnight in machine,login,today,*,errors_demo,action=login time=today sourcetype=host
+list all auth success events by user bob this week in db,success,last7d,bob,errors_demo,action=success time=last7d user=bob sourcetype=database
+list all delete events by user anonymous the previous day in web server,deletion,yesterday,anonymous,access_combined,action=deletion time=yesterday user=anonymous sourcetype=web
+display all successful login events by user bob since yesterday in nginx,success,last24h,bob,access_combined,action=success time=last24h user=bob sourcetype=web
+pull up all crash events by user alice last hour in secure shell,error,last1h,alice,syslog,action=error time=last1h user=alice sourcetype=ssh
+display all error events by user bob last 30 days in db,error,last30d,bob,errors_demo,action=error time=last30d user=bob sourcetype=database
+pull up all login events by user bob last hour in host,login,last1h,bob,errors_demo,action=login time=last1h user=bob sourcetype=host
+give me all request events by user root the previous day in filesystem,access,yesterday,root,errors_demo,action=access time=yesterday user=root sourcetype=filesystem
+display all login events last hour in server,login,last1h,*,errors_demo,action=login time=last1h sourcetype=host
+list all file upload events by user bob last hour in database,upload,last1h,bob,errors_demo,action=upload time=last1h user=bob sourcetype=database
+find all file upload events by user anonymous this week in security log,upload,last7d,anonymous,syslog,action=upload time=last7d user=anonymous sourcetype=auth
+pull up all restart events by user alice past 60 minutes in auth log,restart,last1h,alice,syslog,action=restart time=last1h user=alice sourcetype=auth
+pull up all logins events by user anonymous in the last 24 hours in security log,login,today,anonymous,syslog,action=login time=today user=anonymous sourcetype=auth
+display all login events past week in db,login,last7d,*,errors_demo,action=login time=last7d sourcetype=database
+find all file deletion events by user root last 24 hours in authentication log,deletion,last24h,root,syslog,action=deletion time=last24h user=root sourcetype=auth
+give me all upload events by user admin last hour in secure shell,upload,last1h,admin,syslog,action=upload time=last1h user=admin sourcetype=ssh
+show me all upload events by user anonymous since yesterday in ssh,upload,last24h,anonymous,syslog,action=upload time=last24h user=anonymous sourcetype=ssh
+give me all auth success events by user bob this week in web server,success,last7d,bob,access_combined,action=success time=last7d user=bob sourcetype=web
+list all upload events by user alice last 24 hours in db,upload,last24h,alice,errors_demo,action=upload time=last24h user=alice sourcetype=database
+pull up all login events the previous day in authentication log,login,yesterday,*,syslog,action=login time=yesterday sourcetype=auth
+display all logout events by user bob past 60 minutes in db,logout,last1h,bob,errors_demo,action=logout time=last1h user=bob sourcetype=database
+list all delete events by user bob since midnight in database,deletion,today,bob,errors_demo,action=deletion time=today user=bob sourcetype=database
+find all file download events by user alice last 7 days in ssh,download,last7d,alice,syslog,action=download time=last7d user=alice sourcetype=ssh
+show me all request events by user bob this month in file system,access,last30d,bob,errors_demo,action=access time=last30d user=bob sourcetype=filesystem
+find all file download events by user bob past 60 minutes in secure shell,download,last1h,bob,syslog,action=download time=last1h user=bob sourcetype=ssh
+show me all restart events by user root last 30 days in authentication log,restart,last30d,root,syslog,action=restart time=last30d user=root sourcetype=auth
+show me all auth success events today in db,success,today,*,errors_demo,action=success time=today sourcetype=database
+show me all logins events by user anonymous last hour in nginx,login,last1h,anonymous,access_combined,action=login time=last1h user=anonymous sourcetype=web
+find all failure events this month in secure shell,error,last30d,*,syslog,action=error time=last30d sourcetype=ssh
+list all logins events by user jsmith last 7 days in db,login,last7d,jsmith,errors_demo,action=login time=last7d user=jsmith sourcetype=database
+display all failure events by user admin since yesterday in apache,error,last24h,admin,access_combined,action=error time=last24h user=admin sourcetype=web
+display all restart events by user root since yesterday in web server,restart,last24h,root,access_combined,action=restart time=last24h user=root sourcetype=web
+pull up all login failure events by user root last 30 days in host,failure,last30d,root,errors_demo,action=failure time=last30d user=root sourcetype=host
+display all successful login events by user anonymous last 24 hours in authentication log,success,last24h,anonymous,syslog,action=success time=last24h user=anonymous sourcetype=auth
+show me all failed login events by user root past 60 minutes in ssh,failure,last1h,root,syslog,action=failure time=last1h user=root sourcetype=ssh
+show me all sign off events last 24 hours in file system,logout,last24h,*,errors_demo,action=logout time=last24h sourcetype=filesystem
+list all login failure events by user anonymous in the last 24 hours in ssh,failure,today,anonymous,syslog,action=failure time=today user=anonymous sourcetype=ssh
+list all restart events by user root last 24 hours in ssh,restart,last24h,root,syslog,action=restart time=last24h user=root sourcetype=ssh
+give me all auth success events by user anonymous yesterday in machine,success,yesterday,anonymous,errors_demo,action=success time=yesterday user=anonymous sourcetype=host
+show me all access events by user alice last 30 days in security log,access,last30d,alice,syslog,action=access time=last30d user=alice sourcetype=auth
+give me all auth success events by user anonymous last 7 days in secure shell,success,last7d,anonymous,syslog,action=success time=last7d user=anonymous sourcetype=ssh
+give me all crash events by user jsmith yesterday in secure shell,error,yesterday,jsmith,syslog,action=error time=yesterday user=jsmith sourcetype=ssh
+pull up all restart events by user alice this month in web server,restart,last30d,alice,access_combined,action=restart time=last30d user=alice sourcetype=web
+pull up all successful login events by user admin past 60 minutes in db,success,last1h,admin,errors_demo,action=success time=last1h user=admin sourcetype=database
+list all upload events by user jsmith last 30 days in nginx,upload,last30d,jsmith,access_combined,action=upload time=last30d user=jsmith sourcetype=web
+give me all logout events by user admin last 30 days in file system,logout,last30d,admin,errors_demo,action=logout time=last30d user=admin sourcetype=filesystem
+list all file download events by user jsmith the previous day in file system,download,yesterday,jsmith,errors_demo,action=download time=yesterday user=jsmith sourcetype=filesystem
+give me all logout events by user jsmith last 24 hours in secure shell,logout,last24h,jsmith,syslog,action=logout time=last24h user=jsmith sourcetype=ssh
+find all sign off events by user root last hour in web server,logout,last1h,root,access_combined,action=logout time=last1h user=root sourcetype=web
+find all successful login events this month in host,success,last30d,*,errors_demo,action=success time=last30d sourcetype=host
+find all access events by user bob last 24 hours in db,access,last24h,bob,errors_demo,action=access time=last24h user=bob sourcetype=database
+find all login events by user jsmith past 60 minutes in file system,login,last1h,jsmith,errors_demo,action=login time=last1h user=jsmith sourcetype=filesystem
+give me all file upload events by user jsmith last 30 days in machine,upload,last30d,jsmith,errors_demo,action=upload time=last30d user=jsmith sourcetype=host
+display all auth failure events by user admin yesterday in ssh,failure,yesterday,admin,syslog,action=failure time=yesterday user=admin sourcetype=ssh
+give me all logout events last 24 hours in secure shell,logout,last24h,*,syslog,action=logout time=last24h sourcetype=ssh
+give me all login failure events by user jsmith last 30 days in db,failure,last30d,jsmith,errors_demo,action=failure time=last30d user=jsmith sourcetype=database
+list all delete events by user bob yesterday in auth log,deletion,yesterday,bob,syslog,action=deletion time=yesterday user=bob sourcetype=auth
+list all request events by user admin the previous day in filesystem,access,yesterday,admin,errors_demo,action=access time=yesterday user=admin sourcetype=filesystem
+list all auth success events by user alice this month in secure shell,success,last30d,alice,syslog,action=success time=last30d user=alice sourcetype=ssh
+find all logout events by user anonymous past week in authentication log,logout,last7d,anonymous,syslog,action=logout time=last7d user=anonymous sourcetype=auth
+give me all successful login events by user alice yesterday in database,success,yesterday,alice,errors_demo,action=success time=yesterday user=alice sourcetype=database
+display all file upload events by user alice this month in host,upload,last30d,alice,errors_demo,action=upload time=last30d user=alice sourcetype=host
+pull up all access events by user jsmith since midnight in filesystem,access,today,jsmith,errors_demo,action=access time=today user=jsmith sourcetype=filesystem
+pull up all file deletion events by user root last 24 hours in security log,deletion,last24h,root,syslog,action=deletion time=last24h user=root sourcetype=auth
+display all access events by user alice last hour in ssh,access,last1h,alice,syslog,action=access time=last1h user=alice sourcetype=ssh
+pull up all file download events by user anonymous last 7 days in security log,download,last7d,anonymous,syslog,action=download time=last7d user=anonymous sourcetype=auth
+list all login failure events by user admin yesterday in database,failure,yesterday,admin,errors_demo,action=failure time=yesterday user=admin sourcetype=database
+list all file upload events by user anonymous last 30 days in secure shell,upload,last30d,anonymous,syslog,action=upload time=last30d user=anonymous sourcetype=ssh
+display all file upload events by user anonymous since midnight in apache,upload,today,anonymous,access_combined,action=upload time=today user=anonymous sourcetype=web
+find all error events by user admin yesterday in secure shell,error,yesterday,admin,syslog,action=error time=yesterday user=admin sourcetype=ssh
+show me all file download events yesterday in web server,download,yesterday,*,access_combined,action=download time=yesterday sourcetype=web
+list all file upload events by user admin today in database,upload,today,admin,errors_demo,action=upload time=today user=admin sourcetype=database
+find all restart events by user anonymous last hour in server,restart,last1h,anonymous,errors_demo,action=restart time=last1h user=anonymous sourcetype=host
+show me all failed login events by user anonymous last 30 days in database,failure,last30d,anonymous,errors_demo,action=failure time=last30d user=anonymous sourcetype=database
+show me all auth failure events by user admin past 60 minutes in apache,failure,last1h,admin,access_combined,action=failure time=last1h user=admin sourcetype=web
+give me all logout events by user jsmith since yesterday in machine,logout,last24h,jsmith,errors_demo,action=logout time=last24h user=jsmith sourcetype=host
+find all access events by user alice this month in file system,access,last30d,alice,errors_demo,action=access time=last30d user=alice sourcetype=filesystem
+pull up all upload events by user admin last 30 days in machine,upload,last30d,admin,errors_demo,action=upload time=last30d user=admin sourcetype=host
+give me all request events by user root past week in apache,access,last7d,root,access_combined,action=access time=last7d user=root sourcetype=web
+pull up all auth success events by user anonymous yesterday in apache,success,yesterday,anonymous,access_combined,action=success time=yesterday user=anonymous sourcetype=web
+show me all login failure events by user jsmith this month in host,failure,last30d,jsmith,errors_demo,action=failure time=last30d user=jsmith sourcetype=host
+give me all sign off events by user anonymous last 7 days in db,logout,last7d,anonymous,errors_demo,action=logout time=last7d user=anonymous sourcetype=database
+pull up all file download events by user alice since yesterday in secure shell,download,last24h,alice,syslog,action=download time=last24h user=alice sourcetype=ssh
+show me all file download events by user jsmith since midnight in database,download,today,jsmith,errors_demo,action=download time=today user=jsmith sourcetype=database
+pull up all auth success events by user root since midnight in server,success,today,root,errors_demo,action=success time=today user=root sourcetype=host
+pull up all logins events by user bob since midnight in file system,login,today,bob,errors_demo,action=login time=today user=bob sourcetype=filesystem
+pull up all logout events by user root yesterday in database,logout,yesterday,root,errors_demo,action=logout time=yesterday user=root sourcetype=database
+display all auth success events by user bob the previous day in secure shell,success,yesterday,bob,syslog,action=success time=yesterday user=bob sourcetype=ssh
+display all failure events by user anonymous last 7 days in database,error,last7d,anonymous,errors_demo,action=error time=last7d user=anonymous sourcetype=database
+display all file upload events in the last 24 hours in machine,upload,today,*,errors_demo,action=upload time=today sourcetype=host
+show me all error events by user alice this month in ssh,error,last30d,alice,syslog,action=error time=last30d user=alice sourcetype=ssh
+list all failed login events by user anonymous this month in nginx,failure,last30d,anonymous,access_combined,action=failure time=last30d user=anonymous sourcetype=web
+find all login failure events by user alice the previous day in nginx,failure,yesterday,alice,access_combined,action=failure time=yesterday user=alice sourcetype=web
+pull up all delete events by user root past week in ssh,deletion,last7d,root,syslog,action=deletion time=last7d user=root sourcetype=ssh
+show me all auth failure events by user root last 30 days in security log,failure,last30d,root,syslog,action=failure time=last30d user=root sourcetype=auth
+display all request events by user bob past week in auth log,access,last7d,bob,syslog,action=access time=last7d user=bob sourcetype=auth
+list all access events by user jsmith past week in filesystem,access,last7d,jsmith,errors_demo,action=access time=last7d user=jsmith sourcetype=filesystem
+display all failed login events by user alice the previous day in apache,failure,yesterday,alice,access_combined,action=failure time=yesterday user=alice sourcetype=web
+give me all logins events by user jsmith the previous day in file system,login,yesterday,jsmith,errors_demo,action=login time=yesterday user=jsmith sourcetype=filesystem
+display all auth success events by user bob last 24 hours in database,success,last24h,bob,errors_demo,action=success time=last24h user=bob sourcetype=database
+display all login failure events by user anonymous last hour in server,failure,last1h,anonymous,errors_demo,action=failure time=last1h user=anonymous sourcetype=host
+show me failed logins from yesterday,failure,yesterday,*,syslog,action=failure time=yesterday sourcetype=auth
+list all successful logins in the last 7 days,success,last7d,*,syslog,action=success time=last7d sourcetype=auth
+who accessed the system from IP 10.0.0.1 today,access,today,*,errors_demo,action=access time=today sourcetype=host
+all password change events for user jsmith this week,login,last7d,jsmith,syslog,action=login user=jsmith time=last7d sourcetype=auth
+errors in web server logs in the past hour,error,last1h,*,access_combined,action=error time=last1h sourcetype=web
+show me downloads by user root in last 24 hours,download,last24h,root,errors_demo,action=download user=root time=last24h sourcetype=filesystem
+requests with status code 500 since midnight,error,today,*,access_combined,action=error time=today sourcetype=web status=500
+find logins by anonymous users last month,login,last30d,anonymous,syslog,action=login user=anonymous time=last30d sourcetype=auth
+show web traffic from IP range 192.168.0.0/16 yesterday,access,yesterday,*,access_combined,action=access time=yesterday sourcetype=web
+who accessed server01 between 2pm and 4pm,access,today,*,errors_demo,action=access time=today sourcetype=host
+list all sudo usage by any user in last week,access,last7d,*,syslog,action=access time=last7d sourcetype=auth
+when did apache restart in the last 30 minutes,restart,last1h,*,access_combined,action=restart time=last1h sourcetype=web
+find all failed database connections,failure,last24h,*,errors_demo,action=failure time=last24h sourcetype=database
+who deleted files in /var/log directory,deletion,last7d,*,errors_demo,action=deletion time=last7d sourcetype=filesystem
+instances of brute force attacks last day,failure,last24h,*,syslog,action=failure time=last24h sourcetype=auth
+requests to /admin endpoint returning 403,access,today,*,access_combined,action=access time=today sourcetype=web status=403
+list all log entries tagged as security alert today,error,today,*,syslog,action=error time=today sourcetype=auth
+who logged out yesterday,logout,yesterday,*,syslog,action=logout time=yesterday sourcetype=auth
+count file read operations on temp directory last hour,access,last1h,*,errors_demo,action=access time=last1h sourcetype=filesystem
+show web requests by user bob last month,access,last30d,bob,access_combined,action=access user=bob time=last30d sourcetype=web
