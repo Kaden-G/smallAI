@@ -17,7 +17,7 @@ from sklearn.pipeline import Pipeline
 import numpy as np
 import rule_based_parser as rb
 
-DATASET_FILE = "log_query_dataset.csv"
+DATASET_FILE = "datasets/log_query_dataset.csv"
 CONF_THRESHOLD = 0.7
 
 # -------------------------------
@@ -103,20 +103,46 @@ def clarification_prompt(parsed):
 
 # -------------------------------
 # SPL generator
+
+# -------------------------------
+# SPL generator (sourcetype-aware)
 # -------------------------------
 def to_spl(parsed):
-    action_map = {
-        "failure": 'sourcetype=sshd ("Failed password" OR "auth failure")',
-        "success": 'sourcetype=sshd ("Accepted password" OR "auth success")',
-        "login": 'sourcetype=sshd "session opened"',
-        "logout": 'sourcetype=sshd "session closed"',
-        "download": 'sourcetype=access_combined action=download',
-        "upload": 'sourcetype=access_combined action=upload',
-        "error": 'sourcetype=syslog (error OR fail OR exception)',
-        "access": 'sourcetype=access_combined',
-        "restart": 'sourcetype=syslog ("service restart" OR "system reboot")',
-        "deletion": 'sourcetype=fs change=deleted',
-        "*": "*"
+    """
+    Build an SPL query using Splunk-native sourcetypes.
+    Preference order:
+      1) If parsed["source"] is already a Splunk sourcetype we know (access_combined, syslog, errors_demo), use it.
+      2) Otherwise map high-level sources (auth/web/host/filesystem/database/ssh) to the closest sourcetype.
+      3) Fallback to "*" if unknown.
+    Index: default to "main" for demo purposes, since uploads went to main.
+    """
+    # Known sourcetypes used in your Splunk demo
+    known_sourcetypes = {"access_combined", "syslog", "errors_demo"}
+
+    # Map high-level sources → Splunk sourcetypes
+    source_to_sourcetype = {
+        "auth": "syslog",
+        "ssh": "syslog",
+        "web": "access_combined",
+        "host": "errors_demo",
+        "filesystem": "errors_demo",
+        "database": "errors_demo",
+        "*": "*",
+    }
+
+    # Action templates (no sourcetype baked in)
+    action_templates = {
+        "failure": '("Failed password" OR "auth failure")',
+        "success": '("Accepted password" OR "auth success")',
+        "login": '"session opened"',
+        "logout": '"session closed"',
+        "download": 'action=download',
+        "upload": 'action=upload',
+        "error": '(error OR fail OR exception)',
+        "access": '',
+        "restart": '("service restart" OR "system reboot")',
+        "deletion": 'change=deleted',
+        "*": "",
     }
 
     time_map = {
@@ -125,29 +151,35 @@ def to_spl(parsed):
         "last7d": "earliest=-7d@d latest=now",
         "last30d": "earliest=-30d@d latest=now",
         "last1h": "earliest=-1h@h latest=now",
-        "*": ""
+        "*": "",
     }
 
-    source_map = {
-        "auth": 'index=auth',
-        "web": 'index=web',
-        "ssh": 'index=ssh',
-        "database": 'index=db',
-        "filesystem": 'index=fs',
-        "host": 'index=host',
-        "*": "index=*"
-    }
+    # Determine sourcetype
+    src = parsed.get("source", "*")
+    if src in known_sourcetypes:
+        st = src
+    else:
+        st = source_to_sourcetype.get(src, "*")
 
-    action_part = action_map.get(parsed["action"], "*")
-    time_part = time_map.get(parsed["time"], "")
-    source_part = source_map.get(parsed["source"], "index=*")
+    # Build SPL parts
+    parts = []
+    parts.append("index=main")  # your uploads went to main
+    if st != "*":
+        parts.append(f"sourcetype={st}")
 
-    user_part = ""
-    if parsed["user"] != "*":
-        user_part = f'user={parsed["user"]}'
+    action_clause = action_templates.get(parsed.get("action", "*"), "")
+    if action_clause:
+        parts.append(action_clause)
 
-    spl = f'{source_part} {action_part} {user_part} {time_part}'
-    return spl.strip()
+    user = parsed.get("user", "*")
+    if user and user != "*":
+        parts.append(f'user={user}')
+
+    time_clause = time_map.get(parsed.get("time", "*"), "")
+    if time_clause:
+        parts.append(time_clause)
+
+    return " ".join(parts).strip()
 
 
 # -------------------------------
@@ -172,13 +204,26 @@ def predict_query(query, models, threshold=CONF_THRESHOLD):
     result = normalize_slots(result)
     return result
 
+from sklearn.metrics import accuracy_score
+
+def evaluate_all():
+    X, y_action, y_time, y_user, y_source = load_dataset()
+    models = train_all()
+    y_pred_action = models["action"].predict(X)
+    y_pred_time = models["time"].predict(X)
+    y_pred_user = models["user"].predict(X)
+    y_pred_source = models["source"].predict(X)
+
+    print("\n=== Evaluation Results ===")
+    print(f"Action accuracy:     {accuracy_score(y_action, y_pred_action) * 100:.2f}%")
+    print(f"Time accuracy:       {accuracy_score(y_time, y_pred_time) * 100:.2f}%")
+    print(f"User accuracy:       {accuracy_score(y_user, y_pred_user) * 100:.2f}%")
+    print(f"Sourcetype accuracy: {accuracy_score(y_source, y_pred_source) * 100:.2f}%")
 
 # -------------------------------
 # Main
 # -------------------------------
 if __name__ == "__main__":
-    models = train_all()
-
     force_mode = False
     args = sys.argv[1:]
 
@@ -190,6 +235,8 @@ if __name__ == "__main__":
         print("⚡ Running in force mode: skipping clarification prompts.\n")
 
     if len(args) > 0:
+        # parse a single natural-language query
+        models = train_all()
         nl_query = " ".join(args)
         parsed = predict_query(nl_query, models)
         if not force_mode:
@@ -199,17 +246,5 @@ if __name__ == "__main__":
         print("Hybrid Parsed:", parsed)
         print("Generated SPL:", spl)
     else:
-        tests = [
-            "show me failed logins from yesterday",
-            "list all upload events since yesterday",
-            "give me all errors this week",
-        ]
-        for t in tests:
-            parsed = predict_query(t, models)
-            if not force_mode:
-                parsed = clarification_prompt(parsed)
-            spl = to_spl(parsed)
-            print("\nNL Query:", t)
-            print("Hybrid Parsed:", parsed)
-            print("Generated SPL:", spl)
-
+        # no args → run evaluation on the dataset
+        evaluate_all()
