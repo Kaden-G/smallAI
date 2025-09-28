@@ -1,15 +1,18 @@
 #!/usr/bin/env python3
+import os
 import re
 import csv
 import sys
 
+# Always resolve dataset relative to this script’s folder
+BASE_DIR = os.path.dirname(__file__)
+DATASET_FILE = os.path.join(BASE_DIR, "log_query_dataset.csv")
+
 # -------------------------------
 # Keyword dictionaries
 # -------------------------------
-# Fallbacks after priority rules.
-
 action_keywords = {
-    "error": ["error", "crash", "problem", "failure"],  # generic errors
+    "error": ["error", "crash", "problem", "failure"],
     "download": ["download", "file download"],
     "upload": ["upload", "file upload"],
     "access": ["access", "connection", "request"],
@@ -19,7 +22,7 @@ action_keywords = {
 
 time_keywords = {
     "today": ["today", "since midnight", "in the last 24 hours"],
-    "yesterday": ["yesterday", "the previous day"],  # no "since yesterday" here
+    "yesterday": ["yesterday", "the previous day"],
     "last7d": ["last 7 days", "this week", "past week"],
     "last30d": ["last 30 days", "this month"],
     "last1h": ["last hour", "past 60 minutes"],
@@ -41,9 +44,7 @@ def parse_query(nl_query: str):
     text = nl_query.lower()
     parsed = {"action": "*", "time": "*", "user": "*", "source": "*"}
 
-    # -------------------------------
-    # Action extraction (priority rules first)
-    # -------------------------------
+    # Action extraction
     if re.search(r"failed login|login failure|auth failure", text):
         parsed["action"] = "failure"
     elif re.search(r"successful login|auth success", text):
@@ -60,9 +61,7 @@ def parse_query(nl_query: str):
                 parsed["action"] = act
                 break
 
-    # -------------------------------
-    # Time extraction (priority first)
-    # -------------------------------
+    # Time extraction
     if re.search(r"since yesterday|past day|last day", text):
         parsed["time"] = "last24h"
     else:
@@ -71,23 +70,23 @@ def parse_query(nl_query: str):
                 parsed["time"] = t
                 break
 
-    # -------------------------------
     # User extraction
-    # -------------------------------
     for u in users:
         if re.search(rf"\b{u}\b", text):
             parsed["user"] = u
             break
 
-    # -------------------------------
     # Source extraction
-    # -------------------------------
     for s, keywords in source_keywords.items():
         if any(kw in text for kw in keywords):
             parsed["source"] = s
             break
 
     return parsed
+
+# Wrapper so hybrid_parser can import the expected function
+def parse_rule_based(query: str) -> dict:
+    return parse_query(query)
 
 def structured_string(parsed: dict):
     parts = [f"action={parsed['action']}"]
@@ -99,7 +98,7 @@ def structured_string(parsed: dict):
         parts.append(f"source={parsed['source']}")
     return " ".join(parts)
 
-def evaluate(dataset="log_query_dataset.csv", show_fails=10):
+def evaluate(dataset=DATASET_FILE, show_fails=10):
     with open(dataset, newline="") as f:
         reader = csv.DictReader(f)
         rows = list(reader)
@@ -149,4 +148,3 @@ if __name__ == "__main__":
         print("Parsed:", structured_string(parsed))
     else:
         evaluate()
-

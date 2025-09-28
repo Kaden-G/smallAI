@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import csv
 import random
+import datetime
 
 # Synonyms for "show me"
 query_prefixes = [
@@ -40,15 +41,46 @@ sources = {
     "host": ["host", "server", "machine"],
 }
 
+def map_time_to_bounds(time_slot: str) -> str:
+    mapping = {
+        "last1h": 'earliest=-60m latest=now',
+        "last24h": 'earliest=-24h latest=now',
+        "last30d": 'earliest=-30d@d latest=now',
+        "yesterday": 'earliest=@d-1d latest=@d',
+        "today": 'earliest=@d latest=now',
+        "last7d": 'earliest=-7d@d latest=now',
+    }
+    return mapping.get(time_slot.lower(), f'time={time_slot}')
+
+def generate_event_ts(time_key: str) -> str:
+    """Generate a realistic event timestamp string based on the time slot."""
+    now = datetime.datetime.now()
+    if time_key == "last1h":
+        dt = now - datetime.timedelta(minutes=random.randint(0, 59))
+    elif time_key == "last24h":
+        dt = now - datetime.timedelta(hours=random.randint(0, 23))
+    elif time_key == "yesterday":
+        yesterday = now - datetime.timedelta(days=1)
+        dt = yesterday.replace(hour=random.randint(0, 23), minute=random.randint(0, 59))
+    elif time_key == "today":
+        dt = now.replace(hour=random.randint(0, now.hour), minute=random.randint(0, 59))
+    elif time_key == "last7d":
+        dt = now - datetime.timedelta(days=random.randint(0, 6))
+    elif time_key == "last30d":
+        dt = now - datetime.timedelta(days=random.randint(0, 29))
+    else:
+        dt = now
+    return dt.strftime("%Y-%m-%dT%H:%M:%S%z")
+
 def generate_structured(action_key, time_key, user, source_key):
     parts = []
     parts.append(f"action={action_key}")
-    if time_key != "*":
-        parts.append(f"time={time_key}")
     if user != "*":
         parts.append(f"user={user}")
     if source_key != "*":
         parts.append(f"source={source_key}")
+    if time_key != "*":
+        parts.append(map_time_to_bounds(time_key))
     return " ".join(parts)
 
 def generate_queries(n=480):
@@ -68,32 +100,15 @@ def generate_queries(n=480):
         nl_query = f"{prefix} all {action_phrase} events{user_part} {time_phrase} in {source_phrase}"
 
         structured = generate_structured(action_key, time_key, user, source_key)
+        event_ts = generate_event_ts(time_key)
 
-        rows.append([nl_query, action_key, time_key, user, source_key, structured])
+        rows.append([nl_query, action_key, time_key, user, source_key, structured, event_ts])
     return rows
 
 def fixed_gold_examples():
     gold = [
-        ["show me failed logins from yesterday", "failure", "yesterday", "*", "auth", "action=failure time=yesterday source=auth"],
-        ["list all successful logins in the last 7 days", "success", "last7d", "*", "auth", "action=success time=last7d source=auth"],
-        ["who accessed the system from IP 10.0.0.1 today", "access", "today", "*", "host", "action=access time=today source=host"],
-        ["all password change events for user jsmith this week", "login", "last7d", "jsmith", "auth", "action=login user=jsmith time=last7d source=auth"],
-        ["errors in web server logs in the past hour", "error", "last1h", "*", "web", "action=error time=last1h source=web"],
-        ["show me downloads by user root in last 24 hours", "download", "last24h", "root", "filesystem", "action=download user=root time=last24h source=filesystem"],
-        ["requests with status code 500 since midnight", "error", "today", "*", "web", "action=error time=today source=web status=500"],
-        ["find logins by anonymous users last month", "login", "last30d", "anonymous", "auth", "action=login user=anonymous time=last30d source=auth"],
-        ["show web traffic from IP range 192.168.0.0/16 yesterday", "access", "yesterday", "*", "web", "action=access time=yesterday source=web"],
-        ["who accessed server01 between 2pm and 4pm", "access", "today", "*", "host", "action=access time=today source=host"],
-        ["list all sudo usage by any user in last week", "access", "last7d", "*", "auth", "action=access time=last7d source=auth"],
-        ["when did apache restart in the last 30 minutes", "restart", "last1h", "*", "web", "action=restart time=last1h source=web"],
-        ["find all failed database connections", "failure", "last24h", "*", "database", "action=failure time=last24h source=database"],
-        ["who deleted files in /var/log directory", "deletion", "last7d", "*", "filesystem", "action=deletion time=last7d source=filesystem"],
-        ["instances of brute force attacks last day", "failure", "last24h", "*", "auth", "action=failure time=last24h source=auth"],
-        ["requests to /admin endpoint returning 403", "access", "today", "*", "web", "action=access time=today source=web status=403"],
-        ["list all log entries tagged as security alert today", "error", "today", "*", "auth", "action=error time=today source=auth"],
-        ["who logged out yesterday", "logout", "yesterday", "*", "auth", "action=logout time=yesterday source=auth"],
-        ["count file read operations on temp directory last hour", "access", "last1h", "*", "filesystem", "action=access time=last1h source=filesystem"],
-        ["show web requests by user bob last month", "access", "last30d", "bob", "web", "action=access user=bob time=last30d source=web"],
+        ["show me failed logins from yesterday", "failure", "yesterday", "*", "auth", "action=failure source=auth earliest=@d-1d latest=@d", datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S%z")],
+        ["list all successful logins in the last 7 days", "success", "last7d", "*", "auth", "action=success source=auth earliest=-7d@d latest=now", datetime.datetime.now().strftime("%Y-%m-%dT%H:%M:%S%z")],
     ]
     return gold
 
@@ -102,7 +117,7 @@ def save_dataset(filename="log_query_dataset.csv"):
     rows.extend(fixed_gold_examples())
     with open(filename, "w", newline="") as f:
         writer = csv.writer(f)
-        writer.writerow(["nl_query", "action", "time", "user", "source", "structured_query"])
+        writer.writerow(["nl_query", "action", "time", "user", "source", "structured_query", "event_ts"])
         writer.writerows(rows)
     print(f"Saved {len(rows)} examples to {filename}")
 
