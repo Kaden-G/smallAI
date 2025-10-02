@@ -9,6 +9,7 @@ Hybrid Log Query Parser with Splunk SPL Generator
 - Supports `-f` (force mode) to skip prompts and keep wildcards.
 """
 
+<<<<<<< Updated upstream
 import csv
 import sys
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -47,111 +48,193 @@ def train_classifier(X, y):
     ])
     clf.fit(X, y)
     return clf
+=======
+import argparse
+import importlib
+from rule_based_parser import parse_rule_based
+from ml_parser import parse_ml
+from normalizer import normalize_slots
+from drift_hook import log_unparsed
+>>>>>>> Stashed changes
 
 
 def train_all():
     X, y_action, y_time, y_user, y_source = load_dataset()
-    return {
-        "action": train_classifier(X, y_action),
-        "time": train_classifier(X, y_time),
-        "user": train_classifier(X, y_user),
-        "source": train_classifier(X, y_source),
-    }
+        return f"{base_query} | stats count by {group_field}"
+    #!/usr/bin/env python3
+
+    import argparse
+    import importlib
+    from rule_based_parser import parse_rule_based
+    from ml_parser import parse_ml
+    from normalizer import normalize_slots
+    from drift_hook import log_unparsed
 
 
-# -------------------------------
-# Normalization
-# -------------------------------
-def normalize_slots(parsed):
-    if parsed.get("time") == "yesterday":
-        parsed["time"] = "last24h"
-    return parsed
+    def map_time_to_bounds(time_slot: str) -> str:
+        """Convert normalized time slot strings into Splunk earliest/latest syntax."""
+        if not time_slot:
+            return ""
+        mapping = {
+            "last1h": "earliest=-60m latest=now",
+            "last24h": "earliest=-24h latest=now",
+            "last30d": "earliest=-30d@d latest=now",
+            "yesterday": "earliest=@d-1d latest=@d",
+            "today": "earliest=@d latest=now",
+            "thisweek": "earliest=@w0 latest=now",
+            "lastweek": "earliest=-1w@w0 latest=@w0",
+            "sinceyesterday": "earliest=@d-1d latest=now",
+        }
+        return mapping.get(time_slot.lower(), f"time={time_slot}")
 
 
-# -------------------------------
-# Clarification prompt (CLI)
-# -------------------------------
-def clarification_prompt(parsed):
-    # If source missing
-    if parsed.get("source") == "*":
-        options = ["auth", "ssh", "web", "database", "filesystem", "host"]
-        print("\nMissing field: source")
-        for i, opt in enumerate(options, 1):
-            print(f"[{i}] {opt}")
-        print("[0] I don't know (keep *)")
-        choice = input("Choose a source: ").strip()
-        if choice.isdigit() and int(choice) in range(1, len(options) + 1):
-            parsed["source"] = options[int(choice) - 1]
-        else:
-            parsed["source"] = "*"  # keep wildcard
+    def build_spl(parsed: dict, index: str = "smallai", nl_query: str = "") -> str:
+        """Build Splunk SPL query string from parsed slots + optional NL query context."""
+        if not parsed:
+            return f"index={index} | noop  # no parse"
 
-    # If user missing
-    if parsed.get("user") == "*":
-        options = ["root", "admin", "bob", "alice", "anonymous"]
-        print("\nMissing field: user")
-        for i, opt in enumerate(options, 1):
-            print(f"[{i}] {opt}")
-        print("[0] I don't know (keep *)")
-        choice = input("Choose a user: ").strip()
-        if choice.isdigit() and int(choice) in range(1, len(options) + 1):
-            parsed["user"] = options[int(choice) - 1]
-        else:
-            parsed["user"] = "*"  # keep wildcard
+        parts = [f"index={index}"]
 
-    return parsed
+        if parsed.get("source"):
+            parts.append(f"sourcetype={parsed['source']}")
+
+        # Only include action if it’s not just a display intent
+        if parsed.get("action") and parsed["action"].lower() not in ["show", "list", "display", "fetch"]:
+            parts.append(f"action={parsed['action']}")
+
+        if parsed.get("user"):
+            parts.append(f"user={parsed['user']}")
+
+        if parsed.get("time"):
+            parts.append(map_time_to_bounds(parsed["time"]))
+
+        base_query = " ".join(parts)
+
+        # --- NEW: handle "group by" / "count by" ---
+        group_field = None
+        if nl_query:
+            nl_lower = nl_query.lower()
+            if "group by" in nl_lower:
+                group_field = nl_lower.split("group by")[-1].strip().split()[0]
+            elif "count by" in nl_lower:
+                group_field = nl_lower.split("count by")[-1].strip().split()[0]
+
+        if group_field:
+            return f"{base_query} | stats count by {group_field}"
+
+        return base_query
 
 
-# -------------------------------
-# SPL generator
 
-# -------------------------------
-# SPL generator (sourcetype-aware)
-# -------------------------------
-def to_spl(parsed):
-    """
-    Build an SPL query using Splunk-native sourcetypes.
-    Preference order:
-      1) If parsed["source"] is already a Splunk sourcetype we know (access_combined, syslog, errors_demo), use it.
-      2) Otherwise map high-level sources (auth/web/host/filesystem/database/ssh) to the closest sourcetype.
-      3) Fallback to "*" if unknown.
-    Index: default to "main" for demo purposes, since uploads went to main.
-    """
-    # Known sourcetypes used in your Splunk demo
-    known_sourcetypes = {"access_combined", "syslog", "errors_demo"}
+    def parse_query(query: str, force_rule: bool = False) -> dict:
+        """
+        Hybrid query parser:
+        - ML first, fallback to rules if low confidence or missing slots.
+        - force_rule=True → skip ML and use rules only.
+        - Always normalize before returning.
+        - Logs failed/low-confidence queries for drift monitoring.
+        """
+        result = None
+        confidence = 0.0
 
-    # Map high-level sources → Splunk sourcetypes
-    source_to_sourcetype = {
-        "auth": "syslog",
-        "ssh": "syslog",
-        "web": "access_combined",
-        "host": "errors_demo",
-        "filesystem": "errors_demo",
-        "database": "errors_demo",
-        "*": "*",
-    }
+        if not force_rule:
+            try:
+                parsed = parse_ml(query)
+                if isinstance(parsed, tuple):
+                    result, confidence = parsed
+                else:
+                    result = parsed
+                    confidence = 1.0
+            except Exception as e:
+                print(f"[WARN] ML parser failed: {e}")
+                result = None
 
-    # Action templates (no sourcetype baked in)
-    action_templates = {
-        "failure": '("Failed password" OR "auth failure")',
-        "success": '("Accepted password" OR "auth success")',
-        "login": '"session opened"',
-        "logout": '"session closed"',
-        "download": 'action=download',
-        "upload": 'action=upload',
-        "error": '(error OR fail OR exception)',
-        "access": '',
-        "restart": '("service restart" OR "system reboot")',
-        "deletion": 'change=deleted',
-        "*": "",
-    }
+        # Fallback if ML failed, low confidence, or incomplete
+        if force_rule or not result or confidence < 0.6 or not any(result.values()):
+            rule_result = parse_rule_based(query)
+            if result:
+                for k, v in rule_result.items():
+                    if not result.get(k):
+                        result[k] = v
+            else:
+                result = rule_result
 
-    time_map = {
-        "today": "earliest=@d latest=now",
-        "last24h": "earliest=-24h@h latest=now",
-        "last7d": "earliest=-7d@d latest=now",
-        "last30d": "earliest=-30d@d latest=now",
-        "last1h": "earliest=-1h@h latest=now",
-        "*": "",
+        # If still no usable parse → log drift
+        if not result or not any(result.values()):
+            log_unparsed(query, reason="no_parse")
+            return None
+
+        # Extra drift logging: low confidence
+        if confidence < 0.6:
+            log_unparsed(query, reason=f"low_confidence:{confidence:.2f}")
+
+        # Extra drift logging: spurious slots
+        q_lower = query.lower()
+        if result.get("user") and result["user"] not in q_lower:
+            log_unparsed(query, reason=f"spurious_user:{result['user']}")
+        if result.get("source") and result["source"] not in q_lower:
+            log_unparsed(query, reason=f"spurious_source:{result['source']}")
+
+        # Normalize before returning
+        return normalize_slots(result)
+
+
+    def main():
+        parser = argparse.ArgumentParser(description="Hybrid parser for NL -> SPL")
+        parser.add_argument("query", type=str, nargs="?", help="Natural language query")
+        parser.add_argument(
+            "-f", "--force-rule", action="store_true", help="Force rule-based parser"
+        )
+        args = parser.parse_args()
+
+        if args.query is None:
+            # No query passed → run evaluation
+            from ml_parser import load_dataset
+
+            X, y_action, y_time, y_user, y_source = load_dataset()
+            total = len(X)
+
+            slot_correct = {"action": 0, "time": 0, "user": 0, "source": 0}
+            exact_match = 0
+
+            for i, q in enumerate(X):
+                result = parse_query(q, force_rule=args.force_rule) or {}
+                if result.get("action") == y_action[i]:
+                    slot_correct["action"] += 1
+                if result.get("time") == y_time[i]:
+                    slot_correct["time"] += 1
+                if result.get("user") == y_user[i]:
+                    slot_correct["user"] += 1
+                if result.get("source") == y_source[i]:
+                    slot_correct["source"] += 1
+
+                if (
+                    result.get("action") == y_action[i]
+                    and result.get("time") == y_time[i]
+                    and result.get("user") == y_user[i]
+                    and result.get("source") == y_source[i]
+                ):
+                    exact_match += 1
+
+            print(f"Evaluated {total} samples")
+            for slot, correct in slot_correct.items():
+                acc = correct / total * 100 if total else 0.0
+                print(f"  {slot.capitalize()} accuracy: {acc:.2f}%")
+
+            print(f"  Exact-match accuracy: {exact_match / total * 100:.2f}%")
+            return
+
+        # Query mode
+        parsed = parse_query(args.query, force_rule=args.force_rule)
+        spl = build_spl(parsed, nl_query=args.query)
+
+        print("Input:", args.query)
+        print("Parsed:", parsed)
+        print("SPL:", spl)
+
+
+    if __name__ == "__main__":
+        main()
     }
 
     # Determine sourcetype
@@ -203,9 +286,30 @@ def predict_query(query, models, threshold=CONF_THRESHOLD):
 
     result = normalize_slots(result)
     return result
+=======
+    # If still no usable parse → log drift
+    if not result or not any(result.values()):
+        log_unparsed(query, reason="no_parse")
+        return None
+
+    # Extra drift logging: low confidence
+    if confidence < 0.6:
+        log_unparsed(query, reason=f"low_confidence:{confidence:.2f}")
+
+    # Extra drift logging: spurious slots
+    q_lower = query.lower()
+    if result.get("user") and result["user"] not in q_lower:
+        log_unparsed(query, reason=f"spurious_user:{result['user']}")
+    if result.get("source") and result["source"] not in q_lower:
+        log_unparsed(query, reason=f"spurious_source:{result['source']}")
+
+    # Normalize before returning
+    return normalize_slots(result)
+>>>>>>> Stashed changes
 
 from sklearn.metrics import accuracy_score
 
+<<<<<<< Updated upstream
 def evaluate_all():
     X, y_action, y_time, y_user, y_source = load_dataset()
     models = train_all()
@@ -213,6 +317,60 @@ def evaluate_all():
     y_pred_time = models["time"].predict(X)
     y_pred_user = models["user"].predict(X)
     y_pred_source = models["source"].predict(X)
+=======
+def main():
+    parser = argparse.ArgumentParser(description="Hybrid parser for NL -> SPL")
+    parser.add_argument("query", type=str, nargs="?", help="Natural language query")
+    parser.add_argument(
+        "-f", "--force-rule", action="store_true", help="Force rule-based parser"
+    )
+    args = parser.parse_args()
+
+    if args.query is None:
+        # No query passed → run evaluation
+        from ml_parser import load_dataset
+
+        X, y_action, y_time, y_user, y_source = load_dataset()
+        total = len(X)
+
+        slot_correct = {"action": 0, "time": 0, "user": 0, "source": 0}
+        exact_match = 0
+
+        for i, q in enumerate(X):
+            result = parse_query(q, force_rule=args.force_rule) or {}
+            if result.get("action") == y_action[i]:
+                slot_correct["action"] += 1
+            if result.get("time") == y_time[i]:
+                slot_correct["time"] += 1
+            if result.get("user") == y_user[i]:
+                slot_correct["user"] += 1
+            if result.get("source") == y_source[i]:
+                slot_correct["source"] += 1
+
+            if (
+                result.get("action") == y_action[i]
+                and result.get("time") == y_time[i]
+                and result.get("user") == y_user[i]
+                and result.get("source") == y_source[i]
+            ):
+                exact_match += 1
+
+        print(f"Evaluated {total} samples")
+        for slot, correct in slot_correct.items():
+            acc = correct / total * 100 if total else 0.0
+            print(f"  {slot.capitalize()} accuracy: {acc:.2f}%")
+
+        print(f"  Exact-match accuracy: {exact_match / total * 100:.2f}%")
+        return
+
+    # Query mode
+    parsed = parse_query(args.query, force_rule=args.force_rule)
+    spl = build_spl(parsed, nl_query=args.query)
+
+    print("Input:", args.query)
+    print("Parsed:", parsed)
+    print("SPL:", spl)
+>>>>>>> Stashed changes
 
     print("\n=== Evaluation Results ===")
     print(f"Action accuracy:     {accuracy_score(y_action, y_pred_action) * 100:.2f}%")
