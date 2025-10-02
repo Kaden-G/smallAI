@@ -1,7 +1,5 @@
 # Phase 2 Validation Report
-Generated: 2025-10-02T05:28:36.259096+00:00
-# Phase 2 Validation Report
-Generated: 2025-10-02T04:44:53Z
+Generated: 2025-10-02T05:33:51.519923Z
 
 ## Overview
 This report summarizes the performance of the **SmallAI Hybrid Parser** after completing **Phase 2 (Execution/MVP)**.  
@@ -14,10 +12,10 @@ The goal of this phase was to build a hybrid natural language → Splunk SPL tra
 - **Accuracy report deliverable** for reproducibility and portfolio use
 
 ## Key Results
-- **Action slot:** 94% accuracy  
-- **Time slot:** 98% accuracy (major improvement over rules baseline)  
-- **User slot:** 99% accuracy  
-- **Source slot:** 95% accuracy  
+- **Action slot:** 99% accuracy  
+- **Time slot:** 100% accuracy (major improvement over rules baseline)  
+- **User slot:** 100% accuracy  
+- **Source slot:** 99% accuracy  
 
 Overall, the hybrid parser meets or exceeds all Phase 2 success criteria.  
 
