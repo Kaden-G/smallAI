@@ -17,7 +17,7 @@ Usage: python3 scripts/phase2_validation.py
 import os
 import csv
 from collections import Counter
-from datetime import datetime
+from datetime import datetime, timezone
 
 ROOT = os.path.dirname(os.path.dirname(__file__))
 DATASET = os.path.join(ROOT, "datasets", "log_query_dataset.csv")
@@ -199,7 +199,7 @@ def run_robustness_checks(clfs):
 def write_report(rule_stats, ml_stats, hybrid_stats, real_checks, robustness_checks):
     os.makedirs(os.path.dirname(REPORT_MD), exist_ok=True)
     with open(REPORT_MD, "w") as f:
-        f.write(f"# Phase 2 Validation Report\nGenerated: {datetime.utcnow().isoformat()}\n\n")
+        f.write(f"# Phase 2 Validation Report\nGenerated: {datetime.now(timezone.utc).isoformat()}\n\n")
 
         f.write("## Summary\n")
         f.write(f"- Dataset rows evaluated: {rule_stats['total']}\n")
