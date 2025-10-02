@@ -1,0 +1,13 @@
+input,action,time,user,source
+"show failed login attempts in the last 24 hours",show,last24h,,auth
+"list all successful logins by user alice since yesterday",list,yesterday,alice,auth
+"show number of 500 errors in the web index, grouped by host",show,,,web
+"find all 404 errors from nginx logs in the last 7 days",find,last7d,,web
+"show ssh login failures for root in the past week",show,last7d,root,ssh
+"list all ssh sessions started by user bob today",list,today,bob,ssh
+"find database timeouts in the last 30 days",find,last30d,,db
+"show slow queries from postgres yesterday",show,yesterday,,db
+"list all disk errors in the past 24 hours",list,last24h,,filesystem
+"find out which users exceeded disk quota this week",find,thisweek,,filesystem
+"show system errors since yesterday",show,yesterday,,system
+"list all processes that crashed today",list,today,,system
