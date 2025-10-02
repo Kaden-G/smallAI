@@ -1,0 +1,30 @@
+name: Nightly Branch Sync
+
+on:
+  schedule:
+    - cron: "0 23 * * *"   # runs every day at 23:00 UTC
+  workflow_dispatch:        # optional: lets you trigger manually too
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history so we can rebase
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Fetch latest main
+        run: |
+          git fetch origin main
+          git checkout feature/sync-updates-20250927
+          git rebase origin/main || (echo "Rebase failed, resolve manually" && exit 1)
+
+      - name: Push rebased branch
+        run: |
+          git push origin feature/sync-updates-20250927 --force-with-lease
