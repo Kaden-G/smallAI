@@ -1,5 +1,40 @@
 # Phase 2 Validation Report
-Generated: 2025-10-02T05:23:41.138131
+Generated: 2025-10-02T05:28:36.259096+00:00
+# Phase 2 Validation Report
+Generated: 2025-10-02T04:44:53Z
+
+## Overview
+This report summarizes the performance of the **SmallAI Hybrid Parser** after completing **Phase 2 (Execution/MVP)**.  
+The goal of this phase was to build a hybrid natural language → Splunk SPL translator using both a rule-based parser and an ML classifier, and to demonstrate measurable accuracy improvements compared to the baseline.
+
+## Success Criteria
+- **≥90% exact-match accuracy** on synthetic dataset
+- **Improved performance on time expressions** (rule plateau ~91%, ML ≥95%)
+- **Hybrid parser that gracefully falls back** to rules and logs drift cases
+- **Accuracy report deliverable** for reproducibility and portfolio use
+
+## Key Results
+- **Action slot:** 94% accuracy  
+- **Time slot:** 98% accuracy (major improvement over rules baseline)  
+- **User slot:** 99% accuracy  
+- **Source slot:** 95% accuracy  
+
+Overall, the hybrid parser meets or exceeds all Phase 2 success criteria.  
+
+## Interpretation
+- Rules provided a strong baseline (~90%), but were brittle and required constant updating.  
+- ML generalized across phrasing and delivered big gains, especially on time expressions.  
+- The hybrid approach combines both: ML first, rules as fallback.  
+- Drift logging captures low-confidence and unparsed queries, enabling continuous improvement in later phases.  
+
+## Next Steps
+Phase 3 and beyond will focus on:
+- Adding sourcetype-aware validation and schema checks  
+- Improving coverage of real Splunk queries beyond synthetic dataset  
+- Expanding schema to support fields (`host`, `status`) and intents (`stats`, `anomaly detection`)  
+- Packaging into a deployable demo (CLI + Hugging Face Space)
+
+---
 
 ## Summary
 - Dataset rows evaluated: 500
