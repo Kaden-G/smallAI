@@ -1,0 +1,1001 @@
+nl_query,action,time,user,source
+critical errors last month in auth for user david,error,last30d,david,auth
+logins that worked in the last month in auth for user bob,success,last30d,bob,auth
+fetch last 24 hours in auth for user bob,show,last24h,bob,auth
+successful logins since yesterday in web_demo for all users,success,last24h,*,web_demo
+login failures last 24 hours in system for user bob,failure,last24h,bob,system
+failed logins since midnight in errors_demo for user alice,failure,today,alice,errors_demo
+logins that worked earlier today in web_demo for user bob,success,today,bob,web_demo
+critical errors today in web_demo for user frank,error,today,frank,web_demo
+login failures this month in web_demo for user erin,failure,last30d,erin,web_demo
+failed logins over the weekend in web_demo for user david,failure,lastweek,david,web_demo
+successful logins since midnight in system for user charlie,success,today,charlie,system
+auth failures today in errors_demo for user bob,failure,today,bob,errors_demo
+show me yesterday in auth for all users,show,yesterday,*,auth
+login failures this weekend in web_demo for user david,failure,thisweek,david,web_demo
+logins that worked yesterday in web_demo for user bob,success,yesterday,bob,web_demo
+login failures the day before today in system for user charlie,failure,yesterday,charlie,system
+login failures yesterday in web_demo for user alice,failure,yesterday,alice,web_demo
+failed logins since yesterday in auth for user charlie,failure,last24h,charlie,auth
+failed logins in the last month in auth for user david,failure,last30d,david,auth
+logins that worked over the weekend in system for user frank,success,lastweek,frank,system
+web errors today in errors_demo for user frank,error,today,frank,errors_demo
+system errors the day before today in auth for user alice,error,yesterday,alice,auth
+logins that worked since friday in errors_demo for user bob,success,thisweek,bob,errors_demo
+successes yesterday in auth for user bob,success,yesterday,bob,auth
+failed logins today so far in system for user charlie,failure,today,charlie,system
+successful logins last 24 hours in web_demo for all users,success,last24h,*,web_demo
+successful logins since monday in system for user charlie,success,thisweek,charlie,system
+failed logins since midnight in errors_demo for user bob,failure,today,bob,errors_demo
+fetch last week in auth for user bob,show,lastweek,bob,auth
+system errors last weekend in errors_demo for user erin,error,lastweek,erin,errors_demo
+successful logins since midnight in auth for user erin,success,today,erin,auth
+show me last night in auth for all users,show,yesterday,*,auth
+display past 24hrs in web_demo for user charlie,show,last24h,charlie,web_demo
+show me today so far in errors_demo for user frank,show,today,frank,errors_demo
+critical errors today in auth for user david,error,today,david,auth
+successful logins past 24hrs in auth for user alice,success,last24h,alice,auth
+fetch last 30 days in system for user david,show,last30d,david,system
+successes since midnight in auth for user charlie,success,today,charlie,auth
+display last week in web_demo for user charlie,show,lastweek,charlie,web_demo
+fetch last night in auth for user bob,show,yesterday,bob,auth
+fetch since friday in web_demo for user alice,show,thisweek,alice,web_demo
+successful logins over the weekend in auth for user alice,success,lastweek,alice,auth
+failed logins since the start of this week in system for user bob,failure,thisweek,bob,system
+auth failures this weekend in system for user frank,failure,thisweek,frank,system
+critical errors over the weekend in web_demo for user frank,error,lastweek,frank,web_demo
+fetch so far this month in auth for user alice,show,last30d,alice,auth
+failed logins past 24hrs in auth for user david,failure,last24h,david,auth
+successes the day before today in system for user david,success,yesterday,david,system
+logins that worked since the start of this week in system for all users,success,thisweek,*,system
+fetch last night in system for user david,show,yesterday,david,system
+login failures today in web_demo for all users,failure,today,*,web_demo
+successes since friday in errors_demo for user alice,success,thisweek,alice,errors_demo
+successes since the start of this week in system for user frank,success,thisweek,frank,system
+list since this morning in auth for user charlie,show,today,charlie,auth
+failed logins since tuesday in auth for all users,failure,thisweek,*,auth
+successful logins last 24 hours in auth for user david,success,last24h,david,auth
+critical errors in the last week in web_demo for user frank,error,lastweek,frank,web_demo
+logins that worked yesterday in auth for user charlie,success,yesterday,charlie,auth
+display month to date in auth for user alice,show,last30d,alice,auth
+auth failures in the last week in system for user frank,failure,lastweek,frank,system
+auth failures last 24 hours in auth for user alice,failure,last24h,alice,auth
+logins that worked since midnight in auth for user frank,success,today,frank,auth
+successful logins previous month in web_demo for user david,success,last30d,david,web_demo
+auth failures the day before today in system for all users,failure,yesterday,*,system
+auth failures today so far in errors_demo for all users,failure,today,*,errors_demo
+system errors yesterday in system for user erin,error,yesterday,erin,system
+web errors the day before today in system for all users,error,yesterday,*,system
+fetch past month in system for user david,show,last30d,david,system
+system errors the day before today in auth for user bob,error,yesterday,bob,auth
+successes this week in errors_demo for user bob,success,thisweek,bob,errors_demo
+fetch month to date in system for user bob,show,last30d,bob,system
+list in the last week in errors_demo for user charlie,show,lastweek,charlie,errors_demo
+logins that worked since tuesday in web_demo for user alice,success,thisweek,alice,web_demo
+critical errors the day before today in errors_demo for user erin,error,yesterday,erin,errors_demo
+failed logins since friday in system for user frank,failure,thisweek,frank,system
+system errors past month in web_demo for user charlie,error,last30d,charlie,web_demo
+successes past week in errors_demo for user alice,success,lastweek,alice,errors_demo
+successes today in web_demo for user alice,success,today,alice,web_demo
+successful logins since yesterday in errors_demo for user charlie,success,last24h,charlie,errors_demo
+successful logins today so far in errors_demo for user alice,success,today,alice,errors_demo
+display in the last month in errors_demo for user alice,show,last30d,alice,errors_demo
+show me in the past day in web_demo for all users,show,last24h,*,web_demo
+system errors in the last month in web_demo for all users,error,last30d,*,web_demo
+login failures since this morning in errors_demo for user charlie,failure,today,charlie,errors_demo
+auth failures last 24 hours in web_demo for user david,failure,last24h,david,web_demo
+failed logins today so far in auth for user david,failure,today,david,auth
+auth failures last 24 hours in web_demo for all users,failure,last24h,*,web_demo
+failed logins past 30 days in auth for user david,failure,last30d,david,auth
+logins that worked yesterday in web_demo for user david,success,yesterday,david,web_demo
+successful logins since yesterday in errors_demo for all users,success,last24h,*,errors_demo
+auth failures the day before today in errors_demo for user frank,failure,yesterday,frank,errors_demo
+successful logins last month in web_demo for user charlie,success,last30d,charlie,web_demo
+show me over the weekend in errors_demo for user charlie,show,lastweek,charlie,errors_demo
+fetch since the start of this week in system for user bob,show,thisweek,bob,system
+successes today so far in web_demo for user bob,success,today,bob,web_demo
+auth failures since wednesday in system for user charlie,failure,thisweek,charlie,system
+application errors month to date in errors_demo for all users,error,last30d,*,errors_demo
+auth failures past 24hrs in errors_demo for user bob,failure,last24h,bob,errors_demo
+failed logins today so far in system for user erin,failure,today,erin,system
+successful logins last week in errors_demo for user bob,success,lastweek,bob,errors_demo
+fetch last 24 hours in system for user charlie,show,last24h,charlie,system
+successes earlier today in auth for all users,success,today,*,auth
+web errors the day before today in web_demo for all users,error,yesterday,*,web_demo
+web errors since thursday in auth for all users,error,thisweek,*,auth
+logins that worked last 24 hours in auth for user frank,success,last24h,frank,auth
+fetch since monday in auth for all users,show,thisweek,*,auth
+auth failures in the past day in errors_demo for user david,failure,last24h,david,errors_demo
+show me earlier today in system for user david,show,today,david,system
+failed logins since wednesday in errors_demo for user frank,failure,thisweek,frank,errors_demo
+failed logins yesterday in auth for user bob,failure,yesterday,bob,auth
+show me yesterday in system for all users,show,yesterday,*,system
+auth failures yesterday in auth for user alice,failure,yesterday,alice,auth
+critical errors past week in web_demo for user erin,error,lastweek,erin,web_demo
+auth failures today so far in errors_demo for user charlie,failure,today,charlie,errors_demo
+application errors last night in auth for user bob,error,yesterday,bob,auth
+web errors since monday in auth for user erin,error,thisweek,erin,auth
+application errors since yesterday in auth for user frank,error,last24h,frank,auth
+web errors today in auth for user charlie,error,today,charlie,auth
+application errors past month in web_demo for user charlie,error,last30d,charlie,web_demo
+web errors earlier today in auth for user alice,error,today,alice,auth
+login failures previous month in auth for all users,failure,last30d,*,auth
+failed logins in the past day in auth for user david,failure,last24h,david,auth
+application errors the day before today in web_demo for user frank,error,yesterday,frank,web_demo
+logins that worked since yesterday in system for user erin,success,last24h,erin,system
+auth failures since yesterday in errors_demo for user alice,failure,last24h,alice,errors_demo
+list yesterday in web_demo for user bob,show,yesterday,bob,web_demo
+web errors this week in errors_demo for all users,error,thisweek,*,errors_demo
+failed logins past 30 days in system for all users,failure,last30d,*,system
+fetch yesterday in errors_demo for user frank,show,yesterday,frank,errors_demo
+fetch past 30 days in auth for user charlie,show,last30d,charlie,auth
+display since yesterday in web_demo for all users,show,last24h,*,web_demo
+list last week in system for user charlie,show,lastweek,charlie,system
+system errors past 30 days in errors_demo for user frank,error,last30d,frank,errors_demo
+failed logins since yesterday in system for user charlie,failure,last24h,charlie,system
+application errors over the weekend in auth for user erin,error,lastweek,erin,auth
+web errors yesterday in system for user david,error,yesterday,david,system
+successful logins last night in web_demo for user david,success,yesterday,david,web_demo
+critical errors since midnight in system for user david,error,today,david,system
+logins that worked over the weekend in errors_demo for user erin,success,lastweek,erin,errors_demo
+successes over the weekend in auth for all users,success,lastweek,*,auth
+successful logins since midnight in web_demo for user david,success,today,david,web_demo
+successes yesterday in errors_demo for user erin,success,yesterday,erin,errors_demo
+display the day before today in auth for user charlie,show,yesterday,charlie,auth
+failed logins yesterday in errors_demo for user frank,failure,yesterday,frank,errors_demo
+logins that worked since monday in auth for user david,success,thisweek,david,auth
+application errors past 24hrs in errors_demo for user frank,error,last24h,frank,errors_demo
+web errors last 24 hours in errors_demo for user bob,error,last24h,bob,errors_demo
+successes last month in system for user frank,success,last30d,frank,system
+successes so far this month in errors_demo for user david,success,last30d,david,errors_demo
+login failures last night in system for user david,failure,yesterday,david,system
+web errors last night in errors_demo for user charlie,error,yesterday,charlie,errors_demo
+successes past month in system for user david,success,last30d,david,system
+successes since midnight in errors_demo for all users,success,today,*,errors_demo
+logins that worked since this morning in web_demo for user david,success,today,david,web_demo
+application errors in the past day in system for user david,error,last24h,david,system
+application errors yesterday in web_demo for all users,error,yesterday,*,web_demo
+login failures past 24hrs in auth for all users,failure,last24h,*,auth
+logins that worked yesterday in web_demo for user alice,success,yesterday,alice,web_demo
+failed logins since this morning in web_demo for user charlie,failure,today,charlie,web_demo
+login failures since this morning in auth for user charlie,failure,today,charlie,auth
+critical errors past 30 days in errors_demo for user erin,error,last30d,erin,errors_demo
+logins that worked the day before today in system for all users,success,yesterday,*,system
+failed logins this weekend in system for user david,failure,thisweek,david,system
+successes month to date in system for user charlie,success,last30d,charlie,system
+failed logins this weekend in errors_demo for user frank,failure,thisweek,frank,errors_demo
+system errors today so far in web_demo for user charlie,error,today,charlie,web_demo
+web errors earlier today in web_demo for user erin,error,today,erin,web_demo
+critical errors the day before today in web_demo for user frank,error,yesterday,frank,web_demo
+system errors this month in errors_demo for user erin,error,last30d,erin,errors_demo
+display the day before today in auth for user frank,show,yesterday,frank,auth
+show me last night in web_demo for user bob,show,yesterday,bob,web_demo
+show me since yesterday in web_demo for user bob,show,last24h,bob,web_demo
+fetch since yesterday in auth for user frank,show,last24h,frank,auth
+auth failures last 30 days in system for user david,failure,last30d,david,system
+auth failures this month in system for user david,failure,last30d,david,system
+display this month in auth for user erin,show,last30d,erin,auth
+critical errors last weekend in web_demo for all users,error,lastweek,*,web_demo
+system errors this weekend in errors_demo for user david,error,thisweek,david,errors_demo
+web errors last night in system for user erin,error,yesterday,erin,system
+application errors in the last week in web_demo for user charlie,error,lastweek,charlie,web_demo
+successes past 24hrs in errors_demo for user charlie,success,last24h,charlie,errors_demo
+login failures yesterday in web_demo for user erin,failure,yesterday,erin,web_demo
+logins that worked last 24 hours in system for user david,success,last24h,david,system
+application errors last month in web_demo for user frank,error,last30d,frank,web_demo
+failed logins last night in auth for user david,failure,yesterday,david,auth
+login failures since this morning in auth for user frank,failure,today,frank,auth
+successes in the last week in system for user bob,success,lastweek,bob,system
+show me since yesterday in errors_demo for user erin,show,last24h,erin,errors_demo
+show me past 24hrs in web_demo for user david,show,last24h,david,web_demo
+successful logins month to date in system for user frank,success,last30d,frank,system
+auth failures last weekend in web_demo for user bob,failure,lastweek,bob,web_demo
+application errors since yesterday in system for user david,error,last24h,david,system
+auth failures the day before today in system for user alice,failure,yesterday,alice,system
+application errors last 30 days in web_demo for user charlie,error,last30d,charlie,web_demo
+successes earlier today in errors_demo for user bob,success,today,bob,errors_demo
+application errors yesterday in web_demo for user bob,error,yesterday,bob,web_demo
+successes in the past day in system for user bob,success,last24h,bob,system
+display past 24hrs in web_demo for all users,show,last24h,*,web_demo
+application errors since midnight in system for user frank,error,today,frank,system
+show me since midnight in errors_demo for user alice,show,today,alice,errors_demo
+application errors previous month in system for user charlie,error,last30d,charlie,system
+login failures yesterday in web_demo for user frank,failure,yesterday,frank,web_demo
+failed logins since this morning in auth for all users,failure,today,*,auth
+auth failures last 24 hours in errors_demo for all users,failure,last24h,*,errors_demo
+application errors since thursday in system for user david,error,thisweek,david,system
+failed logins in the past day in web_demo for user david,failure,last24h,david,web_demo
+successful logins this week in web_demo for user erin,success,thisweek,erin,web_demo
+successful logins in the past day in auth for user alice,success,last24h,alice,auth
+web errors past 24hrs in auth for user frank,error,last24h,frank,auth
+successes since the start of this week in errors_demo for user alice,success,thisweek,alice,errors_demo
+logins that worked last month in errors_demo for user charlie,success,last30d,charlie,errors_demo
+display the day before today in auth for user erin,show,yesterday,erin,auth
+auth failures since tuesday in system for all users,failure,thisweek,*,system
+show me last night in auth for user bob,show,yesterday,bob,auth
+fetch past 24hrs in auth for user erin,show,last24h,erin,auth
+logins that worked yesterday in web_demo for user charlie,success,yesterday,charlie,web_demo
+display since midnight in web_demo for user erin,show,today,erin,web_demo
+successes since this morning in web_demo for user charlie,success,today,charlie,web_demo
+successes this weekend in errors_demo for user bob,success,thisweek,bob,errors_demo
+login failures today in errors_demo for user erin,failure,today,erin,errors_demo
+successes in the past day in errors_demo for user alice,success,last24h,alice,errors_demo
+system errors earlier today in system for all users,error,today,*,system
+logins that worked last weekend in system for user alice,success,lastweek,alice,system
+failed logins since friday in errors_demo for user david,failure,thisweek,david,errors_demo
+logins that worked since midnight in system for all users,success,today,*,system
+fetch in the past day in errors_demo for user bob,show,last24h,bob,errors_demo
+list the day before today in errors_demo for user erin,show,yesterday,erin,errors_demo
+logins that worked in the last week in system for all users,success,lastweek,*,system
+failed logins since wednesday in system for user erin,failure,thisweek,erin,system
+login failures since thursday in web_demo for user charlie,failure,thisweek,charlie,web_demo
+successful logins the day before today in system for user erin,success,yesterday,erin,system
+successful logins since midnight in errors_demo for all users,success,today,*,errors_demo
+logins that worked last weekend in auth for user frank,success,lastweek,frank,auth
+successes the day before today in errors_demo for user erin,success,yesterday,erin,errors_demo
+logins that worked last night in web_demo for user bob,success,yesterday,bob,web_demo
+login failures last 24 hours in errors_demo for all users,failure,last24h,*,errors_demo
+application errors since yesterday in auth for user frank,error,last24h,frank,auth
+failed logins in the past day in web_demo for all users,failure,last24h,*,web_demo
+list last night in system for user frank,show,yesterday,frank,system
+fetch the day before today in system for all users,show,yesterday,*,system
+failed logins over the weekend in web_demo for user charlie,failure,lastweek,charlie,web_demo
+application errors yesterday in errors_demo for user alice,error,yesterday,alice,errors_demo
+display since wednesday in system for user david,show,thisweek,david,system
+web errors the day before today in system for all users,error,yesterday,*,system
+system errors last week in system for user alice,error,lastweek,alice,system
+show me past 30 days in auth for user alice,show,last30d,alice,auth
+successful logins since the start of this week in web_demo for user david,success,thisweek,david,web_demo
+application errors in the last week in web_demo for user alice,error,lastweek,alice,web_demo
+failed logins past 30 days in system for user alice,failure,last30d,alice,system
+successes month to date in system for user alice,success,last30d,alice,system
+fetch since tuesday in errors_demo for user bob,show,thisweek,bob,errors_demo
+application errors the day before today in errors_demo for all users,error,yesterday,*,errors_demo
+show me last night in errors_demo for all users,show,yesterday,*,errors_demo
+display last weekend in system for user frank,show,lastweek,frank,system
+auth failures over the weekend in web_demo for user erin,failure,lastweek,erin,web_demo
+failed logins since friday in system for user erin,failure,thisweek,erin,system
+auth failures last 24 hours in web_demo for user charlie,failure,last24h,charlie,web_demo
+logins that worked earlier today in web_demo for user frank,success,today,frank,web_demo
+web errors since the start of this week in system for user frank,error,thisweek,frank,system
+auth failures yesterday in web_demo for all users,failure,yesterday,*,web_demo
+critical errors since the start of this week in errors_demo for user erin,error,thisweek,erin,errors_demo
+failed logins yesterday in system for user frank,failure,yesterday,frank,system
+critical errors last night in errors_demo for user alice,error,yesterday,alice,errors_demo
+show me yesterday in web_demo for user alice,show,yesterday,alice,web_demo
+list this weekend in auth for all users,show,thisweek,*,auth
+login failures since friday in errors_demo for user david,failure,thisweek,david,errors_demo
+login failures the day before today in auth for all users,failure,yesterday,*,auth
+application errors last month in system for user bob,error,last30d,bob,system
+application errors last weekend in errors_demo for all users,error,lastweek,*,errors_demo
+critical errors last 24 hours in errors_demo for user frank,error,last24h,frank,errors_demo
+successful logins since wednesday in web_demo for user alice,success,thisweek,alice,web_demo
+show me yesterday in auth for user charlie,show,yesterday,charlie,auth
+fetch over the weekend in system for all users,show,lastweek,*,system
+logins that worked last weekend in errors_demo for user frank,success,lastweek,frank,errors_demo
+logins that worked since yesterday in system for user erin,success,last24h,erin,system
+application errors the day before today in system for user david,error,yesterday,david,system
+display the day before today in system for user bob,show,yesterday,bob,system
+login failures last 24 hours in auth for user frank,failure,last24h,frank,auth
+system errors last night in web_demo for user alice,error,yesterday,alice,web_demo
+display past month in system for user frank,show,last30d,frank,system
+show me over the weekend in system for all users,show,lastweek,*,system
+failed logins since midnight in errors_demo for user alice,failure,today,alice,errors_demo
+failed logins last weekend in auth for user frank,failure,lastweek,frank,auth
+auth failures last week in system for user frank,failure,lastweek,frank,system
+successful logins since yesterday in system for user david,success,last24h,david,system
+list since wednesday in errors_demo for user bob,show,thisweek,bob,errors_demo
+failed logins since wednesday in system for user charlie,failure,thisweek,charlie,system
+logins that worked since thursday in errors_demo for user alice,success,thisweek,alice,errors_demo
+login failures since monday in system for user alice,failure,thisweek,alice,system
+login failures last week in web_demo for user frank,failure,lastweek,frank,web_demo
+auth failures month to date in web_demo for user charlie,failure,last30d,charlie,web_demo
+fetch since midnight in web_demo for user david,show,today,david,web_demo
+auth failures last week in system for all users,failure,lastweek,*,system
+successes over the weekend in system for user charlie,success,lastweek,charlie,system
+display past 30 days in system for user alice,show,last30d,alice,system
+failed logins last night in auth for user bob,failure,yesterday,bob,auth
+successful logins in the last month in auth for user alice,success,last30d,alice,auth
+display this week in web_demo for user charlie,show,thisweek,charlie,web_demo
+successful logins last 24 hours in web_demo for user charlie,success,last24h,charlie,web_demo
+successes since the start of this week in system for user bob,success,thisweek,bob,system
+successes so far this month in errors_demo for user alice,success,last30d,alice,errors_demo
+failed logins past week in auth for user frank,failure,lastweek,frank,auth
+critical errors last night in errors_demo for user alice,error,yesterday,alice,errors_demo
+display yesterday in system for user frank,show,yesterday,frank,system
+system errors since yesterday in errors_demo for all users,error,last24h,*,errors_demo
+application errors past 30 days in errors_demo for user erin,error,last30d,erin,errors_demo
+application errors so far this month in system for user bob,error,last30d,bob,system
+list last night in system for user frank,show,yesterday,frank,system
+successful logins past week in web_demo for user david,success,lastweek,david,web_demo
+display since midnight in system for user bob,show,today,bob,system
+web errors this week in auth for user bob,error,thisweek,bob,auth
+auth failures this weekend in system for user charlie,failure,thisweek,charlie,system
+failed logins last 24 hours in errors_demo for user bob,failure,last24h,bob,errors_demo
+successes since the start of this week in web_demo for user alice,success,thisweek,alice,web_demo
+auth failures in the last month in system for all users,failure,last30d,*,system
+successes since thursday in auth for user frank,success,thisweek,frank,auth
+login failures since midnight in auth for user alice,failure,today,alice,auth
+successful logins this month in auth for user david,success,last30d,david,auth
+failed logins last month in auth for user bob,failure,last30d,bob,auth
+successes today in errors_demo for user charlie,success,today,charlie,errors_demo
+auth failures last night in web_demo for user charlie,failure,yesterday,charlie,web_demo
+successful logins since tuesday in errors_demo for user alice,success,thisweek,alice,errors_demo
+successes the day before today in system for user bob,success,yesterday,bob,system
+application errors earlier today in auth for user frank,error,today,frank,auth
+show me previous month in auth for user bob,show,last30d,bob,auth
+system errors last weekend in auth for all users,error,lastweek,*,auth
+auth failures last night in system for user bob,failure,yesterday,bob,system
+show me since this morning in auth for user david,show,today,david,auth
+fetch since monday in auth for user frank,show,thisweek,frank,auth
+failed logins since yesterday in web_demo for user erin,failure,last24h,erin,web_demo
+login failures yesterday in errors_demo for user david,failure,yesterday,david,errors_demo
+login failures this weekend in auth for user david,failure,thisweek,david,auth
+successes since monday in web_demo for user david,success,thisweek,david,web_demo
+fetch since monday in errors_demo for user frank,show,thisweek,frank,errors_demo
+system errors earlier today in errors_demo for all users,error,today,*,errors_demo
+fetch last weekend in auth for user david,show,lastweek,david,auth
+failed logins since midnight in system for user erin,failure,today,erin,system
+fetch since the start of this week in errors_demo for user david,show,thisweek,david,errors_demo
+application errors in the past day in system for user alice,error,last24h,alice,system
+fetch last weekend in auth for user bob,show,lastweek,bob,auth
+show me last month in auth for user david,show,last30d,david,auth
+list over the weekend in system for user frank,show,lastweek,frank,system
+successful logins last 24 hours in web_demo for all users,success,last24h,*,web_demo
+login failures last 24 hours in system for user alice,failure,last24h,alice,system
+system errors last weekend in system for user bob,error,lastweek,bob,system
+critical errors past 30 days in auth for user alice,error,last30d,alice,auth
+logins that worked since friday in auth for user frank,success,thisweek,frank,auth
+web errors yesterday in errors_demo for user david,error,yesterday,david,errors_demo
+login failures last 30 days in web_demo for user alice,failure,last30d,alice,web_demo
+auth failures last 30 days in auth for user bob,failure,last30d,bob,auth
+successful logins over the weekend in errors_demo for user frank,success,lastweek,frank,errors_demo
+list so far this month in auth for user alice,show,last30d,alice,auth
+application errors in the past day in system for all users,error,last24h,*,system
+display last 24 hours in auth for user alice,show,last24h,alice,auth
+web errors last weekend in auth for user frank,error,lastweek,frank,auth
+fetch last 24 hours in errors_demo for user bob,show,last24h,bob,errors_demo
+successes previous month in system for user erin,success,last30d,erin,system
+show me past 24hrs in auth for user frank,show,last24h,frank,auth
+list over the weekend in web_demo for user erin,show,lastweek,erin,web_demo
+display past month in auth for user erin,show,last30d,erin,auth
+display since yesterday in web_demo for user erin,show,last24h,erin,web_demo
+successful logins yesterday in errors_demo for user erin,success,yesterday,erin,errors_demo
+critical errors since midnight in auth for user alice,error,today,alice,auth
+login failures in the past day in web_demo for user bob,failure,last24h,bob,web_demo
+show me in the past day in web_demo for user alice,show,last24h,alice,web_demo
+logins that worked last night in auth for user david,success,yesterday,david,auth
+critical errors yesterday in system for user alice,error,yesterday,alice,system
+web errors since friday in system for user bob,error,thisweek,bob,system
+auth failures since yesterday in errors_demo for user bob,failure,last24h,bob,errors_demo
+display today in web_demo for user david,show,today,david,web_demo
+login failures yesterday in errors_demo for user david,failure,yesterday,david,errors_demo
+logins that worked the day before today in auth for all users,success,yesterday,*,auth
+login failures last weekend in errors_demo for user frank,failure,lastweek,frank,errors_demo
+auth failures in the last week in auth for user charlie,failure,lastweek,charlie,auth
+fetch last week in web_demo for user alice,show,lastweek,alice,web_demo
+show me previous month in auth for user erin,show,last30d,erin,auth
+logins that worked last 24 hours in system for user erin,success,last24h,erin,system
+auth failures last week in web_demo for user charlie,failure,lastweek,charlie,web_demo
+show me since tuesday in system for all users,show,thisweek,*,system
+application errors in the past day in system for user erin,error,last24h,erin,system
+show me since yesterday in system for all users,show,last24h,*,system
+show me previous month in system for all users,show,last30d,*,system
+display yesterday in web_demo for user erin,show,yesterday,erin,web_demo
+critical errors since monday in system for all users,error,thisweek,*,system
+login failures past 24hrs in errors_demo for user frank,failure,last24h,frank,errors_demo
+critical errors last week in system for user alice,error,lastweek,alice,system
+successful logins since this morning in web_demo for user alice,success,today,alice,web_demo
+fetch previous month in auth for user bob,show,last30d,bob,auth
+login failures since tuesday in web_demo for user erin,failure,thisweek,erin,web_demo
+successful logins this week in errors_demo for user bob,success,thisweek,bob,errors_demo
+application errors past week in web_demo for user bob,error,lastweek,bob,web_demo
+critical errors in the past day in web_demo for all users,error,last24h,*,web_demo
+failed logins the day before today in system for user alice,failure,yesterday,alice,system
+display yesterday in web_demo for user alice,show,yesterday,alice,web_demo
+successes yesterday in web_demo for user bob,success,yesterday,bob,web_demo
+failed logins since yesterday in errors_demo for user david,failure,last24h,david,errors_demo
+system errors since yesterday in web_demo for user alice,error,last24h,alice,web_demo
+fetch since midnight in errors_demo for user erin,show,today,erin,errors_demo
+show me yesterday in errors_demo for user erin,show,yesterday,erin,errors_demo
+logins that worked since wednesday in system for user bob,success,thisweek,bob,system
+display yesterday in auth for user frank,show,yesterday,frank,auth
+web errors in the past day in errors_demo for user david,error,last24h,david,errors_demo
+auth failures over the weekend in errors_demo for all users,failure,lastweek,*,errors_demo
+system errors since yesterday in errors_demo for user david,error,last24h,david,errors_demo
+display since this morning in auth for user charlie,show,today,charlie,auth
+login failures yesterday in auth for user bob,failure,yesterday,bob,auth
+logins that worked past 24hrs in errors_demo for user alice,success,last24h,alice,errors_demo
+display since thursday in web_demo for user charlie,show,thisweek,charlie,web_demo
+successes month to date in auth for user charlie,success,last30d,charlie,auth
+failed logins earlier today in auth for user frank,failure,today,frank,auth
+logins that worked past 30 days in auth for user frank,success,last30d,frank,auth
+logins that worked since this morning in errors_demo for user charlie,success,today,charlie,errors_demo
+display past month in auth for user bob,show,last30d,bob,auth
+successful logins past 30 days in web_demo for user alice,success,last30d,alice,web_demo
+web errors last month in system for user david,error,last30d,david,system
+application errors yesterday in system for all users,error,yesterday,*,system
+auth failures over the weekend in system for user david,failure,lastweek,david,system
+list earlier today in system for user frank,show,today,frank,system
+display past month in web_demo for user erin,show,last30d,erin,web_demo
+login failures earlier today in auth for user bob,failure,today,bob,auth
+failed logins since wednesday in errors_demo for user alice,failure,thisweek,alice,errors_demo
+display so far this month in auth for user bob,show,last30d,bob,auth
+show me in the last month in system for all users,show,last30d,*,system
+application errors since friday in web_demo for user frank,error,thisweek,frank,web_demo
+list in the last week in system for user frank,show,lastweek,frank,system
+logins that worked past 24hrs in errors_demo for user alice,success,last24h,alice,errors_demo
+display since the start of this week in auth for user bob,show,thisweek,bob,auth
+logins that worked so far this month in errors_demo for user david,success,last30d,david,errors_demo
+logins that worked since monday in errors_demo for all users,success,thisweek,*,errors_demo
+failed logins last week in errors_demo for user alice,failure,lastweek,alice,errors_demo
+login failures since yesterday in errors_demo for user erin,failure,last24h,erin,errors_demo
+logins that worked past 24hrs in errors_demo for user bob,success,last24h,bob,errors_demo
+web errors yesterday in errors_demo for user charlie,error,yesterday,charlie,errors_demo
+auth failures last night in auth for user charlie,failure,yesterday,charlie,auth
+critical errors past 24hrs in auth for user david,error,last24h,david,auth
+successful logins past month in web_demo for user alice,success,last30d,alice,web_demo
+login failures month to date in errors_demo for user frank,failure,last30d,frank,errors_demo
+critical errors the day before today in errors_demo for all users,error,yesterday,*,errors_demo
+auth failures past 24hrs in web_demo for user alice,failure,last24h,alice,web_demo
+login failures since wednesday in errors_demo for user charlie,failure,thisweek,charlie,errors_demo
+application errors earlier today in errors_demo for user charlie,error,today,charlie,errors_demo
+failed logins last week in web_demo for user charlie,failure,lastweek,charlie,web_demo
+system errors since yesterday in system for user david,error,last24h,david,system
+login failures last 24 hours in auth for all users,failure,last24h,*,auth
+web errors previous month in errors_demo for user charlie,error,last30d,charlie,errors_demo
+list last 24 hours in auth for user bob,show,last24h,bob,auth
+auth failures last weekend in errors_demo for user charlie,failure,lastweek,charlie,errors_demo
+web errors previous month in system for user erin,error,last30d,erin,system
+failed logins earlier today in errors_demo for user david,failure,today,david,errors_demo
+application errors last weekend in errors_demo for user erin,error,lastweek,erin,errors_demo
+critical errors the day before today in system for user bob,error,yesterday,bob,system
+login failures since wednesday in auth for user alice,failure,thisweek,alice,auth
+auth failures this month in errors_demo for user charlie,failure,last30d,charlie,errors_demo
+fetch last week in web_demo for all users,show,lastweek,*,web_demo
+failed logins since thursday in errors_demo for user charlie,failure,thisweek,charlie,errors_demo
+application errors yesterday in auth for user charlie,error,yesterday,charlie,auth
+login failures past month in system for user bob,failure,last30d,bob,system
+show me this weekend in web_demo for user erin,show,thisweek,erin,web_demo
+show me last week in web_demo for user charlie,show,lastweek,charlie,web_demo
+successes in the last week in web_demo for user charlie,success,lastweek,charlie,web_demo
+web errors today so far in web_demo for all users,error,today,*,web_demo
+successful logins this weekend in web_demo for all users,success,thisweek,*,web_demo
+display last 24 hours in web_demo for user erin,show,last24h,erin,web_demo
+successful logins last night in system for user frank,success,yesterday,frank,system
+show me in the last week in auth for user erin,show,lastweek,erin,auth
+successes today in errors_demo for user bob,success,today,bob,errors_demo
+login failures since yesterday in auth for user charlie,failure,last24h,charlie,auth
+successes last night in web_demo for user bob,success,yesterday,bob,web_demo
+fetch since yesterday in auth for user frank,show,last24h,frank,auth
+successful logins yesterday in web_demo for user bob,success,yesterday,bob,web_demo
+display since thursday in web_demo for user erin,show,thisweek,erin,web_demo
+successes in the past day in web_demo for user erin,success,last24h,erin,web_demo
+auth failures last 24 hours in web_demo for user charlie,failure,last24h,charlie,web_demo
+show me last month in errors_demo for user erin,show,last30d,erin,errors_demo
+failed logins last weekend in errors_demo for user erin,failure,lastweek,erin,errors_demo
+web errors the day before today in web_demo for user alice,error,yesterday,alice,web_demo
+login failures since thursday in auth for user bob,failure,thisweek,bob,auth
+application errors since monday in web_demo for user bob,error,thisweek,bob,web_demo
+auth failures since this morning in auth for user charlie,failure,today,charlie,auth
+critical errors this weekend in web_demo for user alice,error,thisweek,alice,web_demo
+application errors last 24 hours in auth for user erin,error,last24h,erin,auth
+list since wednesday in errors_demo for user frank,show,thisweek,frank,errors_demo
+successes over the weekend in web_demo for all users,success,lastweek,*,web_demo
+list in the past day in web_demo for user david,show,last24h,david,web_demo
+fetch past 30 days in auth for user bob,show,last30d,bob,auth
+web errors past month in auth for user frank,error,last30d,frank,auth
+auth failures yesterday in system for user erin,failure,yesterday,erin,system
+login failures since thursday in errors_demo for user charlie,failure,thisweek,charlie,errors_demo
+application errors last weekend in errors_demo for all users,error,lastweek,*,errors_demo
+application errors last 24 hours in errors_demo for user david,error,last24h,david,errors_demo
+failed logins since midnight in web_demo for all users,failure,today,*,web_demo
+list today so far in system for user charlie,show,today,charlie,system
+auth failures last weekend in web_demo for user david,failure,lastweek,david,web_demo
+critical errors past 24hrs in system for all users,error,last24h,*,system
+successes last night in web_demo for user frank,success,yesterday,frank,web_demo
+logins that worked past 30 days in web_demo for user david,success,last30d,david,web_demo
+system errors since monday in auth for user alice,error,thisweek,alice,auth
+critical errors this month in web_demo for user bob,error,last30d,bob,web_demo
+logins that worked past month in errors_demo for all users,success,last30d,*,errors_demo
+system errors since yesterday in system for user alice,error,last24h,alice,system
+logins that worked since wednesday in auth for user charlie,success,thisweek,charlie,auth
+system errors past 24hrs in web_demo for user frank,error,last24h,frank,web_demo
+successes today so far in web_demo for user frank,success,today,frank,web_demo
+failed logins yesterday in auth for user frank,failure,yesterday,frank,auth
+fetch last 30 days in errors_demo for user bob,show,last30d,bob,errors_demo
+show me since the start of this week in system for user frank,show,thisweek,frank,system
+auth failures since tuesday in auth for user david,failure,thisweek,david,auth
+application errors past 24hrs in auth for user bob,error,last24h,bob,auth
+login failures last 24 hours in errors_demo for user erin,failure,last24h,erin,errors_demo
+show me over the weekend in errors_demo for user bob,show,lastweek,bob,errors_demo
+auth failures earlier today in auth for user erin,failure,today,erin,auth
+auth failures last week in web_demo for user david,failure,lastweek,david,web_demo
+list last night in auth for user erin,show,yesterday,erin,auth
+critical errors since wednesday in auth for user frank,error,thisweek,frank,auth
+system errors this week in web_demo for all users,error,thisweek,*,web_demo
+successes last weekend in web_demo for all users,success,lastweek,*,web_demo
+critical errors since monday in errors_demo for all users,error,thisweek,*,errors_demo
+successful logins since midnight in errors_demo for user erin,success,today,erin,errors_demo
+auth failures in the past day in errors_demo for user frank,failure,last24h,frank,errors_demo
+login failures this week in web_demo for user bob,failure,thisweek,bob,web_demo
+auth failures this week in auth for user frank,failure,thisweek,frank,auth
+auth failures earlier today in system for user frank,failure,today,frank,system
+login failures past 24hrs in errors_demo for user frank,failure,last24h,frank,errors_demo
+show me over the weekend in auth for user bob,show,lastweek,bob,auth
+successes today so far in auth for user charlie,success,today,charlie,auth
+system errors yesterday in errors_demo for user erin,error,yesterday,erin,errors_demo
+login failures since friday in errors_demo for user erin,failure,thisweek,erin,errors_demo
+successful logins yesterday in errors_demo for all users,success,yesterday,*,errors_demo
+critical errors in the last week in web_demo for user bob,error,lastweek,bob,web_demo
+web errors past month in web_demo for all users,error,last30d,*,web_demo
+auth failures the day before today in system for user david,failure,yesterday,david,system
+login failures last week in web_demo for user frank,failure,lastweek,frank,web_demo
+application errors in the past day in web_demo for all users,error,last24h,*,web_demo
+logins that worked last month in errors_demo for all users,success,last30d,*,errors_demo
+system errors the day before today in web_demo for user david,error,yesterday,david,web_demo
+successes since yesterday in errors_demo for user bob,success,last24h,bob,errors_demo
+login failures last 24 hours in system for user charlie,failure,last24h,charlie,system
+failed logins since yesterday in web_demo for all users,failure,last24h,*,web_demo
+login failures earlier today in web_demo for all users,failure,today,*,web_demo
+auth failures this month in errors_demo for user frank,failure,last30d,frank,errors_demo
+logins that worked since tuesday in auth for user bob,success,thisweek,bob,auth
+web errors since midnight in errors_demo for user charlie,error,today,charlie,errors_demo
+show me this week in errors_demo for user frank,show,thisweek,frank,errors_demo
+auth failures since thursday in errors_demo for user david,failure,thisweek,david,errors_demo
+system errors since this morning in web_demo for user charlie,error,today,charlie,web_demo
+list past 30 days in system for user erin,show,last30d,erin,system
+login failures in the last week in system for user alice,failure,lastweek,alice,system
+failed logins past week in system for user frank,failure,lastweek,frank,system
+failed logins since thursday in auth for user charlie,failure,thisweek,charlie,auth
+list earlier today in system for all users,show,today,*,system
+logins that worked since thursday in auth for user alice,success,thisweek,alice,auth
+logins that worked in the past day in web_demo for user charlie,success,last24h,charlie,web_demo
+logins that worked earlier today in errors_demo for user david,success,today,david,errors_demo
+successful logins last night in system for user frank,success,yesterday,frank,system
+display yesterday in auth for user frank,show,yesterday,frank,auth
+display in the past day in web_demo for user charlie,show,last24h,charlie,web_demo
+successful logins since friday in web_demo for user frank,success,thisweek,frank,web_demo
+auth failures previous month in web_demo for user bob,failure,last30d,bob,web_demo
+successes the day before today in auth for user erin,success,yesterday,erin,auth
+display last weekend in auth for user bob,show,lastweek,bob,auth
+critical errors today in system for user frank,error,today,frank,system
+successful logins last weekend in errors_demo for all users,success,lastweek,*,errors_demo
+login failures last night in web_demo for user frank,failure,yesterday,frank,web_demo
+web errors previous month in errors_demo for all users,error,last30d,*,errors_demo
+list last night in system for user erin,show,yesterday,erin,system
+critical errors earlier today in errors_demo for user frank,error,today,frank,errors_demo
+successful logins since monday in auth for user david,success,thisweek,david,auth
+web errors last night in auth for user david,error,yesterday,david,auth
+list last night in auth for user erin,show,yesterday,erin,auth
+application errors since tuesday in web_demo for user alice,error,thisweek,alice,web_demo
+logins that worked yesterday in errors_demo for user david,success,yesterday,david,errors_demo
+login failures past week in web_demo for user bob,failure,lastweek,bob,web_demo
+successful logins in the last week in auth for user charlie,success,lastweek,charlie,auth
+critical errors yesterday in auth for user erin,error,yesterday,erin,auth
+login failures last 24 hours in auth for user bob,failure,last24h,bob,auth
+logins that worked earlier today in system for user david,success,today,david,system
+application errors since midnight in errors_demo for all users,error,today,*,errors_demo
+auth failures previous month in web_demo for user erin,failure,last30d,erin,web_demo
+fetch earlier today in errors_demo for user frank,show,today,frank,errors_demo
+failed logins in the last week in auth for all users,failure,lastweek,*,auth
+failed logins since tuesday in system for user bob,failure,thisweek,bob,system
+failed logins in the past day in errors_demo for user erin,failure,last24h,erin,errors_demo
+failed logins last month in system for user bob,failure,last30d,bob,system
+successful logins last 24 hours in errors_demo for user charlie,success,last24h,charlie,errors_demo
+show me since yesterday in web_demo for user david,show,last24h,david,web_demo
+successes since thursday in errors_demo for user charlie,success,thisweek,charlie,errors_demo
+list last night in errors_demo for user alice,show,yesterday,alice,errors_demo
+web errors over the weekend in errors_demo for user bob,error,lastweek,bob,errors_demo
+logins that worked yesterday in errors_demo for all users,success,yesterday,*,errors_demo
+show me today in auth for user bob,show,today,bob,auth
+failed logins in the last week in web_demo for all users,failure,lastweek,*,web_demo
+critical errors over the weekend in system for user charlie,error,lastweek,charlie,system
+login failures since monday in system for user david,failure,thisweek,david,system
+auth failures past month in auth for user bob,failure,last30d,bob,auth
+successes since the start of this week in web_demo for user alice,success,thisweek,alice,web_demo
+critical errors in the past day in errors_demo for user erin,error,last24h,erin,errors_demo
+show me last 30 days in errors_demo for user erin,show,last30d,erin,errors_demo
+login failures month to date in auth for user charlie,failure,last30d,charlie,auth
+successes today in system for user frank,success,today,frank,system
+application errors last weekend in web_demo for user charlie,error,lastweek,charlie,web_demo
+successful logins last night in web_demo for user alice,success,yesterday,alice,web_demo
+display yesterday in auth for user charlie,show,yesterday,charlie,auth
+auth failures the day before today in system for user bob,failure,yesterday,bob,system
+successes yesterday in errors_demo for user erin,success,yesterday,erin,errors_demo
+web errors since wednesday in errors_demo for user bob,error,thisweek,bob,errors_demo
+successes this month in auth for all users,success,last30d,*,auth
+successes since midnight in system for user david,success,today,david,system
+fetch in the last month in auth for user erin,show,last30d,erin,auth
+system errors past week in auth for user alice,error,lastweek,alice,auth
+successful logins today so far in errors_demo for user erin,success,today,erin,errors_demo
+fetch over the weekend in errors_demo for user frank,show,lastweek,frank,errors_demo
+logins that worked last 24 hours in web_demo for all users,success,last24h,*,web_demo
+auth failures since midnight in web_demo for user bob,failure,today,bob,web_demo
+successful logins today so far in errors_demo for all users,success,today,*,errors_demo
+successful logins this month in auth for all users,success,last30d,*,auth
+fetch over the weekend in errors_demo for user bob,show,lastweek,bob,errors_demo
+auth failures last 24 hours in errors_demo for all users,failure,last24h,*,errors_demo
+auth failures in the last week in auth for user david,failure,lastweek,david,auth
+application errors in the past day in auth for all users,error,last24h,*,auth
+web errors since yesterday in web_demo for user erin,error,last24h,erin,web_demo
+display since midnight in errors_demo for user erin,show,today,erin,errors_demo
+login failures in the last week in auth for all users,failure,lastweek,*,auth
+display past week in errors_demo for user erin,show,lastweek,erin,errors_demo
+successes since thursday in auth for user alice,success,thisweek,alice,auth
+display since friday in web_demo for all users,show,thisweek,*,web_demo
+successful logins since monday in auth for user erin,success,thisweek,erin,auth
+application errors this week in errors_demo for user alice,error,thisweek,alice,errors_demo
+list last 24 hours in web_demo for user bob,show,last24h,bob,web_demo
+list yesterday in web_demo for user david,show,yesterday,david,web_demo
+successes past week in errors_demo for user alice,success,lastweek,alice,errors_demo
+successes this weekend in web_demo for user charlie,success,thisweek,charlie,web_demo
+successes since midnight in auth for user alice,success,today,alice,auth
+fetch earlier today in auth for user charlie,show,today,charlie,auth
+display since yesterday in errors_demo for user frank,show,last24h,frank,errors_demo
+fetch past 24hrs in web_demo for user erin,show,last24h,erin,web_demo
+web errors last week in system for all users,error,lastweek,*,system
+critical errors last night in auth for user charlie,error,yesterday,charlie,auth
+critical errors since midnight in auth for user david,error,today,david,auth
+logins that worked the day before today in auth for user charlie,success,yesterday,charlie,auth
+auth failures last night in web_demo for user frank,failure,yesterday,frank,web_demo
+auth failures last 24 hours in errors_demo for user frank,failure,last24h,frank,errors_demo
+display this month in auth for user alice,show,last30d,alice,auth
+failed logins over the weekend in errors_demo for user erin,failure,lastweek,erin,errors_demo
+display past 24hrs in web_demo for user frank,show,last24h,frank,web_demo
+login failures yesterday in web_demo for user david,failure,yesterday,david,web_demo
+login failures since wednesday in system for user bob,failure,thisweek,bob,system
+system errors this weekend in web_demo for user frank,error,thisweek,frank,web_demo
+application errors past 24hrs in web_demo for user erin,error,last24h,erin,web_demo
+auth failures since tuesday in auth for all users,failure,thisweek,*,auth
+list in the last week in errors_demo for all users,show,lastweek,*,errors_demo
+display past 24hrs in system for user erin,show,last24h,erin,system
+successes since yesterday in system for user charlie,success,last24h,charlie,system
+successful logins in the past day in system for user charlie,success,last24h,charlie,system
+fetch this month in errors_demo for user alice,show,last30d,alice,errors_demo
+failed logins today so far in auth for user bob,failure,today,bob,auth
+show me since thursday in errors_demo for user david,show,thisweek,david,errors_demo
+logins that worked since thursday in auth for all users,success,thisweek,*,auth
+fetch since midnight in errors_demo for user frank,show,today,frank,errors_demo
+successes today so far in errors_demo for user charlie,success,today,charlie,errors_demo
+logins that worked the day before today in errors_demo for user erin,success,yesterday,erin,errors_demo
+logins that worked last 30 days in web_demo for user alice,success,last30d,alice,web_demo
+system errors so far this month in web_demo for user frank,error,last30d,frank,web_demo
+failed logins today in auth for user erin,failure,today,erin,auth
+auth failures yesterday in auth for user erin,failure,yesterday,erin,auth
+failed logins past week in errors_demo for all users,failure,lastweek,*,errors_demo
+auth failures last week in system for user alice,failure,lastweek,alice,system
+logins that worked today in web_demo for user alice,success,today,alice,web_demo
+login failures yesterday in web_demo for user bob,failure,yesterday,bob,web_demo
+list the day before today in auth for user alice,show,yesterday,alice,auth
+login failures the day before today in system for user alice,failure,yesterday,alice,system
+logins that worked in the last week in errors_demo for user alice,success,lastweek,alice,errors_demo
+system errors today so far in system for user david,error,today,david,system
+auth failures since this morning in system for user alice,failure,today,alice,system
+show me past 30 days in errors_demo for user erin,show,last30d,erin,errors_demo
+fetch the day before today in system for user erin,show,yesterday,erin,system
+successful logins yesterday in auth for user charlie,success,yesterday,charlie,auth
+system errors yesterday in errors_demo for user frank,error,yesterday,frank,errors_demo
+display past week in web_demo for user bob,show,lastweek,bob,web_demo
+system errors last night in errors_demo for user charlie,error,yesterday,charlie,errors_demo
+failed logins previous month in errors_demo for user erin,failure,last30d,erin,errors_demo
+display the day before today in system for user bob,show,yesterday,bob,system
+list past week in auth for user alice,show,lastweek,alice,auth
+login failures earlier today in errors_demo for user bob,failure,today,bob,errors_demo
+successful logins since tuesday in system for user frank,success,thisweek,frank,system
+auth failures last month in web_demo for user david,failure,last30d,david,web_demo
+logins that worked since this morning in errors_demo for user frank,success,today,frank,errors_demo
+failed logins last night in auth for user charlie,failure,yesterday,charlie,auth
+failed logins the day before today in auth for user alice,failure,yesterday,alice,auth
+auth failures since wednesday in web_demo for user david,failure,thisweek,david,web_demo
+fetch previous month in web_demo for user erin,show,last30d,erin,web_demo
+login failures in the last week in web_demo for all users,failure,lastweek,*,web_demo
+failed logins since tuesday in system for user david,failure,thisweek,david,system
+critical errors in the last week in errors_demo for all users,error,lastweek,*,errors_demo
+application errors since friday in auth for user frank,error,thisweek,frank,auth
+system errors past 24hrs in web_demo for user charlie,error,last24h,charlie,web_demo
+list earlier today in web_demo for user erin,show,today,erin,web_demo
+application errors since thursday in errors_demo for all users,error,thisweek,*,errors_demo
+auth failures yesterday in errors_demo for user erin,failure,yesterday,erin,errors_demo
+web errors the day before today in web_demo for user erin,error,yesterday,erin,web_demo
+successful logins this weekend in web_demo for user david,success,thisweek,david,web_demo
+show me since this morning in auth for user charlie,show,today,charlie,auth
+failed logins month to date in system for user david,failure,last30d,david,system
+logins that worked last night in auth for user alice,success,yesterday,alice,auth
+logins that worked this weekend in auth for all users,success,thisweek,*,auth
+display since monday in system for user alice,show,thisweek,alice,system
+fetch this weekend in auth for user david,show,thisweek,david,auth
+logins that worked this week in errors_demo for user bob,success,thisweek,bob,errors_demo
+system errors in the past day in web_demo for all users,error,last24h,*,web_demo
+web errors last night in auth for user david,error,yesterday,david,auth
+fetch since midnight in system for user alice,show,today,alice,system
+list last month in auth for user bob,show,last30d,bob,auth
+display last weekend in errors_demo for user charlie,show,lastweek,charlie,errors_demo
+failed logins last month in system for user frank,failure,last30d,frank,system
+logins that worked past 24hrs in web_demo for user david,success,last24h,david,web_demo
+critical errors past 30 days in auth for user bob,error,last30d,bob,auth
+system errors this week in errors_demo for user frank,error,thisweek,frank,errors_demo
+application errors since wednesday in auth for user david,error,thisweek,david,auth
+successful logins since friday in errors_demo for user erin,success,thisweek,erin,errors_demo
+fetch since thursday in errors_demo for user charlie,show,thisweek,charlie,errors_demo
+web errors today in auth for user erin,error,today,erin,auth
+application errors this week in auth for all users,error,thisweek,*,auth
+system errors the day before today in errors_demo for user erin,error,yesterday,erin,errors_demo
+list since yesterday in errors_demo for user alice,show,last24h,alice,errors_demo
+web errors the day before today in auth for user frank,error,yesterday,frank,auth
+critical errors this weekend in errors_demo for user david,error,thisweek,david,errors_demo
+successful logins last 24 hours in web_demo for user bob,success,last24h,bob,web_demo
+login failures this week in auth for user david,failure,thisweek,david,auth
+display past 24hrs in system for user david,show,last24h,david,system
+failed logins since wednesday in auth for all users,failure,thisweek,*,auth
+auth failures over the weekend in web_demo for user alice,failure,lastweek,alice,web_demo
+failed logins since friday in system for user erin,failure,thisweek,erin,system
+login failures today so far in auth for user charlie,failure,today,charlie,auth
+list earlier today in auth for user david,show,today,david,auth
+application errors last 24 hours in auth for user erin,error,last24h,erin,auth
+display last month in system for all users,show,last30d,*,system
+successes past 24hrs in web_demo for user frank,success,last24h,frank,web_demo
+list last weekend in system for user charlie,show,lastweek,charlie,system
+list the day before today in system for user charlie,show,yesterday,charlie,system
+web errors earlier today in system for user alice,error,today,alice,system
+fetch since tuesday in auth for user bob,show,thisweek,bob,auth
+failed logins in the past day in errors_demo for all users,failure,last24h,*,errors_demo
+auth failures last week in errors_demo for user david,failure,lastweek,david,errors_demo
+login failures over the weekend in web_demo for user frank,failure,lastweek,frank,web_demo
+auth failures since tuesday in errors_demo for user charlie,failure,thisweek,charlie,errors_demo
+list this week in auth for user david,show,thisweek,david,auth
+web errors in the last week in system for user david,error,lastweek,david,system
+system errors since the start of this week in auth for user charlie,error,thisweek,charlie,auth
+fetch past week in web_demo for user alice,show,lastweek,alice,web_demo
+successes past 24hrs in auth for all users,success,last24h,*,auth
+critical errors today so far in web_demo for user frank,error,today,frank,web_demo
+critical errors over the weekend in system for all users,error,lastweek,*,system
+auth failures since this morning in auth for user frank,failure,today,frank,auth
+list last night in auth for user charlie,show,yesterday,charlie,auth
+successful logins since this morning in web_demo for all users,success,today,*,web_demo
+list since midnight in auth for all users,show,today,*,auth
+system errors last 30 days in auth for user david,error,last30d,david,auth
+web errors month to date in auth for user alice,error,last30d,alice,auth
+web errors in the last week in auth for user alice,error,lastweek,alice,auth
+list since thursday in system for user frank,show,thisweek,frank,system
+system errors today in system for all users,error,today,*,system
+successful logins since friday in web_demo for user frank,success,thisweek,frank,web_demo
+display this weekend in errors_demo for user alice,show,thisweek,alice,errors_demo
+successes last 24 hours in system for user charlie,success,last24h,charlie,system
+logins that worked in the past day in system for user erin,success,last24h,erin,system
+auth failures last 30 days in auth for user charlie,failure,last30d,charlie,auth
+failed logins last weekend in system for user david,failure,lastweek,david,system
+successes last weekend in errors_demo for user charlie,success,lastweek,charlie,errors_demo
+login failures this month in errors_demo for user erin,failure,last30d,erin,errors_demo
+system errors over the weekend in web_demo for user frank,error,lastweek,frank,web_demo
+show me today in auth for all users,show,today,*,auth
+fetch this week in system for user charlie,show,thisweek,charlie,system
+list since yesterday in auth for all users,show,last24h,*,auth
+auth failures over the weekend in auth for user david,failure,lastweek,david,auth
+show me last week in errors_demo for all users,show,lastweek,*,errors_demo
+list today so far in system for all users,show,today,*,system
+login failures since yesterday in errors_demo for user charlie,failure,last24h,charlie,errors_demo
+auth failures yesterday in web_demo for user erin,failure,yesterday,erin,web_demo
+auth failures last 30 days in system for user alice,failure,last30d,alice,system
+login failures yesterday in web_demo for user alice,failure,yesterday,alice,web_demo
+list last 24 hours in errors_demo for user bob,show,last24h,bob,errors_demo
+show me since midnight in web_demo for user charlie,show,today,charlie,web_demo
+fetch yesterday in system for user charlie,show,yesterday,charlie,system
+application errors last 24 hours in auth for user erin,error,last24h,erin,auth
+login failures last night in system for user erin,failure,yesterday,erin,system
+system errors last weekend in auth for user erin,error,lastweek,erin,auth
+logins that worked over the weekend in errors_demo for all users,success,lastweek,*,errors_demo
+show me so far this month in auth for user david,show,last30d,david,auth
+logins that worked in the last week in system for user frank,success,lastweek,frank,system
+show me the day before today in system for user david,show,yesterday,david,system
+failed logins earlier today in system for user david,failure,today,david,system
+logins that worked since friday in web_demo for user frank,success,thisweek,frank,web_demo
+logins that worked last week in auth for user frank,success,lastweek,frank,auth
+critical errors since yesterday in web_demo for user erin,error,last24h,erin,web_demo
+list last night in system for user bob,show,yesterday,bob,system
+system errors last 30 days in system for user alice,error,last30d,alice,system
+auth failures yesterday in web_demo for user david,failure,yesterday,david,web_demo
+login failures in the last month in auth for user alice,failure,last30d,alice,auth
+logins that worked this month in web_demo for user bob,success,last30d,bob,web_demo
+system errors since the start of this week in web_demo for user bob,error,thisweek,bob,web_demo
+system errors past 24hrs in system for user frank,error,last24h,frank,system
+successful logins yesterday in errors_demo for user erin,success,yesterday,erin,errors_demo
+show me since thursday in errors_demo for user alice,show,thisweek,alice,errors_demo
+login failures last night in auth for user charlie,failure,yesterday,charlie,auth
+fetch yesterday in system for user alice,show,yesterday,alice,system
+display last night in errors_demo for user bob,show,yesterday,bob,errors_demo
+system errors today in errors_demo for user alice,error,today,alice,errors_demo
+display in the last week in errors_demo for user bob,show,lastweek,bob,errors_demo
+login failures over the weekend in system for user erin,failure,lastweek,erin,system
+web errors since this morning in web_demo for all users,error,today,*,web_demo
+login failures last 24 hours in web_demo for user erin,failure,last24h,erin,web_demo
+web errors yesterday in web_demo for user erin,error,yesterday,erin,web_demo
+successes today so far in auth for user david,success,today,david,auth
+failed logins this month in auth for user david,failure,last30d,david,auth
+fetch last weekend in system for user alice,show,lastweek,alice,system
+show me last weekend in auth for user frank,show,lastweek,frank,auth
+critical errors since friday in web_demo for user erin,error,thisweek,erin,web_demo
+auth failures past week in system for user charlie,failure,lastweek,charlie,system
+auth failures earlier today in auth for all users,failure,today,*,auth
+application errors yesterday in system for user charlie,error,yesterday,charlie,system
+auth failures month to date in system for user david,failure,last30d,david,system
+web errors since this morning in system for user erin,error,today,erin,system
+web errors since friday in system for user alice,error,thisweek,alice,system
+show me last night in errors_demo for all users,show,yesterday,*,errors_demo
+auth failures last 30 days in system for user bob,failure,last30d,bob,system
+successful logins today so far in auth for user alice,success,today,alice,auth
+list the day before today in auth for user bob,show,yesterday,bob,auth
+show me so far this month in auth for user bob,show,last30d,bob,auth
+critical errors today in errors_demo for user david,error,today,david,errors_demo
+failed logins since the start of this week in errors_demo for user alice,failure,thisweek,alice,errors_demo
+web errors since this morning in errors_demo for user bob,error,today,bob,errors_demo
+login failures over the weekend in web_demo for user david,failure,lastweek,david,web_demo
+successful logins today so far in auth for user frank,success,today,frank,auth
+successful logins last weekend in web_demo for user bob,success,lastweek,bob,web_demo
+show me past 24hrs in errors_demo for user charlie,show,last24h,charlie,errors_demo
+critical errors the day before today in web_demo for all users,error,yesterday,*,web_demo
+login failures in the last week in web_demo for user erin,failure,lastweek,erin,web_demo
+fetch past 30 days in errors_demo for user alice,show,last30d,alice,errors_demo
+successful logins earlier today in system for user bob,success,today,bob,system
+list yesterday in web_demo for user erin,show,yesterday,erin,web_demo
+logins that worked yesterday in auth for user bob,success,yesterday,bob,auth
+web errors since friday in web_demo for user charlie,error,thisweek,charlie,web_demo
+successes past 24hrs in auth for user charlie,success,last24h,charlie,auth
+auth failures last weekend in system for user alice,failure,lastweek,alice,system
+list past week in auth for user david,show,lastweek,david,auth
+auth failures since midnight in system for user charlie,failure,today,charlie,system
+failed logins last 30 days in auth for user frank,failure,last30d,frank,auth
+successful logins month to date in auth for user charlie,success,last30d,charlie,auth
+logins that worked last 24 hours in web_demo for all users,success,last24h,*,web_demo
+web errors last week in web_demo for user david,error,lastweek,david,web_demo
+login failures last 30 days in system for user david,failure,last30d,david,system
+login failures over the weekend in web_demo for all users,failure,lastweek,*,web_demo
+list since the start of this week in system for user frank,show,thisweek,frank,system
+login failures since thursday in errors_demo for user alice,failure,thisweek,alice,errors_demo
+list in the last month in system for user erin,show,last30d,erin,system
+login failures this month in system for all users,failure,last30d,*,system
+login failures last night in errors_demo for all users,failure,yesterday,*,errors_demo
+logins that worked last 24 hours in auth for user alice,success,last24h,alice,auth
+logins that worked last weekend in errors_demo for user charlie,success,lastweek,charlie,errors_demo
+fetch the day before today in auth for user charlie,show,yesterday,charlie,auth
+application errors since the start of this week in web_demo for user charlie,error,thisweek,charlie,web_demo
+successes earlier today in auth for user david,success,today,david,auth
+auth failures past 24hrs in auth for user bob,failure,last24h,bob,auth
+list since monday in errors_demo for user frank,show,thisweek,frank,errors_demo
+fetch since yesterday in auth for user alice,show,last24h,alice,auth
+successes since wednesday in errors_demo for user frank,success,thisweek,frank,errors_demo
+auth failures yesterday in auth for user david,failure,yesterday,david,auth
+critical errors past week in web_demo for all users,error,lastweek,*,web_demo
+application errors since the start of this week in auth for user david,error,thisweek,david,auth
+fetch since wednesday in errors_demo for user bob,show,thisweek,bob,errors_demo
+application errors over the weekend in errors_demo for user erin,error,lastweek,erin,errors_demo
+web errors past 30 days in auth for all users,error,last30d,*,auth
+display since friday in errors_demo for user david,show,thisweek,david,errors_demo
+successful logins last month in web_demo for user frank,success,last30d,frank,web_demo
+failed logins since monday in errors_demo for user bob,failure,thisweek,bob,errors_demo
+critical errors since thursday in auth for user alice,error,thisweek,alice,auth
+fetch last night in auth for user frank,show,yesterday,frank,auth
+fetch in the last month in system for user erin,show,last30d,erin,system
+logins that worked earlier today in auth for user bob,success,today,bob,auth
+failed logins past month in errors_demo for all users,failure,last30d,*,errors_demo
+show me past week in system for user frank,show,lastweek,frank,system
+list past 24hrs in system for user charlie,show,last24h,charlie,system
+successes since wednesday in auth for user charlie,success,thisweek,charlie,auth
+list in the last week in web_demo for all users,show,lastweek,*,web_demo
+web errors since monday in auth for user bob,error,thisweek,bob,auth
+logins that worked since yesterday in auth for user frank,success,last24h,frank,auth
+logins that worked this weekend in auth for user bob,success,thisweek,bob,auth
+list yesterday in web_demo for user frank,show,yesterday,frank,web_demo
+auth failures the day before today in web_demo for user frank,failure,yesterday,frank,web_demo
+critical errors this month in errors_demo for user charlie,error,last30d,charlie,errors_demo
+application errors since midnight in errors_demo for user charlie,error,today,charlie,errors_demo
+logins that worked last week in web_demo for user charlie,success,lastweek,charlie,web_demo
+show me earlier today in web_demo for user charlie,show,today,charlie,web_demo
+successes last night in auth for user erin,success,yesterday,erin,auth
+list previous month in system for user david,show,last30d,david,system
+failed logins since this morning in web_demo for user erin,failure,today,erin,web_demo
+fetch since thursday in errors_demo for all users,show,thisweek,*,errors_demo
+show me last night in web_demo for user bob,show,yesterday,bob,web_demo
+application errors in the last week in web_demo for all users,error,lastweek,*,web_demo
+successful logins past 24hrs in auth for user david,success,last24h,david,auth
+system errors last week in errors_demo for user charlie,error,lastweek,charlie,errors_demo
+successes yesterday in web_demo for user david,success,yesterday,david,web_demo
+list last 30 days in errors_demo for user frank,show,last30d,frank,errors_demo
+fetch last night in web_demo for user charlie,show,yesterday,charlie,web_demo
+fetch in the last week in system for user bob,show,lastweek,bob,system
+application errors since tuesday in system for user alice,error,thisweek,alice,system
+logins that worked so far this month in web_demo for user erin,success,last30d,erin,web_demo
+successful logins since friday in auth for user bob,success,thisweek,bob,auth
+web errors last night in auth for user david,error,yesterday,david,auth
+logins that worked this month in system for user frank,success,last30d,frank,system
+web errors since this morning in web_demo for user frank,error,today,frank,web_demo
+system errors in the past day in errors_demo for user bob,error,last24h,bob,errors_demo
+successes past 30 days in web_demo for user bob,success,last30d,bob,web_demo
+fetch today so far in errors_demo for user alice,show,today,alice,errors_demo
+fetch yesterday in web_demo for user bob,show,yesterday,bob,web_demo
+display this week in web_demo for user alice,show,thisweek,alice,web_demo
+failed logins earlier today in errors_demo for user david,failure,today,david,errors_demo
+failed logins so far this month in web_demo for all users,failure,last30d,*,web_demo
+logins that worked past week in errors_demo for user erin,success,lastweek,erin,errors_demo
+login failures this week in errors_demo for user frank,failure,thisweek,frank,errors_demo
+display over the weekend in errors_demo for user david,show,lastweek,david,errors_demo
+web errors this month in web_demo for user charlie,error,last30d,charlie,web_demo
+show me past 24hrs in system for user charlie,show,last24h,charlie,system
+successful logins this weekend in web_demo for user frank,success,thisweek,frank,web_demo
+logins that worked this week in auth for user frank,success,thisweek,frank,auth
+failed logins last weekend in web_demo for user frank,failure,lastweek,frank,web_demo
+auth failures last night in web_demo for user charlie,failure,yesterday,charlie,web_demo
+logins that worked past week in web_demo for user erin,success,lastweek,erin,web_demo
+login failures in the last month in errors_demo for user alice,failure,last30d,alice,errors_demo
+login failures since midnight in web_demo for user david,failure,today,david,web_demo
+auth failures month to date in system for user charlie,failure,last30d,charlie,system
+web errors last weekend in errors_demo for all users,error,lastweek,*,errors_demo
+successes since midnight in errors_demo for user bob,success,today,bob,errors_demo
+successful logins earlier today in auth for all users,success,today,*,auth
+auth failures since wednesday in web_demo for all users,failure,thisweek,*,web_demo
+fetch past month in auth for all users,show,last30d,*,auth
+successes since friday in errors_demo for all users,success,thisweek,*,errors_demo
+successes since this morning in system for user erin,success,today,erin,system
+web errors in the last week in auth for user charlie,error,lastweek,charlie,auth
+login failures past week in auth for all users,failure,lastweek,*,auth
+list since wednesday in auth for user charlie,show,thisweek,charlie,auth
+login failures past 30 days in auth for all users,failure,last30d,*,auth
+fetch in the past day in errors_demo for all users,show,last24h,*,errors_demo
+list the day before today in auth for all users,show,yesterday,*,auth
+auth failures yesterday in errors_demo for user erin,failure,yesterday,erin,errors_demo
+application errors in the last month in errors_demo for user bob,error,last30d,bob,errors_demo
+display past 24hrs in errors_demo for user erin,show,last24h,erin,errors_demo
+successful logins last weekend in auth for user frank,success,lastweek,frank,auth
+login failures in the past day in errors_demo for user charlie,failure,last24h,charlie,errors_demo
+list past month in auth for user alice,show,last30d,alice,auth
+failed logins yesterday in web_demo for user frank,failure,yesterday,frank,web_demo
+failed logins since monday in auth for user charlie,failure,thisweek,charlie,auth
+failed logins since friday in auth for all users,failure,thisweek,*,auth
+failed logins over the weekend in auth for all users,failure,lastweek,*,auth
+display in the last month in auth for user frank,show,last30d,frank,auth
+system errors since this morning in auth for user alice,error,today,alice,auth
+successful logins past 24hrs in system for user charlie,success,last24h,charlie,system
+web errors since tuesday in web_demo for user erin,error,thisweek,erin,web_demo
+auth failures since wednesday in web_demo for user charlie,failure,thisweek,charlie,web_demo
+show me since midnight in errors_demo for user david,show,today,david,errors_demo
+logins that worked last night in web_demo for user charlie,success,yesterday,charlie,web_demo
+auth failures last 30 days in auth for user alice,failure,last30d,alice,auth
+successes past month in auth for user alice,success,last30d,alice,auth
+successes yesterday in web_demo for user bob,success,yesterday,bob,web_demo
+system errors last 30 days in system for user frank,error,last30d,frank,system
+logins that worked since yesterday in auth for user bob,success,last24h,bob,auth
+show me last weekend in errors_demo for user erin,show,lastweek,erin,errors_demo
+critical errors past 24hrs in auth for user erin,error,last24h,erin,auth
+logins that worked since tuesday in errors_demo for user charlie,success,thisweek,charlie,errors_demo
+system errors past 30 days in auth for user alice,error,last30d,alice,auth
+successes last 24 hours in auth for user charlie,success,last24h,charlie,auth
+web errors in the last week in web_demo for user frank,error,lastweek,frank,web_demo
+auth failures since monday in auth for user charlie,failure,thisweek,charlie,auth
+fetch since the start of this week in system for user charlie,show,thisweek,charlie,system
+system errors since wednesday in errors_demo for all users,error,thisweek,*,errors_demo
+fetch last weekend in errors_demo for all users,show,lastweek,*,errors_demo
+logins that worked past week in web_demo for user erin,success,lastweek,erin,web_demo
+logins that worked month to date in auth for user bob,success,last30d,bob,auth
+fetch last night in auth for user david,show,yesterday,david,auth
+system errors since this morning in system for user bob,error,today,bob,system
+system errors last 24 hours in web_demo for user frank,error,last24h,frank,web_demo
+application errors this month in web_demo for user erin,error,last30d,erin,web_demo
+list today in errors_demo for user alice,show,today,alice,errors_demo
+logins that worked past 24hrs in errors_demo for user bob,success,last24h,bob,errors_demo
+failed logins yesterday in auth for all users,failure,yesterday,*,auth
+successful logins last month in web_demo for user alice,success,last30d,alice,web_demo
+failed logins last 30 days in auth for user frank,failure,last30d,frank,auth
+auth failures in the last month in web_demo for user erin,failure,last30d,erin,web_demo
+list since this morning in system for user bob,show,today,bob,system
+critical errors in the past day in errors_demo for user erin,error,last24h,erin,errors_demo
+login failures this month in system for user alice,failure,last30d,alice,system
+system errors past week in web_demo for user bob,error,lastweek,bob,web_demo
+successes past 24hrs in errors_demo for user erin,success,last24h,erin,errors_demo
+system errors over the weekend in auth for user erin,error,lastweek,erin,auth
+failed logins today in system for user charlie,failure,today,charlie,system
+system errors last night in system for user david,error,yesterday,david,system
+failed logins yesterday in auth for user charlie,failure,yesterday,charlie,auth
+fetch last night in errors_demo for user alice,show,yesterday,alice,errors_demo
+successes since wednesday in system for all users,success,thisweek,*,system
+list last 24 hours in auth for all users,show,last24h,*,auth
+show me in the last month in auth for user frank,show,last30d,frank,auth
