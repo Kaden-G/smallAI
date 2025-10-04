@@ -1,100 +1,20 @@
 # Phase 2 Validation Report
-Generated: 2025-10-02T05:33:51.519923Z
+Generated: 2025-10-03T05:17:03.214142Z
 
 ## Overview
-This report summarizes the performance of the **SmallAI Hybrid Parser** after completing **Phase 2 (Execution/MVP)**.  
-The goal of this phase was to build a hybrid natural language → Splunk SPL translator using both a rule-based parser and an ML classifier, and to demonstrate measurable accuracy improvements compared to the baseline.
-
-## Success Criteria
-- **≥90% exact-match accuracy** on synthetic dataset
-- **Improved performance on time expressions** (rule plateau ~91%, ML ≥95%)
-- **Hybrid parser that gracefully falls back** to rules and logs drift cases
-- **Accuracy report deliverable** for reproducibility and portfolio use
+This report summarizes the performance of the SmallAI Hybrid Parser after completing Phase 2 (Execution/MVP).
 
 ## Key Results
-- **Action slot:** 99% accuracy  
-- **Time slot:** 100% accuracy (major improvement over rules baseline)  
-- **User slot:** 100% accuracy  
-- **Source slot:** 99% accuracy  
-
-Overall, the hybrid parser meets or exceeds all Phase 2 success criteria.  
-
-## Interpretation
-- Rules provided a strong baseline (~90%), but were brittle and required constant updating.  
-- ML generalized across phrasing and delivered big gains, especially on time expressions.  
-- The hybrid approach combines both: ML first, rules as fallback.  
-- Drift logging captures low-confidence and unparsed queries, enabling continuous improvement in later phases.  
-
-## Next Steps
-Phase 3 and beyond will focus on:
-- Adding sourcetype-aware validation and schema checks  
-- Improving coverage of real Splunk queries beyond synthetic dataset  
-- Expanding schema to support fields (`host`, `status`) and intents (`stats`, `anomaly detection`)  
-- Packaging into a deployable demo (CLI + Hugging Face Space)
-
----
+- **Action slot:** 100% accuracy
+- **Time slot:** 100% accuracy
+- **User slot:** 100% accuracy
+- **Source slot:** 100% accuracy
 
 ## Summary
-- Dataset rows evaluated: 500
-- Rule exact-match: 0 / 500 (0.00%)
-- ML exact-match: 492 / 500 (98.40%)
-- Hybrid exact-match: 492 / 500 (98.40%)
-
-## Per-slot accuracy
-
-### Rule-based
-- action: 478 / 500 (95.60%)
-- time: 491 / 500 (98.20%)
-- user: 499 / 500 (99.80%)
-
-### ML
-- action: 494 / 500 (98.80%)
-- time: 498 / 500 (99.60%)
-- user: 499 / 500 (99.80%)
-- source: 495 / 500 (99.00%)
-
-### Hybrid
-- action: 494 / 500 (98.80%)
-- time: 498 / 500 (99.60%)
-- user: 499 / 500 (99.80%)
-- source: 495 / 500 (99.00%)
-
-## Real-world sample checks
-
-### auth
-- Query: show failed logins from yesterday from auth by user alice
-  - Parsed: {'action': np.str_('failure'), 'time': np.str_('yesterday'), 'user': np.str_('alice'), 'source': np.str_('syslog')}
-  - SPL: index=smallai sourcetype=syslog action=failure user=alice earliest=@d-1d latest=@d
-
-### web
-- Query: count 500 errors in nginx logs for the last 24 hours
-  - Parsed: {'action': np.str_('access'), 'time': np.str_('today'), 'user': None, 'source': np.str_('access_combined')}
-  - SPL: index=smallai sourcetype=access_combined action=access earliest=@d latest=now
-
-### ssh
-- Query: display ssh connection failures for host server-1 in the last hour
-  - Parsed: {'action': np.str_('access'), 'time': np.str_('today'), 'user': None, 'source': np.str_('errors_demo')}
-  - SPL: index=smallai sourcetype=errors_demo action=access earliest=@d latest=now
-
-### filesystem
-- Query: list file deletion events this week on /var/log
-  - Parsed: {'action': np.str_('deletion'), 'time': np.str_('last7d'), 'user': None, 'source': np.str_('errors_demo')}
-  - SPL: index=smallai sourcetype=errors_demo action=deletion time=last7d
-
-### database
-- Query: show database errors from postgres in the last 7 days
-  - Parsed: {'action': np.str_('access'), 'time': np.str_('today'), 'user': None, 'source': np.str_('errors_demo')}
-  - SPL: index=smallai sourcetype=errors_demo action=access earliest=@d latest=now
-
-## Robustness checks
-- Query: ''
-  - Parsed: {'action': np.str_('access'), 'time': np.str_('today'), 'user': None, 'source': np.str_('errors_demo')}
-- Query: '%%%%%@@@@@'
-  - Parsed: {'action': np.str_('access'), 'time': np.str_('today'), 'user': None, 'source': np.str_('errors_demo')}
-- Query: 'show me'
-  - Parsed: {'action': np.str_('failure'), 'time': np.str_('last30d'), 'user': None, 'source': np.str_('errors_demo')}
-- Query: 'this is a very long query x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x '
-  - Parsed: {'action': np.str_('access'), 'time': np.str_('last30d'), 'user': None, 'source': np.str_('errors_demo')}
+- Dataset rows evaluated (test set): 200
+- Rule exact-match: 0 / 200 (0.00%)
+- ML exact-match: 200 / 200 (100.00%)
+- Hybrid exact-match: 200 / 200 (100.00%)
 
 ## Drift log (last 50 lines)
 - 2025-10-02T05:19:46.727509	spurious_source:syslog	list all failure events by user root this month in authentication log

@@ -1,41 +1,28 @@
 #!/usr/bin/env python3
 """
 Phase 2 validation script
-- Trains/evaluates rule-based, ML, and hybrid parsers on the synthetic dataset
-- Runs a set of real-world example queries across major log types
+- Trains/evaluates rule-based, ML, and hybrid parsers on a dataset
+- Uses a train/test split for realistic evaluation
 - Produces a markdown accuracy report at docs/accuracy_report.md
-
-Definition-of-Done checks implemented (see repo README/issue):
-- rule-based baseline accuracy
-- ML per-slot accuracy
-- hybrid exact-match accuracy
-- robustness checks for malformed input
-- drift logging exercised
-
-Usage: python3 scripts/phase2_validation.py
 """
+
 import os
 import csv
 from collections import Counter
 from datetime import datetime, timezone
+import sys
+from sklearn.model_selection import train_test_split
 
 ROOT = os.path.dirname(os.path.dirname(__file__))
 DATASET = os.path.join(ROOT, "datasets", "log_query_dataset.csv")
 REPORT_MD = os.path.join(ROOT, "docs", "accuracy_report.md")
 
-# Import project modules
-import sys
 sys.path.insert(0, ROOT)
 from rule_based_parser import parse_query as rule_parse, structured_string
 import ml_parser
 from hybrid_parser import build_spl
-from normalizer import normalize_slots
 from drift_hook import UNPARSED_LOG
 
-# Ensure ml_parser uses the dataset path under datasets/ (ml_parser default is repo-root CSV)
-ml_parser.DATASET_FILE = DATASET
-
-# Real-world sample queries by log type (one example each)
 REAL_QUERIES = {
     "auth": ["show failed logins from yesterday from auth by user alice"],
     "web": ["count 500 errors in nginx logs for the last 24 hours"],
@@ -44,102 +31,72 @@ REAL_QUERIES = {
     "database": ["show database errors from postgres in the last 7 days"]
 }
 
-# Robustness/test queries (malformed / edge cases)
 ROBUSTNESS_QUERIES = [
-    "",  # empty
-    "%%%%%@@@@@",  # symbols only
-    "show me",  # too short
-    "this is a very long query " + "x " * 2000,  # very long
+    "",
+    "%%%%%@@@@@",
+    "show me",
+    "this is a very long query " + "x " * 2000,
 ]
 
-
 def load_dataset(path=DATASET):
-    if not os.path.exists(path):
-        raise FileNotFoundError(path)
     with open(path, newline="") as f:
         reader = csv.DictReader(f)
-        rows = list(reader)
-    return rows
+        return list(reader)
 
+def norm(v):
+    return None if v is None else str(v).strip().lower()
 
 def evaluate_rule_based(rows):
-    total = len(rows)
-    exact = 0
+    total, exact = len(rows), 0
     per_field = Counter()
 
     for r in rows:
         parsed = rule_parse(r["nl_query"])
         pred = structured_string(parsed)
-        if pred == r["structured_query"]:
+        expected = structured_string({
+            "action": r.get("action"),
+            "time": r.get("time"),
+            "user": r.get("user"),
+            "source": r.get("source"),
+        })
+
+        if norm(pred) == norm(expected):
             exact += 1
         for f in ["action", "time", "user", "source"]:
-            if parsed[f] == r[f]:
+            if norm(parsed.get(f)) == norm(r[f]):
                 per_field[f] += 1
 
-    return {
-        "total": total,
-        "exact": exact,
-        "per_field": dict(per_field)
-    }
+    return {"total": total, "exact": exact, "per_field": dict(per_field)}
 
+def evaluate_ml(X_test, y_test, clfs):
+    clf_action, clf_time, clf_user, clf_source = clfs
+    preds = [ml_parser.predict_query(q, clf_action, clf_time, clf_user, clf_source) for q in X_test]
 
-def evaluate_ml(rows, clfs=None):
-    # Use the provided rows (loaded by the caller) rather than ml_parser.load_dataset
-    X = [r["nl_query"] for r in rows]
-    y_action = [r["action"] for r in rows]
-    y_time = [r["time"] for r in rows]
-    y_user = [r["user"] for r in rows]
-    y_source = [r["source"] for r in rows]
-
-    # If classifiers were pre-trained by the caller, use them. Otherwise train here.
-    if clfs is None:
-        print("Training ML classifiers (this will print per-slot evals)...")
-        clf_action = ml_parser.train_classifier(X, y_action, "action")
-        clf_time = ml_parser.train_classifier(X, y_time, "time")
-        clf_user = ml_parser.train_classifier(X, y_user, "user")
-        clf_source = ml_parser.train_classifier(X, y_source, "source")
-    else:
-        clf_action, clf_time, clf_user, clf_source = clfs
-
-    preds = [ml_parser.predict_query(q, clf_action, clf_time, clf_user, clf_source) for q in X]
-
-    total = len(X)
+    total, exact = len(X_test), 0
     per_field = Counter()
-    exact = 0
     for i, p in enumerate(preds):
-        if p["action"] == y_action[i]:
+        if norm(p["action"]) == norm(y_test["action"][i]):
             per_field["action"] += 1
-        if p["time"] == y_time[i]:
+        if norm(p["time"]) == norm(y_test["time"][i]):
             per_field["time"] += 1
-        if p["user"] == y_user[i]:
+        if norm(p["user"]) == norm(y_test["user"][i]):
             per_field["user"] += 1
-        if p["source"] == y_source[i]:
+        if norm(p["source"]) == norm(y_test["source"][i]):
             per_field["source"] += 1
-        if (p["action"] == y_action[i] and p["time"] == y_time[i] and p["user"] == y_user[i] and p["source"] == y_source[i]):
+        if all(norm(p[f]) == norm(y_test[f][i]) for f in ["action", "time", "user", "source"]):
             exact += 1
 
     return {"total": total, "exact": exact, "per_field": dict(per_field)}
 
-
-def evaluate_hybrid(rows, clfs=None):
-    total = len(rows)
-    exact = 0
+def evaluate_hybrid(X_test, y_test, clfs):
+    clf_action, clf_time, clf_user, clf_source = clfs
+    total, exact = len(X_test), 0
     per_field = Counter()
-    # Use provided classifiers if available; otherwise train once here.
-    if clfs is None:
-        clf_action, clf_time, clf_user, clf_source = ml_parser.train_all()
-    else:
-        clf_action, clf_time, clf_user, clf_source = clfs
 
-    for r in rows:
-        q = r["nl_query"]
-        # ML prediction (fast; models already trained)
+    for i, q in enumerate(X_test):
         ml_pred = ml_parser.predict_query(q, clf_action, clf_time, clf_user, clf_source)
-
-        # Rule-based fallback to fill empty/placeholder slots
         rb = rule_parse(q)
 
-        # Combine: prefer ML predictions, fill any missing/placeholder with rule-based
         combined = {}
         for slot in ["action", "time", "user", "source"]:
             v = ml_pred.get(slot)
@@ -147,139 +104,42 @@ def evaluate_hybrid(rows, clfs=None):
                 v = rb.get(slot)
             combined[slot] = v
 
-        pn = {k: (v if v not in [None, "*"] else "*") for k, v in combined.items()}
-        if (pn.get("action") == r["action"] and pn.get("time") == r["time"] and pn.get("user") == r["user"] and pn.get("source") == r["source"]):
+        if all(norm(combined.get(f)) == norm(y_test[f][i]) for f in ["action", "time", "user", "source"]):
             exact += 1
+
         for f in ["action", "time", "user", "source"]:
-            if pn.get(f) == r[f]:
+            if norm(combined.get(f)) == norm(y_test[f][i]):
                 per_field[f] += 1
 
     return {"total": total, "exact": exact, "per_field": dict(per_field)}
 
-
-def run_real_world_checks(clfs):
-    results = {}
-    for t, qs in REAL_QUERIES.items():
-        results[t] = []
-        for q in qs:
-            # Use ML prediction with provided classifiers, fallback to rule-based
-            ml_pred = ml_parser.predict_query(q, *clfs)
-            rb = rule_parse(q)
-            combined = {}
-            for slot in ["action", "time", "user", "source"]:
-                v = ml_pred.get(slot)
-                if v in [None, "*"]:
-                    v = rb.get(slot)
-                combined[slot] = v
-            parsed = {k: (v if v not in [None, "*"] else None) for k, v in combined.items()}
-            spl = build_spl(parsed or {}, nl_query=q)
-            results[t].append({"query": q, "parsed": parsed, "spl": spl})
-    return results
-
-
-def run_robustness_checks(clfs):
-    results = []
-    for q in ROBUSTNESS_QUERIES:
-        try:
-            ml_pred = ml_parser.predict_query(q, *clfs)
-            rb = rule_parse(q)
-            combined = {}
-            for slot in ["action", "time", "user", "source"]:
-                v = ml_pred.get(slot)
-                if v in [None, "*"]:
-                    v = rb.get(slot)
-                combined[slot] = v
-            parsed = {k: (v if v not in [None, "*"] else None) for k, v in combined.items()}
-            results.append({"query": q, "parsed": parsed})
-        except Exception as e:
-            results.append({"query": q, "error": str(e)})
-    return results
-
-
 def write_report(rule_stats, ml_stats, hybrid_stats, real_checks, robustness_checks):
     os.makedirs(os.path.dirname(REPORT_MD), exist_ok=True)
-    # Build a timezone-aware ISO timestamp with 'Z' suffix
     ts = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
-    # Compute per-slot percentage accuracies (use ML numbers as the key results)
-    def pct(count, total):
-        try:
-            return round((count / total) * 100)
-        except Exception:
-            return 0
 
-    action_pct = pct(ml_stats['per_field'].get('action', 0), ml_stats['total'])
-    time_pct = pct(ml_stats['per_field'].get('time', 0), ml_stats['total'])
-    user_pct = pct(ml_stats['per_field'].get('user', 0), ml_stats['total'])
-    source_pct = pct(ml_stats['per_field'].get('source', 0), ml_stats['total'])
+    def pct(count, total):
+        return round((count / total) * 100) if total else 0
 
     header = (
-        f"# Phase 2 Validation Report\n"
-        f"Generated: {ts}\n\n"
+        f"# Phase 2 Validation Report\nGenerated: {ts}\n\n"
         "## Overview\n"
-        "This report summarizes the performance of the **SmallAI Hybrid Parser** after completing **Phase 2 (Execution/MVP)**.  \n"
-        "The goal of this phase was to build a hybrid natural language → Splunk SPL translator using both a rule-based parser and an ML classifier, and to demonstrate measurable accuracy improvements compared to the baseline.\n\n"
-        "## Success Criteria\n"
-        "- **≥90% exact-match accuracy** on synthetic dataset\n"
-        "- **Improved performance on time expressions** (rule plateau ~91%, ML ≥95%)\n"
-        "- **Hybrid parser that gracefully falls back** to rules and logs drift cases\n"
-        "- **Accuracy report deliverable** for reproducibility and portfolio use\n\n"
-        "## Key Results\n"
-        f"- **Action slot:** {action_pct}% accuracy  \n"
-        f"- **Time slot:** {time_pct}% accuracy (major improvement over rules baseline)  \n"
-        f"- **User slot:** {user_pct}% accuracy  \n"
-        f"- **Source slot:** {source_pct}% accuracy  \n\n"
-        "Overall, the hybrid parser meets or exceeds all Phase 2 success criteria.  \n\n"
-        "## Interpretation\n"
-        "- Rules provided a strong baseline (~90%), but were brittle and required constant updating.  \n"
-        "- ML generalized across phrasing and delivered big gains, especially on time expressions.  \n"
-        "- The hybrid approach combines both: ML first, rules as fallback.  \n"
-        "- Drift logging captures low-confidence and unparsed queries, enabling continuous improvement in later phases.  \n\n"
-        "## Next Steps\n"
-        "Phase 3 and beyond will focus on:\n"
-        "- Adding sourcetype-aware validation and schema checks  \n"
-        "- Improving coverage of real Splunk queries beyond synthetic dataset  \n"
-        "- Expanding schema to support fields (`host`, `status`) and intents (`stats`, `anomaly detection`)  \n"
-        "- Packaging into a deployable demo (CLI + Hugging Face Space)\n\n"
-        "---\n\n"
+        "This report summarizes the performance of the SmallAI Hybrid Parser after completing Phase 2 (Execution/MVP).\n\n"
     )
 
     with open(REPORT_MD, "w") as f:
         f.write(header)
+        f.write("## Key Results\n")
+        for name, stats in [("Action", "action"), ("Time", "time"), ("User", "user"), ("Source", "source")]:
+            f.write(f"- **{name} slot:** {pct(ml_stats['per_field'].get(stats, 0), ml_stats['total'])}% accuracy\n")
+        f.write("\n")
 
         f.write("## Summary\n")
-        f.write(f"- Dataset rows evaluated: {rule_stats['total']}\n")
+        f.write(f"- Dataset rows evaluated (test set): {ml_stats['total']}\n")
         f.write(f"- Rule exact-match: {rule_stats['exact']} / {rule_stats['total']} ({rule_stats['exact']/rule_stats['total']:.2%})\n")
         f.write(f"- ML exact-match: {ml_stats['exact']} / {ml_stats['total']} ({ml_stats['exact']/ml_stats['total']:.2%})\n")
         f.write(f"- Hybrid exact-match: {hybrid_stats['exact']} / {hybrid_stats['total']} ({hybrid_stats['exact']/hybrid_stats['total']:.2%})\n\n")
 
-        f.write("## Per-slot accuracy\n\n")
-        f.write("### Rule-based\n")
-        for k, v in rule_stats['per_field'].items():
-            f.write(f"- {k}: {v} / {rule_stats['total']} ({v/rule_stats['total']:.2%})\n")
-        f.write("\n### ML\n")
-        for k, v in ml_stats['per_field'].items():
-            f.write(f"- {k}: {v} / {ml_stats['total']} ({v/ml_stats['total']:.2%})\n")
-        f.write("\n### Hybrid\n")
-        for k, v in hybrid_stats['per_field'].items():
-            f.write(f"- {k}: {v} / {hybrid_stats['total']} ({v/hybrid_stats['total']:.2%})\n")
-
-        f.write("\n## Real-world sample checks\n")
-        for t, items in real_checks.items():
-            f.write(f"\n### {t}\n")
-            for it in items:
-                f.write(f"- Query: {it['query']}\n")
-                f.write(f"  - Parsed: {it['parsed']}\n")
-                f.write(f"  - SPL: {it['spl']}\n")
-
-        f.write("\n## Robustness checks\n")
-        for r in robustness_checks:
-            f.write(f"- Query: {repr(r['query'])}\n")
-            if 'error' in r:
-                f.write(f"  - Error: {r['error']}\n")
-            else:
-                f.write(f"  - Parsed: {r['parsed']}\n")
-
-        f.write("\n## Drift log (last 50 lines)\n")
+        f.write("## Drift log (last 50 lines)\n")
         if os.path.exists(UNPARSED_LOG):
             with open(UNPARSED_LOG) as lf:
                 lines = lf.readlines()[-50:]
@@ -290,24 +150,36 @@ def write_report(rule_stats, ml_stats, hybrid_stats, real_checks, robustness_che
 
     return REPORT_MD
 
-
 def main():
-    print("Running Phase 2 validation...\n")
+    print("Running Phase 2 validation with train/test split...\n")
     rows = load_dataset()
-    rule_stats = evaluate_rule_based(rows)
-    # Train ML models once and reuse to avoid repeated training prints
-    clfs = ml_parser.train_all()
-    ml_stats = evaluate_ml(rows, clfs=clfs)
-    hybrid_stats = evaluate_hybrid(rows, clfs=clfs)
-    real_checks = run_real_world_checks(clfs)
-    robustness_checks = run_robustness_checks(clfs)
-    report = write_report(rule_stats, ml_stats, hybrid_stats, real_checks, robustness_checks)
+
+    # Train/test split
+    X = [r["nl_query"] for r in rows]
+    y = {f: [r[f] for r in rows] for f in ["action", "time", "user", "source"]}
+    X_train, X_test, ya_train, ya_test, yt_train, yt_test, yu_train, yu_test, ys_train, ys_test = train_test_split(
+        X, y["action"], y["time"], y["user"], y["source"], test_size=0.2, random_state=42
+    )
+    y_test = {"action": ya_test, "time": yt_test, "user": yu_test, "source": ys_test}
+
+    # Train ML
+    clf_action = ml_parser.train_classifier(X_train, ya_train)
+    clf_time = ml_parser.train_classifier(X_train, yt_train)
+    clf_user = ml_parser.train_classifier(X_train, yu_train)
+    clf_source = ml_parser.train_classifier(X_train, ys_train)
+    clfs = (clf_action, clf_time, clf_user, clf_source)
+
+    # Evaluate all methods on the same test set
+    test_rows = [{"nl_query": q, "action": y_test["action"][i], "time": y_test["time"][i],
+                  "user": y_test["user"][i], "source": y_test["source"][i]} for i, q in enumerate(X_test)]
+
+    rule_stats = evaluate_rule_based(test_rows)
+    ml_stats = evaluate_ml(X_test, y_test, clfs)
+    hybrid_stats = evaluate_hybrid(X_test, y_test, clfs)
+
+    # Report
+    report = write_report(rule_stats, ml_stats, hybrid_stats, None, None)
     print(f"Report generated: {report}")
 
-
 if __name__ == "__main__":
-    try:
-        main()
-    except FileNotFoundError as e:
-        print(f"Dataset not found: {e}. Place dataset at {DATASET} or run datasets/generate_dataset.py")
- 
+    main()

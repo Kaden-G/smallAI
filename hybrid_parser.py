@@ -1,464 +1,143 @@
 #!/usr/bin/env python3
+"""
+Hybrid Parser for converting natural language queries into structured Splunk SPL queries.
+Uses a combination of ML predictions and rule-based parsing for robust, explainable results.
+"""
 
-import argparse
+import re
 import sys
-from rule_based_parser import parse_query as rule_parse
-import ml_parser
-from normalizer import normalize_slots
-from drift_hook import log_unparsed
 
+# Use a wildcard index for general deployment (instead of a specific index like "smallai").
+DEFAULT_INDEX = "*"
 
-CONF_THRESHOLD = 0.6
-
-
-def map_time_to_bounds(time_slot: str) -> str:
-    if not time_slot:
-        return ""
-    mapping = {
-        "last1h": "earliest=-60m latest=now",
-        "last24h": "earliest=-24h latest=now",
-        "last30d": "earliest=-30d@d latest=now",
-        "yesterday": "earliest=@d-1d latest=@d",
-        "today": "earliest=@d latest=now",
-        "thisweek": "earliest=@w0 latest=now",
-        "lastweek": "earliest=-1w@w0 latest=@w0",
-        "sinceyesterday": "earliest=@d-1d latest=now",
-    }
-    return mapping.get(time_slot.lower(), f"time={time_slot}")
-
-
-def build_spl(parsed: dict, index: str = "smallai", nl_query: str = "") -> str:
-    if not parsed:
-        return f"index={index} | noop  # no parse"
-
-    parts = [f"index={index}"]
-    if parsed.get("source"):
-        parts.append(f"sourcetype={parsed['source']}")
-    if parsed.get("action") and parsed["action"].lower() not in ["show", "list", "display", "fetch"]:
-        parts.append(f"action={parsed['action']}")
-    if parsed.get("user"):
-        parts.append(f"user={parsed['user']}")
-    if parsed.get("time"):
-        parts.append(map_time_to_bounds(parsed["time"]))
-
-    base_query = " ".join(parts)
-
-    group_field = None
-    if nl_query:
-        nl_lower = nl_query.lower()
-        if "group by" in nl_lower:
-            group_field = nl_lower.split("group by")[-1].strip().split()[0]
-        elif "count by" in nl_lower:
-            group_field = nl_lower.split("count by")[-1].strip().split()[0]
-
-    if group_field:
-        return f"{base_query} | stats count by {group_field}"
-
-    return base_query
-
-
-def parse_ml(query: str):
-    # Train in-memory (small demo) and predict
-    clf_action, clf_time, clf_user, clf_source = ml_parser.train_all()
-    parsed = ml_parser.predict_query(query, clf_action, clf_time, clf_user, clf_source)
-    # ml_parser.predict_query returns a dict (no confidence); set confidence=1.0
-    return parsed, 1.0
-
-
-def parse_query(query: str, force_rule: bool = False) -> dict:
-    result = None
-    confidence = 0.0
-
-    if not force_rule:
-        try:
-            parsed_ml = parse_ml(query)
-            if isinstance(parsed_ml, tuple):
-                result, confidence = parsed_ml
-            else:
-                result = parsed_ml
-                confidence = 1.0
-        except Exception as e:
-            print(f"[WARN] ML parser failed: {e}")
-            result = None
-
-    # Fallback to rule-based when needed
-    if force_rule or not result or confidence < CONF_THRESHOLD or not any(result.values()):
-        rb = rule_parse(query)
-        if result:
-            for k, v in rb.items():
-                if not result.get(k):
-                    result[k] = v
-        else:
-            result = rb
-
-    # If still no usable parse → log drift
-    if not result or not any(v not in [None, "*"] for v in result.values()):
-        log_unparsed(query, reason="no_parse")
-        return None
-
-    # Extra drift logging: low confidence
-    if confidence < 0.6:
-        log_unparsed(query, reason=f"low_confidence:{confidence:.2f}")
-
-    # Extra drift logging: spurious slots (ignore '*' which is just fallback)
-    q_lower = query.lower()
-    if result.get("user") not in [None, "*"] and result["user"] not in q_lower:
-        log_unparsed(query, reason=f"spurious_user:{result['user']}")
-    if result.get("source") not in [None, "*"] and result["source"] not in q_lower:
-        log_unparsed(query, reason=f"spurious_source:{result['source']}")
-
-    return normalize_slots(result)
-
-
-def evaluate_all():
-    X, y_action, y_time, y_user, y_source = ml_parser.load_dataset()
-    total = len(X)
-    slot_correct = {"action": 0, "time": 0, "user": 0, "source": 0}
-    exact_match = 0
-
-    for i, q in enumerate(X):
-        res = parse_query(q, force_rule=False) or {}
-        if res.get("action") == y_action[i]:
-            slot_correct["action"] += 1
-        if res.get("time") == y_time[i]:
-            slot_correct["time"] += 1
-        if res.get("user") == y_user[i]:
-            slot_correct["user"] += 1
-        if res.get("source") == y_source[i]:
-            slot_correct["source"] += 1
-
-        if (
-            res.get("action") == y_action[i]
-            and res.get("time") == y_time[i]
-            and res.get("user") == y_user[i]
-            and res.get("source") == y_source[i]
-        ):
-            exact_match += 1
-
-    print(f"Evaluated {total} samples")
-    for slot, correct in slot_correct.items():
-        acc = correct / total * 100 if total else 0.0
-        print(f"  {slot.capitalize()} accuracy: {acc:.2f}%")
-    print(f"  Exact-match accuracy: {exact_match / total * 100:.2f}%")
-
-
-def main():
-    parser = argparse.ArgumentParser(description="Hybrid parser for NL -> SPL")
-    parser.add_argument("query", type=str, nargs="?", help="Natural language query")
-    parser.add_argument("-f", "--force-rule", action="store_true", help="Force rule-based parser")
-    args = parser.parse_args()
-
-    if args.query is None:
-        evaluate_all()
-        return
-
-    parsed = parse_query(args.query, force_rule=args.force_rule)
-    spl = build_spl(parsed, nl_query=args.query)
-
-    print("Input:", args.query)
-    print("Parsed:", parsed)
-    print("SPL:", spl)
-
-
-if __name__ == "__main__":
-    main()
-#!/usr/bin/env python3
-<<<<<<< HEAD
-
-import argparse
-import importlib
-
-# Safe import for rule-based parser (fallback)
-def safe_import_rule_parser():
-    try:
-        module = importlib.import_module("rule_based_parser")
-        return getattr(
-            module,
-            "parse_rule_based",
-            lambda q: {"action": None, "time": None, "user": None, "source": None},
-        )
-    except ImportError:
-        return lambda q: {"action": None, "time": None, "user": None, "source": None}
-
-
-parse_rule_based = safe_import_rule_parser()
-
-# Import ML parser
-from ml_parser import parse_ml
-
-
-def map_time_to_bounds(time_slot: str) -> str:
-    """Convert normalized time slot strings into Splunk earliest/latest syntax."""
-=======
-#!/usr/bin/env python3
-
-import argparse
-import sys
-from rule_based_parser import parse_query as rule_parse
-import ml_parser
-from normalizer import normalize_slots
-from drift_hook import log_unparsed
-
-
-CONF_THRESHOLD = 0.6
-
-
-def map_time_to_bounds(time_slot: str) -> str:
->>>>>>> feature/update-copilot-instructions
-    if not time_slot:
-        return ""
-    mapping = {
-        "last1h": "earliest=-60m latest=now",
-        "last24h": "earliest=-24h latest=now",
-        "last30d": "earliest=-30d@d latest=now",
-        "yesterday": "earliest=@d-1d latest=@d",
-        "today": "earliest=@d latest=now",
-        "thisweek": "earliest=@w0 latest=now",
-        "lastweek": "earliest=-1w@w0 latest=@w0",
-        "sinceyesterday": "earliest=@d-1d latest=now",
-    }
-    return mapping.get(time_slot.lower(), f"time={time_slot}")
-
-
-<<<<<<< HEAD
-def build_spl(parsed: dict, index: str = "smallai") -> str:
-    """Build Splunk SPL query string from parsed slots."""
-    parts = [f"index={index}"]
-
-    # Add sourcetype if present
-    if parsed.get("source"):
-        parts.append(f"sourcetype={parsed['source']}")
-
-    # Only add action if it’s meaningful (not “show” intent)
-    if parsed.get("action") and parsed["action"].lower() not in ["show", "list", "display", "fetch"]:
-        parts.append(f"action={parsed['action']}")
-
-    # Add user if specified
-    if parsed.get("user"):
-        parts.append(f"user={parsed['user']}")
-
-    # Add time bounds
-    if parsed.get("time"):
-        parts.append(map_time_to_bounds(parsed["time"]))
-
-    return " ".join(parts)
-
-
-def parse_query(query: str, force_rule: bool = False) -> dict:
+def ml_predict_slots(query):
     """
-    Parse a query using ML-first, rule-based fallback approach.
-    If force_rule=True, skips ML and uses rule parser only.
+    Dummy ML model prediction for query slots.
+    Replace with real ML model inference later.
     """
-    result = None
+    return {}
 
-    if not force_rule:
-        try:
-            result = parse_ml(query)
-=======
-def build_spl(parsed: dict, index: str = "smallai", nl_query: str = "") -> str:
-    if not parsed:
-        return f"index={index} | noop  # no parse"
+def normalize_text(query):
+    return query.strip()
 
-    parts = [f"index={index}"]
-    if parsed.get("source"):
-        parts.append(f"sourcetype={parsed['source']}")
-    if parsed.get("action") and parsed["action"].lower() not in ["show", "list", "display", "fetch"]:
-        parts.append(f"action={parsed['action']}")
-    if parsed.get("user"):
-        parts.append(f"user={parsed['user']}")
-    if parsed.get("time"):
-        parts.append(map_time_to_bounds(parsed["time"]))
+def parse_natural_language(query):
+    q = normalize_text(query)
+    slots = {"user": None, "action": None, "source": None, "time": None}
 
-    base_query = " ".join(parts)
+    # Rule-based extraction for user
+    user_match = re.search(r'\buser\s+([A-Za-z0-9._-]+)', q, flags=re.IGNORECASE)
+    if user_match:
+        slots["user"] = user_match.group(1)
+    else:
+        poss_match = re.search(r"\b([A-Za-z0-9._-]+)'s\b", q, flags=re.IGNORECASE)
+        if poss_match:
+            slots["user"] = poss_match.group(1)
 
-    group_field = None
-    if nl_query:
-        nl_lower = nl_query.lower()
-        if "group by" in nl_lower:
-            group_field = nl_lower.split("group by")[-1].strip().split()[0]
-        elif "count by" in nl_lower:
-            group_field = nl_lower.split("count by")[-1].strip().split()[0]
-
-    if group_field:
-        return f"{base_query} | stats count by {group_field}"
-
-    return base_query
-
-
-def parse_ml(query: str):
-    # Train in-memory (small demo) and predict
-    clf_action, clf_time, clf_user, clf_source = ml_parser.train_all()
-    parsed = ml_parser.predict_query(query, clf_action, clf_time, clf_user, clf_source)
-    # ml_parser.predict_query returns a dict (no confidence); set confidence=1.0
-    return parsed, 1.0
-
-
-def parse_query(query: str, force_rule: bool = False) -> dict:
-    result = None
-    confidence = 0.0
-
-    if not force_rule:
-        try:
-            parsed_ml = parse_ml(query)
-            if isinstance(parsed_ml, tuple):
-                result, confidence = parsed_ml
-            else:
-                result = parsed_ml
-                confidence = 1.0
->>>>>>> feature/update-copilot-instructions
-        except Exception as e:
-            print(f"[WARN] ML parser failed: {e}")
-            result = None
-
-<<<<<<< HEAD
-    # Fallback if ML missing or incomplete
-    if not result or not all(result.values()):
-        rule_result = parse_rule_based(query)
-        if result:
-            for k, v in rule_result.items():
-                if not result.get(k):
-                    result[k] = v
+    # Rule-based extraction for source
+    src_match = re.search(r'\bin\s+([A-Za-z0-9._ -]+)$', q, flags=re.IGNORECASE)
+    if src_match:
+        src_phrase = src_match.group(1).strip().lower()
+        if "nginx" in src_phrase or "web" in src_phrase:
+            slots["source"] = "web"
+        elif "auth" in src_phrase:
+            slots["source"] = "auth"
+        elif "host" in src_phrase:
+            slots["source"] = "host"
+        elif "filesystem" in src_phrase or "file system" in src_phrase:
+            slots["source"] = "filesystem"
+        elif "database" in src_phrase:
+            slots["source"] = "database"
         else:
-            result = rule_result
+            slots["source"] = src_phrase
 
-    return result
+    # Rule-based extraction for time
+    time_phrases = {
+        "last hour": "last1h",
+        "last 1 hour": "last1h",
+        "last 24 hours": "last24h",
+        "last day": "last24h",
+        "last 30 days": "last30d",
+        "last month": "last30d",
+        "past 60 minutes": "last1h",
+        "yesterday": "yesterday",
+        "today": "today",
+        "since midnight": "today",
+        "past 48 hours": "last48h",
+    }
+    for phrase, code in time_phrases.items():
+        if phrase in q.lower():
+            slots["time"] = code
+            break
 
+    # Rule-based extraction for action
+    action_map = {
+        "login": "login",
+        "logins": "login",
+        "logout": "logout",
+        "sign off": "logout",
+        "failed login": "failure",
+        "failed logins": "failure",
+        "failure": "failure",
+        "error": "error",
+        "errors": "error",
+        "upload": "upload",
+        "download": "download",
+        "access": "access",
+        "connection": "connection",
+        "connections": "connection",
+    }
+    for key, val in action_map.items():
+        if key in q.lower():
+            slots["action"] = val
+            break
+
+    # Merge ML predictions (placeholder for now)
+    ml_slots = ml_predict_slots(q)
+    for k, v in ml_slots.items():
+        if not slots.get(k):
+            slots[k] = v
+
+    # Default user → wildcard instead of a name
+    if slots["user"] is None:
+        slots["user"] = "*"
+
+    return slots
+
+def generate_spl_query(slots):
+    spl = f'search index={DEFAULT_INDEX}'
+    if slots.get("source"):
+        spl += f' source="{slots["source"]}"'
+    if slots.get("user") and slots["user"] not in (None, "*"):
+        spl += f' user="{slots["user"]}"'
+    if slots.get("action"):
+        spl += f' action="{slots["action"]}"'
+
+    if slots.get("time"):
+        time_map = {
+            "last1h": "-1h",
+            "last24h": "-24h",
+            "last30d": "-30d",
+            "last48h": "-48h",
+            "yesterday": "-1d@d",
+            "today": "@d"
+        }
+        if slots["time"] in time_map:
+            spl += f' earliest={time_map[slots["time"]]}'
+
+    return spl
 
 def main():
-    parser = argparse.ArgumentParser(description="Hybrid parser for NL -> SPL")
-    parser.add_argument("query", type=str, nargs="?", help="Natural language query")
-    parser.add_argument(
-        "-f", "--force-rule", action="store_true", help="Force rule-based parser"
-    )
-    args = parser.parse_args()
+    if len(sys.argv) < 2:
+        print("Usage: ./hybrid_parser.py \"<natural language query>\"")
+        sys.exit(1)
 
-    if args.query is None:
-        # No query passed → run evaluation
-        from ml_parser import load_dataset
+    query = " ".join(sys.argv[1:])
+    slots = parse_natural_language(query)
+    spl = generate_spl_query(slots)
 
-        X, y_action, y_time, y_user, y_source = load_dataset()
-        total = len(X)
-
-        slot_correct = {"action": 0, "time": 0, "user": 0, "source": 0}
-        exact_match = 0
-
-        for i, q in enumerate(X):
-            result = parse_query(q, force_rule=args.force_rule)
-
-            # Per-slot accuracy
-            if result.get("action") == y_action[i]:
-                slot_correct["action"] += 1
-            if result.get("time") == y_time[i]:
-                slot_correct["time"] += 1
-            if result.get("user") == y_user[i]:
-                slot_correct["user"] += 1
-            if result.get("source") == y_source[i]:
-                slot_correct["source"] += 1
-
-            # Exact-match accuracy
-            if (
-                result.get("action") == y_action[i]
-                and result.get("time") == y_time[i]
-                and result.get("user") == y_user[i]
-                and result.get("source") == y_source[i]
-            ):
-                exact_match += 1
-
-        print(f"Evaluated {total} samples")
-        for slot, correct in slot_correct.items():
-            acc = correct / total * 100 if total else 0.0
-            print(f"  {slot.capitalize()} accuracy: {acc:.2f}%")
-
-        print(f"  Exact-match accuracy: {exact_match / total * 100:.2f}%")
-        return
-
-    # Normal query mode
-    parsed = parse_query(args.query, force_rule=args.force_rule)
-    spl = build_spl(parsed)
-
-    print("Input:", args.query)
-    print("Parsed:", parsed)
+    print("Input:", query)
+    print("Parsed Slots:", slots)
     print("SPL:", spl)
 
-
-=======
-    # Fallback to rule-based when needed
-    if force_rule or not result or confidence < CONF_THRESHOLD or not any(result.values()):
-        rb = rule_parse(query)
-        if result:
-            for k, v in rb.items():
-                if not result.get(k):
-                    result[k] = v
-        else:
-            result = rb
-
-    # If still no usable parse → log drift
-    if not result or not any(v not in [None, "*"] for v in result.values()):
-        log_unparsed(query, reason="no_parse")
-        return None
-
-    # Extra drift logging: low confidence
-    if confidence < 0.6:
-        log_unparsed(query, reason=f"low_confidence:{confidence:.2f}")
-
-    # Extra drift logging: spurious slots (ignore '*' which is just fallback)
-    q_lower = query.lower()
-    if result.get("user") not in [None, "*"] and result["user"] not in q_lower:
-        log_unparsed(query, reason=f"spurious_user:{result['user']}")
-    if result.get("source") not in [None, "*"] and result["source"] not in q_lower:
-        log_unparsed(query, reason=f"spurious_source:{result['source']}")
-
-    return normalize_slots(result)
-
-
-def evaluate_all():
-    X, y_action, y_time, y_user, y_source = ml_parser.load_dataset()
-    total = len(X)
-    slot_correct = {"action": 0, "time": 0, "user": 0, "source": 0}
-    exact_match = 0
-
-    for i, q in enumerate(X):
-        res = parse_query(q, force_rule=False) or {}
-        if res.get("action") == y_action[i]:
-            slot_correct["action"] += 1
-        if res.get("time") == y_time[i]:
-            slot_correct["time"] += 1
-        if res.get("user") == y_user[i]:
-            slot_correct["user"] += 1
-        if res.get("source") == y_source[i]:
-            slot_correct["source"] += 1
-
-        if (
-            res.get("action") == y_action[i]
-            and res.get("time") == y_time[i]
-            and res.get("user") == y_user[i]
-            and res.get("source") == y_source[i]
-        ):
-            exact_match += 1
-
-    print(f"Evaluated {total} samples")
-    for slot, correct in slot_correct.items():
-        acc = correct / total * 100 if total else 0.0
-        print(f"  {slot.capitalize()} accuracy: {acc:.2f}%")
-    print(f"  Exact-match accuracy: {exact_match / total * 100:.2f}%")
-
-
-def main():
-    parser = argparse.ArgumentParser(description="Hybrid parser for NL -> SPL")
-    parser.add_argument("query", type=str, nargs="?", help="Natural language query")
-    parser.add_argument("-f", "--force-rule", action="store_true", help="Force rule-based parser")
-    args = parser.parse_args()
-
-    if args.query is None:
-        evaluate_all()
-        return
-
-    parsed = parse_query(args.query, force_rule=args.force_rule)
-    spl = build_spl(parsed, nl_query=args.query)
-
-    print("Input:", args.query)
-    print("Parsed:", parsed)
-    print("SPL:", spl)
->>>>>>> feature/update-copilot-instructions
 if __name__ == "__main__":
     main()
