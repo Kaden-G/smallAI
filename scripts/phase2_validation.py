@@ -49,65 +49,56 @@ def norm(v):
 def evaluate_rule_based(rows):
     total, exact = len(rows), 0
     per_field = Counter()
+    fields = ["action", "time", "user", "source", "src_ip", "hostname", "severity", "status_code"]
 
     for r in rows:
         parsed = rule_parse(r["nl_query"])
         pred = structured_string(parsed)
-        expected = structured_string({
-            "action": r.get("action"),
-            "time": r.get("time"),
-            "user": r.get("user"),
-            "source": r.get("source"),
-        })
+        expected = structured_string({f: r.get(f) for f in fields})
 
         if norm(pred) == norm(expected):
             exact += 1
-        for f in ["action", "time", "user", "source"]:
+        for f in fields:
             if norm(parsed.get(f)) == norm(r[f]):
                 per_field[f] += 1
 
     return {"total": total, "exact": exact, "per_field": dict(per_field)}
 
-def evaluate_ml(X_test, y_test, clfs):
-    clf_action, clf_time, clf_user, clf_source = clfs
-    preds = [ml_parser.predict_query(q, clf_action, clf_time, clf_user, clf_source) for q in X_test]
+def evaluate_ml(X_test, y_test, classifiers):
+    fields = ["action", "time", "user", "source", "src_ip", "hostname", "severity", "status_code"]
+    preds = [ml_parser.predict_query(q, classifiers) for q in X_test]
 
     total, exact = len(X_test), 0
     per_field = Counter()
     for i, p in enumerate(preds):
-        if norm(p["action"]) == norm(y_test["action"][i]):
-            per_field["action"] += 1
-        if norm(p["time"]) == norm(y_test["time"][i]):
-            per_field["time"] += 1
-        if norm(p["user"]) == norm(y_test["user"][i]):
-            per_field["user"] += 1
-        if norm(p["source"]) == norm(y_test["source"][i]):
-            per_field["source"] += 1
-        if all(norm(p[f]) == norm(y_test[f][i]) for f in ["action", "time", "user", "source"]):
+        for f in fields:
+            if norm(p.get(f)) == norm(y_test[f][i]):
+                per_field[f] += 1
+        if all(norm(p.get(f)) == norm(y_test[f][i]) for f in fields):
             exact += 1
 
     return {"total": total, "exact": exact, "per_field": dict(per_field)}
 
-def evaluate_hybrid(X_test, y_test, clfs):
-    clf_action, clf_time, clf_user, clf_source = clfs
+def evaluate_hybrid(X_test, y_test, classifiers):
+    fields = ["action", "time", "user", "source", "src_ip", "hostname", "severity", "status_code"]
     total, exact = len(X_test), 0
     per_field = Counter()
 
     for i, q in enumerate(X_test):
-        ml_pred = ml_parser.predict_query(q, clf_action, clf_time, clf_user, clf_source)
+        ml_pred = ml_parser.predict_query(q, classifiers)
         rb = rule_parse(q)
 
         combined = {}
-        for slot in ["action", "time", "user", "source"]:
+        for slot in fields:
             v = ml_pred.get(slot)
             if v in [None, "*"]:
                 v = rb.get(slot)
             combined[slot] = v
 
-        if all(norm(combined.get(f)) == norm(y_test[f][i]) for f in ["action", "time", "user", "source"]):
+        if all(norm(combined.get(f)) == norm(y_test[f][i]) for f in fields):
             exact += 1
 
-        for f in ["action", "time", "user", "source"]:
+        for f in fields:
             if norm(combined.get(f)) == norm(y_test[f][i]):
                 per_field[f] += 1
 
@@ -155,27 +146,32 @@ def main():
     rows = load_dataset()
 
     # Train/test split
+    fields = ["action", "time", "user", "source", "src_ip", "hostname", "severity", "status_code"]
     X = [r["nl_query"] for r in rows]
-    y = {f: [r[f] for r in rows] for f in ["action", "time", "user", "source"]}
-    X_train, X_test, ya_train, ya_test, yt_train, yt_test, yu_train, yu_test, ys_train, ys_test = train_test_split(
-        X, y["action"], y["time"], y["user"], y["source"], test_size=0.2, random_state=42
-    )
-    y_test = {"action": ya_test, "time": yt_test, "user": yu_test, "source": ys_test}
+    y_dict = {f: [r[f] for r in rows] for f in fields}
 
-    # Train ML
-    clf_action = ml_parser.train_classifier(X_train, ya_train)
-    clf_time = ml_parser.train_classifier(X_train, yt_train)
-    clf_user = ml_parser.train_classifier(X_train, yu_train)
-    clf_source = ml_parser.train_classifier(X_train, ys_train)
-    clfs = (clf_action, clf_time, clf_user, clf_source)
+    # Split data
+    from sklearn.model_selection import train_test_split
+    indices = list(range(len(X)))
+    train_idx, test_idx = train_test_split(indices, test_size=0.2, random_state=42)
+
+    X_train = [X[i] for i in train_idx]
+    X_test = [X[i] for i in test_idx]
+    y_train = {f: [y_dict[f][i] for i in train_idx] for f in fields}
+    y_test = {f: [y_dict[f][i] for i in test_idx] for f in fields}
+
+    # Train ML classifiers
+    classifiers = {}
+    for field in fields:
+        print(f"Training {field} classifier...")
+        classifiers[field] = ml_parser.train_classifier(X_train, y_train[field])
 
     # Evaluate all methods on the same test set
-    test_rows = [{"nl_query": q, "action": y_test["action"][i], "time": y_test["time"][i],
-                  "user": y_test["user"][i], "source": y_test["source"][i]} for i, q in enumerate(X_test)]
+    test_rows = [{**{"nl_query": X_test[i]}, **{f: y_test[f][i] for f in fields}} for i in range(len(X_test))]
 
     rule_stats = evaluate_rule_based(test_rows)
-    ml_stats = evaluate_ml(X_test, y_test, clfs)
-    hybrid_stats = evaluate_hybrid(X_test, y_test, clfs)
+    ml_stats = evaluate_ml(X_test, y_test, classifiers)
+    hybrid_stats = evaluate_hybrid(X_test, y_test, classifiers)
 
     # Report
     report = write_report(rule_stats, ml_stats, hybrid_stats, None, None)

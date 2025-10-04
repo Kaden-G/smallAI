@@ -85,6 +85,10 @@ dmypy.json
 *.tsv
 *.json
 
+# Trained ML models
+models/
+*.joblib
+
 # Ignore IDE project settings
 .idea/
 *.iml

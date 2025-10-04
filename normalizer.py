@@ -73,6 +73,56 @@ def normalize_source(raw: str) -> str:
     return mappings.get(raw, raw)
 
 
+def normalize_src_ip(raw: str) -> str:
+    """Normalize IP address (basic validation)."""
+    if not raw or raw.strip() in ["*", "any", "all"]:
+        return None
+    # Basic IP validation - could be enhanced
+    import re
+    if re.match(r'^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$', raw.strip()):
+        return raw.strip()
+    return None
+
+
+def normalize_hostname(raw: str) -> str:
+    """Normalize hostname."""
+    if not raw or raw.strip() in ["*", "any", "all", "unknown"]:
+        return None
+    return raw.strip().lower()
+
+
+def normalize_severity(raw: str) -> str:
+    """Normalize severity level."""
+    if not raw or raw.strip() in ["*", "any"]:
+        return None
+    raw = raw.lower().strip()
+
+    mappings = {
+        "critical": "critical",
+        "crit": "critical",
+        "emergency": "critical",
+        "error": "error",
+        "err": "error",
+        "warning": "warning",
+        "warn": "warning",
+        "caution": "warning",
+        "info": "info",
+        "informational": "info",
+        "notice": "info",
+    }
+    return mappings.get(raw, raw)
+
+
+def normalize_status_code(raw: str) -> str:
+    """Normalize HTTP status code."""
+    if not raw or raw.strip() in ["*", "any"]:
+        return None
+    # Return as-is if it's a valid status code
+    if raw.strip().isdigit():
+        return raw.strip()
+    return None
+
+
 def normalize_slots(slots: dict) -> dict:
     """Apply normalization to all slots in a parsed result dict."""
     return {
@@ -80,4 +130,8 @@ def normalize_slots(slots: dict) -> dict:
         "time": normalize_time(slots.get("time")),
         "user": normalize_user(slots.get("user")),
         "source": normalize_source(slots.get("source")),
+        "src_ip": normalize_src_ip(slots.get("src_ip")),
+        "hostname": normalize_hostname(slots.get("hostname")),
+        "severity": normalize_severity(slots.get("severity")),
+        "status_code": normalize_status_code(slots.get("status_code")),
     }

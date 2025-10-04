@@ -1,1001 +1,487 @@
-nl_query,action,time,user,source
-critical errors last month in auth for user david,error,last30d,david,auth
-logins that worked in the last month in auth for user bob,success,last30d,bob,auth
-fetch last 24 hours in auth for user bob,show,last24h,bob,auth
-successful logins since yesterday in web_demo for all users,success,last24h,*,web_demo
-login failures last 24 hours in system for user bob,failure,last24h,bob,system
-failed logins since midnight in errors_demo for user alice,failure,today,alice,errors_demo
-logins that worked earlier today in web_demo for user bob,success,today,bob,web_demo
-critical errors today in web_demo for user frank,error,today,frank,web_demo
-login failures this month in web_demo for user erin,failure,last30d,erin,web_demo
-failed logins over the weekend in web_demo for user david,failure,lastweek,david,web_demo
-successful logins since midnight in system for user charlie,success,today,charlie,system
-auth failures today in errors_demo for user bob,failure,today,bob,errors_demo
-show me yesterday in auth for all users,show,yesterday,*,auth
-login failures this weekend in web_demo for user david,failure,thisweek,david,web_demo
-logins that worked yesterday in web_demo for user bob,success,yesterday,bob,web_demo
-login failures the day before today in system for user charlie,failure,yesterday,charlie,system
-login failures yesterday in web_demo for user alice,failure,yesterday,alice,web_demo
-failed logins since yesterday in auth for user charlie,failure,last24h,charlie,auth
-failed logins in the last month in auth for user david,failure,last30d,david,auth
-logins that worked over the weekend in system for user frank,success,lastweek,frank,system
-web errors today in errors_demo for user frank,error,today,frank,errors_demo
-system errors the day before today in auth for user alice,error,yesterday,alice,auth
-logins that worked since friday in errors_demo for user bob,success,thisweek,bob,errors_demo
-successes yesterday in auth for user bob,success,yesterday,bob,auth
-failed logins today so far in system for user charlie,failure,today,charlie,system
-successful logins last 24 hours in web_demo for all users,success,last24h,*,web_demo
-successful logins since monday in system for user charlie,success,thisweek,charlie,system
-failed logins since midnight in errors_demo for user bob,failure,today,bob,errors_demo
-fetch last week in auth for user bob,show,lastweek,bob,auth
-system errors last weekend in errors_demo for user erin,error,lastweek,erin,errors_demo
-successful logins since midnight in auth for user erin,success,today,erin,auth
-show me last night in auth for all users,show,yesterday,*,auth
-display past 24hrs in web_demo for user charlie,show,last24h,charlie,web_demo
-show me today so far in errors_demo for user frank,show,today,frank,errors_demo
-critical errors today in auth for user david,error,today,david,auth
-successful logins past 24hrs in auth for user alice,success,last24h,alice,auth
-fetch last 30 days in system for user david,show,last30d,david,system
-successes since midnight in auth for user charlie,success,today,charlie,auth
-display last week in web_demo for user charlie,show,lastweek,charlie,web_demo
-fetch last night in auth for user bob,show,yesterday,bob,auth
-fetch since friday in web_demo for user alice,show,thisweek,alice,web_demo
-successful logins over the weekend in auth for user alice,success,lastweek,alice,auth
-failed logins since the start of this week in system for user bob,failure,thisweek,bob,system
-auth failures this weekend in system for user frank,failure,thisweek,frank,system
-critical errors over the weekend in web_demo for user frank,error,lastweek,frank,web_demo
-fetch so far this month in auth for user alice,show,last30d,alice,auth
-failed logins past 24hrs in auth for user david,failure,last24h,david,auth
-successes the day before today in system for user david,success,yesterday,david,system
-logins that worked since the start of this week in system for all users,success,thisweek,*,system
-fetch last night in system for user david,show,yesterday,david,system
-login failures today in web_demo for all users,failure,today,*,web_demo
-successes since friday in errors_demo for user alice,success,thisweek,alice,errors_demo
-successes since the start of this week in system for user frank,success,thisweek,frank,system
-list since this morning in auth for user charlie,show,today,charlie,auth
-failed logins since tuesday in auth for all users,failure,thisweek,*,auth
-successful logins last 24 hours in auth for user david,success,last24h,david,auth
-critical errors in the last week in web_demo for user frank,error,lastweek,frank,web_demo
-logins that worked yesterday in auth for user charlie,success,yesterday,charlie,auth
-display month to date in auth for user alice,show,last30d,alice,auth
-auth failures in the last week in system for user frank,failure,lastweek,frank,system
-auth failures last 24 hours in auth for user alice,failure,last24h,alice,auth
-logins that worked since midnight in auth for user frank,success,today,frank,auth
-successful logins previous month in web_demo for user david,success,last30d,david,web_demo
-auth failures the day before today in system for all users,failure,yesterday,*,system
-auth failures today so far in errors_demo for all users,failure,today,*,errors_demo
-system errors yesterday in system for user erin,error,yesterday,erin,system
-web errors the day before today in system for all users,error,yesterday,*,system
-fetch past month in system for user david,show,last30d,david,system
-system errors the day before today in auth for user bob,error,yesterday,bob,auth
-successes this week in errors_demo for user bob,success,thisweek,bob,errors_demo
-fetch month to date in system for user bob,show,last30d,bob,system
-list in the last week in errors_demo for user charlie,show,lastweek,charlie,errors_demo
-logins that worked since tuesday in web_demo for user alice,success,thisweek,alice,web_demo
-critical errors the day before today in errors_demo for user erin,error,yesterday,erin,errors_demo
-failed logins since friday in system for user frank,failure,thisweek,frank,system
-system errors past month in web_demo for user charlie,error,last30d,charlie,web_demo
-successes past week in errors_demo for user alice,success,lastweek,alice,errors_demo
-successes today in web_demo for user alice,success,today,alice,web_demo
-successful logins since yesterday in errors_demo for user charlie,success,last24h,charlie,errors_demo
-successful logins today so far in errors_demo for user alice,success,today,alice,errors_demo
-display in the last month in errors_demo for user alice,show,last30d,alice,errors_demo
-show me in the past day in web_demo for all users,show,last24h,*,web_demo
-system errors in the last month in web_demo for all users,error,last30d,*,web_demo
-login failures since this morning in errors_demo for user charlie,failure,today,charlie,errors_demo
-auth failures last 24 hours in web_demo for user david,failure,last24h,david,web_demo
-failed logins today so far in auth for user david,failure,today,david,auth
-auth failures last 24 hours in web_demo for all users,failure,last24h,*,web_demo
-failed logins past 30 days in auth for user david,failure,last30d,david,auth
-logins that worked yesterday in web_demo for user david,success,yesterday,david,web_demo
-successful logins since yesterday in errors_demo for all users,success,last24h,*,errors_demo
-auth failures the day before today in errors_demo for user frank,failure,yesterday,frank,errors_demo
-successful logins last month in web_demo for user charlie,success,last30d,charlie,web_demo
-show me over the weekend in errors_demo for user charlie,show,lastweek,charlie,errors_demo
-fetch since the start of this week in system for user bob,show,thisweek,bob,system
-successes today so far in web_demo for user bob,success,today,bob,web_demo
-auth failures since wednesday in system for user charlie,failure,thisweek,charlie,system
-application errors month to date in errors_demo for all users,error,last30d,*,errors_demo
-auth failures past 24hrs in errors_demo for user bob,failure,last24h,bob,errors_demo
-failed logins today so far in system for user erin,failure,today,erin,system
-successful logins last week in errors_demo for user bob,success,lastweek,bob,errors_demo
-fetch last 24 hours in system for user charlie,show,last24h,charlie,system
-successes earlier today in auth for all users,success,today,*,auth
-web errors the day before today in web_demo for all users,error,yesterday,*,web_demo
-web errors since thursday in auth for all users,error,thisweek,*,auth
-logins that worked last 24 hours in auth for user frank,success,last24h,frank,auth
-fetch since monday in auth for all users,show,thisweek,*,auth
-auth failures in the past day in errors_demo for user david,failure,last24h,david,errors_demo
-show me earlier today in system for user david,show,today,david,system
-failed logins since wednesday in errors_demo for user frank,failure,thisweek,frank,errors_demo
-failed logins yesterday in auth for user bob,failure,yesterday,bob,auth
-show me yesterday in system for all users,show,yesterday,*,system
-auth failures yesterday in auth for user alice,failure,yesterday,alice,auth
-critical errors past week in web_demo for user erin,error,lastweek,erin,web_demo
-auth failures today so far in errors_demo for user charlie,failure,today,charlie,errors_demo
-application errors last night in auth for user bob,error,yesterday,bob,auth
-web errors since monday in auth for user erin,error,thisweek,erin,auth
-application errors since yesterday in auth for user frank,error,last24h,frank,auth
-web errors today in auth for user charlie,error,today,charlie,auth
-application errors past month in web_demo for user charlie,error,last30d,charlie,web_demo
-web errors earlier today in auth for user alice,error,today,alice,auth
-login failures previous month in auth for all users,failure,last30d,*,auth
-failed logins in the past day in auth for user david,failure,last24h,david,auth
-application errors the day before today in web_demo for user frank,error,yesterday,frank,web_demo
-logins that worked since yesterday in system for user erin,success,last24h,erin,system
-auth failures since yesterday in errors_demo for user alice,failure,last24h,alice,errors_demo
-list yesterday in web_demo for user bob,show,yesterday,bob,web_demo
-web errors this week in errors_demo for all users,error,thisweek,*,errors_demo
-failed logins past 30 days in system for all users,failure,last30d,*,system
-fetch yesterday in errors_demo for user frank,show,yesterday,frank,errors_demo
-fetch past 30 days in auth for user charlie,show,last30d,charlie,auth
-display since yesterday in web_demo for all users,show,last24h,*,web_demo
-list last week in system for user charlie,show,lastweek,charlie,system
-system errors past 30 days in errors_demo for user frank,error,last30d,frank,errors_demo
-failed logins since yesterday in system for user charlie,failure,last24h,charlie,system
-application errors over the weekend in auth for user erin,error,lastweek,erin,auth
-web errors yesterday in system for user david,error,yesterday,david,system
-successful logins last night in web_demo for user david,success,yesterday,david,web_demo
-critical errors since midnight in system for user david,error,today,david,system
-logins that worked over the weekend in errors_demo for user erin,success,lastweek,erin,errors_demo
-successes over the weekend in auth for all users,success,lastweek,*,auth
-successful logins since midnight in web_demo for user david,success,today,david,web_demo
-successes yesterday in errors_demo for user erin,success,yesterday,erin,errors_demo
-display the day before today in auth for user charlie,show,yesterday,charlie,auth
-failed logins yesterday in errors_demo for user frank,failure,yesterday,frank,errors_demo
-logins that worked since monday in auth for user david,success,thisweek,david,auth
-application errors past 24hrs in errors_demo for user frank,error,last24h,frank,errors_demo
-web errors last 24 hours in errors_demo for user bob,error,last24h,bob,errors_demo
-successes last month in system for user frank,success,last30d,frank,system
-successes so far this month in errors_demo for user david,success,last30d,david,errors_demo
-login failures last night in system for user david,failure,yesterday,david,system
-web errors last night in errors_demo for user charlie,error,yesterday,charlie,errors_demo
-successes past month in system for user david,success,last30d,david,system
-successes since midnight in errors_demo for all users,success,today,*,errors_demo
-logins that worked since this morning in web_demo for user david,success,today,david,web_demo
-application errors in the past day in system for user david,error,last24h,david,system
-application errors yesterday in web_demo for all users,error,yesterday,*,web_demo
-login failures past 24hrs in auth for all users,failure,last24h,*,auth
-logins that worked yesterday in web_demo for user alice,success,yesterday,alice,web_demo
-failed logins since this morning in web_demo for user charlie,failure,today,charlie,web_demo
-login failures since this morning in auth for user charlie,failure,today,charlie,auth
-critical errors past 30 days in errors_demo for user erin,error,last30d,erin,errors_demo
-logins that worked the day before today in system for all users,success,yesterday,*,system
-failed logins this weekend in system for user david,failure,thisweek,david,system
-successes month to date in system for user charlie,success,last30d,charlie,system
-failed logins this weekend in errors_demo for user frank,failure,thisweek,frank,errors_demo
-system errors today so far in web_demo for user charlie,error,today,charlie,web_demo
-web errors earlier today in web_demo for user erin,error,today,erin,web_demo
-critical errors the day before today in web_demo for user frank,error,yesterday,frank,web_demo
-system errors this month in errors_demo for user erin,error,last30d,erin,errors_demo
-display the day before today in auth for user frank,show,yesterday,frank,auth
-show me last night in web_demo for user bob,show,yesterday,bob,web_demo
-show me since yesterday in web_demo for user bob,show,last24h,bob,web_demo
-fetch since yesterday in auth for user frank,show,last24h,frank,auth
-auth failures last 30 days in system for user david,failure,last30d,david,system
-auth failures this month in system for user david,failure,last30d,david,system
-display this month in auth for user erin,show,last30d,erin,auth
-critical errors last weekend in web_demo for all users,error,lastweek,*,web_demo
-system errors this weekend in errors_demo for user david,error,thisweek,david,errors_demo
-web errors last night in system for user erin,error,yesterday,erin,system
-application errors in the last week in web_demo for user charlie,error,lastweek,charlie,web_demo
-successes past 24hrs in errors_demo for user charlie,success,last24h,charlie,errors_demo
-login failures yesterday in web_demo for user erin,failure,yesterday,erin,web_demo
-logins that worked last 24 hours in system for user david,success,last24h,david,system
-application errors last month in web_demo for user frank,error,last30d,frank,web_demo
-failed logins last night in auth for user david,failure,yesterday,david,auth
-login failures since this morning in auth for user frank,failure,today,frank,auth
-successes in the last week in system for user bob,success,lastweek,bob,system
-show me since yesterday in errors_demo for user erin,show,last24h,erin,errors_demo
-show me past 24hrs in web_demo for user david,show,last24h,david,web_demo
-successful logins month to date in system for user frank,success,last30d,frank,system
-auth failures last weekend in web_demo for user bob,failure,lastweek,bob,web_demo
-application errors since yesterday in system for user david,error,last24h,david,system
-auth failures the day before today in system for user alice,failure,yesterday,alice,system
-application errors last 30 days in web_demo for user charlie,error,last30d,charlie,web_demo
-successes earlier today in errors_demo for user bob,success,today,bob,errors_demo
-application errors yesterday in web_demo for user bob,error,yesterday,bob,web_demo
-successes in the past day in system for user bob,success,last24h,bob,system
-display past 24hrs in web_demo for all users,show,last24h,*,web_demo
-application errors since midnight in system for user frank,error,today,frank,system
-show me since midnight in errors_demo for user alice,show,today,alice,errors_demo
-application errors previous month in system for user charlie,error,last30d,charlie,system
-login failures yesterday in web_demo for user frank,failure,yesterday,frank,web_demo
-failed logins since this morning in auth for all users,failure,today,*,auth
-auth failures last 24 hours in errors_demo for all users,failure,last24h,*,errors_demo
-application errors since thursday in system for user david,error,thisweek,david,system
-failed logins in the past day in web_demo for user david,failure,last24h,david,web_demo
-successful logins this week in web_demo for user erin,success,thisweek,erin,web_demo
-successful logins in the past day in auth for user alice,success,last24h,alice,auth
-web errors past 24hrs in auth for user frank,error,last24h,frank,auth
-successes since the start of this week in errors_demo for user alice,success,thisweek,alice,errors_demo
-logins that worked last month in errors_demo for user charlie,success,last30d,charlie,errors_demo
-display the day before today in auth for user erin,show,yesterday,erin,auth
-auth failures since tuesday in system for all users,failure,thisweek,*,system
-show me last night in auth for user bob,show,yesterday,bob,auth
-fetch past 24hrs in auth for user erin,show,last24h,erin,auth
-logins that worked yesterday in web_demo for user charlie,success,yesterday,charlie,web_demo
-display since midnight in web_demo for user erin,show,today,erin,web_demo
-successes since this morning in web_demo for user charlie,success,today,charlie,web_demo
-successes this weekend in errors_demo for user bob,success,thisweek,bob,errors_demo
-login failures today in errors_demo for user erin,failure,today,erin,errors_demo
-successes in the past day in errors_demo for user alice,success,last24h,alice,errors_demo
-system errors earlier today in system for all users,error,today,*,system
-logins that worked last weekend in system for user alice,success,lastweek,alice,system
-failed logins since friday in errors_demo for user david,failure,thisweek,david,errors_demo
-logins that worked since midnight in system for all users,success,today,*,system
-fetch in the past day in errors_demo for user bob,show,last24h,bob,errors_demo
-list the day before today in errors_demo for user erin,show,yesterday,erin,errors_demo
-logins that worked in the last week in system for all users,success,lastweek,*,system
-failed logins since wednesday in system for user erin,failure,thisweek,erin,system
-login failures since thursday in web_demo for user charlie,failure,thisweek,charlie,web_demo
-successful logins the day before today in system for user erin,success,yesterday,erin,system
-successful logins since midnight in errors_demo for all users,success,today,*,errors_demo
-logins that worked last weekend in auth for user frank,success,lastweek,frank,auth
-successes the day before today in errors_demo for user erin,success,yesterday,erin,errors_demo
-logins that worked last night in web_demo for user bob,success,yesterday,bob,web_demo
-login failures last 24 hours in errors_demo for all users,failure,last24h,*,errors_demo
-application errors since yesterday in auth for user frank,error,last24h,frank,auth
-failed logins in the past day in web_demo for all users,failure,last24h,*,web_demo
-list last night in system for user frank,show,yesterday,frank,system
-fetch the day before today in system for all users,show,yesterday,*,system
-failed logins over the weekend in web_demo for user charlie,failure,lastweek,charlie,web_demo
-application errors yesterday in errors_demo for user alice,error,yesterday,alice,errors_demo
-display since wednesday in system for user david,show,thisweek,david,system
-web errors the day before today in system for all users,error,yesterday,*,system
-system errors last week in system for user alice,error,lastweek,alice,system
-show me past 30 days in auth for user alice,show,last30d,alice,auth
-successful logins since the start of this week in web_demo for user david,success,thisweek,david,web_demo
-application errors in the last week in web_demo for user alice,error,lastweek,alice,web_demo
-failed logins past 30 days in system for user alice,failure,last30d,alice,system
-successes month to date in system for user alice,success,last30d,alice,system
-fetch since tuesday in errors_demo for user bob,show,thisweek,bob,errors_demo
-application errors the day before today in errors_demo for all users,error,yesterday,*,errors_demo
-show me last night in errors_demo for all users,show,yesterday,*,errors_demo
-display last weekend in system for user frank,show,lastweek,frank,system
-auth failures over the weekend in web_demo for user erin,failure,lastweek,erin,web_demo
-failed logins since friday in system for user erin,failure,thisweek,erin,system
-auth failures last 24 hours in web_demo for user charlie,failure,last24h,charlie,web_demo
-logins that worked earlier today in web_demo for user frank,success,today,frank,web_demo
-web errors since the start of this week in system for user frank,error,thisweek,frank,system
-auth failures yesterday in web_demo for all users,failure,yesterday,*,web_demo
-critical errors since the start of this week in errors_demo for user erin,error,thisweek,erin,errors_demo
-failed logins yesterday in system for user frank,failure,yesterday,frank,system
-critical errors last night in errors_demo for user alice,error,yesterday,alice,errors_demo
-show me yesterday in web_demo for user alice,show,yesterday,alice,web_demo
-list this weekend in auth for all users,show,thisweek,*,auth
-login failures since friday in errors_demo for user david,failure,thisweek,david,errors_demo
-login failures the day before today in auth for all users,failure,yesterday,*,auth
-application errors last month in system for user bob,error,last30d,bob,system
-application errors last weekend in errors_demo for all users,error,lastweek,*,errors_demo
-critical errors last 24 hours in errors_demo for user frank,error,last24h,frank,errors_demo
-successful logins since wednesday in web_demo for user alice,success,thisweek,alice,web_demo
-show me yesterday in auth for user charlie,show,yesterday,charlie,auth
-fetch over the weekend in system for all users,show,lastweek,*,system
-logins that worked last weekend in errors_demo for user frank,success,lastweek,frank,errors_demo
-logins that worked since yesterday in system for user erin,success,last24h,erin,system
-application errors the day before today in system for user david,error,yesterday,david,system
-display the day before today in system for user bob,show,yesterday,bob,system
-login failures last 24 hours in auth for user frank,failure,last24h,frank,auth
-system errors last night in web_demo for user alice,error,yesterday,alice,web_demo
-display past month in system for user frank,show,last30d,frank,system
-show me over the weekend in system for all users,show,lastweek,*,system
-failed logins since midnight in errors_demo for user alice,failure,today,alice,errors_demo
-failed logins last weekend in auth for user frank,failure,lastweek,frank,auth
-auth failures last week in system for user frank,failure,lastweek,frank,system
-successful logins since yesterday in system for user david,success,last24h,david,system
-list since wednesday in errors_demo for user bob,show,thisweek,bob,errors_demo
-failed logins since wednesday in system for user charlie,failure,thisweek,charlie,system
-logins that worked since thursday in errors_demo for user alice,success,thisweek,alice,errors_demo
-login failures since monday in system for user alice,failure,thisweek,alice,system
-login failures last week in web_demo for user frank,failure,lastweek,frank,web_demo
-auth failures month to date in web_demo for user charlie,failure,last30d,charlie,web_demo
-fetch since midnight in web_demo for user david,show,today,david,web_demo
-auth failures last week in system for all users,failure,lastweek,*,system
-successes over the weekend in system for user charlie,success,lastweek,charlie,system
-display past 30 days in system for user alice,show,last30d,alice,system
-failed logins last night in auth for user bob,failure,yesterday,bob,auth
-successful logins in the last month in auth for user alice,success,last30d,alice,auth
-display this week in web_demo for user charlie,show,thisweek,charlie,web_demo
-successful logins last 24 hours in web_demo for user charlie,success,last24h,charlie,web_demo
-successes since the start of this week in system for user bob,success,thisweek,bob,system
-successes so far this month in errors_demo for user alice,success,last30d,alice,errors_demo
-failed logins past week in auth for user frank,failure,lastweek,frank,auth
-critical errors last night in errors_demo for user alice,error,yesterday,alice,errors_demo
-display yesterday in system for user frank,show,yesterday,frank,system
-system errors since yesterday in errors_demo for all users,error,last24h,*,errors_demo
-application errors past 30 days in errors_demo for user erin,error,last30d,erin,errors_demo
-application errors so far this month in system for user bob,error,last30d,bob,system
-list last night in system for user frank,show,yesterday,frank,system
-successful logins past week in web_demo for user david,success,lastweek,david,web_demo
-display since midnight in system for user bob,show,today,bob,system
-web errors this week in auth for user bob,error,thisweek,bob,auth
-auth failures this weekend in system for user charlie,failure,thisweek,charlie,system
-failed logins last 24 hours in errors_demo for user bob,failure,last24h,bob,errors_demo
-successes since the start of this week in web_demo for user alice,success,thisweek,alice,web_demo
-auth failures in the last month in system for all users,failure,last30d,*,system
-successes since thursday in auth for user frank,success,thisweek,frank,auth
-login failures since midnight in auth for user alice,failure,today,alice,auth
-successful logins this month in auth for user david,success,last30d,david,auth
-failed logins last month in auth for user bob,failure,last30d,bob,auth
-successes today in errors_demo for user charlie,success,today,charlie,errors_demo
-auth failures last night in web_demo for user charlie,failure,yesterday,charlie,web_demo
-successful logins since tuesday in errors_demo for user alice,success,thisweek,alice,errors_demo
-successes the day before today in system for user bob,success,yesterday,bob,system
-application errors earlier today in auth for user frank,error,today,frank,auth
-show me previous month in auth for user bob,show,last30d,bob,auth
-system errors last weekend in auth for all users,error,lastweek,*,auth
-auth failures last night in system for user bob,failure,yesterday,bob,system
-show me since this morning in auth for user david,show,today,david,auth
-fetch since monday in auth for user frank,show,thisweek,frank,auth
-failed logins since yesterday in web_demo for user erin,failure,last24h,erin,web_demo
-login failures yesterday in errors_demo for user david,failure,yesterday,david,errors_demo
-login failures this weekend in auth for user david,failure,thisweek,david,auth
-successes since monday in web_demo for user david,success,thisweek,david,web_demo
-fetch since monday in errors_demo for user frank,show,thisweek,frank,errors_demo
-system errors earlier today in errors_demo for all users,error,today,*,errors_demo
-fetch last weekend in auth for user david,show,lastweek,david,auth
-failed logins since midnight in system for user erin,failure,today,erin,system
-fetch since the start of this week in errors_demo for user david,show,thisweek,david,errors_demo
-application errors in the past day in system for user alice,error,last24h,alice,system
-fetch last weekend in auth for user bob,show,lastweek,bob,auth
-show me last month in auth for user david,show,last30d,david,auth
-list over the weekend in system for user frank,show,lastweek,frank,system
-successful logins last 24 hours in web_demo for all users,success,last24h,*,web_demo
-login failures last 24 hours in system for user alice,failure,last24h,alice,system
-system errors last weekend in system for user bob,error,lastweek,bob,system
-critical errors past 30 days in auth for user alice,error,last30d,alice,auth
-logins that worked since friday in auth for user frank,success,thisweek,frank,auth
-web errors yesterday in errors_demo for user david,error,yesterday,david,errors_demo
-login failures last 30 days in web_demo for user alice,failure,last30d,alice,web_demo
-auth failures last 30 days in auth for user bob,failure,last30d,bob,auth
-successful logins over the weekend in errors_demo for user frank,success,lastweek,frank,errors_demo
-list so far this month in auth for user alice,show,last30d,alice,auth
-application errors in the past day in system for all users,error,last24h,*,system
-display last 24 hours in auth for user alice,show,last24h,alice,auth
-web errors last weekend in auth for user frank,error,lastweek,frank,auth
-fetch last 24 hours in errors_demo for user bob,show,last24h,bob,errors_demo
-successes previous month in system for user erin,success,last30d,erin,system
-show me past 24hrs in auth for user frank,show,last24h,frank,auth
-list over the weekend in web_demo for user erin,show,lastweek,erin,web_demo
-display past month in auth for user erin,show,last30d,erin,auth
-display since yesterday in web_demo for user erin,show,last24h,erin,web_demo
-successful logins yesterday in errors_demo for user erin,success,yesterday,erin,errors_demo
-critical errors since midnight in auth for user alice,error,today,alice,auth
-login failures in the past day in web_demo for user bob,failure,last24h,bob,web_demo
-show me in the past day in web_demo for user alice,show,last24h,alice,web_demo
-logins that worked last night in auth for user david,success,yesterday,david,auth
-critical errors yesterday in system for user alice,error,yesterday,alice,system
-web errors since friday in system for user bob,error,thisweek,bob,system
-auth failures since yesterday in errors_demo for user bob,failure,last24h,bob,errors_demo
-display today in web_demo for user david,show,today,david,web_demo
-login failures yesterday in errors_demo for user david,failure,yesterday,david,errors_demo
-logins that worked the day before today in auth for all users,success,yesterday,*,auth
-login failures last weekend in errors_demo for user frank,failure,lastweek,frank,errors_demo
-auth failures in the last week in auth for user charlie,failure,lastweek,charlie,auth
-fetch last week in web_demo for user alice,show,lastweek,alice,web_demo
-show me previous month in auth for user erin,show,last30d,erin,auth
-logins that worked last 24 hours in system for user erin,success,last24h,erin,system
-auth failures last week in web_demo for user charlie,failure,lastweek,charlie,web_demo
-show me since tuesday in system for all users,show,thisweek,*,system
-application errors in the past day in system for user erin,error,last24h,erin,system
-show me since yesterday in system for all users,show,last24h,*,system
-show me previous month in system for all users,show,last30d,*,system
-display yesterday in web_demo for user erin,show,yesterday,erin,web_demo
-critical errors since monday in system for all users,error,thisweek,*,system
-login failures past 24hrs in errors_demo for user frank,failure,last24h,frank,errors_demo
-critical errors last week in system for user alice,error,lastweek,alice,system
-successful logins since this morning in web_demo for user alice,success,today,alice,web_demo
-fetch previous month in auth for user bob,show,last30d,bob,auth
-login failures since tuesday in web_demo for user erin,failure,thisweek,erin,web_demo
-successful logins this week in errors_demo for user bob,success,thisweek,bob,errors_demo
-application errors past week in web_demo for user bob,error,lastweek,bob,web_demo
-critical errors in the past day in web_demo for all users,error,last24h,*,web_demo
-failed logins the day before today in system for user alice,failure,yesterday,alice,system
-display yesterday in web_demo for user alice,show,yesterday,alice,web_demo
-successes yesterday in web_demo for user bob,success,yesterday,bob,web_demo
-failed logins since yesterday in errors_demo for user david,failure,last24h,david,errors_demo
-system errors since yesterday in web_demo for user alice,error,last24h,alice,web_demo
-fetch since midnight in errors_demo for user erin,show,today,erin,errors_demo
-show me yesterday in errors_demo for user erin,show,yesterday,erin,errors_demo
-logins that worked since wednesday in system for user bob,success,thisweek,bob,system
-display yesterday in auth for user frank,show,yesterday,frank,auth
-web errors in the past day in errors_demo for user david,error,last24h,david,errors_demo
-auth failures over the weekend in errors_demo for all users,failure,lastweek,*,errors_demo
-system errors since yesterday in errors_demo for user david,error,last24h,david,errors_demo
-display since this morning in auth for user charlie,show,today,charlie,auth
-login failures yesterday in auth for user bob,failure,yesterday,bob,auth
-logins that worked past 24hrs in errors_demo for user alice,success,last24h,alice,errors_demo
-display since thursday in web_demo for user charlie,show,thisweek,charlie,web_demo
-successes month to date in auth for user charlie,success,last30d,charlie,auth
-failed logins earlier today in auth for user frank,failure,today,frank,auth
-logins that worked past 30 days in auth for user frank,success,last30d,frank,auth
-logins that worked since this morning in errors_demo for user charlie,success,today,charlie,errors_demo
-display past month in auth for user bob,show,last30d,bob,auth
-successful logins past 30 days in web_demo for user alice,success,last30d,alice,web_demo
-web errors last month in system for user david,error,last30d,david,system
-application errors yesterday in system for all users,error,yesterday,*,system
-auth failures over the weekend in system for user david,failure,lastweek,david,system
-list earlier today in system for user frank,show,today,frank,system
-display past month in web_demo for user erin,show,last30d,erin,web_demo
-login failures earlier today in auth for user bob,failure,today,bob,auth
-failed logins since wednesday in errors_demo for user alice,failure,thisweek,alice,errors_demo
-display so far this month in auth for user bob,show,last30d,bob,auth
-show me in the last month in system for all users,show,last30d,*,system
-application errors since friday in web_demo for user frank,error,thisweek,frank,web_demo
-list in the last week in system for user frank,show,lastweek,frank,system
-logins that worked past 24hrs in errors_demo for user alice,success,last24h,alice,errors_demo
-display since the start of this week in auth for user bob,show,thisweek,bob,auth
-logins that worked so far this month in errors_demo for user david,success,last30d,david,errors_demo
-logins that worked since monday in errors_demo for all users,success,thisweek,*,errors_demo
-failed logins last week in errors_demo for user alice,failure,lastweek,alice,errors_demo
-login failures since yesterday in errors_demo for user erin,failure,last24h,erin,errors_demo
-logins that worked past 24hrs in errors_demo for user bob,success,last24h,bob,errors_demo
-web errors yesterday in errors_demo for user charlie,error,yesterday,charlie,errors_demo
-auth failures last night in auth for user charlie,failure,yesterday,charlie,auth
-critical errors past 24hrs in auth for user david,error,last24h,david,auth
-successful logins past month in web_demo for user alice,success,last30d,alice,web_demo
-login failures month to date in errors_demo for user frank,failure,last30d,frank,errors_demo
-critical errors the day before today in errors_demo for all users,error,yesterday,*,errors_demo
-auth failures past 24hrs in web_demo for user alice,failure,last24h,alice,web_demo
-login failures since wednesday in errors_demo for user charlie,failure,thisweek,charlie,errors_demo
-application errors earlier today in errors_demo for user charlie,error,today,charlie,errors_demo
-failed logins last week in web_demo for user charlie,failure,lastweek,charlie,web_demo
-system errors since yesterday in system for user david,error,last24h,david,system
-login failures last 24 hours in auth for all users,failure,last24h,*,auth
-web errors previous month in errors_demo for user charlie,error,last30d,charlie,errors_demo
-list last 24 hours in auth for user bob,show,last24h,bob,auth
-auth failures last weekend in errors_demo for user charlie,failure,lastweek,charlie,errors_demo
-web errors previous month in system for user erin,error,last30d,erin,system
-failed logins earlier today in errors_demo for user david,failure,today,david,errors_demo
-application errors last weekend in errors_demo for user erin,error,lastweek,erin,errors_demo
-critical errors the day before today in system for user bob,error,yesterday,bob,system
-login failures since wednesday in auth for user alice,failure,thisweek,alice,auth
-auth failures this month in errors_demo for user charlie,failure,last30d,charlie,errors_demo
-fetch last week in web_demo for all users,show,lastweek,*,web_demo
-failed logins since thursday in errors_demo for user charlie,failure,thisweek,charlie,errors_demo
-application errors yesterday in auth for user charlie,error,yesterday,charlie,auth
-login failures past month in system for user bob,failure,last30d,bob,system
-show me this weekend in web_demo for user erin,show,thisweek,erin,web_demo
-show me last week in web_demo for user charlie,show,lastweek,charlie,web_demo
-successes in the last week in web_demo for user charlie,success,lastweek,charlie,web_demo
-web errors today so far in web_demo for all users,error,today,*,web_demo
-successful logins this weekend in web_demo for all users,success,thisweek,*,web_demo
-display last 24 hours in web_demo for user erin,show,last24h,erin,web_demo
-successful logins last night in system for user frank,success,yesterday,frank,system
-show me in the last week in auth for user erin,show,lastweek,erin,auth
-successes today in errors_demo for user bob,success,today,bob,errors_demo
-login failures since yesterday in auth for user charlie,failure,last24h,charlie,auth
-successes last night in web_demo for user bob,success,yesterday,bob,web_demo
-fetch since yesterday in auth for user frank,show,last24h,frank,auth
-successful logins yesterday in web_demo for user bob,success,yesterday,bob,web_demo
-display since thursday in web_demo for user erin,show,thisweek,erin,web_demo
-successes in the past day in web_demo for user erin,success,last24h,erin,web_demo
-auth failures last 24 hours in web_demo for user charlie,failure,last24h,charlie,web_demo
-show me last month in errors_demo for user erin,show,last30d,erin,errors_demo
-failed logins last weekend in errors_demo for user erin,failure,lastweek,erin,errors_demo
-web errors the day before today in web_demo for user alice,error,yesterday,alice,web_demo
-login failures since thursday in auth for user bob,failure,thisweek,bob,auth
-application errors since monday in web_demo for user bob,error,thisweek,bob,web_demo
-auth failures since this morning in auth for user charlie,failure,today,charlie,auth
-critical errors this weekend in web_demo for user alice,error,thisweek,alice,web_demo
-application errors last 24 hours in auth for user erin,error,last24h,erin,auth
-list since wednesday in errors_demo for user frank,show,thisweek,frank,errors_demo
-successes over the weekend in web_demo for all users,success,lastweek,*,web_demo
-list in the past day in web_demo for user david,show,last24h,david,web_demo
-fetch past 30 days in auth for user bob,show,last30d,bob,auth
-web errors past month in auth for user frank,error,last30d,frank,auth
-auth failures yesterday in system for user erin,failure,yesterday,erin,system
-login failures since thursday in errors_demo for user charlie,failure,thisweek,charlie,errors_demo
-application errors last weekend in errors_demo for all users,error,lastweek,*,errors_demo
-application errors last 24 hours in errors_demo for user david,error,last24h,david,errors_demo
-failed logins since midnight in web_demo for all users,failure,today,*,web_demo
-list today so far in system for user charlie,show,today,charlie,system
-auth failures last weekend in web_demo for user david,failure,lastweek,david,web_demo
-critical errors past 24hrs in system for all users,error,last24h,*,system
-successes last night in web_demo for user frank,success,yesterday,frank,web_demo
-logins that worked past 30 days in web_demo for user david,success,last30d,david,web_demo
-system errors since monday in auth for user alice,error,thisweek,alice,auth
-critical errors this month in web_demo for user bob,error,last30d,bob,web_demo
-logins that worked past month in errors_demo for all users,success,last30d,*,errors_demo
-system errors since yesterday in system for user alice,error,last24h,alice,system
-logins that worked since wednesday in auth for user charlie,success,thisweek,charlie,auth
-system errors past 24hrs in web_demo for user frank,error,last24h,frank,web_demo
-successes today so far in web_demo for user frank,success,today,frank,web_demo
-failed logins yesterday in auth for user frank,failure,yesterday,frank,auth
-fetch last 30 days in errors_demo for user bob,show,last30d,bob,errors_demo
-show me since the start of this week in system for user frank,show,thisweek,frank,system
-auth failures since tuesday in auth for user david,failure,thisweek,david,auth
-application errors past 24hrs in auth for user bob,error,last24h,bob,auth
-login failures last 24 hours in errors_demo for user erin,failure,last24h,erin,errors_demo
-show me over the weekend in errors_demo for user bob,show,lastweek,bob,errors_demo
-auth failures earlier today in auth for user erin,failure,today,erin,auth
-auth failures last week in web_demo for user david,failure,lastweek,david,web_demo
-list last night in auth for user erin,show,yesterday,erin,auth
-critical errors since wednesday in auth for user frank,error,thisweek,frank,auth
-system errors this week in web_demo for all users,error,thisweek,*,web_demo
-successes last weekend in web_demo for all users,success,lastweek,*,web_demo
-critical errors since monday in errors_demo for all users,error,thisweek,*,errors_demo
-successful logins since midnight in errors_demo for user erin,success,today,erin,errors_demo
-auth failures in the past day in errors_demo for user frank,failure,last24h,frank,errors_demo
-login failures this week in web_demo for user bob,failure,thisweek,bob,web_demo
-auth failures this week in auth for user frank,failure,thisweek,frank,auth
-auth failures earlier today in system for user frank,failure,today,frank,system
-login failures past 24hrs in errors_demo for user frank,failure,last24h,frank,errors_demo
-show me over the weekend in auth for user bob,show,lastweek,bob,auth
-successes today so far in auth for user charlie,success,today,charlie,auth
-system errors yesterday in errors_demo for user erin,error,yesterday,erin,errors_demo
-login failures since friday in errors_demo for user erin,failure,thisweek,erin,errors_demo
-successful logins yesterday in errors_demo for all users,success,yesterday,*,errors_demo
-critical errors in the last week in web_demo for user bob,error,lastweek,bob,web_demo
-web errors past month in web_demo for all users,error,last30d,*,web_demo
-auth failures the day before today in system for user david,failure,yesterday,david,system
-login failures last week in web_demo for user frank,failure,lastweek,frank,web_demo
-application errors in the past day in web_demo for all users,error,last24h,*,web_demo
-logins that worked last month in errors_demo for all users,success,last30d,*,errors_demo
-system errors the day before today in web_demo for user david,error,yesterday,david,web_demo
-successes since yesterday in errors_demo for user bob,success,last24h,bob,errors_demo
-login failures last 24 hours in system for user charlie,failure,last24h,charlie,system
-failed logins since yesterday in web_demo for all users,failure,last24h,*,web_demo
-login failures earlier today in web_demo for all users,failure,today,*,web_demo
-auth failures this month in errors_demo for user frank,failure,last30d,frank,errors_demo
-logins that worked since tuesday in auth for user bob,success,thisweek,bob,auth
-web errors since midnight in errors_demo for user charlie,error,today,charlie,errors_demo
-show me this week in errors_demo for user frank,show,thisweek,frank,errors_demo
-auth failures since thursday in errors_demo for user david,failure,thisweek,david,errors_demo
-system errors since this morning in web_demo for user charlie,error,today,charlie,web_demo
-list past 30 days in system for user erin,show,last30d,erin,system
-login failures in the last week in system for user alice,failure,lastweek,alice,system
-failed logins past week in system for user frank,failure,lastweek,frank,system
-failed logins since thursday in auth for user charlie,failure,thisweek,charlie,auth
-list earlier today in system for all users,show,today,*,system
-logins that worked since thursday in auth for user alice,success,thisweek,alice,auth
-logins that worked in the past day in web_demo for user charlie,success,last24h,charlie,web_demo
-logins that worked earlier today in errors_demo for user david,success,today,david,errors_demo
-successful logins last night in system for user frank,success,yesterday,frank,system
-display yesterday in auth for user frank,show,yesterday,frank,auth
-display in the past day in web_demo for user charlie,show,last24h,charlie,web_demo
-successful logins since friday in web_demo for user frank,success,thisweek,frank,web_demo
-auth failures previous month in web_demo for user bob,failure,last30d,bob,web_demo
-successes the day before today in auth for user erin,success,yesterday,erin,auth
-display last weekend in auth for user bob,show,lastweek,bob,auth
-critical errors today in system for user frank,error,today,frank,system
-successful logins last weekend in errors_demo for all users,success,lastweek,*,errors_demo
-login failures last night in web_demo for user frank,failure,yesterday,frank,web_demo
-web errors previous month in errors_demo for all users,error,last30d,*,errors_demo
-list last night in system for user erin,show,yesterday,erin,system
-critical errors earlier today in errors_demo for user frank,error,today,frank,errors_demo
-successful logins since monday in auth for user david,success,thisweek,david,auth
-web errors last night in auth for user david,error,yesterday,david,auth
-list last night in auth for user erin,show,yesterday,erin,auth
-application errors since tuesday in web_demo for user alice,error,thisweek,alice,web_demo
-logins that worked yesterday in errors_demo for user david,success,yesterday,david,errors_demo
-login failures past week in web_demo for user bob,failure,lastweek,bob,web_demo
-successful logins in the last week in auth for user charlie,success,lastweek,charlie,auth
-critical errors yesterday in auth for user erin,error,yesterday,erin,auth
-login failures last 24 hours in auth for user bob,failure,last24h,bob,auth
-logins that worked earlier today in system for user david,success,today,david,system
-application errors since midnight in errors_demo for all users,error,today,*,errors_demo
-auth failures previous month in web_demo for user erin,failure,last30d,erin,web_demo
-fetch earlier today in errors_demo for user frank,show,today,frank,errors_demo
-failed logins in the last week in auth for all users,failure,lastweek,*,auth
-failed logins since tuesday in system for user bob,failure,thisweek,bob,system
-failed logins in the past day in errors_demo for user erin,failure,last24h,erin,errors_demo
-failed logins last month in system for user bob,failure,last30d,bob,system
-successful logins last 24 hours in errors_demo for user charlie,success,last24h,charlie,errors_demo
-show me since yesterday in web_demo for user david,show,last24h,david,web_demo
-successes since thursday in errors_demo for user charlie,success,thisweek,charlie,errors_demo
-list last night in errors_demo for user alice,show,yesterday,alice,errors_demo
-web errors over the weekend in errors_demo for user bob,error,lastweek,bob,errors_demo
-logins that worked yesterday in errors_demo for all users,success,yesterday,*,errors_demo
-show me today in auth for user bob,show,today,bob,auth
-failed logins in the last week in web_demo for all users,failure,lastweek,*,web_demo
-critical errors over the weekend in system for user charlie,error,lastweek,charlie,system
-login failures since monday in system for user david,failure,thisweek,david,system
-auth failures past month in auth for user bob,failure,last30d,bob,auth
-successes since the start of this week in web_demo for user alice,success,thisweek,alice,web_demo
-critical errors in the past day in errors_demo for user erin,error,last24h,erin,errors_demo
-show me last 30 days in errors_demo for user erin,show,last30d,erin,errors_demo
-login failures month to date in auth for user charlie,failure,last30d,charlie,auth
-successes today in system for user frank,success,today,frank,system
-application errors last weekend in web_demo for user charlie,error,lastweek,charlie,web_demo
-successful logins last night in web_demo for user alice,success,yesterday,alice,web_demo
-display yesterday in auth for user charlie,show,yesterday,charlie,auth
-auth failures the day before today in system for user bob,failure,yesterday,bob,system
-successes yesterday in errors_demo for user erin,success,yesterday,erin,errors_demo
-web errors since wednesday in errors_demo for user bob,error,thisweek,bob,errors_demo
-successes this month in auth for all users,success,last30d,*,auth
-successes since midnight in system for user david,success,today,david,system
-fetch in the last month in auth for user erin,show,last30d,erin,auth
-system errors past week in auth for user alice,error,lastweek,alice,auth
-successful logins today so far in errors_demo for user erin,success,today,erin,errors_demo
-fetch over the weekend in errors_demo for user frank,show,lastweek,frank,errors_demo
-logins that worked last 24 hours in web_demo for all users,success,last24h,*,web_demo
-auth failures since midnight in web_demo for user bob,failure,today,bob,web_demo
-successful logins today so far in errors_demo for all users,success,today,*,errors_demo
-successful logins this month in auth for all users,success,last30d,*,auth
-fetch over the weekend in errors_demo for user bob,show,lastweek,bob,errors_demo
-auth failures last 24 hours in errors_demo for all users,failure,last24h,*,errors_demo
-auth failures in the last week in auth for user david,failure,lastweek,david,auth
-application errors in the past day in auth for all users,error,last24h,*,auth
-web errors since yesterday in web_demo for user erin,error,last24h,erin,web_demo
-display since midnight in errors_demo for user erin,show,today,erin,errors_demo
-login failures in the last week in auth for all users,failure,lastweek,*,auth
-display past week in errors_demo for user erin,show,lastweek,erin,errors_demo
-successes since thursday in auth for user alice,success,thisweek,alice,auth
-display since friday in web_demo for all users,show,thisweek,*,web_demo
-successful logins since monday in auth for user erin,success,thisweek,erin,auth
-application errors this week in errors_demo for user alice,error,thisweek,alice,errors_demo
-list last 24 hours in web_demo for user bob,show,last24h,bob,web_demo
-list yesterday in web_demo for user david,show,yesterday,david,web_demo
-successes past week in errors_demo for user alice,success,lastweek,alice,errors_demo
-successes this weekend in web_demo for user charlie,success,thisweek,charlie,web_demo
-successes since midnight in auth for user alice,success,today,alice,auth
-fetch earlier today in auth for user charlie,show,today,charlie,auth
-display since yesterday in errors_demo for user frank,show,last24h,frank,errors_demo
-fetch past 24hrs in web_demo for user erin,show,last24h,erin,web_demo
-web errors last week in system for all users,error,lastweek,*,system
-critical errors last night in auth for user charlie,error,yesterday,charlie,auth
-critical errors since midnight in auth for user david,error,today,david,auth
-logins that worked the day before today in auth for user charlie,success,yesterday,charlie,auth
-auth failures last night in web_demo for user frank,failure,yesterday,frank,web_demo
-auth failures last 24 hours in errors_demo for user frank,failure,last24h,frank,errors_demo
-display this month in auth for user alice,show,last30d,alice,auth
-failed logins over the weekend in errors_demo for user erin,failure,lastweek,erin,errors_demo
-display past 24hrs in web_demo for user frank,show,last24h,frank,web_demo
-login failures yesterday in web_demo for user david,failure,yesterday,david,web_demo
-login failures since wednesday in system for user bob,failure,thisweek,bob,system
-system errors this weekend in web_demo for user frank,error,thisweek,frank,web_demo
-application errors past 24hrs in web_demo for user erin,error,last24h,erin,web_demo
-auth failures since tuesday in auth for all users,failure,thisweek,*,auth
-list in the last week in errors_demo for all users,show,lastweek,*,errors_demo
-display past 24hrs in system for user erin,show,last24h,erin,system
-successes since yesterday in system for user charlie,success,last24h,charlie,system
-successful logins in the past day in system for user charlie,success,last24h,charlie,system
-fetch this month in errors_demo for user alice,show,last30d,alice,errors_demo
-failed logins today so far in auth for user bob,failure,today,bob,auth
-show me since thursday in errors_demo for user david,show,thisweek,david,errors_demo
-logins that worked since thursday in auth for all users,success,thisweek,*,auth
-fetch since midnight in errors_demo for user frank,show,today,frank,errors_demo
-successes today so far in errors_demo for user charlie,success,today,charlie,errors_demo
-logins that worked the day before today in errors_demo for user erin,success,yesterday,erin,errors_demo
-logins that worked last 30 days in web_demo for user alice,success,last30d,alice,web_demo
-system errors so far this month in web_demo for user frank,error,last30d,frank,web_demo
-failed logins today in auth for user erin,failure,today,erin,auth
-auth failures yesterday in auth for user erin,failure,yesterday,erin,auth
-failed logins past week in errors_demo for all users,failure,lastweek,*,errors_demo
-auth failures last week in system for user alice,failure,lastweek,alice,system
-logins that worked today in web_demo for user alice,success,today,alice,web_demo
-login failures yesterday in web_demo for user bob,failure,yesterday,bob,web_demo
-list the day before today in auth for user alice,show,yesterday,alice,auth
-login failures the day before today in system for user alice,failure,yesterday,alice,system
-logins that worked in the last week in errors_demo for user alice,success,lastweek,alice,errors_demo
-system errors today so far in system for user david,error,today,david,system
-auth failures since this morning in system for user alice,failure,today,alice,system
-show me past 30 days in errors_demo for user erin,show,last30d,erin,errors_demo
-fetch the day before today in system for user erin,show,yesterday,erin,system
-successful logins yesterday in auth for user charlie,success,yesterday,charlie,auth
-system errors yesterday in errors_demo for user frank,error,yesterday,frank,errors_demo
-display past week in web_demo for user bob,show,lastweek,bob,web_demo
-system errors last night in errors_demo for user charlie,error,yesterday,charlie,errors_demo
-failed logins previous month in errors_demo for user erin,failure,last30d,erin,errors_demo
-display the day before today in system for user bob,show,yesterday,bob,system
-list past week in auth for user alice,show,lastweek,alice,auth
-login failures earlier today in errors_demo for user bob,failure,today,bob,errors_demo
-successful logins since tuesday in system for user frank,success,thisweek,frank,system
-auth failures last month in web_demo for user david,failure,last30d,david,web_demo
-logins that worked since this morning in errors_demo for user frank,success,today,frank,errors_demo
-failed logins last night in auth for user charlie,failure,yesterday,charlie,auth
-failed logins the day before today in auth for user alice,failure,yesterday,alice,auth
-auth failures since wednesday in web_demo for user david,failure,thisweek,david,web_demo
-fetch previous month in web_demo for user erin,show,last30d,erin,web_demo
-login failures in the last week in web_demo for all users,failure,lastweek,*,web_demo
-failed logins since tuesday in system for user david,failure,thisweek,david,system
-critical errors in the last week in errors_demo for all users,error,lastweek,*,errors_demo
-application errors since friday in auth for user frank,error,thisweek,frank,auth
-system errors past 24hrs in web_demo for user charlie,error,last24h,charlie,web_demo
-list earlier today in web_demo for user erin,show,today,erin,web_demo
-application errors since thursday in errors_demo for all users,error,thisweek,*,errors_demo
-auth failures yesterday in errors_demo for user erin,failure,yesterday,erin,errors_demo
-web errors the day before today in web_demo for user erin,error,yesterday,erin,web_demo
-successful logins this weekend in web_demo for user david,success,thisweek,david,web_demo
-show me since this morning in auth for user charlie,show,today,charlie,auth
-failed logins month to date in system for user david,failure,last30d,david,system
-logins that worked last night in auth for user alice,success,yesterday,alice,auth
-logins that worked this weekend in auth for all users,success,thisweek,*,auth
-display since monday in system for user alice,show,thisweek,alice,system
-fetch this weekend in auth for user david,show,thisweek,david,auth
-logins that worked this week in errors_demo for user bob,success,thisweek,bob,errors_demo
-system errors in the past day in web_demo for all users,error,last24h,*,web_demo
-web errors last night in auth for user david,error,yesterday,david,auth
-fetch since midnight in system for user alice,show,today,alice,system
-list last month in auth for user bob,show,last30d,bob,auth
-display last weekend in errors_demo for user charlie,show,lastweek,charlie,errors_demo
-failed logins last month in system for user frank,failure,last30d,frank,system
-logins that worked past 24hrs in web_demo for user david,success,last24h,david,web_demo
-critical errors past 30 days in auth for user bob,error,last30d,bob,auth
-system errors this week in errors_demo for user frank,error,thisweek,frank,errors_demo
-application errors since wednesday in auth for user david,error,thisweek,david,auth
-successful logins since friday in errors_demo for user erin,success,thisweek,erin,errors_demo
-fetch since thursday in errors_demo for user charlie,show,thisweek,charlie,errors_demo
-web errors today in auth for user erin,error,today,erin,auth
-application errors this week in auth for all users,error,thisweek,*,auth
-system errors the day before today in errors_demo for user erin,error,yesterday,erin,errors_demo
-list since yesterday in errors_demo for user alice,show,last24h,alice,errors_demo
-web errors the day before today in auth for user frank,error,yesterday,frank,auth
-critical errors this weekend in errors_demo for user david,error,thisweek,david,errors_demo
-successful logins last 24 hours in web_demo for user bob,success,last24h,bob,web_demo
-login failures this week in auth for user david,failure,thisweek,david,auth
-display past 24hrs in system for user david,show,last24h,david,system
-failed logins since wednesday in auth for all users,failure,thisweek,*,auth
-auth failures over the weekend in web_demo for user alice,failure,lastweek,alice,web_demo
-failed logins since friday in system for user erin,failure,thisweek,erin,system
-login failures today so far in auth for user charlie,failure,today,charlie,auth
-list earlier today in auth for user david,show,today,david,auth
-application errors last 24 hours in auth for user erin,error,last24h,erin,auth
-display last month in system for all users,show,last30d,*,system
-successes past 24hrs in web_demo for user frank,success,last24h,frank,web_demo
-list last weekend in system for user charlie,show,lastweek,charlie,system
-list the day before today in system for user charlie,show,yesterday,charlie,system
-web errors earlier today in system for user alice,error,today,alice,system
-fetch since tuesday in auth for user bob,show,thisweek,bob,auth
-failed logins in the past day in errors_demo for all users,failure,last24h,*,errors_demo
-auth failures last week in errors_demo for user david,failure,lastweek,david,errors_demo
-login failures over the weekend in web_demo for user frank,failure,lastweek,frank,web_demo
-auth failures since tuesday in errors_demo for user charlie,failure,thisweek,charlie,errors_demo
-list this week in auth for user david,show,thisweek,david,auth
-web errors in the last week in system for user david,error,lastweek,david,system
-system errors since the start of this week in auth for user charlie,error,thisweek,charlie,auth
-fetch past week in web_demo for user alice,show,lastweek,alice,web_demo
-successes past 24hrs in auth for all users,success,last24h,*,auth
-critical errors today so far in web_demo for user frank,error,today,frank,web_demo
-critical errors over the weekend in system for all users,error,lastweek,*,system
-auth failures since this morning in auth for user frank,failure,today,frank,auth
-list last night in auth for user charlie,show,yesterday,charlie,auth
-successful logins since this morning in web_demo for all users,success,today,*,web_demo
-list since midnight in auth for all users,show,today,*,auth
-system errors last 30 days in auth for user david,error,last30d,david,auth
-web errors month to date in auth for user alice,error,last30d,alice,auth
-web errors in the last week in auth for user alice,error,lastweek,alice,auth
-list since thursday in system for user frank,show,thisweek,frank,system
-system errors today in system for all users,error,today,*,system
-successful logins since friday in web_demo for user frank,success,thisweek,frank,web_demo
-display this weekend in errors_demo for user alice,show,thisweek,alice,errors_demo
-successes last 24 hours in system for user charlie,success,last24h,charlie,system
-logins that worked in the past day in system for user erin,success,last24h,erin,system
-auth failures last 30 days in auth for user charlie,failure,last30d,charlie,auth
-failed logins last weekend in system for user david,failure,lastweek,david,system
-successes last weekend in errors_demo for user charlie,success,lastweek,charlie,errors_demo
-login failures this month in errors_demo for user erin,failure,last30d,erin,errors_demo
-system errors over the weekend in web_demo for user frank,error,lastweek,frank,web_demo
-show me today in auth for all users,show,today,*,auth
-fetch this week in system for user charlie,show,thisweek,charlie,system
-list since yesterday in auth for all users,show,last24h,*,auth
-auth failures over the weekend in auth for user david,failure,lastweek,david,auth
-show me last week in errors_demo for all users,show,lastweek,*,errors_demo
-list today so far in system for all users,show,today,*,system
-login failures since yesterday in errors_demo for user charlie,failure,last24h,charlie,errors_demo
-auth failures yesterday in web_demo for user erin,failure,yesterday,erin,web_demo
-auth failures last 30 days in system for user alice,failure,last30d,alice,system
-login failures yesterday in web_demo for user alice,failure,yesterday,alice,web_demo
-list last 24 hours in errors_demo for user bob,show,last24h,bob,errors_demo
-show me since midnight in web_demo for user charlie,show,today,charlie,web_demo
-fetch yesterday in system for user charlie,show,yesterday,charlie,system
-application errors last 24 hours in auth for user erin,error,last24h,erin,auth
-login failures last night in system for user erin,failure,yesterday,erin,system
-system errors last weekend in auth for user erin,error,lastweek,erin,auth
-logins that worked over the weekend in errors_demo for all users,success,lastweek,*,errors_demo
-show me so far this month in auth for user david,show,last30d,david,auth
-logins that worked in the last week in system for user frank,success,lastweek,frank,system
-show me the day before today in system for user david,show,yesterday,david,system
-failed logins earlier today in system for user david,failure,today,david,system
-logins that worked since friday in web_demo for user frank,success,thisweek,frank,web_demo
-logins that worked last week in auth for user frank,success,lastweek,frank,auth
-critical errors since yesterday in web_demo for user erin,error,last24h,erin,web_demo
-list last night in system for user bob,show,yesterday,bob,system
-system errors last 30 days in system for user alice,error,last30d,alice,system
-auth failures yesterday in web_demo for user david,failure,yesterday,david,web_demo
-login failures in the last month in auth for user alice,failure,last30d,alice,auth
-logins that worked this month in web_demo for user bob,success,last30d,bob,web_demo
-system errors since the start of this week in web_demo for user bob,error,thisweek,bob,web_demo
-system errors past 24hrs in system for user frank,error,last24h,frank,system
-successful logins yesterday in errors_demo for user erin,success,yesterday,erin,errors_demo
-show me since thursday in errors_demo for user alice,show,thisweek,alice,errors_demo
-login failures last night in auth for user charlie,failure,yesterday,charlie,auth
-fetch yesterday in system for user alice,show,yesterday,alice,system
-display last night in errors_demo for user bob,show,yesterday,bob,errors_demo
-system errors today in errors_demo for user alice,error,today,alice,errors_demo
-display in the last week in errors_demo for user bob,show,lastweek,bob,errors_demo
-login failures over the weekend in system for user erin,failure,lastweek,erin,system
-web errors since this morning in web_demo for all users,error,today,*,web_demo
-login failures last 24 hours in web_demo for user erin,failure,last24h,erin,web_demo
-web errors yesterday in web_demo for user erin,error,yesterday,erin,web_demo
-successes today so far in auth for user david,success,today,david,auth
-failed logins this month in auth for user david,failure,last30d,david,auth
-fetch last weekend in system for user alice,show,lastweek,alice,system
-show me last weekend in auth for user frank,show,lastweek,frank,auth
-critical errors since friday in web_demo for user erin,error,thisweek,erin,web_demo
-auth failures past week in system for user charlie,failure,lastweek,charlie,system
-auth failures earlier today in auth for all users,failure,today,*,auth
-application errors yesterday in system for user charlie,error,yesterday,charlie,system
-auth failures month to date in system for user david,failure,last30d,david,system
-web errors since this morning in system for user erin,error,today,erin,system
-web errors since friday in system for user alice,error,thisweek,alice,system
-show me last night in errors_demo for all users,show,yesterday,*,errors_demo
-auth failures last 30 days in system for user bob,failure,last30d,bob,system
-successful logins today so far in auth for user alice,success,today,alice,auth
-list the day before today in auth for user bob,show,yesterday,bob,auth
-show me so far this month in auth for user bob,show,last30d,bob,auth
-critical errors today in errors_demo for user david,error,today,david,errors_demo
-failed logins since the start of this week in errors_demo for user alice,failure,thisweek,alice,errors_demo
-web errors since this morning in errors_demo for user bob,error,today,bob,errors_demo
-login failures over the weekend in web_demo for user david,failure,lastweek,david,web_demo
-successful logins today so far in auth for user frank,success,today,frank,auth
-successful logins last weekend in web_demo for user bob,success,lastweek,bob,web_demo
-show me past 24hrs in errors_demo for user charlie,show,last24h,charlie,errors_demo
-critical errors the day before today in web_demo for all users,error,yesterday,*,web_demo
-login failures in the last week in web_demo for user erin,failure,lastweek,erin,web_demo
-fetch past 30 days in errors_demo for user alice,show,last30d,alice,errors_demo
-successful logins earlier today in system for user bob,success,today,bob,system
-list yesterday in web_demo for user erin,show,yesterday,erin,web_demo
-logins that worked yesterday in auth for user bob,success,yesterday,bob,auth
-web errors since friday in web_demo for user charlie,error,thisweek,charlie,web_demo
-successes past 24hrs in auth for user charlie,success,last24h,charlie,auth
-auth failures last weekend in system for user alice,failure,lastweek,alice,system
-list past week in auth for user david,show,lastweek,david,auth
-auth failures since midnight in system for user charlie,failure,today,charlie,system
-failed logins last 30 days in auth for user frank,failure,last30d,frank,auth
-successful logins month to date in auth for user charlie,success,last30d,charlie,auth
-logins that worked last 24 hours in web_demo for all users,success,last24h,*,web_demo
-web errors last week in web_demo for user david,error,lastweek,david,web_demo
-login failures last 30 days in system for user david,failure,last30d,david,system
-login failures over the weekend in web_demo for all users,failure,lastweek,*,web_demo
-list since the start of this week in system for user frank,show,thisweek,frank,system
-login failures since thursday in errors_demo for user alice,failure,thisweek,alice,errors_demo
-list in the last month in system for user erin,show,last30d,erin,system
-login failures this month in system for all users,failure,last30d,*,system
-login failures last night in errors_demo for all users,failure,yesterday,*,errors_demo
-logins that worked last 24 hours in auth for user alice,success,last24h,alice,auth
-logins that worked last weekend in errors_demo for user charlie,success,lastweek,charlie,errors_demo
-fetch the day before today in auth for user charlie,show,yesterday,charlie,auth
-application errors since the start of this week in web_demo for user charlie,error,thisweek,charlie,web_demo
-successes earlier today in auth for user david,success,today,david,auth
-auth failures past 24hrs in auth for user bob,failure,last24h,bob,auth
-list since monday in errors_demo for user frank,show,thisweek,frank,errors_demo
-fetch since yesterday in auth for user alice,show,last24h,alice,auth
-successes since wednesday in errors_demo for user frank,success,thisweek,frank,errors_demo
-auth failures yesterday in auth for user david,failure,yesterday,david,auth
-critical errors past week in web_demo for all users,error,lastweek,*,web_demo
-application errors since the start of this week in auth for user david,error,thisweek,david,auth
-fetch since wednesday in errors_demo for user bob,show,thisweek,bob,errors_demo
-application errors over the weekend in errors_demo for user erin,error,lastweek,erin,errors_demo
-web errors past 30 days in auth for all users,error,last30d,*,auth
-display since friday in errors_demo for user david,show,thisweek,david,errors_demo
-successful logins last month in web_demo for user frank,success,last30d,frank,web_demo
-failed logins since monday in errors_demo for user bob,failure,thisweek,bob,errors_demo
-critical errors since thursday in auth for user alice,error,thisweek,alice,auth
-fetch last night in auth for user frank,show,yesterday,frank,auth
-fetch in the last month in system for user erin,show,last30d,erin,system
-logins that worked earlier today in auth for user bob,success,today,bob,auth
-failed logins past month in errors_demo for all users,failure,last30d,*,errors_demo
-show me past week in system for user frank,show,lastweek,frank,system
-list past 24hrs in system for user charlie,show,last24h,charlie,system
-successes since wednesday in auth for user charlie,success,thisweek,charlie,auth
-list in the last week in web_demo for all users,show,lastweek,*,web_demo
-web errors since monday in auth for user bob,error,thisweek,bob,auth
-logins that worked since yesterday in auth for user frank,success,last24h,frank,auth
-logins that worked this weekend in auth for user bob,success,thisweek,bob,auth
-list yesterday in web_demo for user frank,show,yesterday,frank,web_demo
-auth failures the day before today in web_demo for user frank,failure,yesterday,frank,web_demo
-critical errors this month in errors_demo for user charlie,error,last30d,charlie,errors_demo
-application errors since midnight in errors_demo for user charlie,error,today,charlie,errors_demo
-logins that worked last week in web_demo for user charlie,success,lastweek,charlie,web_demo
-show me earlier today in web_demo for user charlie,show,today,charlie,web_demo
-successes last night in auth for user erin,success,yesterday,erin,auth
-list previous month in system for user david,show,last30d,david,system
-failed logins since this morning in web_demo for user erin,failure,today,erin,web_demo
-fetch since thursday in errors_demo for all users,show,thisweek,*,errors_demo
-show me last night in web_demo for user bob,show,yesterday,bob,web_demo
-application errors in the last week in web_demo for all users,error,lastweek,*,web_demo
-successful logins past 24hrs in auth for user david,success,last24h,david,auth
-system errors last week in errors_demo for user charlie,error,lastweek,charlie,errors_demo
-successes yesterday in web_demo for user david,success,yesterday,david,web_demo
-list last 30 days in errors_demo for user frank,show,last30d,frank,errors_demo
-fetch last night in web_demo for user charlie,show,yesterday,charlie,web_demo
-fetch in the last week in system for user bob,show,lastweek,bob,system
-application errors since tuesday in system for user alice,error,thisweek,alice,system
-logins that worked so far this month in web_demo for user erin,success,last30d,erin,web_demo
-successful logins since friday in auth for user bob,success,thisweek,bob,auth
-web errors last night in auth for user david,error,yesterday,david,auth
-logins that worked this month in system for user frank,success,last30d,frank,system
-web errors since this morning in web_demo for user frank,error,today,frank,web_demo
-system errors in the past day in errors_demo for user bob,error,last24h,bob,errors_demo
-successes past 30 days in web_demo for user bob,success,last30d,bob,web_demo
-fetch today so far in errors_demo for user alice,show,today,alice,errors_demo
-fetch yesterday in web_demo for user bob,show,yesterday,bob,web_demo
-display this week in web_demo for user alice,show,thisweek,alice,web_demo
-failed logins earlier today in errors_demo for user david,failure,today,david,errors_demo
-failed logins so far this month in web_demo for all users,failure,last30d,*,web_demo
-logins that worked past week in errors_demo for user erin,success,lastweek,erin,errors_demo
-login failures this week in errors_demo for user frank,failure,thisweek,frank,errors_demo
-display over the weekend in errors_demo for user david,show,lastweek,david,errors_demo
-web errors this month in web_demo for user charlie,error,last30d,charlie,web_demo
-show me past 24hrs in system for user charlie,show,last24h,charlie,system
-successful logins this weekend in web_demo for user frank,success,thisweek,frank,web_demo
-logins that worked this week in auth for user frank,success,thisweek,frank,auth
-failed logins last weekend in web_demo for user frank,failure,lastweek,frank,web_demo
-auth failures last night in web_demo for user charlie,failure,yesterday,charlie,web_demo
-logins that worked past week in web_demo for user erin,success,lastweek,erin,web_demo
-login failures in the last month in errors_demo for user alice,failure,last30d,alice,errors_demo
-login failures since midnight in web_demo for user david,failure,today,david,web_demo
-auth failures month to date in system for user charlie,failure,last30d,charlie,system
-web errors last weekend in errors_demo for all users,error,lastweek,*,errors_demo
-successes since midnight in errors_demo for user bob,success,today,bob,errors_demo
-successful logins earlier today in auth for all users,success,today,*,auth
-auth failures since wednesday in web_demo for all users,failure,thisweek,*,web_demo
-fetch past month in auth for all users,show,last30d,*,auth
-successes since friday in errors_demo for all users,success,thisweek,*,errors_demo
-successes since this morning in system for user erin,success,today,erin,system
-web errors in the last week in auth for user charlie,error,lastweek,charlie,auth
-login failures past week in auth for all users,failure,lastweek,*,auth
-list since wednesday in auth for user charlie,show,thisweek,charlie,auth
-login failures past 30 days in auth for all users,failure,last30d,*,auth
-fetch in the past day in errors_demo for all users,show,last24h,*,errors_demo
-list the day before today in auth for all users,show,yesterday,*,auth
-auth failures yesterday in errors_demo for user erin,failure,yesterday,erin,errors_demo
-application errors in the last month in errors_demo for user bob,error,last30d,bob,errors_demo
-display past 24hrs in errors_demo for user erin,show,last24h,erin,errors_demo
-successful logins last weekend in auth for user frank,success,lastweek,frank,auth
-login failures in the past day in errors_demo for user charlie,failure,last24h,charlie,errors_demo
-list past month in auth for user alice,show,last30d,alice,auth
-failed logins yesterday in web_demo for user frank,failure,yesterday,frank,web_demo
-failed logins since monday in auth for user charlie,failure,thisweek,charlie,auth
-failed logins since friday in auth for all users,failure,thisweek,*,auth
-failed logins over the weekend in auth for all users,failure,lastweek,*,auth
-display in the last month in auth for user frank,show,last30d,frank,auth
-system errors since this morning in auth for user alice,error,today,alice,auth
-successful logins past 24hrs in system for user charlie,success,last24h,charlie,system
-web errors since tuesday in web_demo for user erin,error,thisweek,erin,web_demo
-auth failures since wednesday in web_demo for user charlie,failure,thisweek,charlie,web_demo
-show me since midnight in errors_demo for user david,show,today,david,errors_demo
-logins that worked last night in web_demo for user charlie,success,yesterday,charlie,web_demo
-auth failures last 30 days in auth for user alice,failure,last30d,alice,auth
-successes past month in auth for user alice,success,last30d,alice,auth
-successes yesterday in web_demo for user bob,success,yesterday,bob,web_demo
-system errors last 30 days in system for user frank,error,last30d,frank,system
-logins that worked since yesterday in auth for user bob,success,last24h,bob,auth
-show me last weekend in errors_demo for user erin,show,lastweek,erin,errors_demo
-critical errors past 24hrs in auth for user erin,error,last24h,erin,auth
-logins that worked since tuesday in errors_demo for user charlie,success,thisweek,charlie,errors_demo
-system errors past 30 days in auth for user alice,error,last30d,alice,auth
-successes last 24 hours in auth for user charlie,success,last24h,charlie,auth
-web errors in the last week in web_demo for user frank,error,lastweek,frank,web_demo
-auth failures since monday in auth for user charlie,failure,thisweek,charlie,auth
-fetch since the start of this week in system for user charlie,show,thisweek,charlie,system
-system errors since wednesday in errors_demo for all users,error,thisweek,*,errors_demo
-fetch last weekend in errors_demo for all users,show,lastweek,*,errors_demo
-logins that worked past week in web_demo for user erin,success,lastweek,erin,web_demo
-logins that worked month to date in auth for user bob,success,last30d,bob,auth
-fetch last night in auth for user david,show,yesterday,david,auth
-system errors since this morning in system for user bob,error,today,bob,system
-system errors last 24 hours in web_demo for user frank,error,last24h,frank,web_demo
-application errors this month in web_demo for user erin,error,last30d,erin,web_demo
-list today in errors_demo for user alice,show,today,alice,errors_demo
-logins that worked past 24hrs in errors_demo for user bob,success,last24h,bob,errors_demo
-failed logins yesterday in auth for all users,failure,yesterday,*,auth
-successful logins last month in web_demo for user alice,success,last30d,alice,web_demo
-failed logins last 30 days in auth for user frank,failure,last30d,frank,auth
-auth failures in the last month in web_demo for user erin,failure,last30d,erin,web_demo
-list since this morning in system for user bob,show,today,bob,system
-critical errors in the past day in errors_demo for user erin,error,last24h,erin,errors_demo
-login failures this month in system for user alice,failure,last30d,alice,system
-system errors past week in web_demo for user bob,error,lastweek,bob,web_demo
-successes past 24hrs in errors_demo for user erin,success,last24h,erin,errors_demo
-system errors over the weekend in auth for user erin,error,lastweek,erin,auth
-failed logins today in system for user charlie,failure,today,charlie,system
-system errors last night in system for user david,error,yesterday,david,system
-failed logins yesterday in auth for user charlie,failure,yesterday,charlie,auth
-fetch last night in errors_demo for user alice,show,yesterday,alice,errors_demo
-successes since wednesday in system for all users,success,thisweek,*,system
-list last 24 hours in auth for all users,show,last24h,*,auth
-show me in the last month in auth for user frank,show,last30d,frank,auth
+nl_query,action,time,user,source,src_ip,hostname,severity,status_code,structured_query,event_ts
+show me auth success events by user root last 24 hours in secure shell,success,last24h,root,ssh,*,*,*,*,action=success user=root source=ssh earliest=-24h latest=now,2025-10-03T15:08:39
+list connection events by user jsmith with status 403 past week in ssh,access,last7d,jsmith,ssh,*,*,*,403,action=access user=jsmith source=ssh status_code=403 earliest=-7d@d latest=now,2025-09-28T12:08:39
+show me failed login events on firewall-01 last 7 days in server,failure,last7d,*,host,*,firewall-01,*,*,action=failure source=host hostname=firewall-01 earliest=-7d@d latest=now,2025-10-04T12:08:39
+give me sign off events by user anonymous from ip 192.168.0.1 this week in auth log,logout,last7d,anonymous,auth,192.168.0.1,*,*,*,action=logout user=anonymous source=auth src_ip=192.168.0.1 earliest=-7d@d latest=now,2025-10-03T12:08:39
+show me service restart events by user root from ip 10.0.0.1 with status 503 last 30 days in secure shell,restart,last30d,root,ssh,10.0.0.1,*,*,503,action=restart user=root source=ssh src_ip=10.0.0.1 status_code=503 earliest=-30d@d latest=now,2025-09-10T12:08:39
+show me restart events by user root the previous day in secure shell,restart,yesterday,root,ssh,*,*,*,*,action=restart user=root source=ssh earliest=@d-1d latest=@d,2025-10-03T04:37:39
+show me info upload events with status 500 last 7 days in security log,upload,last7d,*,auth,*,*,info,500,action=upload source=auth severity=info status_code=500 earliest=-7d@d latest=now,2025-10-01T12:08:39
+find logout events by user jsmith from ip 10.0.0.1 on app-server-03 past week in filesystem,logout,last7d,jsmith,filesystem,10.0.0.1,app-server-03,*,*,action=logout user=jsmith source=filesystem src_ip=10.0.0.1 hostname=app-server-03 earliest=-7d@d latest=now,2025-10-04T12:08:39
+find critical access events by user bob on app-server-03 with status 200 the previous day in database,access,yesterday,bob,database,*,app-server-03,critical,200,action=access user=bob source=database hostname=app-server-03 severity=critical status_code=200 earliest=@d-1d latest=@d,2025-10-03T00:34:39
+give me file upload events by user jsmith from ip 192.168.0.1 with status 403 since yesterday in database,upload,last24h,jsmith,database,192.168.0.1,*,*,403,action=upload user=jsmith source=database src_ip=192.168.0.1 status_code=403 earliest=-24h latest=now,2025-10-04T11:08:39
+list err auth failure events by user alice on app-server-03 last 30 days in security log,failure,last30d,alice,auth,*,app-server-03,error,*,action=failure user=alice source=auth hostname=app-server-03 severity=error earliest=-30d@d latest=now,2025-09-18T12:08:39
+pull up logout events from ip 172.16.0.50 on web-server-01 with status 404 last 7 days in filesystem,logout,last7d,*,filesystem,172.16.0.50,web-server-01,*,404,action=logout source=filesystem src_ip=172.16.0.50 hostname=web-server-01 status_code=404 earliest=-7d@d latest=now,2025-10-02T12:08:39
+pull up restart events by user alice this month in machine,restart,last30d,alice,host,*,*,*,*,action=restart user=alice source=host earliest=-30d@d latest=now,2025-09-20T12:08:39
+find login events by user anonymous yesterday in db,login,yesterday,anonymous,database,*,*,*,*,action=login user=anonymous source=database earliest=@d-1d latest=@d,2025-10-03T12:26:39
+show me download events with status 502 this week in database,download,last7d,*,database,*,*,*,502,action=download source=database status_code=502 earliest=-7d@d latest=now,2025-09-28T12:08:39
+pull up auth success events by user bob from ip 172.16.0.50 since yesterday in host,success,last24h,bob,host,172.16.0.50,*,*,*,action=success user=bob source=host src_ip=172.16.0.50 earliest=-24h latest=now,2025-10-03T20:08:39
+display error events by user anonymous last 7 days in security log,error,last7d,anonymous,auth,*,*,*,*,action=error user=anonymous source=auth earliest=-7d@d latest=now,2025-09-28T12:08:39
+give me failure events by user admin on db-prod-02 since yesterday in file system,error,last24h,admin,filesystem,*,db-prod-02,*,*,action=error user=admin source=filesystem hostname=db-prod-02 earliest=-24h latest=now,2025-10-03T20:08:39
+show me download events by user alice on load-balancer in the last 24 hours in apache,download,today,alice,web,*,load-balancer,*,*,action=download user=alice source=web hostname=load-balancer earliest=@d latest=now,2025-10-04T07:50:39
+list emergency failed login events from ip 192.168.0.1 with status 502 last 24 hours in host,failure,last24h,*,host,192.168.0.1,*,critical,502,action=failure source=host src_ip=192.168.0.1 severity=critical status_code=502 earliest=-24h latest=now,2025-10-03T17:08:39
+display crash events by user anonymous since yesterday in authentication log,error,last24h,anonymous,auth,*,*,*,*,action=error user=anonymous source=auth earliest=-24h latest=now,2025-10-03T20:08:39
+list login events by user root on db-prod-02 yesterday in file system,login,yesterday,root,filesystem,*,db-prod-02,*,*,action=login user=root source=filesystem hostname=db-prod-02 earliest=@d-1d latest=@d,2025-10-03T17:19:39
+find restart events by user jsmith from ip 10.10.10.5 with status 502 last 7 days in file system,restart,last7d,jsmith,filesystem,10.10.10.5,*,*,502,action=restart user=jsmith source=filesystem src_ip=10.10.10.5 status_code=502 earliest=-7d@d latest=now,2025-10-04T12:08:39
+list service restart events by user anonymous with status 503 this month in filesystem,restart,last30d,anonymous,filesystem,*,*,*,503,action=restart user=anonymous source=filesystem status_code=503 earliest=-30d@d latest=now,2025-09-25T12:08:39
+list file download events by user admin last 24 hours in secure shell,download,last24h,admin,ssh,*,*,*,*,action=download user=admin source=ssh earliest=-24h latest=now,2025-10-03T14:08:39
+pull up emergency request events by user jsmith from ip 192.168.1.100 last hour in ssh,access,last1h,jsmith,ssh,192.168.1.100,*,critical,*,action=access user=jsmith source=ssh src_ip=192.168.1.100 severity=critical earliest=-60m latest=now,2025-10-04T11:26:39
+find file download events by user bob last 24 hours in apache,download,last24h,bob,web,*,*,*,*,action=download user=bob source=web earliest=-24h latest=now,2025-10-03T19:08:39
+list file deletion events by user jsmith this week in database,deletion,last7d,jsmith,database,*,*,*,*,action=deletion user=jsmith source=database earliest=-7d@d latest=now,2025-10-03T12:08:39
+show me failure events past 60 minutes in security log,error,last1h,*,auth,*,*,*,*,action=error source=auth earliest=-60m latest=now,2025-10-04T11:10:39
+give me login failure events from ip 172.16.0.50 last 30 days in filesystem,failure,last30d,*,filesystem,172.16.0.50,*,*,*,action=failure source=filesystem src_ip=172.16.0.50 earliest=-30d@d latest=now,2025-09-10T12:08:39
+show me successful login events by user root on load-balancer last 30 days in auth log,success,last30d,root,auth,*,load-balancer,*,*,action=success user=root source=auth hostname=load-balancer earliest=-30d@d latest=now,2025-09-26T12:08:39
+pull up upload events by user bob last 30 days in ssh,upload,last30d,bob,ssh,*,*,*,*,action=upload user=bob source=ssh earliest=-30d@d latest=now,2025-10-02T12:08:39
+find successful login events by user jsmith on db-prod-02 since midnight in auth log,success,today,jsmith,auth,*,db-prod-02,*,*,action=success user=jsmith source=auth hostname=db-prod-02 earliest=@d latest=now,2025-10-04T09:28:39
+give me critical upload events by user alice today in nginx,upload,today,alice,web,*,*,critical,*,action=upload user=alice source=web severity=critical earliest=@d latest=now,2025-10-04T06:50:39
+show me service restart events by user root on firewall-01 yesterday in security log,restart,yesterday,root,auth,*,firewall-01,*,*,action=restart user=root source=auth hostname=firewall-01 earliest=@d-1d latest=@d,2025-10-03T13:59:39
+list file upload events by user root last 30 days in auth log,upload,last30d,root,auth,*,*,*,*,action=upload user=root source=auth earliest=-30d@d latest=now,2025-09-13T12:08:39
+pull up authentication events by user jsmith on web-server-01 in the last 24 hours in file system,login,today,jsmith,filesystem,*,web-server-01,*,*,action=login user=jsmith source=filesystem hostname=web-server-01 earliest=@d latest=now,2025-10-04T08:21:39
+give me informational failed login events by user bob today in web server,failure,today,bob,web,*,*,info,*,action=failure user=bob source=web severity=info earliest=@d latest=now,2025-10-04T10:35:39
+give me connection events last 30 days in db,access,last30d,*,database,*,*,*,*,action=access source=database earliest=-30d@d latest=now,2025-09-13T12:08:39
+pull up login failure events by user jsmith from ip 10.0.0.1 past 60 minutes in server,failure,last1h,jsmith,host,10.0.0.1,*,*,*,action=failure user=jsmith source=host src_ip=10.0.0.1 earliest=-60m latest=now,2025-10-04T11:22:39
+list sign off events on web-server-01 this week in nginx,logout,last7d,*,web,*,web-server-01,*,*,action=logout source=web hostname=web-server-01 earliest=-7d@d latest=now,2025-10-01T12:08:39
+display info upload events by user anonymous since midnight in database,upload,today,anonymous,database,*,*,info,*,action=upload user=anonymous source=database severity=info earliest=@d latest=now,2025-10-04T11:16:39
+find successful login events by user admin the previous day in filesystem,success,yesterday,admin,filesystem,*,*,*,*,action=success user=admin source=filesystem earliest=@d-1d latest=@d,2025-10-03T05:56:39
+pull up download events by user root last hour in db,download,last1h,root,database,*,*,*,*,action=download user=root source=database earliest=-60m latest=now,2025-10-04T11:38:39
+pull up warn file deletion events by user alice from ip 192.168.0.1 the previous day in secure shell,deletion,yesterday,alice,ssh,192.168.0.1,*,warning,*,action=deletion user=alice source=ssh src_ip=192.168.0.1 severity=warning earliest=@d-1d latest=@d,2025-10-03T05:58:39
+give me login failure events by user admin on web-server-01 the previous day in filesystem,failure,yesterday,admin,filesystem,*,web-server-01,*,*,action=failure user=admin source=filesystem hostname=web-server-01 earliest=@d-1d latest=@d,2025-10-03T09:55:39
+give me crash events by user root with status 200 since midnight in server,error,today,root,host,*,*,*,200,action=error user=root source=host status_code=200 earliest=@d latest=now,2025-10-04T10:13:39
+pull up error auth failure events by user anonymous on app-server-03 the previous day in db,failure,yesterday,anonymous,database,*,app-server-03,error,*,action=failure user=anonymous source=database hostname=app-server-03 severity=error earliest=@d-1d latest=@d,2025-10-03T06:28:39
+show me error events by user root last 24 hours in filesystem,error,last24h,root,filesystem,*,*,*,*,action=error user=root source=filesystem earliest=-24h latest=now,2025-10-04T05:08:39
+give me warning auth failure events by user anonymous this week in db,failure,last7d,anonymous,database,*,*,warning,*,action=failure user=anonymous source=database severity=warning earliest=-7d@d latest=now,2025-09-30T12:08:39
+give me download events from ip 10.10.10.5 with status 403 since midnight in filesystem,download,today,*,filesystem,10.10.10.5,*,*,403,action=download source=filesystem src_ip=10.10.10.5 status_code=403 earliest=@d latest=now,2025-10-04T04:14:39
+display logout events by user jsmith last 24 hours in server,logout,last24h,jsmith,host,*,*,*,*,action=logout user=jsmith source=host earliest=-24h latest=now,2025-10-04T12:08:39
+pull up crit service restart events by user root past 60 minutes in filesystem,restart,last1h,root,filesystem,*,*,critical,*,action=restart user=root source=filesystem severity=critical earliest=-60m latest=now,2025-10-04T11:27:39
+show me logins events by user anonymous on firewall-01 with status 404 the previous day in host,login,yesterday,anonymous,host,*,firewall-01,*,404,action=login user=anonymous source=host hostname=firewall-01 status_code=404 earliest=@d-1d latest=@d,2025-10-03T17:56:39
+show me sign off events with status 503 yesterday in server,logout,yesterday,*,host,*,*,*,503,action=logout source=host status_code=503 earliest=@d-1d latest=@d,2025-10-03T12:50:39
+list warning connection events by user jsmith last 30 days in server,access,last30d,jsmith,host,*,*,warning,*,action=access user=jsmith source=host severity=warning earliest=-30d@d latest=now,2025-09-14T12:08:39
+show me file deletion events by user bob from ip 172.16.0.50 since midnight in host,deletion,today,bob,host,172.16.0.50,*,*,*,action=deletion user=bob source=host src_ip=172.16.0.50 earliest=@d latest=now,2025-10-04T11:10:39
+give me warning failed login events by user jsmith from ip 10.10.10.5 today in ssh,failure,today,jsmith,ssh,10.10.10.5,*,warning,*,action=failure user=jsmith source=ssh src_ip=10.10.10.5 severity=warning earliest=@d latest=now,2025-10-04T04:13:39
+give me login failure events by user anonymous this week in server,failure,last7d,anonymous,host,*,*,*,*,action=failure user=anonymous source=host earliest=-7d@d latest=now,2025-10-02T12:08:39
+give me informational service restart events by user jsmith this week in apache,restart,last7d,jsmith,web,*,*,info,*,action=restart user=jsmith source=web severity=info earliest=-7d@d latest=now,2025-09-28T12:08:39
+show me sign off events by user anonymous with status 503 the previous day in auth log,logout,yesterday,anonymous,auth,*,*,*,503,action=logout user=anonymous source=auth status_code=503 earliest=@d-1d latest=@d,2025-10-03T07:38:39
+find request events by user bob this month in secure shell,access,last30d,bob,ssh,*,*,*,*,action=access user=bob source=ssh earliest=-30d@d latest=now,2025-09-10T12:08:39
+show me delete events with status 200 this month in filesystem,deletion,last30d,*,filesystem,*,*,*,200,action=deletion source=filesystem status_code=200 earliest=-30d@d latest=now,2025-09-15T12:08:39
+display err auth failure events by user anonymous from ip 10.0.0.1 with status 200 this month in nginx,failure,last30d,anonymous,web,10.0.0.1,*,error,200,action=failure user=anonymous source=web src_ip=10.0.0.1 severity=error status_code=200 earliest=-30d@d latest=now,2025-09-09T12:08:39
+find error events on load-balancer past 60 minutes in file system,error,last1h,*,filesystem,*,load-balancer,*,*,action=error source=filesystem hostname=load-balancer earliest=-60m latest=now,2025-10-04T11:28:39
+find successful login events by user jsmith from ip 10.10.10.5 with status 502 this month in ssh,success,last30d,jsmith,ssh,10.10.10.5,*,*,502,action=success user=jsmith source=ssh src_ip=10.10.10.5 status_code=502 earliest=-30d@d latest=now,2025-09-18T12:08:39
+give me logout events by user jsmith from ip 192.168.1.100 with status 500 in the last 24 hours in nginx,logout,today,jsmith,web,192.168.1.100,*,*,500,action=logout user=jsmith source=web src_ip=192.168.1.100 status_code=500 earliest=@d latest=now,2025-10-04T09:24:39
+give me login failure events by user root from ip 10.10.10.5 today in apache,failure,today,root,web,10.10.10.5,*,*,*,action=failure user=root source=web src_ip=10.10.10.5 earliest=@d latest=now,2025-10-04T05:39:39
+give me restart events by user root last 30 days in filesystem,restart,last30d,root,filesystem,*,*,*,*,action=restart user=root source=filesystem earliest=-30d@d latest=now,2025-10-02T12:08:39
+show me sign off events by user anonymous this month in file system,logout,last30d,anonymous,filesystem,*,*,*,*,action=logout user=anonymous source=filesystem earliest=-30d@d latest=now,2025-09-12T12:08:39
+pull up successful login events from ip 10.0.0.1 last hour in apache,success,last1h,*,web,10.0.0.1,*,*,*,action=success source=web src_ip=10.0.0.1 earliest=-60m latest=now,2025-10-04T11:10:39
+display file download events by user root from ip 172.16.0.50 on db-prod-02 since yesterday in file system,download,last24h,root,filesystem,172.16.0.50,db-prod-02,*,*,action=download user=root source=filesystem src_ip=172.16.0.50 hostname=db-prod-02 earliest=-24h latest=now,2025-10-04T02:08:39
+find successful login events by user anonymous the previous day in secure shell,success,yesterday,anonymous,ssh,*,*,*,*,action=success user=anonymous source=ssh earliest=@d-1d latest=@d,2025-10-03T08:10:39
+give me download events by user jsmith past week in apache,download,last7d,jsmith,web,*,*,*,*,action=download user=jsmith source=web earliest=-7d@d latest=now,2025-10-03T12:08:39
+give me sign off events from ip 172.16.0.50 last hour in web server,logout,last1h,*,web,172.16.0.50,*,*,*,action=logout source=web src_ip=172.16.0.50 earliest=-60m latest=now,2025-10-04T11:26:39
+find warn connection events from ip 192.168.0.1 today in machine,access,today,*,host,192.168.0.1,*,warning,*,action=access source=host src_ip=192.168.0.1 severity=warning earliest=@d latest=now,2025-10-04T10:04:39
+list auth failure events by user anonymous on app-server-03 last 24 hours in web server,failure,last24h,anonymous,web,*,app-server-03,*,*,action=failure user=anonymous source=web hostname=app-server-03 earliest=-24h latest=now,2025-10-03T21:08:39
+find emergency successful login events by user anonymous with status 200 past week in filesystem,success,last7d,anonymous,filesystem,*,*,critical,200,action=success user=anonymous source=filesystem severity=critical status_code=200 earliest=-7d@d latest=now,2025-09-30T12:08:39
+list download events by user jsmith today in ssh,download,today,jsmith,ssh,*,*,*,*,action=download user=jsmith source=ssh earliest=@d latest=now,2025-10-04T08:35:39
+give me auth failure events from ip 10.0.0.1 on firewall-01 with status 503 this month in server,failure,last30d,*,host,10.0.0.1,firewall-01,*,503,action=failure source=host src_ip=10.0.0.1 hostname=firewall-01 status_code=503 earliest=-30d@d latest=now,2025-09-24T12:08:39
+find warn delete events by user anonymous from ip 10.10.10.5 last hour in nginx,deletion,last1h,anonymous,web,10.10.10.5,*,warning,*,action=deletion user=anonymous source=web src_ip=10.10.10.5 severity=warning earliest=-60m latest=now,2025-10-04T12:00:39
+list file upload events by user bob with status 502 past 60 minutes in host,upload,last1h,bob,host,*,*,*,502,action=upload user=bob source=host status_code=502 earliest=-60m latest=now,2025-10-04T11:22:39
+pull up critical failure events by user admin from ip 192.168.0.1 last 7 days in secure shell,error,last7d,admin,ssh,192.168.0.1,*,critical,*,action=error user=admin source=ssh src_ip=192.168.0.1 severity=critical earliest=-7d@d latest=now,2025-10-03T12:08:39
+list crit successful login events by user anonymous last hour in ssh,success,last1h,anonymous,ssh,*,*,critical,*,action=success user=anonymous source=ssh severity=critical earliest=-60m latest=now,2025-10-04T11:44:39
+show me auth success events by user admin last hour in db,success,last1h,admin,database,*,*,*,*,action=success user=admin source=database earliest=-60m latest=now,2025-10-04T11:33:39
+list auth success events by user root with status 500 in the last 24 hours in nginx,success,today,root,web,*,*,*,500,action=success user=root source=web status_code=500 earliest=@d latest=now,2025-10-04T09:29:39
+pull up download events by user alice past 60 minutes in db,download,last1h,alice,database,*,*,*,*,action=download user=alice source=database earliest=-60m latest=now,2025-10-04T11:15:39
+give me info auth success events by user jsmith with status 200 last 7 days in nginx,success,last7d,jsmith,web,*,*,info,200,action=success user=jsmith source=web severity=info status_code=200 earliest=-7d@d latest=now,2025-10-03T12:08:39
+list crash events by user alice from ip 10.10.10.5 today in web server,error,today,alice,web,10.10.10.5,*,*,*,action=error user=alice source=web src_ip=10.10.10.5 earliest=@d latest=now,2025-10-04T04:30:39
+give me err connection events by user root last hour in filesystem,access,last1h,root,filesystem,*,*,error,*,action=access user=root source=filesystem severity=error earliest=-60m latest=now,2025-10-04T11:56:39
+show me err restart events by user bob with status 500 last 7 days in server,restart,last7d,bob,host,*,*,error,500,action=restart user=bob source=host severity=error status_code=500 earliest=-7d@d latest=now,2025-10-01T12:08:39
+find crash events by user root from ip 172.16.0.50 in the last 24 hours in machine,error,today,root,host,172.16.0.50,*,*,*,action=error user=root source=host src_ip=172.16.0.50 earliest=@d latest=now,2025-10-04T03:01:39
+give me file download events by user bob from ip 192.168.1.100 on app-server-03 since midnight in machine,download,today,bob,host,192.168.1.100,app-server-03,*,*,action=download user=bob source=host src_ip=192.168.1.100 hostname=app-server-03 earliest=@d latest=now,2025-10-04T06:14:39
+give me service restart events by user alice this week in file system,restart,last7d,alice,filesystem,*,*,*,*,action=restart user=alice source=filesystem earliest=-7d@d latest=now,2025-10-03T12:08:39
+list info logins events by user root the previous day in db,login,yesterday,root,database,*,*,info,*,action=login user=root source=database severity=info earliest=@d-1d latest=@d,2025-10-03T07:28:39
+pull up error successful login events by user root on load-balancer last 24 hours in nginx,success,last24h,root,web,*,load-balancer,error,*,action=success user=root source=web hostname=load-balancer severity=error earliest=-24h latest=now,2025-10-03T20:08:39
+display auth failure events by user root past 60 minutes in database,failure,last1h,root,database,*,*,*,*,action=failure user=root source=database earliest=-60m latest=now,2025-10-04T11:50:39
+show me service restart events on load-balancer last 24 hours in apache,restart,last24h,*,web,*,load-balancer,*,*,action=restart source=web hostname=load-balancer earliest=-24h latest=now,2025-10-03T20:08:39
+display warning logins events by user root last 30 days in nginx,login,last30d,root,web,*,*,warning,*,action=login user=root source=web severity=warning earliest=-30d@d latest=now,2025-09-25T12:08:39
+display failed login events by user root with status 404 last 7 days in file system,failure,last7d,root,filesystem,*,*,*,404,action=failure user=root source=filesystem status_code=404 earliest=-7d@d latest=now,2025-09-30T12:08:39
+list file deletion events by user anonymous with status 503 the previous day in machine,deletion,yesterday,anonymous,host,*,*,*,503,action=deletion user=anonymous source=host status_code=503 earliest=@d-1d latest=@d,2025-10-03T18:31:39
+display warning login events by user anonymous last 7 days in ssh,login,last7d,anonymous,ssh,*,*,warning,*,action=login user=anonymous source=ssh severity=warning earliest=-7d@d latest=now,2025-10-03T12:08:39
+pull up crash events by user jsmith on app-server-03 past week in secure shell,error,last7d,jsmith,ssh,*,app-server-03,*,*,action=error user=jsmith source=ssh hostname=app-server-03 earliest=-7d@d latest=now,2025-10-02T12:08:39
+show me informational download events by user jsmith past week in authentication log,download,last7d,jsmith,auth,*,*,info,*,action=download user=jsmith source=auth severity=info earliest=-7d@d latest=now,2025-10-01T12:08:39
+pull up info file deletion events by user jsmith with status 502 yesterday in filesystem,deletion,yesterday,jsmith,filesystem,*,*,info,502,action=deletion user=jsmith source=filesystem severity=info status_code=502 earliest=@d-1d latest=@d,2025-10-03T03:02:39
+give me emergency successful login events by user alice since yesterday in server,success,last24h,alice,host,*,*,critical,*,action=success user=alice source=host severity=critical earliest=-24h latest=now,2025-10-03T18:08:39
+give me emergency file deletion events by user jsmith from ip 172.16.0.50 on web-server-01 yesterday in secure shell,deletion,yesterday,jsmith,ssh,172.16.0.50,web-server-01,critical,*,action=deletion user=jsmith source=ssh src_ip=172.16.0.50 hostname=web-server-01 severity=critical earliest=@d-1d latest=@d,2025-10-03T19:57:39
+give me service restart events by user jsmith last hour in auth log,restart,last1h,jsmith,auth,*,*,*,*,action=restart user=jsmith source=auth earliest=-60m latest=now,2025-10-04T11:56:39
+give me logout events with status 200 since yesterday in secure shell,logout,last24h,*,ssh,*,*,*,200,action=logout source=ssh status_code=200 earliest=-24h latest=now,2025-10-03T19:08:39
+show me sign off events by user bob this week in nginx,logout,last7d,bob,web,*,*,*,*,action=logout user=bob source=web earliest=-7d@d latest=now,2025-09-29T12:08:39
+pull up restart events by user alice the previous day in apache,restart,yesterday,alice,web,*,*,*,*,action=restart user=alice source=web earliest=@d-1d latest=@d,2025-10-03T05:27:39
+pull up file deletion events by user jsmith on web-server-01 last 7 days in db,deletion,last7d,jsmith,database,*,web-server-01,*,*,action=deletion user=jsmith source=database hostname=web-server-01 earliest=-7d@d latest=now,2025-10-03T12:08:39
+show me error authentication events by user jsmith from ip 10.10.10.5 with status 502 yesterday in secure shell,login,yesterday,jsmith,ssh,10.10.10.5,*,error,502,action=login user=jsmith source=ssh src_ip=10.10.10.5 severity=error status_code=502 earliest=@d-1d latest=@d,2025-10-03T07:35:39
+show me file deletion events by user anonymous the previous day in security log,deletion,yesterday,anonymous,auth,*,*,*,*,action=deletion user=anonymous source=auth earliest=@d-1d latest=@d,2025-10-03T10:00:39
+display access events by user alice from ip 192.168.0.1 with status 404 since midnight in database,access,today,alice,database,192.168.0.1,*,*,404,action=access user=alice source=database src_ip=192.168.0.1 status_code=404 earliest=@d latest=now,2025-10-04T08:14:39
+list failure events by user anonymous this month in file system,error,last30d,anonymous,filesystem,*,*,*,*,action=error user=anonymous source=filesystem earliest=-30d@d latest=now,2025-09-13T12:08:39
+give me request events by user alice yesterday in apache,access,yesterday,alice,web,*,*,*,*,action=access user=alice source=web earliest=@d-1d latest=@d,2025-10-03T19:06:39
+list failed login events by user alice past 60 minutes in machine,failure,last1h,alice,host,*,*,*,*,action=failure user=alice source=host earliest=-60m latest=now,2025-10-04T11:52:39
+pull up failed login events by user anonymous today in host,failure,today,anonymous,host,*,*,*,*,action=failure user=anonymous source=host earliest=@d latest=now,2025-10-04T06:01:39
+show me file upload events by user admin on db-prod-02 with status 200 today in host,upload,today,admin,host,*,db-prod-02,*,200,action=upload user=admin source=host hostname=db-prod-02 status_code=200 earliest=@d latest=now,2025-10-04T10:42:39
+give me login events by user bob with status 503 since yesterday in file system,login,last24h,bob,filesystem,*,*,*,503,action=login user=bob source=filesystem status_code=503 earliest=-24h latest=now,2025-10-03T18:08:39
+give me successful login events on load-balancer with status 502 last hour in db,success,last1h,*,database,*,load-balancer,*,502,action=success source=database hostname=load-balancer status_code=502 earliest=-60m latest=now,2025-10-04T12:07:39
+list authentication events by user bob on app-server-03 yesterday in auth log,login,yesterday,bob,auth,*,app-server-03,*,*,action=login user=bob source=auth hostname=app-server-03 earliest=@d-1d latest=@d,2025-10-03T23:43:39
+pull up failed login events past 60 minutes in database,failure,last1h,*,database,*,*,*,*,action=failure source=database earliest=-60m latest=now,2025-10-04T11:33:39
+find err logout events past 60 minutes in authentication log,logout,last1h,*,auth,*,*,error,*,action=logout source=auth severity=error earliest=-60m latest=now,2025-10-04T11:20:39
+display err authentication events by user root since yesterday in db,login,last24h,root,database,*,*,error,*,action=login user=root source=database severity=error earliest=-24h latest=now,2025-10-03T13:08:39
+find download events by user alice past week in server,download,last7d,alice,host,*,*,*,*,action=download user=alice source=host earliest=-7d@d latest=now,2025-09-28T12:08:39
+display failed login events by user root on app-server-03 past 60 minutes in authentication log,failure,last1h,root,auth,*,app-server-03,*,*,action=failure user=root source=auth hostname=app-server-03 earliest=-60m latest=now,2025-10-04T11:44:39
+display restart events by user jsmith from ip 10.0.0.1 this month in apache,restart,last30d,jsmith,web,10.0.0.1,*,*,*,action=restart user=jsmith source=web src_ip=10.0.0.1 earliest=-30d@d latest=now,2025-09-30T12:08:39
+give me request events by user anonymous on app-server-03 since yesterday in web server,access,last24h,anonymous,web,*,app-server-03,*,*,action=access user=anonymous source=web hostname=app-server-03 earliest=-24h latest=now,2025-10-03T21:08:39
+show me successful login events by user bob from ip 10.0.0.1 on load-balancer with status 500 last 7 days in security log,success,last7d,bob,auth,10.0.0.1,load-balancer,*,500,action=success user=bob source=auth src_ip=10.0.0.1 hostname=load-balancer status_code=500 earliest=-7d@d latest=now,2025-10-02T12:08:39
+find emergency restart events by user anonymous from ip 192.168.1.100 since yesterday in server,restart,last24h,anonymous,host,192.168.1.100,*,critical,*,action=restart user=anonymous source=host src_ip=192.168.1.100 severity=critical earliest=-24h latest=now,2025-10-03T16:08:39
+pull up delete events by user anonymous last 24 hours in apache,deletion,last24h,anonymous,web,*,*,*,*,action=deletion user=anonymous source=web earliest=-24h latest=now,2025-10-04T12:08:39
+display crit access events by user admin yesterday in secure shell,access,yesterday,admin,ssh,*,*,critical,*,action=access user=admin source=ssh severity=critical earliest=@d-1d latest=@d,2025-10-03T20:15:39
+show me warning authentication events by user admin past week in auth log,login,last7d,admin,auth,*,*,warning,*,action=login user=admin source=auth severity=warning earliest=-7d@d latest=now,2025-10-03T12:08:39
+pull up auth failure events by user root this month in authentication log,failure,last30d,root,auth,*,*,*,*,action=failure user=root source=auth earliest=-30d@d latest=now,2025-09-11T12:08:39
+list successful login events by user jsmith from ip 10.10.10.5 yesterday in security log,success,yesterday,jsmith,auth,10.10.10.5,*,*,*,action=success user=jsmith source=auth src_ip=10.10.10.5 earliest=@d-1d latest=@d,2025-10-03T01:16:39
+list delete events by user bob on db-prod-02 yesterday in ssh,deletion,yesterday,bob,ssh,*,db-prod-02,*,*,action=deletion user=bob source=ssh hostname=db-prod-02 earliest=@d-1d latest=@d,2025-10-03T15:29:39
+show me emergency error events by user anonymous this week in file system,error,last7d,anonymous,filesystem,*,*,critical,*,action=error user=anonymous source=filesystem severity=critical earliest=-7d@d latest=now,2025-09-28T12:08:39
+display restart events by user alice last 24 hours in authentication log,restart,last24h,alice,auth,*,*,*,*,action=restart user=alice source=auth earliest=-24h latest=now,2025-10-03T21:08:39
+display err file download events by user jsmith the previous day in filesystem,download,yesterday,jsmith,filesystem,*,*,error,*,action=download user=jsmith source=filesystem severity=error earliest=@d-1d latest=@d,2025-10-03T12:17:39
+pull up access events by user jsmith with status 403 today in authentication log,access,today,jsmith,auth,*,*,*,403,action=access user=jsmith source=auth status_code=403 earliest=@d latest=now,2025-10-04T09:18:39
+display restart events by user anonymous on web-server-01 with status 503 today in machine,restart,today,anonymous,host,*,web-server-01,*,503,action=restart user=anonymous source=host hostname=web-server-01 status_code=503 earliest=@d latest=now,2025-10-04T07:45:39
+display request events by user anonymous today in apache,access,today,anonymous,web,*,*,*,*,action=access user=anonymous source=web earliest=@d latest=now,2025-10-04T02:28:39
+pull up auth success events by user anonymous since yesterday in secure shell,success,last24h,anonymous,ssh,*,*,*,*,action=success user=anonymous source=ssh earliest=-24h latest=now,2025-10-04T00:08:39
+show me file upload events by user alice past 60 minutes in secure shell,upload,last1h,alice,ssh,*,*,*,*,action=upload user=alice source=ssh earliest=-60m latest=now,2025-10-04T11:34:39
+show me logout events by user alice yesterday in file system,logout,yesterday,alice,filesystem,*,*,*,*,action=logout user=alice source=filesystem earliest=@d-1d latest=@d,2025-10-03T07:30:39
+list auth success events by user root from ip 192.168.1.100 on web-server-01 this week in filesystem,success,last7d,root,filesystem,192.168.1.100,web-server-01,*,*,action=success user=root source=filesystem src_ip=192.168.1.100 hostname=web-server-01 earliest=-7d@d latest=now,2025-10-01T12:08:39
+find file download events by user jsmith on firewall-01 yesterday in apache,download,yesterday,jsmith,web,*,firewall-01,*,*,action=download user=jsmith source=web hostname=firewall-01 earliest=@d-1d latest=@d,2025-10-03T04:46:39
+list authentication events by user admin on web-server-01 last hour in ssh,login,last1h,admin,ssh,*,web-server-01,*,*,action=login user=admin source=ssh hostname=web-server-01 earliest=-60m latest=now,2025-10-04T11:49:39
+give me file upload events by user jsmith last hour in security log,upload,last1h,jsmith,auth,*,*,*,*,action=upload user=jsmith source=auth earliest=-60m latest=now,2025-10-04T11:19:39
+pull up critical logins events by user alice from ip 192.168.0.1 since yesterday in file system,login,last24h,alice,filesystem,192.168.0.1,*,critical,*,action=login user=alice source=filesystem src_ip=192.168.0.1 severity=critical earliest=-24h latest=now,2025-10-04T04:08:39
+find sign off events by user bob from ip 172.16.0.50 last 7 days in server,logout,last7d,bob,host,172.16.0.50,*,*,*,action=logout user=bob source=host src_ip=172.16.0.50 earliest=-7d@d latest=now,2025-10-01T12:08:39
+find sign off events by user admin yesterday in host,logout,yesterday,admin,host,*,*,*,*,action=logout user=admin source=host earliest=@d-1d latest=@d,2025-10-03T23:01:39
+display file deletion events by user alice with status 403 last 30 days in file system,deletion,last30d,alice,filesystem,*,*,*,403,action=deletion user=alice source=filesystem status_code=403 earliest=-30d@d latest=now,2025-10-03T12:08:39
+give me emergency file download events by user anonymous past 60 minutes in ssh,download,last1h,anonymous,ssh,*,*,critical,*,action=download user=anonymous source=ssh severity=critical earliest=-60m latest=now,2025-10-04T11:52:39
+show me crash events by user anonymous from ip 10.10.10.5 last hour in db,error,last1h,anonymous,database,10.10.10.5,*,*,*,action=error user=anonymous source=database src_ip=10.10.10.5 earliest=-60m latest=now,2025-10-04T11:24:39
+give me sign off events by user root from ip 10.0.0.1 with status 404 the previous day in auth log,logout,yesterday,root,auth,10.0.0.1,*,*,404,action=logout user=root source=auth src_ip=10.0.0.1 status_code=404 earliest=@d-1d latest=@d,2025-10-03T02:07:39
+find login events by user bob today in file system,login,today,bob,filesystem,*,*,*,*,action=login user=bob source=filesystem earliest=@d latest=now,2025-10-04T12:43:39
+pull up authentication events by user alice on load-balancer yesterday in auth log,login,yesterday,alice,auth,*,load-balancer,*,*,action=login user=alice source=auth hostname=load-balancer earliest=@d-1d latest=@d,2025-10-03T08:33:39
+give me service restart events by user jsmith from ip 172.16.0.50 past 60 minutes in security log,restart,last1h,jsmith,auth,172.16.0.50,*,*,*,action=restart user=jsmith source=auth src_ip=172.16.0.50 earliest=-60m latest=now,2025-10-04T12:00:39
+list logout events by user alice from ip 10.10.10.5 on web-server-01 with status 503 last 7 days in database,logout,last7d,alice,database,10.10.10.5,web-server-01,*,503,action=logout user=alice source=database src_ip=10.10.10.5 hostname=web-server-01 status_code=503 earliest=-7d@d latest=now,2025-09-28T12:08:39
+pull up connection events by user anonymous on load-balancer since yesterday in secure shell,access,last24h,anonymous,ssh,*,load-balancer,*,*,action=access user=anonymous source=ssh hostname=load-balancer earliest=-24h latest=now,2025-10-04T00:08:39
+find restart events by user alice this week in server,restart,last7d,alice,host,*,*,*,*,action=restart user=alice source=host earliest=-7d@d latest=now,2025-10-04T12:08:39
+give me successful login events by user admin with status 503 since midnight in ssh,success,today,admin,ssh,*,*,*,503,action=success user=admin source=ssh status_code=503 earliest=@d latest=now,2025-10-04T09:16:39
+display auth success events by user anonymous the previous day in secure shell,success,yesterday,anonymous,ssh,*,*,*,*,action=success user=anonymous source=ssh earliest=@d-1d latest=@d,2025-10-03T08:25:39
+give me download events by user jsmith with status 500 in the last 24 hours in ssh,download,today,jsmith,ssh,*,*,*,500,action=download user=jsmith source=ssh status_code=500 earliest=@d latest=now,2025-10-04T03:52:39
+find warning connection events by user alice from ip 172.16.0.50 this month in server,access,last30d,alice,host,172.16.0.50,*,warning,*,action=access user=alice source=host src_ip=172.16.0.50 severity=warning earliest=-30d@d latest=now,2025-09-11T12:08:39
+display service restart events since yesterday in apache,restart,last24h,*,web,*,*,*,*,action=restart source=web earliest=-24h latest=now,2025-10-04T02:08:39
+show me file download events by user alice with status 503 this month in secure shell,download,last30d,alice,ssh,*,*,*,503,action=download user=alice source=ssh status_code=503 earliest=-30d@d latest=now,2025-09-20T12:08:39
+find informational successful login events by user alice from ip 10.0.0.1 with status 500 past 60 minutes in filesystem,success,last1h,alice,filesystem,10.0.0.1,*,info,500,action=success user=alice source=filesystem src_ip=10.0.0.1 severity=info status_code=500 earliest=-60m latest=now,2025-10-04T12:08:39
+show me auth failure events by user admin past 60 minutes in file system,failure,last1h,admin,filesystem,*,*,*,*,action=failure user=admin source=filesystem earliest=-60m latest=now,2025-10-04T11:18:39
+find warning auth success events by user alice from ip 172.16.0.50 last hour in file system,success,last1h,alice,filesystem,172.16.0.50,*,warning,*,action=success user=alice source=filesystem src_ip=172.16.0.50 severity=warning earliest=-60m latest=now,2025-10-04T11:59:39
+display delete events by user alice with status 502 this week in authentication log,deletion,last7d,alice,auth,*,*,*,502,action=deletion user=alice source=auth status_code=502 earliest=-7d@d latest=now,2025-10-04T12:08:39
+show me login failure events last hour in secure shell,failure,last1h,*,ssh,*,*,*,*,action=failure source=ssh earliest=-60m latest=now,2025-10-04T11:13:39
+show me successful login events by user anonymous on app-server-03 last 24 hours in db,success,last24h,anonymous,database,*,app-server-03,*,*,action=success user=anonymous source=database hostname=app-server-03 earliest=-24h latest=now,2025-10-03T19:08:39
+find auth success events by user jsmith from ip 10.10.10.5 since yesterday in auth log,success,last24h,jsmith,auth,10.10.10.5,*,*,*,action=success user=jsmith source=auth src_ip=10.10.10.5 earliest=-24h latest=now,2025-10-03T14:08:39
+pull up file download events by user jsmith from ip 10.10.10.5 since yesterday in apache,download,last24h,jsmith,web,10.10.10.5,*,*,*,action=download user=jsmith source=web src_ip=10.10.10.5 earliest=-24h latest=now,2025-10-04T11:08:39
+pull up error sign off events by user alice from ip 192.168.0.1 with status 503 since yesterday in auth log,logout,last24h,alice,auth,192.168.0.1,*,error,503,action=logout user=alice source=auth src_ip=192.168.0.1 severity=error status_code=503 earliest=-24h latest=now,2025-10-03T21:08:39
+list info file deletion events by user bob past 60 minutes in authentication log,deletion,last1h,bob,auth,*,*,info,*,action=deletion user=bob source=auth severity=info earliest=-60m latest=now,2025-10-04T11:42:39
+show me successful login events by user root since yesterday in database,success,last24h,root,database,*,*,*,*,action=success user=root source=database earliest=-24h latest=now,2025-10-03T16:08:39
+find info file download events by user jsmith on db-prod-02 with status 500 past 60 minutes in filesystem,download,last1h,jsmith,filesystem,*,db-prod-02,info,500,action=download user=jsmith source=filesystem hostname=db-prod-02 severity=info status_code=500 earliest=-60m latest=now,2025-10-04T11:47:39
+give me error restart events by user root yesterday in file system,restart,yesterday,root,filesystem,*,*,error,*,action=restart user=root source=filesystem severity=error earliest=@d-1d latest=@d,2025-10-03T19:23:39
+show me login events by user anonymous with status 200 last 30 days in database,login,last30d,anonymous,database,*,*,*,200,action=login user=anonymous source=database status_code=200 earliest=-30d@d latest=now,2025-10-04T12:08:39
+show me file download events by user bob with status 500 since yesterday in ssh,download,last24h,bob,ssh,*,*,*,500,action=download user=bob source=ssh status_code=500 earliest=-24h latest=now,2025-10-04T07:08:39
+display sign off events by user root on load-balancer last hour in machine,logout,last1h,root,host,*,load-balancer,*,*,action=logout user=root source=host hostname=load-balancer earliest=-60m latest=now,2025-10-04T11:54:39
+pull up info connection events by user admin since yesterday in nginx,access,last24h,admin,web,*,*,info,*,action=access user=admin source=web severity=info earliest=-24h latest=now,2025-10-03T18:08:39
+show me error failed login events by user alice on firewall-01 this week in auth log,failure,last7d,alice,auth,*,firewall-01,error,*,action=failure user=alice source=auth hostname=firewall-01 severity=error earliest=-7d@d latest=now,2025-09-30T12:08:39
+pull up informational auth failure events by user alice from ip 192.168.0.1 last hour in web server,failure,last1h,alice,web,192.168.0.1,*,info,*,action=failure user=alice source=web src_ip=192.168.0.1 severity=info earliest=-60m latest=now,2025-10-04T11:42:39
+give me err authentication events by user jsmith with status 500 past 60 minutes in authentication log,login,last1h,jsmith,auth,*,*,error,500,action=login user=jsmith source=auth severity=error status_code=500 earliest=-60m latest=now,2025-10-04T11:29:39
+display restart events on db-prod-02 last 30 days in secure shell,restart,last30d,*,ssh,*,db-prod-02,*,*,action=restart source=ssh hostname=db-prod-02 earliest=-30d@d latest=now,2025-10-04T12:08:39
+show me file upload events by user admin from ip 172.16.0.50 last 24 hours in server,upload,last24h,admin,host,172.16.0.50,*,*,*,action=upload user=admin source=host src_ip=172.16.0.50 earliest=-24h latest=now,2025-10-03T21:08:39
+show me delete events by user jsmith since yesterday in filesystem,deletion,last24h,jsmith,filesystem,*,*,*,*,action=deletion user=jsmith source=filesystem earliest=-24h latest=now,2025-10-04T03:08:39
+pull up service restart events by user bob this week in db,restart,last7d,bob,database,*,*,*,*,action=restart user=bob source=database earliest=-7d@d latest=now,2025-10-03T12:08:39
+find info auth success events by user admin on firewall-01 past week in nginx,success,last7d,admin,web,*,firewall-01,info,*,action=success user=admin source=web hostname=firewall-01 severity=info earliest=-7d@d latest=now,2025-10-04T12:08:39
+display sign off events by user admin from ip 10.0.0.1 today in apache,logout,today,admin,web,10.0.0.1,*,*,*,action=logout user=admin source=web src_ip=10.0.0.1 earliest=@d latest=now,2025-10-04T10:27:39
+list file download events last 30 days in auth log,download,last30d,*,auth,*,*,*,*,action=download source=auth earliest=-30d@d latest=now,2025-09-16T12:08:39
+give me auth success events by user bob on web-server-01 with status 500 yesterday in web server,success,yesterday,bob,web,*,web-server-01,*,500,action=success user=bob source=web hostname=web-server-01 status_code=500 earliest=@d-1d latest=@d,2025-10-03T05:46:39
+list failure events by user admin from ip 10.10.10.5 this month in server,error,last30d,admin,host,10.10.10.5,*,*,*,action=error user=admin source=host src_ip=10.10.10.5 earliest=-30d@d latest=now,2025-09-10T12:08:39
+find request events by user jsmith last hour in authentication log,access,last1h,jsmith,auth,*,*,*,*,action=access user=jsmith source=auth earliest=-60m latest=now,2025-10-04T12:01:39
+find sign off events by user admin on load-balancer with status 503 the previous day in authentication log,logout,yesterday,admin,auth,*,load-balancer,*,503,action=logout user=admin source=auth hostname=load-balancer status_code=503 earliest=@d-1d latest=@d,2025-10-03T06:04:39
+give me auth success events by user bob on db-prod-02 since yesterday in authentication log,success,last24h,bob,auth,*,db-prod-02,*,*,action=success user=bob source=auth hostname=db-prod-02 earliest=-24h latest=now,2025-10-04T04:08:39
+pull up request events by user root the previous day in ssh,access,yesterday,root,ssh,*,*,*,*,action=access user=root source=ssh earliest=@d-1d latest=@d,2025-10-03T11:31:39
+pull up download events from ip 192.168.1.100 the previous day in db,download,yesterday,*,database,192.168.1.100,*,*,*,action=download source=database src_ip=192.168.1.100 earliest=@d-1d latest=@d,2025-10-03T15:01:39
+show me warn file deletion events by user anonymous this month in nginx,deletion,last30d,anonymous,web,*,*,warning,*,action=deletion user=anonymous source=web severity=warning earliest=-30d@d latest=now,2025-09-27T12:08:39
+give me crash events by user anonymous on web-server-01 with status 500 since midnight in authentication log,error,today,anonymous,auth,*,web-server-01,*,500,action=error user=anonymous source=auth hostname=web-server-01 status_code=500 earliest=@d latest=now,2025-10-04T11:56:39
+give me warn authentication events since midnight in authentication log,login,today,*,auth,*,*,warning,*,action=login source=auth severity=warning earliest=@d latest=now,2025-10-04T02:11:39
+list warning logout events by user bob on db-prod-02 this week in security log,logout,last7d,bob,auth,*,db-prod-02,warning,*,action=logout user=bob source=auth hostname=db-prod-02 severity=warning earliest=-7d@d latest=now,2025-10-03T12:08:39
+pull up restart events by user anonymous past week in database,restart,last7d,anonymous,database,*,*,*,*,action=restart user=anonymous source=database earliest=-7d@d latest=now,2025-10-03T12:08:39
+list err file deletion events by user jsmith last 30 days in security log,deletion,last30d,jsmith,auth,*,*,error,*,action=deletion user=jsmith source=auth severity=error earliest=-30d@d latest=now,2025-09-30T12:08:39
+display warning auth failure events by user bob from ip 10.10.10.5 yesterday in filesystem,failure,yesterday,bob,filesystem,10.10.10.5,*,warning,*,action=failure user=bob source=filesystem src_ip=10.10.10.5 severity=warning earliest=@d-1d latest=@d,2025-10-03T07:42:39
+list err sign off events by user alice this week in host,logout,last7d,alice,host,*,*,error,*,action=logout user=alice source=host severity=error earliest=-7d@d latest=now,2025-09-28T12:08:39
+list failure events by user bob this month in apache,error,last30d,bob,web,*,*,*,*,action=error user=bob source=web earliest=-30d@d latest=now,2025-09-21T12:08:39
+find download events on db-prod-02 in the last 24 hours in db,download,today,*,database,*,db-prod-02,*,*,action=download source=database hostname=db-prod-02 earliest=@d latest=now,2025-10-04T07:06:39
+pull up delete events by user anonymous past week in db,deletion,last7d,anonymous,database,*,*,*,*,action=deletion user=anonymous source=database earliest=-7d@d latest=now,2025-10-03T12:08:39
+display failure events by user root from ip 10.0.0.1 with status 403 last 24 hours in ssh,error,last24h,root,ssh,10.0.0.1,*,*,403,action=error user=root source=ssh src_ip=10.0.0.1 status_code=403 earliest=-24h latest=now,2025-10-03T19:08:39
+display informational sign off events from ip 10.10.10.5 on app-server-03 last 7 days in database,logout,last7d,*,database,10.10.10.5,app-server-03,info,*,action=logout source=database src_ip=10.10.10.5 hostname=app-server-03 severity=info earliest=-7d@d latest=now,2025-10-01T12:08:39
+give me info upload events by user alice last 30 days in host,upload,last30d,alice,host,*,*,info,*,action=upload user=alice source=host severity=info earliest=-30d@d latest=now,2025-09-20T12:08:39
+give me successful login events last hour in file system,success,last1h,*,filesystem,*,*,*,*,action=success source=filesystem earliest=-60m latest=now,2025-10-04T11:52:39
+list crash events by user bob past 60 minutes in nginx,error,last1h,bob,web,*,*,*,*,action=error user=bob source=web earliest=-60m latest=now,2025-10-04T11:12:39
+give me file deletion events by user root with status 502 yesterday in web server,deletion,yesterday,root,web,*,*,*,502,action=deletion user=root source=web status_code=502 earliest=@d-1d latest=@d,2025-10-03T04:45:39
+list file upload events since midnight in security log,upload,today,*,auth,*,*,*,*,action=upload source=auth earliest=@d latest=now,2025-10-04T02:22:39
+list authentication events with status 200 the previous day in security log,login,yesterday,*,auth,*,*,*,200,action=login source=auth status_code=200 earliest=@d-1d latest=@d,2025-10-03T17:24:39
+list crash events from ip 192.168.0.1 last 7 days in host,error,last7d,*,host,192.168.0.1,*,*,*,action=error source=host src_ip=192.168.0.1 earliest=-7d@d latest=now,2025-09-28T12:08:39
+list sign off events with status 500 last 30 days in host,logout,last30d,*,host,*,*,*,500,action=logout source=host status_code=500 earliest=-30d@d latest=now,2025-09-11T12:08:39
+display failed login events by user alice with status 404 last hour in server,failure,last1h,alice,host,*,*,*,404,action=failure user=alice source=host status_code=404 earliest=-60m latest=now,2025-10-04T11:30:39
+list failed login events by user root last 24 hours in filesystem,failure,last24h,root,filesystem,*,*,*,*,action=failure user=root source=filesystem earliest=-24h latest=now,2025-10-03T22:08:39
+list sign off events by user admin in the last 24 hours in database,logout,today,admin,database,*,*,*,*,action=logout user=admin source=database earliest=@d latest=now,2025-10-04T12:15:39
+pull up file download events by user jsmith from ip 192.168.1.100 on firewall-01 last 24 hours in host,download,last24h,jsmith,host,192.168.1.100,firewall-01,*,*,action=download user=jsmith source=host src_ip=192.168.1.100 hostname=firewall-01 earliest=-24h latest=now,2025-10-04T10:08:39
+show me restart events yesterday in ssh,restart,yesterday,*,ssh,*,*,*,*,action=restart source=ssh earliest=@d-1d latest=@d,2025-10-03T08:52:39
+give me auth success events by user admin with status 500 in the last 24 hours in file system,success,today,admin,filesystem,*,*,*,500,action=success user=admin source=filesystem status_code=500 earliest=@d latest=now,2025-10-04T12:33:39
+find auth failure events yesterday in database,failure,yesterday,*,database,*,*,*,*,action=failure source=database earliest=@d-1d latest=@d,2025-10-03T09:24:39
+list failed login events by user anonymous the previous day in apache,failure,yesterday,anonymous,web,*,*,*,*,action=failure user=anonymous source=web earliest=@d-1d latest=@d,2025-10-03T08:06:39
+pull up upload events by user root from ip 192.168.0.1 this week in secure shell,upload,last7d,root,ssh,192.168.0.1,*,*,*,action=upload user=root source=ssh src_ip=192.168.0.1 earliest=-7d@d latest=now,2025-10-03T12:08:39
+pull up crash events by user jsmith on firewall-01 yesterday in authentication log,error,yesterday,jsmith,auth,*,firewall-01,*,*,action=error user=jsmith source=auth hostname=firewall-01 earliest=@d-1d latest=@d,2025-10-03T14:52:39
+list file deletion events by user alice last 24 hours in nginx,deletion,last24h,alice,web,*,*,*,*,action=deletion user=alice source=web earliest=-24h latest=now,2025-10-03T21:08:39
+list connection events by user admin last hour in apache,access,last1h,admin,web,*,*,*,*,action=access user=admin source=web earliest=-60m latest=now,2025-10-04T11:15:39
+find login events by user bob on web-server-01 the previous day in security log,login,yesterday,bob,auth,*,web-server-01,*,*,action=login user=bob source=auth hostname=web-server-01 earliest=@d-1d latest=@d,2025-10-03T10:11:39
+list access events since midnight in file system,access,today,*,filesystem,*,*,*,*,action=access source=filesystem earliest=@d latest=now,2025-10-04T03:15:39
+show me restart events by user root today in database,restart,today,root,database,*,*,*,*,action=restart user=root source=database earliest=@d latest=now,2025-10-04T00:48:39
+give me err logins events by user anonymous on load-balancer last hour in machine,login,last1h,anonymous,host,*,load-balancer,error,*,action=login user=anonymous source=host hostname=load-balancer severity=error earliest=-60m latest=now,2025-10-04T12:05:39
+give me delete events by user bob the previous day in authentication log,deletion,yesterday,bob,auth,*,*,*,*,action=deletion user=bob source=auth earliest=@d-1d latest=@d,2025-10-03T14:27:39
+show me logins events by user bob from ip 192.168.1.100 in the last 24 hours in host,login,today,bob,host,192.168.1.100,*,*,*,action=login user=bob source=host src_ip=192.168.1.100 earliest=@d latest=now,2025-10-04T10:16:39
+display logout events by user admin last 30 days in auth log,logout,last30d,admin,auth,*,*,*,*,action=logout user=admin source=auth earliest=-30d@d latest=now,2025-09-15T12:08:39
+pull up connection events yesterday in server,access,yesterday,*,host,*,*,*,*,action=access source=host earliest=@d-1d latest=@d,2025-10-03T20:39:39
+find restart events by user alice in the last 24 hours in filesystem,restart,today,alice,filesystem,*,*,*,*,action=restart user=alice source=filesystem earliest=@d latest=now,2025-10-04T00:49:39
+give me file download events by user bob with status 200 since yesterday in secure shell,download,last24h,bob,ssh,*,*,*,200,action=download user=bob source=ssh status_code=200 earliest=-24h latest=now,2025-10-04T01:08:39
+list delete events by user alice from ip 10.0.0.1 this week in secure shell,deletion,last7d,alice,ssh,10.0.0.1,*,*,*,action=deletion user=alice source=ssh src_ip=10.0.0.1 earliest=-7d@d latest=now,2025-10-03T12:08:39
+give me warn upload events by user bob with status 404 the previous day in database,upload,yesterday,bob,database,*,*,warning,404,action=upload user=bob source=database severity=warning status_code=404 earliest=@d-1d latest=@d,2025-10-03T20:07:39
+pull up critical file deletion events by user admin this month in database,deletion,last30d,admin,database,*,*,critical,*,action=deletion user=admin source=database severity=critical earliest=-30d@d latest=now,2025-09-19T12:08:39
+display authentication events by user anonymous from ip 10.0.0.1 since yesterday in authentication log,login,last24h,anonymous,auth,10.0.0.1,*,*,*,action=login user=anonymous source=auth src_ip=10.0.0.1 earliest=-24h latest=now,2025-10-03T17:08:39
+show me restart events by user bob this week in db,restart,last7d,bob,database,*,*,*,*,action=restart user=bob source=database earliest=-7d@d latest=now,2025-09-28T12:08:39
+display sign off events last 24 hours in apache,logout,last24h,*,web,*,*,*,*,action=logout source=web earliest=-24h latest=now,2025-10-04T00:08:39
+give me auth success events by user root on firewall-01 past 60 minutes in web server,success,last1h,root,web,*,firewall-01,*,*,action=success user=root source=web hostname=firewall-01 earliest=-60m latest=now,2025-10-04T12:03:39
+list failure events from ip 10.0.0.1 past week in database,error,last7d,*,database,10.0.0.1,*,*,*,action=error source=database src_ip=10.0.0.1 earliest=-7d@d latest=now,2025-09-28T12:08:39
+list file deletion events by user anonymous yesterday in security log,deletion,yesterday,anonymous,auth,*,*,*,*,action=deletion user=anonymous source=auth earliest=@d-1d latest=@d,2025-10-03T23:42:39
+list error events by user anonymous with status 503 last hour in db,error,last1h,anonymous,database,*,*,*,503,action=error user=anonymous source=database status_code=503 earliest=-60m latest=now,2025-10-04T11:13:39
+find info logout events by user root today in database,logout,today,root,database,*,*,info,*,action=logout user=root source=database severity=info earliest=@d latest=now,2025-10-04T06:29:39
+find crash events by user root with status 503 last hour in authentication log,error,last1h,root,auth,*,*,*,503,action=error user=root source=auth status_code=503 earliest=-60m latest=now,2025-10-04T11:57:39
+list request events by user anonymous from ip 10.10.10.5 on load-balancer with status 502 today in nginx,access,today,anonymous,web,10.10.10.5,load-balancer,*,502,action=access user=anonymous source=web src_ip=10.10.10.5 hostname=load-balancer status_code=502 earliest=@d latest=now,2025-10-04T02:16:39
+pull up failed login events by user anonymous on db-prod-02 with status 502 last 24 hours in file system,failure,last24h,anonymous,filesystem,*,db-prod-02,*,502,action=failure user=anonymous source=filesystem hostname=db-prod-02 status_code=502 earliest=-24h latest=now,2025-10-04T10:08:39
+give me logout events by user jsmith on app-server-03 last 7 days in nginx,logout,last7d,jsmith,web,*,app-server-03,*,*,action=logout user=jsmith source=web hostname=app-server-03 earliest=-7d@d latest=now,2025-10-01T12:08:39
+display error events by user alice the previous day in ssh,error,yesterday,alice,ssh,*,*,*,*,action=error user=alice source=ssh earliest=@d-1d latest=@d,2025-10-03T09:24:39
+find failure events with status 503 today in filesystem,error,today,*,filesystem,*,*,*,503,action=error source=filesystem status_code=503 earliest=@d latest=now,2025-10-04T10:19:39
+pull up service restart events by user admin on app-server-03 last 30 days in filesystem,restart,last30d,admin,filesystem,*,app-server-03,*,*,action=restart user=admin source=filesystem hostname=app-server-03 earliest=-30d@d latest=now,2025-09-20T12:08:39
+pull up failure events from ip 172.16.0.50 this month in db,error,last30d,*,database,172.16.0.50,*,*,*,action=error source=database src_ip=172.16.0.50 earliest=-30d@d latest=now,2025-09-24T12:08:39
+pull up warning file download events by user bob last 7 days in db,download,last7d,bob,database,*,*,warning,*,action=download user=bob source=database severity=warning earliest=-7d@d latest=now,2025-10-04T12:08:39
+give me restart events by user admin from ip 192.168.0.1 yesterday in file system,restart,yesterday,admin,filesystem,192.168.0.1,*,*,*,action=restart user=admin source=filesystem src_ip=192.168.0.1 earliest=@d-1d latest=@d,2025-10-03T04:32:39
+show me informational auth success events by user anonymous from ip 192.168.1.100 with status 500 last 30 days in secure shell,success,last30d,anonymous,ssh,192.168.1.100,*,info,500,action=success user=anonymous source=ssh src_ip=192.168.1.100 severity=info status_code=500 earliest=-30d@d latest=now,2025-09-07T12:08:39
+pull up auth failure events last 24 hours in ssh,failure,last24h,*,ssh,*,*,*,*,action=failure source=ssh earliest=-24h latest=now,2025-10-03T20:08:39
+display auth success events by user admin from ip 10.10.10.5 on app-server-03 since midnight in ssh,success,today,admin,ssh,10.10.10.5,app-server-03,*,*,action=success user=admin source=ssh src_ip=10.10.10.5 hostname=app-server-03 earliest=@d latest=now,2025-10-04T12:09:39
+pull up failure events by user root past week in ssh,error,last7d,root,ssh,*,*,*,*,action=error user=root source=ssh earliest=-7d@d latest=now,2025-10-01T12:08:39
+find crit file upload events by user anonymous from ip 172.16.0.50 last 24 hours in server,upload,last24h,anonymous,host,172.16.0.50,*,critical,*,action=upload user=anonymous source=host src_ip=172.16.0.50 severity=critical earliest=-24h latest=now,2025-10-04T03:08:39
+find delete events by user jsmith with status 502 last 30 days in security log,deletion,last30d,jsmith,auth,*,*,*,502,action=deletion user=jsmith source=auth status_code=502 earliest=-30d@d latest=now,2025-09-08T12:08:39
+give me warn upload events by user anonymous from ip 192.168.0.1 last 30 days in security log,upload,last30d,anonymous,auth,192.168.0.1,*,warning,*,action=upload user=anonymous source=auth src_ip=192.168.0.1 severity=warning earliest=-30d@d latest=now,2025-09-28T12:08:39
+display error events this month in database,error,last30d,*,database,*,*,*,*,action=error source=database earliest=-30d@d latest=now,2025-09-25T12:08:39
+give me critical restart events by user admin from ip 192.168.0.1 last 7 days in web server,restart,last7d,admin,web,192.168.0.1,*,critical,*,action=restart user=admin source=web src_ip=192.168.0.1 severity=critical earliest=-7d@d latest=now,2025-09-28T12:08:39
+list restart events by user alice in the last 24 hours in ssh,restart,today,alice,ssh,*,*,*,*,action=restart user=alice source=ssh earliest=@d latest=now,2025-10-04T06:09:39
+give me informational file upload events by user anonymous since yesterday in authentication log,upload,last24h,anonymous,auth,*,*,info,*,action=upload user=anonymous source=auth severity=info earliest=-24h latest=now,2025-10-04T08:08:39
+pull up request events by user anonymous since midnight in ssh,access,today,anonymous,ssh,*,*,*,*,action=access user=anonymous source=ssh earliest=@d latest=now,2025-10-04T09:02:39
+pull up informational connection events by user anonymous since yesterday in database,access,last24h,anonymous,database,*,*,info,*,action=access user=anonymous source=database severity=info earliest=-24h latest=now,2025-10-03T13:08:39
+show me file upload events by user bob yesterday in nginx,upload,yesterday,bob,web,*,*,*,*,action=upload user=bob source=web earliest=@d-1d latest=@d,2025-10-03T23:21:39
+pull up logins events by user admin last 7 days in machine,login,last7d,admin,host,*,*,*,*,action=login user=admin source=host earliest=-7d@d latest=now,2025-10-02T12:08:39
+show me login failure events by user bob with status 503 yesterday in ssh,failure,yesterday,bob,ssh,*,*,*,503,action=failure user=bob source=ssh status_code=503 earliest=@d-1d latest=@d,2025-10-03T05:40:39
+list delete events by user root from ip 10.0.0.1 on firewall-01 this month in ssh,deletion,last30d,root,ssh,10.0.0.1,firewall-01,*,*,action=deletion user=root source=ssh src_ip=10.0.0.1 hostname=firewall-01 earliest=-30d@d latest=now,2025-09-13T12:08:39
+list file deletion events by user bob with status 503 past 60 minutes in filesystem,deletion,last1h,bob,filesystem,*,*,*,503,action=deletion user=bob source=filesystem status_code=503 earliest=-60m latest=now,2025-10-04T11:44:39
+list crash events by user bob on web-server-01 with status 502 last 30 days in nginx,error,last30d,bob,web,*,web-server-01,*,502,action=error user=bob source=web hostname=web-server-01 status_code=502 earliest=-30d@d latest=now,2025-09-30T12:08:39
+find file download events by user admin from ip 192.168.1.100 the previous day in filesystem,download,yesterday,admin,filesystem,192.168.1.100,*,*,*,action=download user=admin source=filesystem src_ip=192.168.1.100 earliest=@d-1d latest=@d,2025-10-03T13:54:39
+give me file download events by user bob since yesterday in security log,download,last24h,bob,auth,*,*,*,*,action=download user=bob source=auth earliest=-24h latest=now,2025-10-04T07:08:39
+list error events by user admin last 24 hours in secure shell,error,last24h,admin,ssh,*,*,*,*,action=error user=admin source=ssh earliest=-24h latest=now,2025-10-03T15:08:39
+display access events from ip 172.16.0.50 past 60 minutes in nginx,access,last1h,*,web,172.16.0.50,*,*,*,action=access source=web src_ip=172.16.0.50 earliest=-60m latest=now,2025-10-04T11:24:39
+give me informational successful login events by user anonymous on app-server-03 past 60 minutes in machine,success,last1h,anonymous,host,*,app-server-03,info,*,action=success user=anonymous source=host hostname=app-server-03 severity=info earliest=-60m latest=now,2025-10-04T11:13:39
+give me upload events by user alice from ip 192.168.1.100 last hour in server,upload,last1h,alice,host,192.168.1.100,*,*,*,action=upload user=alice source=host src_ip=192.168.1.100 earliest=-60m latest=now,2025-10-04T12:02:39
+find connection events by user jsmith from ip 10.0.0.1 with status 503 last 30 days in security log,access,last30d,jsmith,auth,10.0.0.1,*,*,503,action=access user=jsmith source=auth src_ip=10.0.0.1 status_code=503 earliest=-30d@d latest=now,2025-09-06T12:08:39
+give me emergency delete events by user alice last 30 days in auth log,deletion,last30d,alice,auth,*,*,critical,*,action=deletion user=alice source=auth severity=critical earliest=-30d@d latest=now,2025-09-23T12:08:39
+pull up sign off events by user anonymous the previous day in host,logout,yesterday,anonymous,host,*,*,*,*,action=logout user=anonymous source=host earliest=@d-1d latest=@d,2025-10-03T22:04:39
+give me warning failure events from ip 10.0.0.1 past 60 minutes in secure shell,error,last1h,*,ssh,10.0.0.1,*,warning,*,action=error source=ssh src_ip=10.0.0.1 severity=warning earliest=-60m latest=now,2025-10-04T11:40:39
+display successful login events by user alice from ip 10.0.0.1 since yesterday in host,success,last24h,alice,host,10.0.0.1,*,*,*,action=success user=alice source=host src_ip=10.0.0.1 earliest=-24h latest=now,2025-10-03T17:08:39
+pull up connection events on db-prod-02 past 60 minutes in secure shell,access,last1h,*,ssh,*,db-prod-02,*,*,action=access source=ssh hostname=db-prod-02 earliest=-60m latest=now,2025-10-04T11:48:39
+display authentication events by user alice today in filesystem,login,today,alice,filesystem,*,*,*,*,action=login user=alice source=filesystem earliest=@d latest=now,2025-10-04T03:04:39
+display error file deletion events by user admin on firewall-01 this month in database,deletion,last30d,admin,database,*,firewall-01,error,*,action=deletion user=admin source=database hostname=firewall-01 severity=error earliest=-30d@d latest=now,2025-09-09T12:08:39
+display file deletion events with status 502 last hour in secure shell,deletion,last1h,*,ssh,*,*,*,502,action=deletion source=ssh status_code=502 earliest=-60m latest=now,2025-10-04T11:10:39
+give me informational access events by user alice from ip 192.168.0.1 in the last 24 hours in auth log,access,today,alice,auth,192.168.0.1,*,info,*,action=access user=alice source=auth src_ip=192.168.0.1 severity=info earliest=@d latest=now,2025-10-04T06:23:39
+give me service restart events by user bob past 60 minutes in database,restart,last1h,bob,database,*,*,*,*,action=restart user=bob source=database earliest=-60m latest=now,2025-10-04T11:40:39
+show me file deletion events by user admin last hour in server,deletion,last1h,admin,host,*,*,*,*,action=deletion user=admin source=host earliest=-60m latest=now,2025-10-04T11:24:39
+list informational failed login events from ip 192.168.1.100 last 7 days in nginx,failure,last7d,*,web,192.168.1.100,*,info,*,action=failure source=web src_ip=192.168.1.100 severity=info earliest=-7d@d latest=now,2025-10-04T12:08:39
+list warning file upload events by user jsmith yesterday in server,upload,yesterday,jsmith,host,*,*,warning,*,action=upload user=jsmith source=host severity=warning earliest=@d-1d latest=@d,2025-10-03T22:04:39
+show me error file deletion events by user admin past week in machine,deletion,last7d,admin,host,*,*,error,*,action=deletion user=admin source=host severity=error earliest=-7d@d latest=now,2025-10-03T12:08:39
+list restart events by user jsmith on app-server-03 in the last 24 hours in auth log,restart,today,jsmith,auth,*,app-server-03,*,*,action=restart user=jsmith source=auth hostname=app-server-03 earliest=@d latest=now,2025-10-04T11:26:39
+show me logins events by user anonymous last 7 days in ssh,login,last7d,anonymous,ssh,*,*,*,*,action=login user=anonymous source=ssh earliest=-7d@d latest=now,2025-10-03T12:08:39
+find restart events by user anonymous from ip 10.0.0.1 with status 403 today in nginx,restart,today,anonymous,web,10.0.0.1,*,*,403,action=restart user=anonymous source=web src_ip=10.0.0.1 status_code=403 earliest=@d latest=now,2025-10-04T10:53:39
+display info login failure events by user bob past 60 minutes in web server,failure,last1h,bob,web,*,*,info,*,action=failure user=bob source=web severity=info earliest=-60m latest=now,2025-10-04T11:51:39
+list info sign off events by user root this month in authentication log,logout,last30d,root,auth,*,*,info,*,action=logout user=root source=auth severity=info earliest=-30d@d latest=now,2025-09-16T12:08:39
+give me auth failure events by user root with status 404 this month in file system,failure,last30d,root,filesystem,*,*,*,404,action=failure user=root source=filesystem status_code=404 earliest=-30d@d latest=now,2025-09-22T12:08:39
+show me file download events by user root the previous day in apache,download,yesterday,root,web,*,*,*,*,action=download user=root source=web earliest=@d-1d latest=@d,2025-10-03T19:41:39
+find file download events by user anonymous yesterday in file system,download,yesterday,anonymous,filesystem,*,*,*,*,action=download user=anonymous source=filesystem earliest=@d-1d latest=@d,2025-10-03T04:00:39
+show me warning sign off events by user anonymous from ip 192.168.1.100 last hour in database,logout,last1h,anonymous,database,192.168.1.100,*,warning,*,action=logout user=anonymous source=database src_ip=192.168.1.100 severity=warning earliest=-60m latest=now,2025-10-04T11:56:39
+pull up access events by user root with status 200 yesterday in file system,access,yesterday,root,filesystem,*,*,*,200,action=access user=root source=filesystem status_code=200 earliest=@d-1d latest=@d,2025-10-03T13:30:39
+give me warning auth success events by user bob from ip 172.16.0.50 the previous day in server,success,yesterday,bob,host,172.16.0.50,*,warning,*,action=success user=bob source=host src_ip=172.16.0.50 severity=warning earliest=@d-1d latest=@d,2025-10-03T16:30:39
+list auth failure events by user root with status 404 last hour in host,failure,last1h,root,host,*,*,*,404,action=failure user=root source=host status_code=404 earliest=-60m latest=now,2025-10-04T12:02:39
+display delete events by user root this month in secure shell,deletion,last30d,root,ssh,*,*,*,*,action=deletion user=root source=ssh earliest=-30d@d latest=now,2025-09-08T12:08:39
+show me warn file upload events by user root on firewall-01 with status 500 this month in authentication log,upload,last30d,root,auth,*,firewall-01,warning,500,action=upload user=root source=auth hostname=firewall-01 severity=warning status_code=500 earliest=-30d@d latest=now,2025-09-16T12:08:39
+pull up upload events today in server,upload,today,*,host,*,*,*,*,action=upload source=host earliest=@d latest=now,2025-10-04T03:57:39
+find restart events by user admin from ip 10.0.0.1 today in filesystem,restart,today,admin,filesystem,10.0.0.1,*,*,*,action=restart user=admin source=filesystem src_ip=10.0.0.1 earliest=@d latest=now,2025-10-04T10:31:39
+show me file deletion events by user anonymous the previous day in nginx,deletion,yesterday,anonymous,web,*,*,*,*,action=deletion user=anonymous source=web earliest=@d-1d latest=@d,2025-10-03T02:57:39
+pull up access events by user alice last 24 hours in web server,access,last24h,alice,web,*,*,*,*,action=access user=alice source=web earliest=-24h latest=now,2025-10-04T09:08:39
+display logout events by user anonymous from ip 10.10.10.5 past 60 minutes in security log,logout,last1h,anonymous,auth,10.10.10.5,*,*,*,action=logout user=anonymous source=auth src_ip=10.10.10.5 earliest=-60m latest=now,2025-10-04T11:16:39
+display critical file upload events by user bob last hour in machine,upload,last1h,bob,host,*,*,critical,*,action=upload user=bob source=host severity=critical earliest=-60m latest=now,2025-10-04T11:15:39
+display file download events by user anonymous the previous day in machine,download,yesterday,anonymous,host,*,*,*,*,action=download user=anonymous source=host earliest=@d-1d latest=@d,2025-10-03T12:55:39
+display file deletion events with status 502 last 30 days in secure shell,deletion,last30d,*,ssh,*,*,*,502,action=deletion source=ssh status_code=502 earliest=-30d@d latest=now,2025-09-05T12:08:39
+pull up critical file download events by user bob last 7 days in database,download,last7d,bob,database,*,*,critical,*,action=download user=bob source=database severity=critical earliest=-7d@d latest=now,2025-09-28T12:08:39
+find failed login events by user anonymous with status 404 last 24 hours in web server,failure,last24h,anonymous,web,*,*,*,404,action=failure user=anonymous source=web status_code=404 earliest=-24h latest=now,2025-10-03T21:08:39
+pull up auth success events by user anonymous since midnight in file system,success,today,anonymous,filesystem,*,*,*,*,action=success user=anonymous source=filesystem earliest=@d latest=now,2025-10-04T12:34:39
+find critical login failure events by user root with status 503 since yesterday in nginx,failure,last24h,root,web,*,*,critical,503,action=failure user=root source=web severity=critical status_code=503 earliest=-24h latest=now,2025-10-04T11:08:39
+list restart events by user root from ip 192.168.1.100 the previous day in authentication log,restart,yesterday,root,auth,192.168.1.100,*,*,*,action=restart user=root source=auth src_ip=192.168.1.100 earliest=@d-1d latest=@d,2025-10-03T10:50:39
+give me failure events by user jsmith from ip 172.16.0.50 last 30 days in db,error,last30d,jsmith,database,172.16.0.50,*,*,*,action=error user=jsmith source=database src_ip=172.16.0.50 earliest=-30d@d latest=now,2025-09-19T12:08:39
+find authentication events by user jsmith from ip 10.0.0.1 today in db,login,today,jsmith,database,10.0.0.1,*,*,*,action=login user=jsmith source=database src_ip=10.0.0.1 earliest=@d latest=now,2025-10-04T07:15:39
+give me error events by user jsmith from ip 10.10.10.5 last hour in apache,error,last1h,jsmith,web,10.10.10.5,*,*,*,action=error user=jsmith source=web src_ip=10.10.10.5 earliest=-60m latest=now,2025-10-04T11:26:39
+find successful login events by user root on firewall-01 past 60 minutes in database,success,last1h,root,database,*,firewall-01,*,*,action=success user=root source=database hostname=firewall-01 earliest=-60m latest=now,2025-10-04T11:46:39
+list download events by user root on firewall-01 with status 502 yesterday in file system,download,yesterday,root,filesystem,*,firewall-01,*,502,action=download user=root source=filesystem hostname=firewall-01 status_code=502 earliest=@d-1d latest=@d,2025-10-03T07:08:39
+list restart events by user root from ip 10.0.0.1 this month in nginx,restart,last30d,root,web,10.0.0.1,*,*,*,action=restart user=root source=web src_ip=10.0.0.1 earliest=-30d@d latest=now,2025-09-19T12:08:39
+show me crash events by user alice past week in auth log,error,last7d,alice,auth,*,*,*,*,action=error user=alice source=auth earliest=-7d@d latest=now,2025-10-04T12:08:39
+pull up authentication events by user jsmith on db-prod-02 last hour in apache,login,last1h,jsmith,web,*,db-prod-02,*,*,action=login user=jsmith source=web hostname=db-prod-02 earliest=-60m latest=now,2025-10-04T11:15:39
+pull up crash events by user root with status 403 the previous day in web server,error,yesterday,root,web,*,*,*,403,action=error user=root source=web status_code=403 earliest=@d-1d latest=@d,2025-10-03T08:34:39
+show me informational logout events by user admin on app-server-03 since yesterday in database,logout,last24h,admin,database,*,app-server-03,info,*,action=logout user=admin source=database hostname=app-server-03 severity=info earliest=-24h latest=now,2025-10-03T19:08:39
+display authentication events by user root on web-server-01 with status 500 last hour in file system,login,last1h,root,filesystem,*,web-server-01,*,500,action=login user=root source=filesystem hostname=web-server-01 status_code=500 earliest=-60m latest=now,2025-10-04T11:54:39
+display logins events with status 502 the previous day in ssh,login,yesterday,*,ssh,*,*,*,502,action=login source=ssh status_code=502 earliest=@d-1d latest=@d,2025-10-03T16:49:39
+list logout events by user jsmith since yesterday in security log,logout,last24h,jsmith,auth,*,*,*,*,action=logout user=jsmith source=auth earliest=-24h latest=now,2025-10-03T20:08:39
+find failure events by user anonymous with status 404 last 30 days in server,error,last30d,anonymous,host,*,*,*,404,action=error user=anonymous source=host status_code=404 earliest=-30d@d latest=now,2025-09-15T12:08:39
+find access events by user anonymous on load-balancer with status 500 past 60 minutes in ssh,access,last1h,anonymous,ssh,*,load-balancer,*,500,action=access user=anonymous source=ssh hostname=load-balancer status_code=500 earliest=-60m latest=now,2025-10-04T11:24:39
+display successful login events by user anonymous on firewall-01 with status 503 since yesterday in authentication log,success,last24h,anonymous,auth,*,firewall-01,*,503,action=success user=anonymous source=auth hostname=firewall-01 status_code=503 earliest=-24h latest=now,2025-10-04T04:08:39
+list warn successful login events by user jsmith from ip 192.168.0.1 with status 200 last hour in secure shell,success,last1h,jsmith,ssh,192.168.0.1,*,warning,200,action=success user=jsmith source=ssh src_ip=192.168.0.1 severity=warning status_code=200 earliest=-60m latest=now,2025-10-04T11:57:39
+list upload events by user alice from ip 10.10.10.5 on firewall-01 yesterday in file system,upload,yesterday,alice,filesystem,10.10.10.5,firewall-01,*,*,action=upload user=alice source=filesystem src_ip=10.10.10.5 hostname=firewall-01 earliest=@d-1d latest=@d,2025-10-03T05:27:39
+show me login failure events by user root last hour in filesystem,failure,last1h,root,filesystem,*,*,*,*,action=failure user=root source=filesystem earliest=-60m latest=now,2025-10-04T11:39:39
+give me upload events this month in web server,upload,last30d,*,web,*,*,*,*,action=upload source=web earliest=-30d@d latest=now,2025-10-04T12:08:39
+find logins events by user alice on web-server-01 last 30 days in file system,login,last30d,alice,filesystem,*,web-server-01,*,*,action=login user=alice source=filesystem hostname=web-server-01 earliest=-30d@d latest=now,2025-09-23T12:08:39
+find error delete events by user anonymous from ip 192.168.0.1 on load-balancer with status 403 this month in security log,deletion,last30d,anonymous,auth,192.168.0.1,load-balancer,error,403,action=deletion user=anonymous source=auth src_ip=192.168.0.1 hostname=load-balancer severity=error status_code=403 earliest=-30d@d latest=now,2025-09-20T12:08:39
+find login events by user admin in the last 24 hours in server,login,today,admin,host,*,*,*,*,action=login user=admin source=host earliest=@d latest=now,2025-10-04T09:35:39
+show me failure events from ip 10.0.0.1 on app-server-03 last 30 days in database,error,last30d,*,database,10.0.0.1,app-server-03,*,*,action=error source=database src_ip=10.0.0.1 hostname=app-server-03 earliest=-30d@d latest=now,2025-09-21T12:08:39
+find service restart events by user bob with status 403 yesterday in authentication log,restart,yesterday,bob,auth,*,*,*,403,action=restart user=bob source=auth status_code=403 earliest=@d-1d latest=@d,2025-10-03T23:12:39
+give me warn sign off events by user anonymous from ip 192.168.0.1 since yesterday in database,logout,last24h,anonymous,database,192.168.0.1,*,warning,*,action=logout user=anonymous source=database src_ip=192.168.0.1 severity=warning earliest=-24h latest=now,2025-10-03T17:08:39
+find successful login events by user root from ip 192.168.1.100 today in server,success,today,root,host,192.168.1.100,*,*,*,action=success user=root source=host src_ip=192.168.1.100 earliest=@d latest=now,2025-10-04T04:54:39
+find upload events by user anonymous with status 200 last 30 days in database,upload,last30d,anonymous,database,*,*,*,200,action=upload user=anonymous source=database status_code=200 earliest=-30d@d latest=now,2025-09-14T12:08:39
+list logout events by user alice from ip 192.168.1.100 yesterday in server,logout,yesterday,alice,host,192.168.1.100,*,*,*,action=logout user=alice source=host src_ip=192.168.1.100 earliest=@d-1d latest=@d,2025-10-03T06:58:39
+display access events by user admin last hour in host,access,last1h,admin,host,*,*,*,*,action=access user=admin source=host earliest=-60m latest=now,2025-10-04T11:39:39
+display service restart events by user admin past week in filesystem,restart,last7d,admin,filesystem,*,*,*,*,action=restart user=admin source=filesystem earliest=-7d@d latest=now,2025-10-04T12:08:39
+give me info file deletion events by user alice with status 200 today in machine,deletion,today,alice,host,*,*,info,200,action=deletion user=alice source=host severity=info status_code=200 earliest=@d latest=now,2025-10-04T04:50:39
+show me successful login events by user admin in the last 24 hours in database,success,today,admin,database,*,*,*,*,action=success user=admin source=database earliest=@d latest=now,2025-10-04T12:58:39
+give me logout events by user jsmith since midnight in machine,logout,today,jsmith,host,*,*,*,*,action=logout user=jsmith source=host earliest=@d latest=now,2025-10-04T12:08:39
+find restart events by user jsmith last 24 hours in file system,restart,last24h,jsmith,filesystem,*,*,*,*,action=restart user=jsmith source=filesystem earliest=-24h latest=now,2025-10-04T01:08:39
+pull up error connection events by user admin with status 403 last 24 hours in file system,access,last24h,admin,filesystem,*,*,error,403,action=access user=admin source=filesystem severity=error status_code=403 earliest=-24h latest=now,2025-10-04T00:08:39
+pull up sign off events by user root last 24 hours in ssh,logout,last24h,root,ssh,*,*,*,*,action=logout user=root source=ssh earliest=-24h latest=now,2025-10-04T05:08:39
+give me info successful login events by user alice from ip 192.168.1.100 last 24 hours in filesystem,success,last24h,alice,filesystem,192.168.1.100,*,info,*,action=success user=alice source=filesystem src_ip=192.168.1.100 severity=info earliest=-24h latest=now,2025-10-04T04:08:39
+pull up auth failure events with status 200 this month in server,failure,last30d,*,host,*,*,*,200,action=failure source=host status_code=200 earliest=-30d@d latest=now,2025-10-03T12:08:39
+show me warn request events by user root with status 502 last 7 days in db,access,last7d,root,database,*,*,warning,502,action=access user=root source=database severity=warning status_code=502 earliest=-7d@d latest=now,2025-09-28T12:08:39
+display connection events by user root this month in web server,access,last30d,root,web,*,*,*,*,action=access user=root source=web earliest=-30d@d latest=now,2025-09-28T12:08:39
+display file download events by user admin this month in filesystem,download,last30d,admin,filesystem,*,*,*,*,action=download user=admin source=filesystem earliest=-30d@d latest=now,2025-09-07T12:08:39
+pull up crash events by user alice with status 403 last hour in host,error,last1h,alice,host,*,*,*,403,action=error user=alice source=host status_code=403 earliest=-60m latest=now,2025-10-04T11:50:39
+give me logins events by user jsmith from ip 10.10.10.5 past 60 minutes in server,login,last1h,jsmith,host,10.10.10.5,*,*,*,action=login user=jsmith source=host src_ip=10.10.10.5 earliest=-60m latest=now,2025-10-04T11:39:39
+find file deletion events by user alice last 7 days in machine,deletion,last7d,alice,host,*,*,*,*,action=deletion user=alice source=host earliest=-7d@d latest=now,2025-09-29T12:08:39
+display auth failure events by user anonymous last 30 days in machine,failure,last30d,anonymous,host,*,*,*,*,action=failure user=anonymous source=host earliest=-30d@d latest=now,2025-09-17T12:08:39
+list request events by user anonymous since yesterday in server,access,last24h,anonymous,host,*,*,*,*,action=access user=anonymous source=host earliest=-24h latest=now,2025-10-03T19:08:39
+display error events by user admin last hour in auth log,error,last1h,admin,auth,*,*,*,*,action=error user=admin source=auth earliest=-60m latest=now,2025-10-04T11:52:39
+list error service restart events by user admin on load-balancer since midnight in security log,restart,today,admin,auth,*,load-balancer,error,*,action=restart user=admin source=auth hostname=load-balancer severity=error earliest=@d latest=now,2025-10-04T06:45:39
+give me sign off events by user anonymous last 24 hours in host,logout,last24h,anonymous,host,*,*,*,*,action=logout user=anonymous source=host earliest=-24h latest=now,2025-10-03T22:08:39
+show me info error events yesterday in server,error,yesterday,*,host,*,*,info,*,action=error source=host severity=info earliest=@d-1d latest=@d,2025-10-03T20:29:39
+display error events by user bob this week in host,error,last7d,bob,host,*,*,*,*,action=error user=bob source=host earliest=-7d@d latest=now,2025-10-01T12:08:39
+show me auth failure events by user bob yesterday in filesystem,failure,yesterday,bob,filesystem,*,*,*,*,action=failure user=bob source=filesystem earliest=@d-1d latest=@d,2025-10-03T16:51:39
+show me login events by user anonymous last 7 days in file system,login,last7d,anonymous,filesystem,*,*,*,*,action=login user=anonymous source=filesystem earliest=-7d@d latest=now,2025-10-04T12:08:39
+find auth failure events from ip 192.168.1.100 in the last 24 hours in db,failure,today,*,database,192.168.1.100,*,*,*,action=failure source=database src_ip=192.168.1.100 earliest=@d latest=now,2025-10-04T05:56:39
+list logout events by user admin past week in filesystem,logout,last7d,admin,filesystem,*,*,*,*,action=logout user=admin source=filesystem earliest=-7d@d latest=now,2025-09-30T12:08:39
+display failed login events by user root with status 502 yesterday in apache,failure,yesterday,root,web,*,*,*,502,action=failure user=root source=web status_code=502 earliest=@d-1d latest=@d,2025-10-03T10:35:39
+pull up access events by user alice on load-balancer this month in server,access,last30d,alice,host,*,load-balancer,*,*,action=access user=alice source=host hostname=load-balancer earliest=-30d@d latest=now,2025-09-09T12:08:39
+display error events by user bob in the last 24 hours in server,error,today,bob,host,*,*,*,*,action=error user=bob source=host earliest=@d latest=now,2025-10-04T03:40:39
+find logout events by user anonymous from ip 192.168.0.1 on load-balancer past 60 minutes in db,logout,last1h,anonymous,database,192.168.0.1,load-balancer,*,*,action=logout user=anonymous source=database src_ip=192.168.0.1 hostname=load-balancer earliest=-60m latest=now,2025-10-04T11:35:39
+pull up critical error events by user admin with status 404 yesterday in auth log,error,yesterday,admin,auth,*,*,critical,404,action=error user=admin source=auth severity=critical status_code=404 earliest=@d-1d latest=@d,2025-10-03T17:49:39
+pull up service restart events by user jsmith last hour in database,restart,last1h,jsmith,database,*,*,*,*,action=restart user=jsmith source=database earliest=-60m latest=now,2025-10-04T11:36:39
+find logins events by user jsmith from ip 10.10.10.5 last hour in database,login,last1h,jsmith,database,10.10.10.5,*,*,*,action=login user=jsmith source=database src_ip=10.10.10.5 earliest=-60m latest=now,2025-10-04T11:14:39
+show me download events by user bob with status 200 past 60 minutes in database,download,last1h,bob,database,*,*,*,200,action=download user=bob source=database status_code=200 earliest=-60m latest=now,2025-10-04T11:23:39
+find emergency file upload events by user admin on app-server-03 since yesterday in auth log,upload,last24h,admin,auth,*,app-server-03,critical,*,action=upload user=admin source=auth hostname=app-server-03 severity=critical earliest=-24h latest=now,2025-10-04T06:08:39
+pull up request events from ip 10.10.10.5 today in filesystem,access,today,*,filesystem,10.10.10.5,*,*,*,action=access source=filesystem src_ip=10.10.10.5 earliest=@d latest=now,2025-10-04T05:21:39
+give me delete events by user admin from ip 172.16.0.50 last 30 days in apache,deletion,last30d,admin,web,172.16.0.50,*,*,*,action=deletion user=admin source=web src_ip=172.16.0.50 earliest=-30d@d latest=now,2025-09-20T12:08:39
+give me informational delete events by user anonymous on load-balancer last 30 days in filesystem,deletion,last30d,anonymous,filesystem,*,load-balancer,info,*,action=deletion user=anonymous source=filesystem hostname=load-balancer severity=info earliest=-30d@d latest=now,2025-09-07T12:08:39
+show me file upload events by user root last 7 days in db,upload,last7d,root,database,*,*,*,*,action=upload user=root source=database earliest=-7d@d latest=now,2025-10-01T12:08:39
+pull up info error events by user alice from ip 10.10.10.5 with status 404 last 24 hours in nginx,error,last24h,alice,web,10.10.10.5,*,info,404,action=error user=alice source=web src_ip=10.10.10.5 severity=info status_code=404 earliest=-24h latest=now,2025-10-04T03:08:39
+show me access events by user root since yesterday in security log,access,last24h,root,auth,*,*,*,*,action=access user=root source=auth earliest=-24h latest=now,2025-10-03T14:08:39
+pull up file download events by user root on db-prod-02 this month in server,download,last30d,root,host,*,db-prod-02,*,*,action=download user=root source=host hostname=db-prod-02 earliest=-30d@d latest=now,2025-09-26T12:08:39
+show me connection events by user alice with status 500 yesterday in security log,access,yesterday,alice,auth,*,*,*,500,action=access user=alice source=auth status_code=500 earliest=@d-1d latest=@d,2025-10-03T20:52:39
+pull up connection events by user jsmith from ip 192.168.0.1 with status 502 the previous day in db,access,yesterday,jsmith,database,192.168.0.1,*,*,502,action=access user=jsmith source=database src_ip=192.168.0.1 status_code=502 earliest=@d-1d latest=@d,2025-10-03T20:56:39
+display login events by user bob on web-server-01 past week in secure shell,login,last7d,bob,ssh,*,web-server-01,*,*,action=login user=bob source=ssh hostname=web-server-01 earliest=-7d@d latest=now,2025-10-01T12:08:39
+show me auth success events by user bob since midnight in authentication log,success,today,bob,auth,*,*,*,*,action=success user=bob source=auth earliest=@d latest=now,2025-10-04T06:39:39
+give me restart events by user root this week in ssh,restart,last7d,root,ssh,*,*,*,*,action=restart user=root source=ssh earliest=-7d@d latest=now,2025-10-04T12:08:39
+list crash events by user bob in the last 24 hours in server,error,today,bob,host,*,*,*,*,action=error user=bob source=host earliest=@d latest=now,2025-10-04T08:22:39
+display failed login events by user bob from ip 192.168.0.1 on web-server-01 this month in secure shell,failure,last30d,bob,ssh,192.168.0.1,web-server-01,*,*,action=failure user=bob source=ssh src_ip=192.168.0.1 hostname=web-server-01 earliest=-30d@d latest=now,2025-09-15T12:08:39
+list service restart events by user admin from ip 10.10.10.5 with status 404 last 30 days in db,restart,last30d,admin,database,10.10.10.5,*,*,404,action=restart user=admin source=database src_ip=10.10.10.5 status_code=404 earliest=-30d@d latest=now,2025-09-05T12:08:39
+list authentication events by user bob with status 502 since midnight in security log,login,today,bob,auth,*,*,*,502,action=login user=bob source=auth status_code=502 earliest=@d latest=now,2025-10-04T05:12:39
+pull up download events by user anonymous from ip 10.10.10.5 this month in secure shell,download,last30d,anonymous,ssh,10.10.10.5,*,*,*,action=download user=anonymous source=ssh src_ip=10.10.10.5 earliest=-30d@d latest=now,2025-09-26T12:08:39
+pull up info sign off events on web-server-01 yesterday in database,logout,yesterday,*,database,*,web-server-01,info,*,action=logout source=database hostname=web-server-01 severity=info earliest=@d-1d latest=@d,2025-10-03T01:01:39
+give me info request events by user anonymous from ip 192.168.1.100 on firewall-01 last 7 days in ssh,access,last7d,anonymous,ssh,192.168.1.100,firewall-01,info,*,action=access user=anonymous source=ssh src_ip=192.168.1.100 hostname=firewall-01 severity=info earliest=-7d@d latest=now,2025-09-29T12:08:39
+find authentication events by user alice from ip 10.0.0.1 with status 404 in the last 24 hours in filesystem,login,today,alice,filesystem,10.0.0.1,*,*,404,action=login user=alice source=filesystem src_ip=10.0.0.1 status_code=404 earliest=@d latest=now,2025-10-04T06:54:39
+pull up logout events by user jsmith with status 200 past week in ssh,logout,last7d,jsmith,ssh,*,*,*,200,action=logout user=jsmith source=ssh status_code=200 earliest=-7d@d latest=now,2025-09-30T12:08:39
+show me login events by user alice today in file system,login,today,alice,filesystem,*,*,*,*,action=login user=alice source=filesystem earliest=@d latest=now,2025-10-04T11:10:39
+list error auth failure events by user admin in the last 24 hours in file system,failure,today,admin,filesystem,*,*,error,*,action=failure user=admin source=filesystem severity=error earliest=@d latest=now,2025-10-04T00:18:39
+list restart events by user alice since yesterday in database,restart,last24h,alice,database,*,*,*,*,action=restart user=alice source=database earliest=-24h latest=now,2025-10-03T23:08:39
+give me warn connection events by user admin last 24 hours in filesystem,access,last24h,admin,filesystem,*,*,warning,*,action=access user=admin source=filesystem severity=warning earliest=-24h latest=now,2025-10-04T00:08:39
+show me emergency successful login events by user root yesterday in filesystem,success,yesterday,root,filesystem,*,*,critical,*,action=success user=root source=filesystem severity=critical earliest=@d-1d latest=@d,2025-10-03T10:22:39
+display file deletion events by user alice since yesterday in file system,deletion,last24h,alice,filesystem,*,*,*,*,action=deletion user=alice source=filesystem earliest=-24h latest=now,2025-10-03T13:08:39
+give me access events today in filesystem,access,today,*,filesystem,*,*,*,*,action=access source=filesystem earliest=@d latest=now,2025-10-04T11:56:39
+pull up connection events by user jsmith from ip 10.10.10.5 in the last 24 hours in secure shell,access,today,jsmith,ssh,10.10.10.5,*,*,*,action=access user=jsmith source=ssh src_ip=10.10.10.5 earliest=@d latest=now,2025-10-04T06:51:39
+display delete events by user admin from ip 10.0.0.1 on load-balancer with status 502 since midnight in secure shell,deletion,today,admin,ssh,10.0.0.1,load-balancer,*,502,action=deletion user=admin source=ssh src_ip=10.0.0.1 hostname=load-balancer status_code=502 earliest=@d latest=now,2025-10-04T08:11:39
+pull up connection events by user root the previous day in apache,access,yesterday,root,web,*,*,*,*,action=access user=root source=web earliest=@d-1d latest=@d,2025-10-03T10:52:39
+pull up error events by user root with status 200 since midnight in secure shell,error,today,root,ssh,*,*,*,200,action=error user=root source=ssh status_code=200 earliest=@d latest=now,2025-10-04T00:01:39
+pull up informational logins events with status 500 the previous day in security log,login,yesterday,*,auth,*,*,info,500,action=login source=auth severity=info status_code=500 earliest=@d-1d latest=@d,2025-10-03T22:20:39
+find delete events by user root with status 503 past 60 minutes in host,deletion,last1h,root,host,*,*,*,503,action=deletion user=root source=host status_code=503 earliest=-60m latest=now,2025-10-04T11:56:39
+find info error events by user root past 60 minutes in ssh,error,last1h,root,ssh,*,*,info,*,action=error user=root source=ssh severity=info earliest=-60m latest=now,2025-10-04T11:49:39
+pull up upload events by user root with status 404 last hour in security log,upload,last1h,root,auth,*,*,*,404,action=upload user=root source=auth status_code=404 earliest=-60m latest=now,2025-10-04T11:56:39
+pull up err upload events by user root with status 403 this month in apache,upload,last30d,root,web,*,*,error,403,action=upload user=root source=web severity=error status_code=403 earliest=-30d@d latest=now,2025-09-25T12:08:39
+list error events by user jsmith on db-prod-02 with status 404 this month in web server,error,last30d,jsmith,web,*,db-prod-02,*,404,action=error user=jsmith source=web hostname=db-prod-02 status_code=404 earliest=-30d@d latest=now,2025-10-04T12:08:39
+list err login failure events by user jsmith since midnight in security log,failure,today,jsmith,auth,*,*,error,*,action=failure user=jsmith source=auth severity=error earliest=@d latest=now,2025-10-04T10:03:39
+find info failed login events by user anonymous past week in filesystem,failure,last7d,anonymous,filesystem,*,*,info,*,action=failure user=anonymous source=filesystem severity=info earliest=-7d@d latest=now,2025-10-01T12:08:39
+give me file deletion events by user alice with status 502 past week in auth log,deletion,last7d,alice,auth,*,*,*,502,action=deletion user=alice source=auth status_code=502 earliest=-7d@d latest=now,2025-10-01T12:08:39
+display connection events by user alice in the last 24 hours in server,access,today,alice,host,*,*,*,*,action=access user=alice source=host earliest=@d latest=now,2025-10-04T03:00:39
+give me warning file deletion events by user jsmith last 7 days in nginx,deletion,last7d,jsmith,web,*,*,warning,*,action=deletion user=jsmith source=web severity=warning earliest=-7d@d latest=now,2025-10-04T12:08:39
+give me file download events from ip 192.168.1.100 with status 502 last 24 hours in db,download,last24h,*,database,192.168.1.100,*,*,502,action=download source=database src_ip=192.168.1.100 status_code=502 earliest=-24h latest=now,2025-10-03T22:08:39
+give me sign off events from ip 192.168.1.100 today in filesystem,logout,today,*,filesystem,192.168.1.100,*,*,*,action=logout source=filesystem src_ip=192.168.1.100 earliest=@d latest=now,2025-10-04T02:44:39
+show me file upload events by user alice past 60 minutes in auth log,upload,last1h,alice,auth,*,*,*,*,action=upload user=alice source=auth earliest=-60m latest=now,2025-10-04T12:04:39
+list info successful login events by user bob yesterday in apache,success,yesterday,bob,web,*,*,info,*,action=success user=bob source=web severity=info earliest=@d-1d latest=@d,2025-10-03T02:33:39
+show me logout events by user root yesterday in secure shell,logout,yesterday,root,ssh,*,*,*,*,action=logout user=root source=ssh earliest=@d-1d latest=@d,2025-10-03T12:11:39
+find auth success events with status 403 yesterday in server,success,yesterday,*,host,*,*,*,403,action=success source=host status_code=403 earliest=@d-1d latest=@d,2025-10-03T11:58:39
+find file deletion events by user admin last 24 hours in security log,deletion,last24h,admin,auth,*,*,*,*,action=deletion user=admin source=auth earliest=-24h latest=now,2025-10-04T03:08:39
+list info successful login events by user bob today in host,success,today,bob,host,*,*,info,*,action=success user=bob source=host severity=info earliest=@d latest=now,2025-10-04T06:18:39
+list warn successful login events by user bob last 24 hours in filesystem,success,last24h,bob,filesystem,*,*,warning,*,action=success user=bob source=filesystem severity=warning earliest=-24h latest=now,2025-10-03T17:08:39
+give me restart events by user anonymous from ip 10.10.10.5 today in file system,restart,today,anonymous,filesystem,10.10.10.5,*,*,*,action=restart user=anonymous source=filesystem src_ip=10.10.10.5 earliest=@d latest=now,2025-10-04T12:43:39
+find sign off events by user anonymous on firewall-01 last 30 days in auth log,logout,last30d,anonymous,auth,*,firewall-01,*,*,action=logout user=anonymous source=auth hostname=firewall-01 earliest=-30d@d latest=now,2025-09-12T12:08:39
+list logout events by user root from ip 10.0.0.1 on web-server-01 last hour in server,logout,last1h,root,host,10.0.0.1,web-server-01,*,*,action=logout user=root source=host src_ip=10.0.0.1 hostname=web-server-01 earliest=-60m latest=now,2025-10-04T12:02:39
+list auth success events by user bob this month in web server,success,last30d,bob,web,*,*,*,*,action=success user=bob source=web earliest=-30d@d latest=now,2025-09-18T12:08:39
+show me emergency download events by user alice on load-balancer past week in secure shell,download,last7d,alice,ssh,*,load-balancer,critical,*,action=download user=alice source=ssh hostname=load-balancer severity=critical earliest=-7d@d latest=now,2025-09-30T12:08:39
+display error events by user anonymous from ip 172.16.0.50 in the last 24 hours in file system,error,today,anonymous,filesystem,172.16.0.50,*,*,*,action=error user=anonymous source=filesystem src_ip=172.16.0.50 earliest=@d latest=now,2025-10-04T07:03:39
+display warning sign off events by user alice on web-server-01 the previous day in auth log,logout,yesterday,alice,auth,*,web-server-01,warning,*,action=logout user=alice source=auth hostname=web-server-01 severity=warning earliest=@d-1d latest=@d,2025-10-03T06:31:39
+find authentication events on app-server-03 past week in secure shell,login,last7d,*,ssh,*,app-server-03,*,*,action=login source=ssh hostname=app-server-03 earliest=-7d@d latest=now,2025-09-28T12:08:39
+show me delete events by user bob last 24 hours in ssh,deletion,last24h,bob,ssh,*,*,*,*,action=deletion user=bob source=ssh earliest=-24h latest=now,2025-10-03T16:08:39
+show me upload events by user bob with status 200 last hour in db,upload,last1h,bob,database,*,*,*,200,action=upload user=bob source=database status_code=200 earliest=-60m latest=now,2025-10-04T11:23:39
+list file download events by user alice last hour in db,download,last1h,alice,database,*,*,*,*,action=download user=alice source=database earliest=-60m latest=now,2025-10-04T11:12:39
+display file deletion events by user alice on app-server-03 this month in web server,deletion,last30d,alice,web,*,app-server-03,*,*,action=deletion user=alice source=web hostname=app-server-03 earliest=-30d@d latest=now,2025-09-15T12:08:39
+pull up successful login events by user bob from ip 192.168.0.1 past week in web server,success,last7d,bob,web,192.168.0.1,*,*,*,action=success user=bob source=web src_ip=192.168.0.1 earliest=-7d@d latest=now,2025-09-29T12:08:39
+give me delete events by user root from ip 192.168.1.100 past week in db,deletion,last7d,root,database,192.168.1.100,*,*,*,action=deletion user=root source=database src_ip=192.168.1.100 earliest=-7d@d latest=now,2025-09-30T12:08:39
+find delete events with status 500 yesterday in db,deletion,yesterday,*,database,*,*,*,500,action=deletion source=database status_code=500 earliest=@d-1d latest=@d,2025-10-03T09:31:39
+show me sign off events by user bob on app-server-03 in the last 24 hours in database,logout,today,bob,database,*,app-server-03,*,*,action=logout user=bob source=database hostname=app-server-03 earliest=@d latest=now,2025-10-04T04:50:39
+find logout events by user jsmith with status 500 last 30 days in nginx,logout,last30d,jsmith,web,*,*,*,500,action=logout user=jsmith source=web status_code=500 earliest=-30d@d latest=now,2025-09-28T12:08:39
+show me successful login events by user alice from ip 192.168.1.100 on firewall-01 yesterday in ssh,success,yesterday,alice,ssh,192.168.1.100,firewall-01,*,*,action=success user=alice source=ssh src_ip=192.168.1.100 hostname=firewall-01 earliest=@d-1d latest=@d,2025-10-03T12:23:39
+give me download events by user root from ip 192.168.0.1 the previous day in authentication log,download,yesterday,root,auth,192.168.0.1,*,*,*,action=download user=root source=auth src_ip=192.168.0.1 earliest=@d-1d latest=@d,2025-10-03T18:06:39
+find crash events by user anonymous with status 404 last 24 hours in db,error,last24h,anonymous,database,*,*,*,404,action=error user=anonymous source=database status_code=404 earliest=-24h latest=now,2025-10-03T20:08:39
+give me restart events by user alice this month in host,restart,last30d,alice,host,*,*,*,*,action=restart user=alice source=host earliest=-30d@d latest=now,2025-09-11T12:08:39
+display warn restart events by user jsmith on firewall-01 past 60 minutes in ssh,restart,last1h,jsmith,ssh,*,firewall-01,warning,*,action=restart user=jsmith source=ssh hostname=firewall-01 severity=warning earliest=-60m latest=now,2025-10-04T11:35:39
+pull up warning auth failure events by user jsmith on db-prod-02 last 24 hours in db,failure,last24h,jsmith,database,*,db-prod-02,warning,*,action=failure user=jsmith source=database hostname=db-prod-02 severity=warning earliest=-24h latest=now,2025-10-04T04:08:39
+show me upload events by user jsmith since yesterday in database,upload,last24h,jsmith,database,*,*,*,*,action=upload user=jsmith source=database earliest=-24h latest=now,2025-10-03T15:08:39
+show me failed login events by user admin past 60 minutes in database,failure,last1h,admin,database,*,*,*,*,action=failure user=admin source=database earliest=-60m latest=now,2025-10-04T11:41:39
+pull up service restart events by user jsmith from ip 172.16.0.50 last 30 days in db,restart,last30d,jsmith,database,172.16.0.50,*,*,*,action=restart user=jsmith source=database src_ip=172.16.0.50 earliest=-30d@d latest=now,2025-09-19T12:08:39
+display critical request events by user jsmith last 30 days in security log,access,last30d,jsmith,auth,*,*,critical,*,action=access user=jsmith source=auth severity=critical earliest=-30d@d latest=now,2025-10-02T12:08:39
+find restart events by user admin with status 404 last 7 days in database,restart,last7d,admin,database,*,*,*,404,action=restart user=admin source=database status_code=404 earliest=-7d@d latest=now,2025-09-28T12:08:39
+show me failed logins from yesterday,failure,yesterday,*,auth,*,*,*,*,action=failure source=auth earliest=@d-1d latest=@d,2025-10-04T12:08:39
+list all successful logins in the last 7 days,success,last7d,*,auth,*,*,*,*,action=success source=auth earliest=-7d@d latest=now,2025-10-04T12:08:39
+find all requests from ip 10.0.0.1,access,last24h,*,web,10.0.0.1,*,*,*,action=access source=web src_ip=10.0.0.1 earliest=-24h latest=now,2025-10-04T12:08:39
+show critical errors on web-server-01 last hour,error,last1h,*,web,*,web-server-01,critical,*,action=error source=web hostname=web-server-01 severity=critical earliest=-60m latest=now,2025-10-04T12:08:39
+display all 404 errors from yesterday,error,yesterday,*,web,*,*,*,404,action=error source=web status_code=404 earliest=@d-1d latest=@d,2025-10-04T12:08:39
+list 500 errors on app-server-03 today,error,today,*,web,*,app-server-03,*,500,action=error source=web hostname=app-server-03 status_code=500 earliest=@d latest=now,2025-10-04T12:08:39

@@ -19,7 +19,7 @@ from hybrid_parser import parse_query as parse_hybrid
 SYNTHETIC_DATASET = Path("dataset/log_query_dataset.csv")
 REAL_DATASET = Path("tests/real_queries.csv")
 
-SLOTS = ["action", "time", "user", "source"]
+SLOTS = ["action", "time", "user", "source", "src_ip", "hostname", "severity", "status_code"]
 
 
 def load_dataset(path: Path) -> List[Dict]:

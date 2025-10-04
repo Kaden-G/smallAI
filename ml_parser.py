@@ -16,7 +16,7 @@ from __future__ import annotations
 import csv
 import os
 import random
-from typing import List, Optional, Tuple
+from typing import List, Optional
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
@@ -29,12 +29,12 @@ REPO_ROOT = os.path.dirname(os.path.abspath(__file__))  # this file = smallAI/ml
 DATASET_FILE = os.path.join(REPO_ROOT, "datasets", "log_query_dataset.csv")
 
 
-def load_dataset(filename: Optional[str] = None) -> Tuple[List[str], List[str], List[str], List[str], List[str]]:
+def load_dataset(filename: Optional[str] = None):
     """
     Load the training dataset of natural language queries and slot labels.
     Returns:
         X: list of NL queries
-        y_action, y_time, y_user, y_source: labels for each slot
+        y_dict: dict with keys for each slot (action, time, user, source, src_ip, hostname, severity, status_code)
     """
     path = filename or DATASET_FILE
     if not os.path.exists(path):
@@ -42,16 +42,32 @@ def load_dataset(filename: Optional[str] = None) -> Tuple[List[str], List[str], 
             f"Dataset not found at {path}. Ensure datasets/log_query_dataset.csv exists under project root."
         )
 
-    X, y_action, y_time, y_user, y_source = [], [], [], [], []
+    X = []
+    y_dict = {
+        "action": [],
+        "time": [],
+        "user": [],
+        "source": [],
+        "src_ip": [],
+        "hostname": [],
+        "severity": [],
+        "status_code": []
+    }
+
     with open(path, "r", encoding="utf-8") as f:
         reader = csv.DictReader(f)
         for r in reader:
             X.append(r["nl_query"].lower())  # normalize text to lowercase
-            y_action.append(r["action"])
-            y_time.append(r["time"])
-            y_user.append(r["user"])
-            y_source.append(r["source"])
-    return X, y_action, y_time, y_user, y_source
+            y_dict["action"].append(r["action"])
+            y_dict["time"].append(r["time"])
+            y_dict["user"].append(r["user"])
+            y_dict["source"].append(r["source"])
+            y_dict["src_ip"].append(r["src_ip"])
+            y_dict["hostname"].append(r["hostname"])
+            y_dict["severity"].append(r["severity"])
+            y_dict["status_code"].append(r["status_code"])
+
+    return X, y_dict
 
 
 def train_classifier(X: List[str], y: List[str]) -> Pipeline:
@@ -66,35 +82,46 @@ def train_classifier(X: List[str], y: List[str]) -> Pipeline:
     return pipe
 
 
-def train_all(filename: Optional[str] = None) -> Tuple[Pipeline, Pipeline, Pipeline, Pipeline]:
+def train_all(filename: Optional[str] = None):
     """
-    Train all four classifiers (action, time, user, source).
-    Returns a tuple of sklearn Pipelines.
+    Train all eight classifiers (action, time, user, source, src_ip, hostname, severity, status_code).
+    Returns a dict of sklearn Pipelines.
     """
-    X, y_action, y_time, y_user, y_source = load_dataset(filename)
+    X, y_dict = load_dataset(filename)
 
     # Shuffle for randomness
-    combined = list(zip(X, y_action, y_time, y_user, y_source))
-    random.shuffle(combined)
-    Xs, a, t, u, s = zip(*combined)
+    indices = list(range(len(X)))
+    random.shuffle(indices)
 
-    clf_a = train_classifier(list(Xs), list(a))
-    clf_t = train_classifier(list(Xs), list(t))
-    clf_u = train_classifier(list(Xs), list(u))
-    clf_s = train_classifier(list(Xs), list(s))
-    return clf_a, clf_t, clf_u, clf_s
+    X_shuffled = [X[i] for i in indices]
+    y_shuffled = {key: [vals[i] for i in indices] for key, vals in y_dict.items()}
+
+    # Train one classifier per slot
+    classifiers = {}
+    for slot_name in ["action", "time", "user", "source", "src_ip", "hostname", "severity", "status_code"]:
+        classifiers[slot_name] = train_classifier(X_shuffled, y_shuffled[slot_name])
+
+    return classifiers
 
 
-def predict_query(q: str, clf_a: Pipeline, clf_t: Pipeline, clf_u: Pipeline, clf_s: Pipeline) -> dict:
+def predict_query(q: str, classifiers: dict) -> dict:
     """
     Predict slot values for a given natural language query.
+
+    Args:
+        q: Natural language query
+        classifiers: Dict of trained Pipeline objects, one per slot
+
+    Returns:
+        Dict with predicted slot values
     """
-    return {
-        "action": clf_a.predict([q.lower()])[0],
-        "time": clf_t.predict([q.lower()])[0],
-        "user": clf_u.predict([q.lower()])[0],
-        "source": clf_s.predict([q.lower()])[0],
-    }
+    q_lower = q.lower()
+    predictions = {}
+
+    for slot_name, clf in classifiers.items():
+        predictions[slot_name] = clf.predict([q_lower])[0]
+
+    return predictions
 
 
 if __name__ == "__main__":
@@ -104,7 +131,7 @@ if __name__ == "__main__":
         train_all()
         print("Done")
     else:
-        models = train_all()
+        classifiers = train_all()
         q = " ".join(sys.argv[1:])
         print("Query:", q)
-        print("Prediction:", predict_query(q, *models))
+        print("Prediction:", predict_query(q, classifiers))
