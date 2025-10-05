@@ -1,0 +1,4 @@
+nl_query,action,time,user,source,src_ip,hostname,severity,status_code,structured_query,event_ts,reason
+show me all errors,error,*,*,logs,*,*,*,*,,2025-10-05T03:36:43.354732,test
+find user admin logs,search,*,admin,*,*,*,*,*,,2025-10-05T03:36:43.358552,test
+display failed logins,failure,*,*,auth,*,*,*,*,,2025-10-05T03:36:43.359939,test
