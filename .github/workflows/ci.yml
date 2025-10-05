@@ -28,11 +28,6 @@ jobs:
 
       - name: Verify hybrid_parser
         run: |
-<<<<<<< Updated upstream
-          cd smallAI/src
-=======
->>>>>>> Stashed changes
-          python hybrid_parser.py "show failed logins"
 
       - name: Lint (optional)
         run: |
