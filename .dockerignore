@@ -1,0 +1,48 @@
+# Git
+.git
+.gitignore
+.github
+
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+.claude
+
+# Documentation
+*.md
+!README.md
+docs/
+
+# Logs and reports (created at runtime)
+logs/*.log
+reports/*.txt
+reports/*.csv
+
+# Test files
+tests/
+*.test.py
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Other
+.env
+.env.*
+*.bak
+*.tmp

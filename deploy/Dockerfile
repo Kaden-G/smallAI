@@ -1,32 +1,44 @@
-# deploy/Dockerfile
-# Owner: @kaden
-FROM python:3.10-slim
+# SmallAI Dockerfile
+# Natural Language to Splunk SPL Parser
+FROM python:3.12-slim
 
+LABEL maintainer="kaden"
+LABEL description="SmallAI - Natural Language to Splunk SPL Query Parser"
+LABEL version="2.0"
 
-# best-effort system deps (add as needed)
+# Install system dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
-build-essential \
-&& rm -rf /var/lib/apt/lists/*
-
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
-
-# Copy only requirements first for faster rebuilds
+# Copy requirements first for layer caching
 COPY requirements.txt ./
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
 
+# Copy application code
+COPY src/ ./src/
+COPY config/ ./config/
+COPY datasets/ ./datasets/
+COPY models/ ./models/
+COPY deploy/ ./deploy/
+COPY drift_hook.py ./
+COPY hybrid_parser.py ./
 
-# Copy the rest of the project
-COPY . .
+# Create necessary directories
+RUN mkdir -p logs reports
 
+# Set Python path to include src/
+ENV PYTHONPATH=/app/src:/app
+ENV PYTHONUNBUFFERED=1
 
-# Ensure src is importable
-ENV PYTHONPATH=/app/src
-
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+    CMD python -c "import requests; requests.get('http://localhost:8000/health')" || exit 1
 
 EXPOSE 8000
 
-
-# Run the FastAPI server (deploy/serve.py)
-CMD ["uvicorn", "deploy.serve:app", "--host", "0.0.0.0", "--port", "8000"]
+# Run the API server
+CMD ["uvicorn", "deploy.serve:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "2"]
