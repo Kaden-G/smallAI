@@ -6,10 +6,19 @@ Uses a combination of ML predictions and rule-based parsing for robust, explaina
 
 import re
 import sys
+import yaml
 from pathlib import Path
 
 # Use a wildcard index for general deployment (instead of a specific index like "smallai").
 DEFAULT_INDEX = "*"
+
+# Load schema map once
+SCHEMA_PATH = Path(__file__).parent / "config" / "schema_map.yaml"
+if SCHEMA_PATH.exists():
+    with open(SCHEMA_PATH, "r") as f:
+        SCHEMA_MAP = yaml.safe_load(f)
+else:
+    SCHEMA_MAP = {}
 
 # Model persistence settings
 MODELS_DIR = Path(__file__).parent / "models"
@@ -103,6 +112,13 @@ def ml_predict_slots(query, models=None):
 def normalize_text(query):
     return query.strip()
 
+def field_exists(dataset_name: str, field: str) -> bool:
+    """Return True if a field exists in the known schema for a dataset."""
+    try:
+        return field in SCHEMA_MAP.get(dataset_name, {}).get("fields", [])
+    except Exception:
+        return False
+
 def parse_natural_language(query):
     """
     Hybrid parsing: Use ML predictions, fall back to rule-based for missing/low-confidence slots.
@@ -144,7 +160,7 @@ def parse_natural_language(query):
 
     return slots
 
-def generate_spl_query(slots):
+def generate_spl_query(slots, query=""):
     """
     Generate Splunk SPL query from parsed slots.
     Uses sourcetype-aware field mappings for real-world compatibility.
@@ -234,6 +250,7 @@ def generate_spl_query(slots):
         time_map = {
             "last1h": "-1h",
             "last24h": "-24h",
+            "last7d": "-7d@d",
             "last30d": "-30d",
             "last48h": "-48h",
             "yesterday": "-1d@d",
@@ -241,6 +258,69 @@ def generate_spl_query(slots):
         }
         if slots["time"] in time_map:
             spl += f' earliest={time_map[slots["time"]]}'
+
+    # --- Phase 3 enhancement: smarter NOC/Web context merge ---
+    noc_terms = ["critical", "crit", "warn", "warning", "alert"]
+    if any(term in query.lower() for term in noc_terms):
+        # If generated SPL already includes HTTP status codes, merge NOC terms
+        if "(status>=" in spl:
+            import re
+            spl = re.sub(
+                r'\(status>=(\d+)\)',
+                r'(status>=\1 OR status="CRIT" OR status="WARN" OR status="Critical" OR status="Warning") /* blended contexts */',
+                spl,
+                count=1
+            )
+        elif 'status="' in spl:
+            # For exact status codes like status="404", append NOC terms
+            spl = spl.replace(
+                'status="',
+                '(status="',
+                1  # Only replace first occurrence
+            )
+            # Find position after the status code value and insert NOC terms
+            import re
+            spl = re.sub(
+                r'status="(\d+)"',
+                r'(status="\1" OR status="CRIT" OR status="WARN" OR status="Critical" OR status="Warning") /* blended contexts */',
+                spl,
+                count=1
+            )
+        else:
+            # otherwise just add NOC-style conditions
+            spl = 'search index=* (status="CRIT" OR status="WARN" OR status="Critical" OR status="Warning") earliest=-24h@h latest=now'
+
+    # --- Phase 3 field-awareness filter ---
+    # Remove clauses for fields that don't exist in the active dataset schema
+    import re
+    spl = re.sub(r'\s*\(log_level="[^"]*"\s+OR\s+severity="[^"]*"\)', '', spl)
+
+    # --- Schema awareness cleanup ---
+    active_dataset = "access_combined" if "access_combined" in spl else "noc_sample_logs"
+
+    for field in ["log_level", "severity", "action", "status", "bytes", "clientip"]:
+        if not field_exists(active_dataset, field):
+            # remove unsupported clauses for this dataset
+            spl = re.sub(rf'\({field}="[^"]*"\s+OR\s+"{field}"\)', '', spl)
+            spl = re.sub(rf'{field}="[^"]*"', '', spl)
+
+    # Clean up dangling OR operators and empty parentheses
+    spl = re.sub(r'\(\s+OR\s+', '(', spl)
+    spl = re.sub(r'\s+OR\s+\)', ')', spl)
+    spl = re.sub(r'\(\s*\)', '', spl)
+    spl = re.sub(r'\("[^"]*"\)\s*', '', spl)  # Remove orphaned quoted strings in parens
+    spl = re.sub(r'\s+', ' ', spl).strip()
+
+    # Balance parentheses
+    open_count = spl.count('(')
+    close_count = spl.count(')')
+    if open_count > close_count:
+        spl += ')' * (open_count - close_count)
+    elif close_count > open_count:
+        # Remove extra closing parens from the end
+        extra = close_count - open_count
+        for _ in range(extra):
+            spl = spl.rstrip(') ')
 
     return spl
 
@@ -275,6 +355,7 @@ def generate_loose_spl(slots):
         time_map = {
             "last1h": "-1h",
             "last24h": "-24h",
+            "last7d": "-7d@d",
             "last30d": "-30d",
             "last48h": "-48h",
             "yesterday": "-1d@d",
@@ -337,7 +418,7 @@ def main():
     if loose_mode:
         spl = generate_loose_spl(slots)
     else:
-        spl = generate_spl_query(slots)
+        spl = generate_spl_query(slots, query)
 
     print("Input:", query)
     print("Parsed Slots:", slots)
@@ -384,6 +465,7 @@ def main():
             time_map = {
                 "last1h": "-1h",
                 "last24h": "-24h",
+                "last7d": "-7d@d",
                 "last30d": "-30d",
                 "last48h": "-48h",
                 "yesterday": "-1d@d",

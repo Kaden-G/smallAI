@@ -1,0 +1,53 @@
+# Schema mapping for different Splunk sourcetypes
+# Maps sourcetype -> available fields
+
+access_combined:
+  fields:
+    - clientip
+    - status
+    - method
+    - uri
+    - useragent
+    - referer
+    - bytes
+
+noc_sample_logs:
+  fields:
+    - status
+    - host
+    - message
+    - timestamp
+
+syslog:
+  fields:
+    - host
+    - facility
+    - priority
+    - message
+    - pid
+    - program
+
+firewall:
+  fields:
+    - action
+    - src_ip
+    - dest_ip
+    - src_port
+    - dest_port
+    - protocol
+
+WinEventLog:
+  fields:
+    - EventCode
+    - ComputerName
+    - User
+    - Message
+    - SourceName
+
+database:
+  fields:
+    - query
+    - duration
+    - user
+    - database
+    - error_code
