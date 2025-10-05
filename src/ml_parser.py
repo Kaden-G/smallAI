@@ -23,10 +23,10 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
 
 # ---------------------------------------------------------------------
-# Dataset path resolution (always points to smallAI/datasets/log_query_dataset.csv)
+# Dataset path resolution (always points to smallAI/datasets/train_queries.csv)
 # ---------------------------------------------------------------------
-REPO_ROOT = os.path.dirname(os.path.abspath(__file__))  # this file = smallAI/ml_parser.py
-DATASET_FILE = os.path.join(REPO_ROOT, "datasets", "log_query_dataset.csv")
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # this file = smallAI/src/ml_parser.py
+DATASET_FILE = os.path.join(REPO_ROOT, "datasets", "train_queries.csv")
 
 
 def load_dataset(filename: Optional[str] = None):
@@ -39,7 +39,7 @@ def load_dataset(filename: Optional[str] = None):
     path = filename or DATASET_FILE
     if not os.path.exists(path):
         raise FileNotFoundError(
-            f"Dataset not found at {path}. Ensure datasets/log_query_dataset.csv exists under project root."
+            f"Dataset not found at {path}. Ensure datasets/train_queries.csv exists under project root."
         )
 
     X = []

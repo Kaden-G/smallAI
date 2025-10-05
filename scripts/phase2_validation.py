@@ -14,13 +14,12 @@ import sys
 from sklearn.model_selection import train_test_split
 
 ROOT = os.path.dirname(os.path.dirname(__file__))
-DATASET = os.path.join(ROOT, "datasets", "log_query_dataset.csv")
+DATASET = os.path.join(ROOT, "datasets", "train_queries.csv")
 REPORT_MD = os.path.join(ROOT, "docs", "accuracy_report.md")
 
-sys.path.insert(0, ROOT)
+sys.path.insert(0, os.path.join(ROOT, "src"))
 from rule_based_parser import parse_query as rule_parse, structured_string
 import ml_parser
-from hybrid_parser import build_spl
 from drift_hook import UNPARSED_LOG
 
 REAL_QUERIES = {

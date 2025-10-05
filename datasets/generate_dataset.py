@@ -187,7 +187,7 @@ def fixed_gold_examples():
     ]
     return gold
 
-def save_dataset(filename="log_query_dataset.csv"):
+def save_dataset(filename="train_queries.csv"):
     rows = generate_queries()
     rows.extend(fixed_gold_examples())
     with open(filename, "w", newline="") as f:

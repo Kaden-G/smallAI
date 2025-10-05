@@ -92,3 +92,6 @@ models/
 # Ignore IDE project settings
 .idea/
 *.iml
+
+# Model artifacts
+models/*.pkl

@@ -1,0 +1,9 @@
+Slot,Accuracy
+action,0.94
+time,0.98
+user,1.00
+source,0.98
+src_ip,0.91
+hostname,0.91
+severity,0.76
+status_code,0.84

@@ -1,0 +1,7 @@
+input,expected_spl,category
+"show all 500 errors and critical alerts from the last 12 hours","index=* ((status=500) OR (status=\"CRIT\" OR status=\"Critical\")) earliest=-12h@h latest=now","cross"
+"list hosts with either 404 errors or warning events this week","index=* ((status=404) OR (status=\"WARN\" OR status=\"Warning\")) earliest=-7d@d latest=now | stats count by host","cross"
+"count all login failures and 400-series errors grouped by user","index=* ((\"login_failure\" OR \"Failed password\") OR (status>=400 AND status<500)) | stats count by user","cross"
+"show average bytes returned per http method","index=* sourcetype=\"access_combined\" | stats avg(bytes) by method","web"
+"show all failed logins from the past 24 hours","index=* (\"login_failure\" OR \"Failed password\") earliest=-24h@h latest=now","noc"
+ß

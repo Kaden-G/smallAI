@@ -1,0 +1,132 @@
+                                                                                                                                  precision    recall  f1-score   support
+
+                                                        action=access source=firewall severity=critical earliest=-24h latest=now       0.00      0.00      0.00       1.0
+                                                                          action=access source=windows earliest=-7d@d latest=now       0.00      0.00      0.00       1.0
+           action=access user=admin source=firewall src_ip=10.0.0.1 hostname=db-prod-02 status_code=200 earliest=-60m latest=now       0.00      0.00      0.00       1.0
+                                                action=access user=alice source=database severity=error earliest=@d-1d latest=@d       0.00      0.00      0.00       1.0
+                                               action=access user=alice source=database status_code=403 earliest=-24h latest=now       0.00      0.00      0.00       1.0
+                                             action=access user=alice source=filesystem severity=info earliest=-30d@d latest=now       0.00      0.00      0.00       1.0
+                                                                    action=access user=alice source=ssh earliest=-60m latest=now       0.00      0.00      0.00       0.0
+                                 action=access user=alice source=web src_ip=192.168.0.1 severity=critical earliest=@d latest=now       0.00      0.00      0.00       1.0
+                             action=access user=bob source=database src_ip=192.168.1.100 severity=warning earliest=@d latest=now       0.00      0.00      0.00       1.0
+                                                                   action=access user=bob source=host earliest=-30d@d latest=now       0.00      0.00      0.00       1.0
+                                                  action=access user=jsmith source=auth status_code=404 earliest=-60m latest=now       0.00      0.00      0.00       1.0
+        action=access user=jsmith source=web src_ip=10.10.10.5 hostname=load-balancer severity=warning earliest=-7d@d latest=now       0.00      0.00      0.00       1.0
+                                                           action=allow source=firewall src_ip=10.0.0.1 earliest=@d-1d latest=@d       0.00      0.00      0.00       1.0
+                                        action=deletion source=database src_ip=10.10.10.5 status_code=500 earliest=@d latest=now       0.00      0.00      0.00       1.0
+                                                     action=deletion source=database src_ip=192.168.0.1 earliest=@d-1d latest=@d       0.00      0.00      0.00       1.0
+                                       action=deletion source=firewall src_ip=10.0.0.1 severity=warning earliest=-60m latest=now       0.00      0.00      0.00       1.0
+                                        action=deletion user=admin source=database hostname=firewall-01 earliest=@d-1d latest=@d       0.00      0.00      0.00       1.0
+                                                             action=deletion user=alice source=windows earliest=-7d@d latest=now       0.00      0.00      0.00       0.0
+                                                            action=deletion user=anonymous source=auth earliest=-7d@d latest=now       0.00      0.00      0.00       1.0
+                                                               action=deletion user=jsmith source=auth earliest=-7d@d latest=now       0.00      0.00      0.00       1.0
+                                                   action=deletion user=root source=web src_ip=10.0.0.1 earliest=-24h latest=now       0.00      0.00      0.00       1.0
+                                                             action=deletion user=root source=windows earliest=-30d@d latest=now       0.00      0.00      0.00       1.0
+                                                                              action=deny source=firewall earliest=@d latest=now       0.00      0.00      0.00       1.0
+                                                                             action=download source=web earliest=-24h latest=now       0.00      0.00      0.00       2.0
+                                     action=download user=admin source=database hostname=load-balancer earliest=-7d@d latest=now       0.00      0.00      0.00       1.0
+                        action=download user=alice source=filesystem src_ip=172.16.0.50 severity=error earliest=-7d@d latest=now       0.00      0.00      0.00       1.0
+                                                              action=download user=alice source=windows earliest=-60m latest=now       0.00      0.00      0.00       1.0
+                      action=download user=alice source=windows hostname=web-server-01 severity=warning earliest=-24h latest=now       0.00      0.00      0.00       1.0
+                      action=download user=anonymous source=database src_ip=192.168.1.100 status_code=403 earliest=@d latest=now       0.00      0.00      0.00       1.0
+               action=download user=anonymous source=firewall src_ip=192.168.0.1 hostname=web-server-01 earliest=-60m latest=now       0.00      0.00      0.00       1.0
+                      action=download user=anonymous source=ssh hostname=web-server-01 status_code=500 earliest=-7d@d latest=now       0.00      0.00      0.00       1.0
+                                           action=download user=anonymous source=ssh src_ip=192.168.0.1 earliest=-24h latest=now       0.00      0.00      0.00       1.0
+                     action=download user=bob source=filesystem src_ip=192.168.1.100 severity=warning earliest=-30d@d latest=now       0.00      0.00      0.00       1.0
+                                action=download user=bob source=ssh src_ip=192.168.1.100 severity=error earliest=-24h latest=now       0.00      0.00      0.00       1.0
+                                               action=download user=bob source=web src_ip=172.16.0.50 earliest=-30d@d latest=now       0.00      0.00      0.00       1.0
+                                                action=download user=jsmith source=host status_code=502 earliest=-60m latest=now       0.00      0.00      0.00       1.0
+                                                                   action=download user=root source=web earliest=-24h latest=now       0.00      0.00      0.00       1.0
+                                          action=error source=auth hostname=firewall-01 status_code=200 earliest=-24h latest=now       0.00      0.00      0.00       1.0
+                      action=error source=ssh src_ip=10.10.10.5 hostname=web-server-01 status_code=403 earliest=-7d@d latest=now       0.00      0.00      0.00       1.0
+                                                                  action=error user=admin source=database earliest=@d latest=now       0.00      0.00      0.00       1.0
+                                                                     action=error user=admin source=web earliest=-60m latest=now       0.00      0.00      0.00       1.0
+                                             action=error user=alice source=filesystem severity=warning earliest=@d-1d latest=@d       0.00      0.00      0.00       1.0
+        action=error user=anonymous source=filesystem src_ip=10.0.0.1 severity=critical status_code=403 earliest=-24h latest=now       0.00      0.00      0.00       1.0
+                            action=error user=anonymous source=firewall src_ip=10.10.10.5 status_code=200 earliest=@d latest=now       0.00      0.00      0.00       1.0
+                                                                 action=error user=anonymous source=ssh earliest=@d-1d latest=@d       0.00      0.00      0.00       1.0
+                                                                  action=error user=bob source=database earliest=-24h latest=now       0.00      0.00      0.00       1.0
+                                                              action=error user=bob source=filesystem earliest=-30d@d latest=now       0.00      0.00      0.00       1.0
+                                               action=error user=jsmith source=database src_ip=10.0.0.1 earliest=-60m latest=now       0.00      0.00      0.00       1.0
+                                               action=error user=root source=firewall src_ip=10.10.10.5 earliest=@d-1d latest=@d       0.00      0.00      0.00       1.0
+                                                                     action=error user=root source=ssh earliest=-7d@d latest=now       0.00      0.00      0.00       1.0
+                                                                             action=failure source=auth earliest=@d-1d latest=@d       0.00      0.00      0.00       1.0
+                       action=failure source=ssh src_ip=10.0.0.1 hostname=load-balancer severity=error earliest=-7d@d latest=now       0.00      0.00      0.00       1.0
+                                                                          action=failure source=windows earliest=@d-1d latest=@d       0.00      0.00      0.00       1.0
+                                            action=failure user=admin source=ssh hostname=load-balancer earliest=@d-1d latest=@d       0.00      0.00      0.00       1.0
+                                                             action=failure user=admin source=windows earliest=-30d@d latest=now       0.00      0.00      0.00       1.0
+                                           action=failure user=anonymous source=host src_ip=172.16.0.50 earliest=@d-1d latest=@d       0.00      0.00      0.00       1.0
+                                               action=failure user=anonymous source=web severity=info earliest=-30d@d latest=now       0.00      0.00      0.00       1.0
+                                              action=failure user=bob source=firewall severity=critical earliest=-60m latest=now       0.00      0.00      0.00       1.0
+                                                                  action=login user=admin source=auth earliest=-30d@d latest=now       0.00      0.00      0.00       1.0
+                                                    action=login user=admin source=auth src_ip=10.0.0.1 earliest=-24h latest=now       0.00      0.00      0.00       1.0
+                                                              action=login user=admin source=firewall earliest=-30d@d latest=now       0.00      0.00      0.00       1.0
+                               action=login user=admin source=ssh hostname=web-server-01 severity=error earliest=-24h latest=now       0.00      0.00      0.00       1.0
+                                      action=login user=anonymous source=database hostname=db-prod-02 earliest=-30d@d latest=now       0.00      0.00      0.00       1.0
+                                             action=login user=anonymous source=windows src_ip=10.0.0.1 earliest=@d-1d latest=@d       0.00      0.00      0.00       1.0
+                                              action=login user=jsmith source=database src_ip=192.168.0.1 earliest=@d latest=now       0.00      0.00      0.00       1.0
+                                        action=login user=jsmith source=firewall src_ip=192.168.1.100 earliest=-30d@d latest=now       0.00      0.00      0.00       1.0
+                                                                action=login user=jsmith source=windows earliest=@d-1d latest=@d       0.00      0.00      0.00       1.0
+                                                  action=login user=jsmith source=windows status_code=200 earliest=@d latest=now       0.00      0.00      0.00       1.0
+                                                       action=login user=root source=host status_code=403 earliest=@d latest=now       0.00      0.00      0.00       1.0
+                                                action=login user=root source=windows status_code=200 earliest=-30d@d latest=now       0.00      0.00      0.00       1.0
+                                 action=logout source=filesystem hostname=load-balancer severity=error earliest=-7d@d latest=now       0.00      0.00      0.00       1.0
+                           action=logout user=admin source=windows hostname=load-balancer severity=info earliest=@d-1d latest=@d       0.00      0.00      0.00       1.0
+                             action=logout user=alice source=firewall src_ip=10.10.10.5 status_code=502 earliest=-24h latest=now       0.00      0.00      0.00       1.0
+                            action=logout user=alice source=ssh src_ip=172.16.0.50 hostname=firewall-01 earliest=@d-1d latest=@d       0.00      0.00      0.00       1.0
+                                               action=logout user=anonymous source=host severity=critical earliest=@d latest=now       0.00      0.00      0.00       1.0
+                                                                 action=logout user=bob source=database earliest=-60m latest=now       0.00      0.00      0.00       1.0
+                                   action=logout user=bob source=ssh hostname=firewall-01 severity=info earliest=@d-1d latest=@d       0.00      0.00      0.00       1.0
+                                     action=logout user=jsmith source=filesystem hostname=firewall-01 earliest=-30d@d latest=now       0.00      0.00      0.00       1.0
+                           action=logout user=jsmith source=web src_ip=172.16.0.50 hostname=firewall-01 earliest=-60m latest=now       0.00      0.00      0.00       1.0
+                                             action=logout user=root source=auth hostname=load-balancer earliest=@d-1d latest=@d       0.00      0.00      0.00       1.0
+                                                                  action=logout user=root source=firewall earliest=@d latest=now       0.00      0.00      0.00       0.0
+                                                                     action=logout user=root source=ssh earliest=-60m latest=now       0.00      0.00      0.00       1.0
+                                   action=restart source=firewall hostname=db-prod-02 status_code=503 earliest=-30d@d latest=now       0.00      0.00      0.00       1.0
+                                                        action=restart source=host hostname=web-server-01 earliest=@d latest=now       0.00      0.00      0.00       1.0
+                                                                                action=restart source=web earliest=@d latest=now       0.00      0.00      0.00       1.0
+                                          action=restart source=web src_ip=192.168.0.1 severity=warning earliest=-60m latest=now       0.00      0.00      0.00       1.0
+                                                action=restart user=admin source=auth status_code=503 earliest=-30d@d latest=now       0.00      0.00      0.00       1.0
+                         action=restart user=admin source=filesystem src_ip=172.16.0.50 severity=error earliest=-7d@d latest=now       0.00      0.00      0.00       1.0
+action=restart user=admin source=firewall src_ip=172.16.0.50 hostname=load-balancer severity=critical earliest=-30d@d latest=now       0.00      0.00      0.00       1.0
+                                   action=restart user=admin source=ssh src_ip=10.0.0.1 status_code=502 earliest=-60m latest=now       0.00      0.00      0.00       1.0
+                                                                    action=restart user=bob source=auth earliest=-60m latest=now       0.00      0.00      0.00       1.0
+                                              action=restart user=bob source=ssh hostname=web-server-01 earliest=-24h latest=now       0.00      0.00      0.00       1.0
+                                                   action=restart user=bob source=ssh severity=critical earliest=-60m latest=now       0.00      0.00      0.00       1.0
+                        action=restart user=jsmith source=database hostname=web-server-01 status_code=503 earliest=@d latest=now       0.00      0.00      0.00       1.0
+                                                                  action=restart user=jsmith source=web earliest=-24h latest=now       0.00      0.00      0.00       1.0
+                                                 action=restart user=root source=database severity=info earliest=-60m latest=now       0.00      0.00      0.00       1.0
+                    action=restart user=root source=filesystem hostname=app-server-03 status_code=502 earliest=-30d@d latest=now       0.00      0.00      0.00       1.0
+                         action=restart user=root source=filesystem src_ip=10.10.10.5 status_code=404 earliest=-30d@d latest=now       0.00      0.00      0.00       1.0
+                                                               action=restart user=root source=firewall earliest=@d-1d latest=@d       0.00      0.00      0.00       1.0
+                                                  action=restart user=root source=host status_code=500 earliest=-7d@d latest=now       0.00      0.00      0.00       1.0
+                                                action=success source=filesystem src_ip=192.168.1.100 earliest=-30d@d latest=now       0.00      0.00      0.00       1.0
+                                                                         action=success source=firewall earliest=-24h latest=now       0.00      0.00      0.00       1.0
+                                                                        action=success source=firewall earliest=-7d@d latest=now       0.00      0.00      0.00       1.0
+                              action=success user=alice source=database severity=critical status_code=404 earliest=@d latest=now       0.00      0.00      0.00       1.0
+                                             action=success user=alice source=firewall status_code=200 earliest=-7d@d latest=now       0.00      0.00      0.00       1.0
+                                           action=success user=jsmith source=filesystem src_ip=10.0.0.1 earliest=-60m latest=now       0.00      0.00      0.00       1.0
+                          action=success user=jsmith source=ssh hostname=load-balancer severity=error earliest=-30d@d latest=now       0.00      0.00      0.00       1.0
+                                   action=success user=root source=auth hostname=db-prod-02 severity=info earliest=@d latest=now       0.00      0.00      0.00       1.0
+                                               action=success user=root source=database status_code=200 earliest=@d-1d latest=@d       0.00      0.00      0.00       0.0
+                                                      action=success user=root source=web status_code=503 earliest=@d latest=now       0.00      0.00      0.00       1.0
+                                                                          action=upload source=database earliest=-60m latest=now       0.00      0.00      0.00       1.0
+                                                     action=upload source=database hostname=firewall-01 earliest=@d-1d latest=@d       0.00      0.00      0.00       1.0
+                                                 action=upload user=admin source=ssh severity=critical earliest=-7d@d latest=now       0.00      0.00      0.00       1.0
+                                             action=upload user=alice source=host hostname=db-prod-02 earliest=-30d@d latest=now       0.00      0.00      0.00       1.0
+                                              action=upload user=alice source=host hostname=firewall-01 earliest=@d-1d latest=@d       0.00      0.00      0.00       1.0
+                                                                    action=upload user=alice source=ssh earliest=@d-1d latest=@d       0.00      0.00      0.00       1.0
+                                       action=upload user=anonymous source=windows src_ip=192.168.1.100 earliest=-24h latest=now       0.00      0.00      0.00       1.0
+                                            action=upload user=anonymous source=windows status_code=502 earliest=-60m latest=now       0.00      0.00      0.00       1.0
+                                              action=upload user=bob source=web hostname=app-server-03 earliest=-7d@d latest=now       0.00      0.00      0.00       1.0
+                         action=upload user=jsmith source=database src_ip=192.168.0.1 status_code=200 earliest=-30d@d latest=now       0.00      0.00      0.00       1.0
+                                            action=upload user=jsmith source=firewall src_ip=10.0.0.1 earliest=-30d@d latest=now       0.00      0.00      0.00       1.0
+                                              action=upload user=jsmith source=host src_ip=10.10.10.5 earliest=-30d@d latest=now       0.00      0.00      0.00       1.0
+                                           action=upload user=jsmith source=web hostname=app-server-03 earliest=-7d@d latest=now       0.00      0.00      0.00       1.0
+                                                action=upload user=jsmith source=web src_ip=172.16.0.50 earliest=-60m latest=now       0.00      0.00      0.00       1.0
+                                       action=upload user=root source=filesystem hostname=web-server-01 earliest=-24h latest=now       0.00      0.00      0.00       1.0
+                                                 action=upload user=root source=ssh hostname=db-prod-02 earliest=-60m latest=now       0.00      0.00      0.00       1.0
+
+                                                                                                                        accuracy                           0.00     123.0
+                                                                                                                       macro avg       0.00      0.00      0.00     123.0
+                                                                                                                    weighted avg       0.00      0.00      0.00     123.0

@@ -4,9 +4,9 @@ import re
 import csv
 import sys
 
-# Always resolve dataset relative to this script’s folder
-BASE_DIR = os.path.dirname(__file__)
-DATASET_FILE = os.path.join(BASE_DIR, "log_query_dataset.csv")
+# Always resolve dataset relative to this script's folder
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+DATASET_FILE = os.path.join(BASE_DIR, "datasets", "train_queries.csv")
 
 # -------------------------------
 # Keyword dictionaries
