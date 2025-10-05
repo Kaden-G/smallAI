@@ -16,6 +16,8 @@ from __future__ import annotations
 import csv
 import os
 import random
+import joblib
+from pathlib import Path
 from typing import List, Optional
 
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -27,6 +29,44 @@ from sklearn.pipeline import Pipeline
 # ---------------------------------------------------------------------
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # this file = smallAI/src/ml_parser.py
 DATASET_FILE = os.path.join(REPO_ROOT, "datasets", "train_queries.csv")
+
+# ---------------------------------------------------------------------
+# Model Configuration Block
+# ---------------------------------------------------------------------
+MODEL_DIR = Path(REPO_ROOT) / "models"
+SLOTS = [
+    "action", "time", "user", "source",
+    "src_ip", "hostname", "severity", "status_code",
+]
+MODEL_VERSION = "slot_models_v1"
+
+# Load vectorizer and slot models (lazy loading)
+_vectorizer = None
+_slot_models = None
+
+def _load_models():
+    """Lazy load vectorizer and slot models."""
+    global _vectorizer, _slot_models
+
+    if _vectorizer is not None and _slot_models is not None:
+        return _vectorizer, _slot_models
+
+    vectorizer_path = MODEL_DIR / "vectorizer.pkl"
+    if not vectorizer_path.exists():
+        # Models not trained yet, return None
+        return None, None
+
+    _vectorizer = joblib.load(vectorizer_path)
+    _slot_models = {}
+
+    for slot in SLOTS:
+        path = MODEL_DIR / f"model_{slot}.pkl"
+        if path.exists():
+            _slot_models[slot] = joblib.load(path)
+        else:
+            print(f"[WARN] No model found for slot '{slot}' — skipping.")
+
+    return _vectorizer, _slot_models
 
 
 def load_dataset(filename: Optional[str] = None):
@@ -124,14 +164,54 @@ def predict_query(q: str, classifiers: dict) -> dict:
     return predictions
 
 
+def parse_ml(query: str) -> dict:
+    """
+    Predict slot values for a given natural language query using pre-trained models.
+
+    This function uses the models trained by scripts/train_ml_parser.py.
+    If models are not found, it falls back to training in-memory.
+
+    Args:
+        query: Natural language query string
+
+    Returns:
+        Dict with predicted slot values for all 8 slots
+    """
+    if not query or not query.strip():
+        return {slot: None for slot in SLOTS}
+
+    vectorizer, slot_models = _load_models()
+
+    # If models don't exist, fall back to in-memory training
+    if vectorizer is None or slot_models is None:
+        print("[INFO] Pre-trained models not found. Training in-memory...")
+        classifiers = train_all()
+        return predict_query(query, classifiers)
+
+    # Use pre-trained models
+    X_vec = vectorizer.transform([query])
+    results = {}
+
+    for slot, model in slot_models.items():
+        try:
+            pred = model.predict(X_vec)[0]
+            if not pred or pred.lower() in ["none", "null", "nan", ""]:
+                pred = None
+            results[slot] = pred
+        except Exception as e:
+            print(f"[WARN] Prediction failed for slot '{slot}': {e}")
+            results[slot] = None
+
+    return results
+
+
 if __name__ == "__main__":
     import sys
     if len(sys.argv) == 1:
-        print("Training classifiers...")
-        train_all()
-        print("Done")
-    else:
-        classifiers = train_all()
-        q = " ".join(sys.argv[1:])
-        print("Query:", q)
-        print("Prediction:", predict_query(q, classifiers))
+        print("Usage: python ml_parser.py \"<query>\"")
+        print("Example: python ml_parser.py \"show failed logins from yesterday\"")
+        sys.exit(0)
+
+    q = " ".join(sys.argv[1:])
+    print("Query:", q)
+    print("Prediction:", parse_ml(q))

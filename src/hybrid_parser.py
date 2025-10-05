@@ -9,6 +9,10 @@ import sys
 import yaml
 from pathlib import Path
 
+# Import the new slot-based parsers
+from ml_parser import parse_ml
+from rule_based_parser import parse_query as parse_rule_based
+
 # Use a wildcard index for general deployment (instead of a specific index like "smallai").
 DEFAULT_INDEX = "*"
 
@@ -122,37 +126,44 @@ def field_exists(dataset_name: str, field: str) -> bool:
 def parse_natural_language(query):
     """
     Hybrid parsing: Use ML predictions, fall back to rule-based for missing/low-confidence slots.
-    """
-    import rule_based_parser
 
+    Step 1: Run ML parser (using pre-trained slot models)
+    Step 2: Run rule-based parser
+    Step 3: Merge results (rule-based takes precedence for high-precision matches)
+    """
     q = normalize_text(query)
 
-    # Get ML predictions
-    ml_slots = ml_predict_slots(q)
+    # Step 1 — run ML parser (uses pre-trained models from scripts/train_ml_parser.py)
+    ml_slots = parse_ml(q)
 
-    # Get rule-based predictions as fallback
-    rule_slots = rule_based_parser.parse_query(q)
+    # Step 2 — run rule-based parser
+    rb_slots = parse_rule_based(q)
 
-    # Merge: Start with rule-based (high precision), override with ML when confident
+    # Step 3 — merge dictionaries
+    # Strategy: Use rule-based if it found something specific, otherwise use ML
     slots = {}
     for key in ["action", "time", "user", "source", "src_ip", "hostname", "severity", "status_code"]:
         ml_val = ml_slots.get(key)
-        rule_val = rule_slots.get(key)
+        rb_val = rb_slots.get(key)
 
-        # Strategy: Use rule-based if it found something, otherwise use ML
-        # Exception: For 'time', be more conservative - only use ML if query mentions time
-        if rule_val and rule_val != "*":
-            slots[key] = rule_val
+        # Normalize None and "*" to be equivalent
+        if ml_val in (None, "*"):
+            ml_val = "*"
+        if rb_val in (None, "*"):
+            rb_val = "*"
+
+        # Rule-based has high precision - use it if it found something
+        if rb_val and rb_val != "*":
+            slots[key] = rb_val
         elif ml_val and ml_val != "*":
             # Special case: Don't default to ML time predictions when no time mentioned
-            # Check if query actually contains time-related words
             if key == "time":
                 time_keywords = ["hour", "day", "week", "month", "yesterday", "today", "since", "last", "past", "ago"]
                 has_time_keyword = any(kw in q.lower() for kw in time_keywords)
                 if has_time_keyword:
                     slots[key] = ml_val
                 else:
-                    slots[key] = "*"  # No time mentioned, don't add arbitrary time filter
+                    slots[key] = "*"
             else:
                 slots[key] = ml_val
         else:
@@ -406,11 +417,7 @@ def main():
             loose_mode = True
         query_start = 2
 
-    # Load models once at startup
-    models = load_models()
-    if models is None:
-        print("Warning: No trained models found. Run with --train first, or models will use rule-based only.")
-        print(f"Expected models in: {MODELS_DIR}/")
+    # Models are now loaded by ml_parser.parse_ml() automatically
 
     query = " ".join(sys.argv[query_start:])
     slots = parse_natural_language(query)
